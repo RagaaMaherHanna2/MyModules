@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+ <t t-name="OrderReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension" owl="1">
+      <!-- Survey QR Code-->
+     <xpath expr="//div[hasclass('pos-receipt-order-data')]" position="before">
+            <div id="survey_qrcode_container">
+                <a id="survey_url" target="_blank">To Survey</a>
+                <div id="survey_qrcode"/>
+                <script type="text/javascript">
+                    odoo.define(function (require) {
+
+                    var rpc = require('web.rpc');
+
+                    function _get_pos_survey() {
+                        var pos_id = "<t t-esc='env.pos.config.id'/>";
+                        return rpc.query({
+                            model: 'pos.config',
+                            method: 'get_pos_survey',
+                            args: [[pos_id], pos_id]
+                            }).then(function (result) {
+                                var survey_qrcode = new QRCode('survey_qrcode' , {
+                                                    text: result['survey_url'],
+                                                    width: 160,
+                                                    height: 160,
+                                                    colorDark : "#000000",
+                                                    colorLight : "#ffffff",
+                                                    correctLevel : QRCode.CorrectLevel.H
+                                                    });
+                                survey_qrcode.makeCode(result['survey_url']);
+                                $("#survey_qrcode > img").css({"margin":"20px auto"});
+                                document.getElementById("survey_url").href = result['survey_url'];
+                                $("#survey_url").css({"color":"blue"});
+                            });
+                    }
+                    _get_pos_survey()
+                    });
+                </script>
+            </div>
+       </xpath>
+
+    </t>
+
+</templates>

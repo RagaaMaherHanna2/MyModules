@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+  <t
+    t-inherit="itq_my_hr_dashboard.MyDashboardTemp"
+    name="MyDashboardLeavesTemp"
+    t-inherit-mode="extension"
+  >
+    <xpath
+      expr="//div[@name='main-wrapper-employee-details-time-management']"
+      position="inside"
+    >
+      <!-- Leaves-->
+      <div
+        class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12"
+        style="padding-left: 0px"
+        name="employee_leaves"
+        id="employee-leave-details"
+      >
+        <div class="oh-card ">
+          <div
+            class="oh-card-body d_hr_leave_request_approve hr_leave_request_approve"
+          >
+            <div class="stat-widget-one">
+              <div class="stat-icon"><div></div></div>
+              <div class="stat-content">
+                <div class="stat-text">Leave Requests</div>
+                <div class="stat-digit">
+                  <div class="stat-count">
+                    <t t-esc="widget.login_employee.leaves_to_approve_count" />
+                  </div>
+                </div>
+                <div class="" style="display: flex;
+    justify-content: space-between;
+    align-items: center;">
+                   <div class="stat-digit">
+                <div class="d_leaves_request_today leaves_request_today" style="display: flex;
+    align-items: center;
+">
+                  <div>Today</div>
+                  <div style="padding: 0 5px;">
+                    <div class="stat-count">
+                      <t t-esc="widget.login_employee.leaves_today_count" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+                   <div class="d_leaves_request_month leaves_request_month stat-digit" style="display: flex; align-items: center;
+">
+                  <div>Month</div>
+                  <div style="padding: 0 5px;">
+                    <div class="stat-count">
+                      <t t-esc="widget.login_employee.leaves_this_month_count" />
+                    </div>
+                  </div>
+              </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </xpath>
+  </t>
+  <t
+    t-inherit="itq_my_hr_dashboard.MyDashboardTemp"
+    name="MyDashboardLeavesTemp"
+    t-inherit-mode="extension"
+  >
+    <xpath expr="//div[@name='footer']" position="before">
+      <!-- Leaves-->
+      <div
+        class="row main-section"
+        name="employee_leaves"
+        id="employee-leave-details"
+      >
+        <div class="col-md-2 col-sm-2 dummy" />
+        <div
+          class="d_leaves_allocation_details"
+          name="leaves_allocation_details"
+        >
+          <div class="hr_notification">
+            <div class="card" style="color: yellow">
+              <div class="hr_notification_head card-header">
+                All Your Leaves Allocation Details
+              </div>
+              <div class="card-body">
+                <t t-if="widget.login_employee.leaves_allocation_details">
+                  <div class="row d-flex flex-wrap">
+                    <div class="col-xs-4 col-md-4 col-12 text-align">
+                      <t
+                        t-foreach="widget.login_employee.leaves_allocation_details"
+                        t-as="allocation"
+                      >
+                        <div class="col-sm-12 col-lg-12" style="padding: 0">
+                          <div class="text-color">
+                            <div class="">
+                              <div class="media">
+                                <div class="media-body">
+                                  <h2
+                                    class="text-color display-6"
+                                    style="font-size: 15px"
+                                  >
+                                    <t t-esc="allocation['leave_type']" />
+                                  </h2>
+                                  <p>
+                                    Allocated :
+                                    <t
+                                      t-esc="allocation['leave_type_allocated_days']"
+                                    />
+                                    - Taken:
+                                    <t
+                                      t-esc="allocation['leave_type_taken_days']"
+                                    />
+                                    - Remaining:
+                                    <t
+                                      t-esc="allocation['leave_type_remaining_days']"
+                                    />
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </t>
+                    </div>
+                  </div>
+                </t>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="row main-section o_year_allocation_details"
+        id="annual-leave-graph"
+        name="annual_leave_graph"
+      ></div>
+    </xpath>
+  </t>
+</templates>

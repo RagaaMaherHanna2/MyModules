@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_employee_list_search" model="ir.ui.view">
+            <field name="name">view_employee_list_search</field>
+            <field name="model">itq.employee.list</field>
+            <field name="arch" type="xml">
+                <search string="">
+                    <group expand="0" string="Group By">
+                        <field name="name" string="name"/>
+                        <field name="employee_ids" string="Have Employee name"
+                                domain="[('name','ilike',self)]"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="payroll_config_settings_view_form" model="ir.ui.view">
+            <field name="name">payroll.config.settings.view.form</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="100"/>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]" position="inside">
+                    <div class="app_settings_block" data-string="Auto Generate Payslip Employee List"
+                         string="Auto Generate Payslip Employee List" data-key="om_hr_payroll">
+                        <h2>Auto Generate Payslip Employee List</h2>
+                        <div class="row mt16 o_settings_container" id="employee_list_configuration_id">
+                            <div class="col-lg-6 col-12 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="is_auto_generated_list"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="is_auto_generated_list" string="Activate"/>
+                                    <div class="text-muted">
+                                        Activate Auto Generate Pay-slip Lists
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 o_setting_box"
+                                 attrs="{'invisible':[('is_auto_generated_list','=', False)]}">
+                                <div class="o_setting_left_pane">
+                                    <field name="for_project"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="for_project" string="Split Per Project"/>
+                                    <div class="text-muted">
+                                        Auto Generate Split Per Project
+                                    </div>
+                                </div>
+                                <div class="o_setting_left_pane">
+                                    <field name="for_department"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="for_department" string="Split Per Department"/>
+                                    <div class="text-muted">
+                                        Auto Generate Split Per Department
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

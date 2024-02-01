@@ -1,0 +1,144 @@
+
+
+
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* itq_purchases_requisition_project
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20220325\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-30 16:44+0000\n"
+"PO-Revision-Date: 2023-05-30 16:44+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: itq_purchases_requisition_project
+#: model_terms:ir.ui.view,arch_db:itq_purchases_requisition_project.itq_purchase_requisition_view_form
+msgid ""
+"<span class=\"text-center\">\n"
+" The demanded Qty of the Items in red exceeded the planned Qty of the task\n"
+"</span>"
+msgstr "<span class=\"text-center\">\n"
+" لقد تجاوزت الكمية المطلوبة من العناصر باللون الأحمر كمية المهام المخطط لها"
+"</span>"
+
+#. module: itq_purchases_requisition_project
+#: model_terms:ir.ui.view,arch_db:itq_purchases_requisition_project.itq_purchase_requisition_view_form
+msgid ""
+"<span class=\"text-center\">\n"
+"The demanded items in yellow are not related to the planned items\n"
+"</span>"
+msgstr "<span class=\"text-center\">\n"
+"العناصر المطلوبة باللون الأصفر غير متصلة بالعناصر المخطط لها"
+"</span>"
+
+#. module: itq_purchases_requisition_project
+#: model:ir.model,name:itq_purchases_requisition_project.model_itq_purchase_requisition_line
+msgid "Defined Products"
+msgstr "منتجات محددة"
+
+#. module: itq_purchases_requisition_project
+#: model:ir.model.fields,field_description:itq_purchases_requisition_project.field_itq_purchase_requisition_line__uom_demand_quantity
+#: model:ir.model.fields,field_description:itq_purchases_requisition_project.field_itq_undefined_product_line__uom_demand_quantity
+msgid "Demand Quantity"
+msgstr "الكمية المطلوبة"
+
+#. module: itq_purchases_requisition_project
+#: model:ir.model.fields,field_description:itq_purchases_requisition_project.field_itq_purchase_requisition__display_name
+#: model:ir.model.fields,field_description:itq_purchases_requisition_project.field_itq_purchase_requisition_line__display_name
+#: model:ir.model.fields,field_description:itq_purchases_requisition_project.field_project_project__display_name
+#: model:ir.model.fields,field_description:itq_purchases_requisition_project.field_project_task__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+
+#. module: itq_purchases_requisition_project
+#: model:ir.model.fields,field_description:itq_purchases_requisition_project.field_itq_purchase_requisition__is_out_of_task_lines
+msgid "Is Out Of Task Lines"
+msgstr "خارج بنود المهمة؟"
+
+#. module: itq_purchases_requisition_project
+#: model:ir.model.fields,field_description:itq_purchases_requisition_project.field_itq_purchase_requisition__is_qty_exceeded_lines
+msgid "Is Qty Exceeded Lines"
+msgstr "بنود الكميات الزائدة"
+
+#. module: itq_purchases_requisition_project
+#: model:ir.model.fields,field_description:itq_purchases_requisition_project.field_itq_purchase_requisition____last_update
+#: model:ir.model.fields,field_description:itq_purchases_requisition_project.field_itq_purchase_requisition_line____last_update
+#: model:ir.model.fields,field_description:itq_purchases_requisition_project.field_project_project____last_update
+#: model:ir.model.fields,field_description:itq_purchases_requisition_project.field_project_task____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل بتاريخ"
+
+#. module: itq_purchases_requisition_project
+#: model:ir.model.fields,field_description:itq_purchases_requisition_project.field_itq_purchase_requisition_line__line_state
+#: model:ir.model.fields,field_description:itq_purchases_requisition_project.field_itq_undefined_product_line__line_state
+msgid "Line State"
+msgstr "حالة البند"
+
+#. module: itq_purchases_requisition_project
+#: model:ir.model.fields.selection,name:itq_purchases_requisition_project.selection__itq_purchase_requisition_line__line_state__out_of_task
+#: model:ir.model.fields.selection,name:itq_purchases_requisition_project.selection__itq_undefined_product_line__line_state__out_of_task
+msgid "Out Of Planned"
+msgstr "خارج المخطط له"
+
+#. module: itq_purchases_requisition_project
+#: model:ir.model,name:itq_purchases_requisition_project.model_project_project
+msgid "Project"
+msgstr "المشروع"
+
+#. module: itq_purchases_requisition_project
+#: model:ir.model.fields,field_description:itq_purchases_requisition_project.field_itq_purchase_requisition__project_is_readonly
+msgid "Project Is Readonly"
+msgstr "المشروع للقراءة فقط"
+
+#. module: itq_purchases_requisition_project
+#: code:addons/itq_purchases_requisition_project/models/project_project.py:0
+#: code:addons/itq_purchases_requisition_project/models/project_task.py:0
+#: model:ir.model,name:itq_purchases_requisition_project.model_itq_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:itq_purchases_requisition_project.view_task_form2
+#, python-format
+msgid "Purchase Requisition"
+msgstr "طلب شراء"
+
+#. module: itq_purchases_requisition_project
+#: model:ir.actions.act_window,name:itq_purchases_requisition_project.action_purchases_requisition_project_view
+#: model:ir.ui.menu,name:itq_purchases_requisition_project.purchases_requisition_project_main_menu
+#: model:ir.ui.menu,name:itq_purchases_requisition_project.purchases_requisition_project_menuitem
+#: model_terms:ir.ui.view,arch_db:itq_purchases_requisition_project.view_edit_project
+msgid "Purchase Requisitions"
+msgstr "طلبات المشتريات"
+
+#. module: itq_purchases_requisition_project
+#: model:ir.model.fields.selection,name:itq_purchases_requisition_project.selection__itq_purchase_requisition_line__line_state__qty_exceeded
+#: model:ir.model.fields.selection,name:itq_purchases_requisition_project.selection__itq_undefined_product_line__line_state__qty_exceeded
+msgid "Qty Exceeded"
+msgstr "تجاوز الكمية"
+
+#. module: itq_purchases_requisition_project
+#: model:ir.model.fields,field_description:itq_purchases_requisition_project.field_project_project__requisition_ids
+msgid "Requisition"
+msgstr "طلب"
+
+#. module: itq_purchases_requisition_project
+#: model:ir.model.fields,field_description:itq_purchases_requisition_project.field_project_project__requisitions_count
+msgid "Requisitions Count"
+msgstr "عدد الطلبات"
+
+#. module: itq_purchases_requisition_project
+#: model:ir.model,name:itq_purchases_requisition_project.model_project_task
+#: model:ir.model.fields,field_description:itq_purchases_requisition_project.field_itq_purchase_requisition__task_id
+msgid "Task"
+msgstr "المهمة"
+
+#. module: itq_purchases_requisition_project
+#: model:ir.model.fields.selection,name:itq_purchases_requisition_project.selection__itq_purchase_requisition_line__line_state__validated
+#: model:ir.model.fields.selection,name:itq_purchases_requisition_project.selection__itq_undefined_product_line__line_state__validated
+msgid "Validated"
+msgstr "تم التحقق من الصحة"

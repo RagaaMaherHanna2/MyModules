@@ -1,0 +1,61 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+  <templates xml:space="preserve">
+    <t t-inherit="itq_my_hr_dashboard.MyDashboardTemp" name="MyDashboardBenefitsTemp" t-inherit-mode="extension">
+      <xpath expr="//div[@name='main-wrapper-employee-details-content']" position="inside">
+        <!-- Benefits -->
+        <div class="col-md-2 col-sm-2 dummy" />
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 valuable_benefits oh-payslip oh-contracts">
+          <div class="oh-card">
+            <div class="oh-card-body">
+              <div class="stat-widget-one">
+                <div class="stat-icon"><div></div></div>
+                <div class="stat-content">
+                  <div class="stat-text" title="Valuable Benefits">Valuable Benefits</div>
+                  <div class="stat-digit"><t t-esc="widget.login_employee['valuable_benefit_ids_count']" /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 non_valuable_benefits oh-payslip oh-contracts">
+          <div class="oh-card">
+            <div class="oh-card-body">
+              <div class="stat-widget-one">
+                <div class="stat-icon"><div></div></div>
+                <div class="stat-content">
+                  <div class="stat-text" title="Non Valuable Benefits">Non Valuable Benefits</div>
+                  <div class="stat-digit"><t t-esc="widget.login_employee['non_valuable_benefit_ids_count']" /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 benefit_change_requests oh-payslip oh-contracts">
+          <div class="oh-card">
+            <div class="oh-card-body">
+              <div class="stat-widget-one">
+                <div class="stat-icon"><div></div></div>
+                <div class="stat-content">
+                  <div class="stat-text" title="Benefits Change Requests">Benefits Change Requests</div>
+                  <div class="stat-digit"><t t-esc="widget.login_employee['benefit_change_request_count']" /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 non_periodical_benefit_requests oh-payslip oh-contracts">
+          <div class="oh-card">
+            <div class="oh-card-body">
+              <div class="stat-widget-one">
+                <div class="stat-icon"><div></div></div>
+                <div class="stat-content">
+                  <div class="stat-text" title="Non-periodical Benefits Requests">Non-periodical Benefits Requests</div>
+                  <div class="stat-digit"><t t-esc="widget.login_employee['non_periodical_benefit_request_count']" /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </xpath>
+    </t>
+  </templates>

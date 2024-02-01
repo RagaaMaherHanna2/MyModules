@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="work_procedure_view_tree" model="ir.ui.view">
+        <field name="name">view.work.procedure.tree</field>
+        <field name="model">work.procedure</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="create_date"/>
+                <field name="version_no"/>
+                <field name="user_id"/>
+                <field name="department_id"/>
+                <field name="name"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="work_procedure_view_form" model="ir.ui.view">
+        <field name="name">view.work.procedure.form</field>
+        <field name="model">work.procedure</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_request_review" type="object"
+                            string="Request Review"
+                            itq_is_always_display="1"
+                            attrs="{'invisible': [('can_request_approve', '=', False)]}"/>
+
+                    <button name="%(itq_work_procedures.approval_line_action)d" type="action"
+                            string="Approve"
+                            itq_is_always_display="1"
+                            attrs="{'invisible': [('can_review', '=', False)]}"
+                            context="{'default_procedure_id': active_id,
+                            'action': 'review_approve'}"/>
+                    <button name="%(itq_work_procedures.approval_line_action)d" type="action"
+                            string="Reject"
+                            itq_is_always_display="1"
+                            attrs="{'invisible': [('can_review', '=', False)]}"
+                            context="{'default_procedure_id': active_id,
+                            'action': 'review_reject'}"/>
+
+                    <button name="%(itq_work_procedures.approval_line_action)d" type="action"
+                            string="Confirm"
+                            itq_is_always_display="1"
+                            attrs="{'invisible': [('can_confirm', '=', False)]}"
+                            context="{'default_procedure_id': active_id,
+                            'action': 'confirm'}"/>
+
+                    <button name="%(itq_work_procedures.approval_line_action)d" type="action"
+                            string="Reject"
+                            itq_is_always_display="1"
+                            attrs="{'invisible': [('can_confirm', '=', False)]}"
+                            context="{'default_procedure_id': active_id,
+                            'action': 'reject'}"/>
+
+                    <button name="action_archive" type="object"
+                            string="Archive"
+                            attrs="{'invisible': [('can_archive', '=', False)]}"/>
+
+                    <button name="action_new_version" type="object"
+                            string="دورة جديده"
+                            itq_is_always_display="1"
+                            attrs="{'invisible': [('can_add_new_v', '=', False)]}"/>
+
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,under_review,review_rejected,under_confirmation,confirmed,rejected,archived"/>
+
+                </header>
+                <sheet>
+                    <div style="width: 13%; position: absolute; top: 190px; left: -20px; transform-origin: top left; transform: rotate(-45deg);"
+                         class="text-center o_field_widget label label-success"
+                         attrs="{'invisible':['|', ('latest_version','=',False),('state','!=','confirmed')]}">
+                        <span class="text-center">
+                            أحدث إصدار
+                        </span>
+                    </div>
+                    <div style="width: 13%; position: absolute; top: 170px; left: -40px; transform-origin: top left; transform: rotate(-45deg);"
+                         class="text-center o_field_widget label label-danger"
+                         attrs="{'invisible':[('procedure_availability','!=','secret')]}">
+                        <span class="text-center">
+                            سري
+                        </span>
+                    </div>
+                    <div class="oe_title">
+                        <label for="code" class="oe_edit_only"/>
+                        <h1>
+                            <field name="code"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name_id"
+                                   context="{'name_active_visible': True}"
+                                   options="{'no_create': False, 'no_create_edit':False,'no_open': False}"
+                                   attrs="{'readonly': [('state', 'not in', ('draft', 'review_rejected', 'rejected'))]}"/>
+                            <field name="user_id"/>
+                            <field name="name" invisible="1"/>
+                            <field name="create_date" readonly="1"/>
+                            <field name="write_date" readonly="1"/>
+                            <field name="latest_write_uid" readonly="1"/>
+                            <field name="procedure_availability"
+                                   attrs="{'readonly': [('state', 'not in', ('draft', 'review_rejected', 'rejected'))]}"/>
+                        </group>
+                        <group>
+                            <field name="department_id"
+                                   attrs="{'readonly': ['|', ('state', 'not in', ('draft', 'review_rejected', 'rejected')),
+                                   ('parent_id', '!=', False)]}"/>
+                            <field name="scope_id"
+                                   attrs="{'readonly': [('state', 'not in', ('draft', 'review_rejected', 'rejected'))]}"/>
+                            <field name="parent_id"
+                                   attrs="{'invisible': [('parent_id', '=', False)]}"/>
+                            <field name="version_no"/>
+                            <field name="procedure_review_user_id" invisible="1"/>
+                            <field name="procedure_confirm_user_id" invisible="1"/>
+                            <field name="can_request_approve" invisible="1"/>
+                            <field name="can_archive" invisible="1"/>
+                            <field name="can_review" invisible="1"/>
+                            <field name="can_confirm" invisible="1"/>
+                            <field name="can_add_new_v" invisible="1"/>
+                            <field name="latest_version" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook string="Procedure Details">
+                        <page name="more_details" string="More Details">
+                            <group>
+                                <group>
+                                    <field name="allowed_departments" invisible="1"/>
+                                    <field name="setting_side_department_id"
+                                           attrs="{'readonly': [('state', 'not in', ('draft', 'review_rejected', 'rejected'))]}"
+                                           domain="[('id', 'in', allowed_departments)]"/>
+                                    <field name="committee_members_ids" widget="many2many_tags"
+                                           attrs="{'readonly': [('state', 'not in', ('draft', 'review_rejected', 'rejected'))]}"/>
+                                    <field name="version_reason"
+                                           attrs="{'readonly': [('state', 'not in', ('draft', 'review_rejected', 'rejected'))]}"/>
+                                    <field name="target"
+                                           attrs="{'readonly': [('state', 'not in', ('draft', 'review_rejected', 'rejected'))]}"/>
+                                    <field name="responsibility_department_id"
+                                           attrs="{'readonly': [('state', 'not in', ('draft', 'review_rejected', 'rejected'))]}"
+                                           domain="[('id', 'in', allowed_departments)]"/>
+                                </group>
+                                <group attrs="{'readonly': [('state', 'not in', ('draft', 'review_rejected', 'rejected'))]}">
+                                    <field name="next_procedure_review_date"
+                                           attrs="{'readonly': [('state', 'not in', ('draft', 'review_rejected', 'rejected'))]}"/>
+                                    <div class="oe_title" style="padding : 20px;">
+                                        <h3>الزمن الكلي لتنفيذ الاجراء</h3>
+                                        <div class="o_row">
+                                            <div>
+                                                <field name="procedure_execution_days"
+                                                       placeholder="day"/>day
+                                            </div>
+
+                                            <div>
+                                                <field name="procedure_execution_hours"
+                                                       placeholder="hour"/>
+                                                hour
+                                            </div>
+
+                                            <div>
+                                                <field name="procedure_execution_mints"
+                                                       placeholder="minute"/>
+                                                minute
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <field name="file_name" invisible="1"/>
+                                    <field name="flowchart_file" filename="file_name" widget="binary"
+                                           attrs="{'readonly': [('state', 'not in', ('draft', 'review_rejected', 'rejected'))]}"/>
+                                    <field name="procedure_request_review_date" readonly="1"/>
+                                    <field name="procedure_review_date" readonly="1"/>
+                                    <field name="procedure_confirmation_date"
+                                           attrs="{'invisible': [('state', '!=', ('confirmed'))]}"/>
+                                </group>
+                            </group>
+                            <group>
+                                <field name="inputs"
+                                       attrs="{'readonly': [('state', 'not in', ('draft', 'review_rejected', 'rejected'))]}"/>
+                                <field name="outputs"
+                                       attrs="{'readonly': [('state', 'not in', ('draft', 'review_rejected', 'rejected'))]}"/>
+                                <field name="procedure_settings_criteria" required="1"
+                                       attrs="{'readonly': [('state', 'not in', ('draft', 'review_rejected', 'rejected'))]}"/>
+
+                            </group>
+                        </page>
+                        <page name="steps_events" string="Steps And Events">
+                            <field name="procedure_step_ids"
+                                   attrs="{'readonly': [('state', 'not in', ('draft', 'review_rejected', 'rejected'))]}">
+                                <tree editable="bottom">
+                                    <field name="procedure_id" invisible="1"/>
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                    <field name="description"/>
+                                    <field name="system"/>
+                                    <field name="communication_tool"/>
+                                    <field name="execution_days"/>
+                                    <field name="execution_hours"/>
+                                    <field name="execution_mints"/>
+                                    <button name="action_view_step_resources" string="View Resource"
+                                            type="object"/>
+                                    <button name="action_view_step_docs" string="View Docs"
+                                            type="object"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <group>
+                                            <field name="sequence"/>
+                                            <field name="name"/>
+                                            <field name="description"/>
+                                        </group>
+                                        <group>
+                                            <field name="system"/>
+                                            <field name="communication_tool"/>
+                                            <br/>
+                                            <h2>الزمن الكلي لتنفيذ الخطوه</h2>
+                                            <br/>
+                                            <div class="oe_title">
+                                                <h5 class="o_row">
+                                                    <div>
+                                                        <field name="execution_days"
+                                                               placeholder="day"/>
+                                                    </div>
+                                                    day-
+                                                    <div>
+                                                        <field name="execution_hours"
+                                                               placeholder="hour"/>
+                                                    </div>
+                                                    hour-
+                                                    <div>
+                                                        <field name="execution_mints"
+                                                               placeholder="minute"/>
+                                                    </div>
+                                                    minute
+                                                </h5>
+                                            </div>
+                                            <br/>
+
+                                        </group>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page name="related_procedure_list" string="Related Procedures">
+                            <field name="related_procedure_ids"
+                                   attrs="{'readonly': [('state', 'not in', ('draft', 'review_rejected', 'rejected'))]}">
+                                <tree editable="bottom">
+                                    <field name="serial_number"/>
+                                    <field name="related_procedure_id"/>
+                                    <field name="relation"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+                    <notebook string="Procedure Requirements">
+                        <page name="procedure_resource_list" string="Procedure Resource">
+                            <field name="procedure_resource_ids"
+                                   attrs="{'readonly': [('state', 'not in', ('draft', 'review_rejected', 'rejected'))]}">
+                                <tree editable="bottom">
+                                    <field name="sequence"/>
+                                    <field name="aim"/>
+                                    <field name="step_id"
+                                           domain="[('id','in',parent.procedure_step_ids)]"
+                                           attrs="{'readonly': [('aim', '!=', 'step')], 'required': [('aim', '=', 'step')]}"/>
+                                    <field name="resource_type"/>
+                                    <field name="employee_categ"
+                                           attrs="{'required': [('resource_type', '=', 'hr')], 'readonly': [('resource_type', '!=', 'hr')]}"/>
+                                    <field name="name"/>
+                                    <field name="asset_id"
+                                           attrs="{'required': [('resource_type', '=', 'assets')], 'readonly': [('resource_type', '!=', 'assets')]}"/>
+
+                                    <field name="job_id"
+                                           attrs="{'required': [('resource_type', '=', 'hr')], 'readonly': [('resource_type', '!=', 'hr')]}"/>
+                                    <field name="job_code"/>
+                                    <field name="resource_description"/>
+                                    <field name="jobs_access_ids" widget="many2many_tags"
+                                           attrs="{'required': [('resource_type', '=', 'hr')], 'readonly': [('resource_type', '!=', 'hr')]}"/>
+                                    <field name="procedure_id" invisible="1"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <group>
+                                            <field name="sequence"/>
+                                            <field name="aim"/>
+                                            <field name="step_id"
+                                                   domain="[('id','in',parent.procedure_step_ids)]"
+                                                   attrs="{'readonly': [('aim', '!=', 'step')], 'required': [('aim', '=', 'step')]}"/>
+                                            <field name="resource_type"/>
+                                            <field name="employee_categ"
+                                                   attrs="{'required': [('resource_type', '=', 'hr')], 'invisible': [('resource_type', '!=', 'hr')]}"/>
+                                            <field name="name"/>
+                                        </group>
+                                        <group>
+                                            <field name="asset_id"
+                                                   attrs="{'required': [('resource_type', '=', 'assets')], 'invisible': [('resource_type', '!=', 'assets')]}"/>
+
+                                            <field name="job_id"
+                                                   attrs="{'required': [('resource_type', '=', 'hr')], 'invisible': [('resource_type', '!=', 'hr')]}"/>
+                                            <field name="job_code"/>
+                                            <field name="resource_description"/>
+                                            <field name="jobs_access_ids" widget="many2many_tags"
+                                                   attrs="{'required': [('resource_type', '=', 'hr')], 'invisible': [('resource_type', '!=', 'hr')]}"/>
+                                            <field name="procedure_id" invisible="1"/>
+                                        </group>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page name="procedure_docs_list" string="Procedure Documents">
+                            <field name="procedure_doc_ids"
+                                   attrs="{'readonly': [('state', 'not in', ('draft', 'review_rejected', 'rejected'))]}">
+                                <tree editable="bottom">
+                                    <field name="procedure_docs_sequence"/>
+                                    <field name="aim"/>
+                                    <field name="procedure_id" invisible="1"/>
+                                    <field name="step_id"
+                                           domain="[('id','in',parent.procedure_step_ids)]"
+                                           attrs="{'readonly': [('aim', '!=', 'step')], 'required': [('aim', '=', 'step')]}"/>
+                                    <field name="name"/>
+                                    <field name="description"/>
+                                    <field name="file_name" invisible="1"/>
+                                    <field name="document_file" filename="file_name" widget="binary"/>
+
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+                    <notebook string="Procedure Approvals"
+                              attrs="{'invisible': [('state', '=', 'draft')]}">
+                        <page name="approvals_tracking" string="Procedure Approvals">
+                            <field name="approvals_tracking_ids" readonly="1">
+                                <tree editable="top">
+                                    <field name="sequence"/>
+                                    <field name="approver_id"/>
+                                    <field name="action_date"/>
+                                    <field name="current_version_no"/>
+                                    <field name="state"/>
+                                    <field name="notes"/>
+                                    <field name="rejection_reasons"/>
+                                    <field name="approval_doc_ids" widget="many2many_tags"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="o_attachment_preview"/>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="work_procedure_view_kanban" model="ir.ui.view">
+        <field name="name">work.procedure.kanban</field>
+        <field name="model">work.procedure</field>
+        <field name="arch" type="xml">
+            <kanban create="false" edit="false" delete="false" class="o_kanban_mobile">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="user_id"/>
+                <field name="create_date"/>
+                <field name="department_id"/>
+                <field name="state"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_record_top mb8">
+                                <div class="o_kanban_record_headings">
+                                    <small>
+                                        <span>
+                                            <t style="color:rgb(43, 90, 127);font-weight: bold;"
+                                               t-esc="record.name.value"/>
+                                        </span>
+                                    </small>
+                                    <span>
+                                        <br/>
+                                        <t t-esc="record.create_date.value"/>
+                                    </span>
+                                </div>
+                                <strong>
+                                    <field name="state" widget="label_selection"
+                                           options="{'classes': {'draft': 'default', 'under_review': 'warning', 'under_confirmation': 'warning', 'confirmed': 'success', 'rejected': 'danger', 'review_rejected': 'danger'}}"/>
+                                </strong>
+                            </div>
+                            <div class="o_kanban_record_bottom">
+                                <div class="oe_kanban_bottom_left">
+                                    <t t-esc="record.user_id.value"/>
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <t t-esc="record.department_id.value"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="work_procedure_view_search" model="ir.ui.view">
+        <field name="name">work.procedure.view.search</field>
+        <field name="model">work.procedure</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name_id"/>
+                <field name="code"/>
+                <group expand="0" string="Filters">
+                    <filter name="draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                    <filter name="under_review" string="Under Approval procedures"
+                            domain="[('state', '=', 'under_review')]"/>
+                    <filter name="review_rejected" string="Review Rejected procedures"
+                            domain="[('state', '=', 'review_rejected')]"/>
+                    <filter name="under_confirmation" string="Under Confirmation procedures"
+                            domain="[('state', '=', 'under_confirmation')]"/>
+                    <filter name="rejected" string="Rejected procedures" domain="[('state', '=', 'rejected')]"/>
+                    <filter name="confirmed" string="Confirmed procedures" domain="[('state', '=', 'confirmed')]"/>
+                    <filter name="archived" string="Archived procedures" domain="[('state', '=', 'archived')]"/>
+                    <separator/>
+                </group>
+                <group expand="0" string="Group By">
+                    <filter name="state" string="State" domain="[]" context="{'group_by':'state'}"/>
+                    <filter name="department" string="Department" domain="[]" context="{'group_by':'department_id'}"/>
+                    <filter name="scope" string="Scope" domain="[]" context="{'group_by':'scope_id'}"/>
+                    <filter name="parent" string="Parent" domain="[]" context="{'group_by':'parent_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <menuitem id="work_procedure_module_menu" name="Work Procedures"
+              web_icon="itq_basic,static/description/icon.png"
+              sequence="80"
+              parent="itq_basic.itq_system_menu_main"/>
+
+    <menuitem id="work_procedure_menu" parent="itq_work_procedures.work_procedure_module_menu"
+              name="Work Procedures"
+              sequence="1"/>
+
+    <record id="action_my_procedure" model="ir.actions.act_window">
+        <field name="name">Work Procedures</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">work.procedure</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="context">{'search_default_draft': 1}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to Add new Work Procedure.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="work_procedure_menuitem" name="Work Procedures"
+              action="itq_work_procedures.action_my_procedure"
+              parent="itq_work_procedures.work_procedure_menu"
+              sequence="1"/>
+
+    <record id="action_server_under_review_procedures" model="ir.actions.server">
+        <field name="name">Under Review Procedures</field>
+        <field name="model_id" ref="itq_work_procedures.model_work_procedure"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.action_my_work_procedures(state='under_review', action_name='إجراءات تحت المراجعه')
+        </field>
+    </record>
+    <menuitem id="under_review_menuitem" name="Under Review Procedures"
+              action="itq_work_procedures.action_server_under_review_procedures"
+              parent="itq_work_procedures.work_procedure_menu"
+              sequence="2"/>
+
+    <record id="action_server_under_confirm_procedures" model="ir.actions.server">
+        <field name="name">Under Confirm Procedures</field>
+        <field name="model_id" ref="itq_work_procedures.model_work_procedure"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.action_my_work_procedures(state='under_confirmation', action_name='إجراءات تحت الاعتماد')
+        </field>
+    </record>
+    <menuitem id="under_confirm_procedures_menuitem" name="Under Confirm Procedures"
+              action="itq_work_procedures.action_server_under_confirm_procedures"
+              parent="itq_work_procedures.work_procedure_menu"
+              sequence="4"/>
+
+    <record id="action_review_rejected_procedures" model="ir.actions.act_window">
+        <field name="name">Review Rejected Procedures</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">work.procedure</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="domain">[('state', '=', 'review_rejected')]</field>
+        <field name="context">{'create':0}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There's no Review Rejected Procedures.
+            </p>
+        </field>
+    </record>
+    <menuitem id="review_rejected_procedures_menuitem" name="Review Rejected Procedures"
+              action="itq_work_procedures.action_review_rejected_procedures"
+              parent="itq_work_procedures.work_procedure_menu"
+              sequence="3"/>
+
+    <record id="action_confirmed_procedures" model="ir.actions.act_window">
+        <field name="name">Confirmed Procedures</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">work.procedure</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="domain">[('state', '=', 'confirmed')]</field>
+        <field name="context">{'create':0, 'search_default_parent': 1}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There's no Confirmed Procedures.
+            </p>
+        </field>
+    </record>
+    <menuitem id="confirmed_procedure_menuitem" name="Confirmed Procedures"
+              action="itq_work_procedures.action_confirmed_procedures"
+              parent="itq_work_procedures.work_procedure_menu"
+              sequence="5"/>
+
+    <record id="action_confirmed_procedures_latest_v" model="ir.actions.act_window">
+        <field name="name">Latest Version Confirmed Procedures</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">work.procedure</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="domain">[('state', '=', 'confirmed'), ('latest_version', '=', True)]</field>
+        <field name="context">{'create':0}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There's no Latest Version Confirmed Procedures.
+            </p>
+        </field>
+    </record>
+    <menuitem id="confirmed_procedure_latest_v_menuitem" name="دليل الإجراءات المعتمدة"
+              action="itq_work_procedures.action_confirmed_procedures_latest_v"
+              parent="itq_work_procedures.work_procedure_menu"
+              sequence="6"/>
+
+    <record id="action_not_confirmed_procedures" model="ir.actions.act_window">
+        <field name="name">Not Confirmed Work Procedures</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">work.procedure</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="domain">[('state', '=', 'rejected')]</field>
+        <field name="context">{'create':0}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There's no Not Confirmed Procedures.
+            </p>
+        </field>
+    </record>
+    <menuitem id="not_confirmed_procedures_menuitem" name="Not Confirmed Procedures"
+              action="itq_work_procedures.action_not_confirmed_procedures"
+              parent="itq_work_procedures.work_procedure_menu"
+              sequence="7"/>
+
+    <record id="action_archived_procedures" model="ir.actions.act_window">
+        <field name="name">Archived Procedures</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">work.procedure</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="domain">[('state', '=', 'archived')]</field>
+        <field name="context">{'create':0}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There's no Archived Procedures.
+            </p>
+        </field>
+    </record>
+    <menuitem id="archived_procedures_menuitem" name="Archived Procedures"
+              action="itq_work_procedures.action_archived_procedures"
+              parent="itq_work_procedures.work_procedure_menu"
+              sequence="8"/>
+
+
+</odoo>

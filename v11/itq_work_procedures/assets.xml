@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <template id="itq_work_procedures_assets" inherit_id="web.assets_backend" name="assets_itq_work_procedures">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="itq_work_procedures/static/src/js/track_procedure_view.js"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

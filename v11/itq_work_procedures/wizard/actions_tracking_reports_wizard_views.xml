@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="actions_tracking_reports_wizard_wizard_form">
+        <field name="name">actions.tracking.reports.wizard.form</field>
+        <field name="model">actions.tracking.reports.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Print Procedures Actions">
+                <group>
+                    <group>
+                        <field name="date_from"/>
+                        <field name="group_by"/>
+                    </group>
+                    <group>
+                        <field name="date_to"/>
+                        <field name="order_by"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="print_actions_tracking_report" type="object"
+                            string="Print"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_procedures_actions_report" model="ir.actions.act_window">
+        <field name="name">Procedure Actions Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">actions.tracking.reports.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="actions_tracking_reports_wizard_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="actions_tracking_report_menuitem" name="Actions Tracking"
+              action="action_procedures_actions_report"
+              parent="itq_work_procedures.work_procedure_reports_menu"
+              sequence="0"/>
+
+</odoo>

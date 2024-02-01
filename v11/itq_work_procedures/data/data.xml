@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="main_work_procedures_system" model="itq.module">
+            <field name="name">نظام إجراءات العمل</field>
+            <field name="menu_id" ref="itq_work_procedures.work_procedure_module_menu"/>
+        </record>
+        <record id="work_procedures_system" model="itq.module">
+            <field name="name">Work Procedures</field>
+            <field name="menu_id" ref="itq_work_procedures.work_procedure_menuitem"/>
+            <field name="parent_module_id" ref="itq_work_procedures.main_work_procedures_system"/>
+        </record>
+        <record id="configurations_system" model="itq.module">
+            <field name="name">Work Procedures Reports</field>
+            <field name="menu_id" ref="itq_work_procedures.work_procedure_reports_menu"/>
+            <field name="parent_module_id" ref="itq_work_procedures.main_work_procedures_system"/>
+        </record>
+        <record id="configurations_system" model="itq.module">
+            <field name="name">Work Procedures Configuration</field>
+            <field name="menu_id" ref="itq_work_procedures.configurations_menuitem"/>
+            <field name="parent_module_id" ref="itq_work_procedures.main_work_procedures_system"/>
+        </record>
+    </data>
+</odoo>

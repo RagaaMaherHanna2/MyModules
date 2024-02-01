@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="visitor.line">
+        <div class="o_visitor row align-items-center mb-1">
+            <div class="col ms-3 ms-md-5">
+                <div class="row align-items-center">
+                    <div class="col-11 p-0">
+                        <div class="input-group o_visitor_line_data">
+                            <div class="input-group-text">
+                                <label>Name * </label>
+                                <input type="text"
+                                       name="visitor_name"
+                                       required="This field is required"
+                                       class="form-control o_visitor_name_value o_field_value"/>
+                            </div>
+                            <div class="input-group-text">
+                            <label>Mobile </label>
+                                <input type="tel"
+                                       name="visitor_mobile"
+                                       pattren="/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/"
+                                       class="form-control o_visitor_mobile_value o_field_value"/>
+                            </div>
+                            <div class="input-group-text">
+                            <label>Email </label>
+                                <input type="email"
+                                       name="visitor_email"
+                                       pattren="/^[a-zA-Z0-9.!#$%’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+                                       class="form-control o_visitor_email_value o_field_value"/>
+                            </div>
+                        </div>
+                    </div>
+                    <i class="o_remove_visitor fa fa-lg fa-trash-o col-auto p-md-2 py-2 px-1 text-muted"
+                       title="Remove this Visitor"/>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

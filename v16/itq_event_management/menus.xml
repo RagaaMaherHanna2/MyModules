@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- نظام إدارة الفاعليات -->
+    <menuitem id="event_management_system_menu"
+              name="Events Management System"
+              sequence="1"/>
+
+    <!-- طلبات الفاعليات -->
+    <menuitem id="event_management_menu"
+              name="Events Management"
+              parent="itq_event_management.event_management_system_menu"
+              sequence="1"/>
+
+    <menuitem id="itq_event_management_menu"
+              name="Event Request"
+              groups="itq_event_management.itq_group_event_user"
+              action="itq_event_management.itq_event_request_action"
+              parent="itq_event_management.event_management_menu"
+              sequence="1"/>
+
+    <menuitem id="itq_event_request_review_menu"
+              name="Event Request Review"
+              groups="itq_event_management.itq_group_event_manager"
+              action="itq_event_management.itq_event_request_review_action"
+              parent="itq_event_management.event_management_menu"
+              sequence="2"/>
+
+    <menuitem id="itq_event_request_approval_menu"
+              name="Event Request Approval"
+              action="itq_event_management.itq_event_request_approve_action"
+              groups="itq_event_management.itq_group_event_approver"
+              parent="itq_event_management.event_management_menu"
+              sequence="3"/>
+
+    <menuitem id="itq_event_request_rejected_menu"
+              name="Event Request Rejected"
+              groups="itq_event_management.itq_group_event_user"
+              action="itq_event_management.itq_event_request_reject_action"
+              parent="itq_event_management.event_management_menu"
+              sequence="4"/>
+
+    <menuitem id="confirmed_event_requests_menu"
+              name="Confirmed Events"
+              groups="itq_event_management.itq_group_event_user"
+              action="itq_event_management.confirmed_requests_action"
+              parent="itq_event_management.event_management_menu"
+              sequence="5"/>
+
+    <menuitem id="itq_event_permission_menu"
+              name="Permissions"
+              action="itq_event_management.itq_event_permission_action"
+              groups="itq_event_management.itq_group_event_approver"
+              parent="itq_event_management.event_management_menu"
+              sequence="6"/>
+
+    <!-- الإعدادات -->
+    <menuitem id="settings_menu"
+              name="Settings"
+              parent="itq_event_management.event_management_system_menu"
+              sequence="10"/>
+
+    <!--  انواع للفاعلية -->
+    <menuitem id="menu_action_itq_event_type"
+              action="action_itq_event_type"
+              name="Event Types"
+              parent="itq_event_management.settings_menu"
+              sequence="1"/>
+
+    <menuitem id="itq_target_audience_menu"
+              action="itq_event_management.itq_target_audience_action"
+              name="Target Audience"
+              parent="itq_event_management.settings_menu"
+              sequence="2"/>
+
+    <menuitem id="itq_amenity_specification_menu"
+              action="itq_event_management.itq_amenity_specification_action"
+              name="Amenities And Specifications"
+              parent="itq_event_management.settings_menu"
+              sequence="3"/>
+
+    <menuitem id="menu_action_itq_catering_type"
+              action="action_itq_catering_type"
+              name="Catering Types"
+              parent="itq_event_management.settings_menu"
+              sequence="4"/>
+
+    <menuitem id="menu_action_itq_event_organizer"
+              action="action_itq_event_organizer"
+              name="Event Organizer"
+              parent="itq_event_management.settings_menu"
+              sequence="5"/>
+
+    <!--    إعدادات نظام الفاعليات-->
+    <menuitem id="menu_itq_event_management_settings"
+              action="action_itq_event_management_settings"
+              name="Event Management Settings"
+              parent="itq_event_management.settings_menu"
+              sequence="2"/>
+
+    <menuitem id="itq_entrance_configuration_menu"
+              action="itq_event_management.itq_entrance_configuration_action"
+              name="Entrance Configuration"
+              parent="itq_event_management.settings_menu"
+              sequence="8"/>
+
+
+    <!-- نظام إدارة الزائين -->
+    <menuitem id="menu_itq_visitor_management"
+              name="Visitor Management"
+              sequence="2"/>
+
+    <menuitem id="menu_visitor_management" name="Visitor Management"/>
+
+    <!--    Visit Request  -->
+    <menuitem id="itq_visit_request_menu"
+              action="itq_event_management.action_itq_visit_request"
+              name="Visit Request"
+              parent="itq_event_management.menu_visitor_management"
+              sequence="1"/>
+
+    <menuitem id="menu_itq_visitor_management_settings"
+              name="Visitor Management Settings"
+              parent="itq_event_management.menu_visitor_management"
+              sequence="2"/>
+
+    <!--    Visit Configurations -->
+
+    <menuitem id="itq_visit_classification_menu"
+              action="itq_event_management.action_itq_visit_classification"
+              name="Visit Classification"
+              parent="itq_event_management.menu_itq_visitor_management_settings"
+              sequence="1"/>
+
+    <menuitem id="itq_organization_type_menu"
+              action="itq_event_management.action_itq_organization_type"
+              name="Organization Type"
+              parent="itq_event_management.menu_itq_visitor_management_settings"
+              sequence="2"/>
+
+    <menuitem id="itq_research_type_menu"
+              action="itq_event_management.action_itq_research_type"
+              name="Research Type"
+              parent="itq_event_management.menu_itq_visitor_management_settings"
+              sequence="3"/>
+
+    <menuitem id="itq_documentation_type_menu"
+              action="itq_event_management.action_itq_documentation_type"
+              name="Documentation Type"
+              parent="itq_event_management.menu_itq_visitor_management_settings"
+              sequence="4"/>
+
+    <!-- الإعدادات العامة -->
+    <menuitem id="general_settings_menu"
+              name="General Settings"
+              sequence="3"/>
+
+    <!--  فروع الفاعلية -->
+    <menuitem id="menu_action_itq_holding_branch"
+              action="action_itq_holding_branch"
+              name="Branches"
+              parent="itq_event_management.general_settings_menu"
+              sequence="1"/>
+    <!--  مواقع الفاعلية -->
+    <menuitem id="menu_itq_attraction_location" name="Attractions"
+              parent="itq_event_management.general_settings_menu"
+              action="itq_attraction_location_action"
+              sequence="2"/>
+
+    <!--  اشكال الجلوس للفاعلية -->
+    <menuitem id="menu_itq_event_seating_type"
+              action="itq_event_seating_type_action"
+              name="Seating Types"
+              parent="itq_event_management.general_settings_menu"
+              sequence="3"/>
+
+</odoo>

@@ -1,0 +1,24 @@
+<odoo>
+
+    <record id="hrms_project_graph" model="ir.ui.view">
+        <field name="name">view.hrms.project.graph</field>
+        <field name="model">hr.employee.data</field>
+        <field name="inherit_id" ref="itq_base_hrms_dashboard.hrms_base_graph"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='is_citizen']" position="after">
+                <field name="project_id" type="col"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="hrms_project_pivot" model="ir.ui.view">
+        <field name="name">view.hrms.project.type.pivot</field>
+        <field name="model">hr.employee.data</field>
+        <field name="inherit_id" ref="itq_base_hrms_dashboard.hrms_base_graph"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='is_citizen']" position="after">
+                <field name="project_id" type="col"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,8 @@
+<odoo>
+    <data>
+        <record model="itq.attraction.location" id="other_attraction_location">
+            <field name="name">Others</field>
+            <field name="state">active</field>
+        </record>
+    </data>
+</odoo>

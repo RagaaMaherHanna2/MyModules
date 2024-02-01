@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <record model="ir.module.category" id="itq_event_management_category">
+            <field name="name">Events Management</field>
+        </record>
+
+        <record model="res.groups" id="itq_group_event_user">
+            <field name="name">User</field>
+            <field name="category_id" ref="itq_event_management_category"/>
+            <field name="implied_ids" eval="[Command.link(ref('base.group_user'))]"/>
+        </record>
+
+        <record model="res.groups" id="itq_group_event_manager">
+            <field name="name">Manager</field>
+            <field name="implied_ids" eval="[Command.link(ref('itq_group_event_user'))]"/>
+            <field name="category_id" ref="itq_event_management_category"/>
+        </record>
+
+        <record model="res.groups" id="itq_group_event_approver">
+            <field name="name">Approver</field>
+            <field name="implied_ids" eval="[Command.link(ref('itq_group_event_manager'))]"/>
+            <field name="category_id" ref="itq_event_management_category"/>
+        </record>
+
+        <record model="res.groups" id="itq_group_event_admin">
+            <field name="name">Admin</field>
+            <field name="implied_ids" eval="[Command.link(ref('itq_group_event_manager'))]"/>
+            <field name="category_id" ref="itq_event_management_category"/>
+        </record>
+    </data>
+</odoo>

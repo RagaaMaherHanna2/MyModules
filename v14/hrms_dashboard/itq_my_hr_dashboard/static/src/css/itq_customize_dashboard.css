@@ -1,0 +1,341 @@
+.employee-prof .employee-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    height: auto;
+}
+
+.employee-prof .employee-icon img{
+    background: #fff;
+    margin: 0 !important;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+}
+
+.media-body.employee-name, .employee-prof{
+    background-color: #fff;
+}
+
+.employee-prof .employee-name h2{
+    font-size: 20px;
+    line-height: 37px;
+    color: #000000;
+    text-transform: capitalize;
+}
+
+.employee-prof .employee-name p{
+    font-size: 16px;
+    line-height: 30px;
+    color: #000000 !important;
+}
+
+.employee-details .wrapper-square{
+    width: 110px;
+    height: 110px;
+    background: #D9D9D9;
+    border-radius: 10px;
+    border: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px !important;
+    float: inherit;
+    clear: both;
+}
+
+.itq-wrapper-employee-prof .employee-experience{
+    text-align: center;
+    padding-top: 0;
+    float: inherit;
+    padding-bottom: 10px;
+}
+
+.employee-details .wrapper-square p{
+    font-weight: 500;
+    font-size: 11px;
+    color: #333 !important;
+}
+
+.row.main-section {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.employee-prof{
+    background: #FAFAFA;
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+    height: 90%;
+}
+
+.col-md-2.col-sm-2.dummy{
+    display: none !important
+}
+
+.side-employee-wrapper{
+    margin: 15px 0;
+}
+
+.main-wrapper-employee-details-content{
+  margin: 30px 0px 30px 0px;
+}
+
+.main-wrapper-employee-details-content .row{
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+.main-wrapper-employee-details-content .footer-section{
+        background-color: #FCFCFC;
+        display: flex;
+        justify-content: center;
+}
+
+.main-wrapper-employee-details-content .itq-oh-card-customize-own-dashboard{
+        background: #5d8da8;
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 27px;
+        padding: 0px 16px;
+        cursor: pointer;
+        margin-top: 15px
+}
+
+.main-wrapper-employee-details-content .itq-oh-card-customize-own-dashboard .stat-widget-one{
+    background-color: inherit;
+}
+
+.main-wrapper-employee-details-content .itq-oh-card-customize-own-dashboard .stat-widget-one .stat-content{
+    display: block;
+    width: 100%;
+}
+
+.main-wrapper-employee-details-content .itq-oh-card-customize-own-dashboard .stat-widget-one .stat-text{
+        font-size: 14px;
+    line-height: 26px;
+    color: #fff !important;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     margin-top: 0;
+     font-weight: 400;
+     margin-bottom: 0px !important;
+}
+
+.main-wrapper-employee-details-content .d_custom_dashboard .itq-oh-card-customize-own-dashboard{
+        background: #76a8c6;
+}
+
+.main-wrapper-employee-details-content .hr-chart-1{
+    box-shadow: none;
+}
+
+.main-wrapper-employee-details-content .card{
+   box-shadow: 0 10px 40px 0 rgb(62 57 107 / 7%), 0 2px 9px 0 rgb(62 57 107 / 6%)
+}
+
+.itq-wrapper-employee-prof{
+    background: #FAFAFA;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 9px;
+    margin: 15px 0;
+    position: relative;
+    height: 795px;
+    max-height: 795px;
+}
+
+.itq-wrapper-employee-prof .employee-experience .text-light{
+    color: #333 !important;
+    margin-bottom: 3px;
+
+}
+
+.itq-wrapper-employee-prof .employee-prof .employee-icon{
+       background: #fff;
+    margin-top: 15px;
+}
+
+.main-wrapper-employee-details-content .card-header{
+    font-weight: bold;
+}
+
+.main-wrapper-employee-details-content .stat-icon{
+    background: #D9D9D9 !important;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0 15px 15px;
+    height: 60px;
+    width: 60px;
+    border-radius: 36px;
+}
+
+.main-wrapper-employee-details-content .stat-widget-one .stat-text,
+.main-wrapper-employee-details-content .oh-contracts .stat-widget-one .stat-text{
+    font-size: 16px;
+    color: #000;
+    font-weight: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.main-wrapper-employee-details-content .stat-content{
+        padding: 15px 16px;
+}
+
+.main-wrapper-employee-details-content .stat-widget-one .stat-text{
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 10px;
+}
+
+.main-wrapper-employee-details-content .stat-widget-one .stat-digit {
+    font-size: 14px;
+    color: #000;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.main-wrapper-employee-details-content .oh-payslip{
+    margin-top: 0px
+}
+
+.main-wrapper-employee-details-content .hr_leave_request_approve h4,
+.main-wrapper-employee-details-content .leaves_request_month h4,
+.main-wrapper-employee-details-content .leaves_request_today h4{
+    background: #D9D9D9;
+}
+
+.main-wrapper-employee-details-content .hr_leave_request_approve p,
+.main-wrapper-employee-details-content .leaves_request_month p,
+.main-wrapper-employee-details-content .leaves_request_today p{
+    font-size: 13px;
+    color: #333;
+}
+
+.employee-details .wrapper-square p:nth-child(2){
+    font-weight: normal !important;
+}
+
+.main-wrapper-employee-details-content .stat-icon div{
+    width: 32px;
+    height: 32px;
+    background-image: url('/itq_my_hr_dashboard/static/src/img/Contract-g.svg') !important;
+    background-size: cover !important;
+}
+
+.main-wrapper-employee-details-content .stat-widget-one{
+    display: flex;
+}
+
+.main-wrapper-employee-details-content div[name="main-wrapper-requests-card"] .oh-card,
+.main-wrapper-employee-details-content div[name="main-wrapper-employee-details-time-management"] .oh-card{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 10px;
+    border: 1px solid #fff;
+    padding: 5px;
+}
+
+.main-wrapper-employee-details-content div[name="main-wrapper-requests-card"] .oh-card{
+    cursor: pointer;
+}
+
+.main-wrapper-employee-details-content div[name="main-wrapper-employee-details-time-management"] .hr_leave_request_approve:hover,
+.main-wrapper-employee-details-content div[name="main-wrapper-employee-details-time-management"] .leaves_request_month:hover,
+.main-wrapper-employee-details-content div[name="main-wrapper-employee-details-time-management"] .leaves_request_today:hover,
+.main-wrapper-employee-details-content div[name="main-wrapper-employee-details-time-management"] .hr_leave_request_approve{
+    transform: none !important;
+    box-shadow: none !important;
+    transition: none !important;
+    will-change: initial;
+}
+
+.main-wrapper-employee-details-content .stat-count{
+        font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    color: #000000;
+        text-align: inherit;
+}
+
+#annual-leave-graph .card-header{
+    font-size: 15px;
+    line-height: 30px;
+    color: #333;
+}
+
+#annual-leave-graph .hr_notification{
+    background: #EFEFEF;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 10px;
+}
+
+#annual-leave-graph .hr_notification_head{
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+}
+
+#annual-leave-graph .text-align{
+    margin-left: 0px;
+}
+
+#annual-leave-graph .hr_notification .media{
+    background: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    border-radius: 5px;
+    padding: 8px 16px;
+    margin: 12px 8px;
+}
+
+#annual-leave-graph .hr_notification .text-color.display-6{
+    font-size: 12px !important;
+    line-height: 22px;
+    color: #000000;
+}
+
+#annual-leave-graph .hr_notification p {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 15px;
+    color: #000000;
+    padding: 2px 10px;
+}
+
+.itq-wrapper-employee-prof .employee-prof{
+    overflow-y: auto;
+    height: 91%;
+    overflow-x: hidden;
+}
+
+
+@media only screen and (max-width: 740px) {
+.itq-wrapper-employee-prof{
+   height: auto;
+    max-height: initial;
+}
+}
+
+
+.welcome-icon{
+    width: 25px;
+    height: 25px;
+    background-image: url(/itq_my_hr_dashboard/static/src/img/Hello1.svg);
+    background-size: cover;
+    background-position: center;
+    margin: 0 10px;
+}

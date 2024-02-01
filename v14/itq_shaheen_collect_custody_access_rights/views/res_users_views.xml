@@ -1,0 +1,23 @@
+<odoo>
+    <record id="res_users_view-form" model="ir.ui.view">
+        <field name="name">res.users.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='references']//group//group" position="inside">
+                <field name="related_collect_custody_ids" widget="many2many_tags" />
+            </xpath>
+        </field>
+    </record>
+
+<!--    <record id="itq_collect_custody_form-form" model="ir.ui.view">-->
+<!--        <field name="name">itq.collect.custody.request.form</field>-->
+<!--        <field name="model">itq.collect.custody.request</field>-->
+<!--        <field name="inherit_id" ref="itq_cheque_petty_cash_management.itq_collect_custody_form"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//field[@name='collection_by_id']" position="after">-->
+<!--                <field name="related_accountant_user_ids" widget="many2many_tags" />-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+</odoo>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="approval_line_form">
+        <field name="name">approval.tracking.line.form</field>
+        <field name="model">approval.tracking.line</field>
+        <field name="arch" type="xml">
+            <form string="Approval/Rejection Notes" create="0">
+                <sheet>
+                    <group>
+                        <field name="notes"/>
+
+                        <field name="rejection_reasons"
+                               invisible="context.get('action') not in ['review_reject', 'reject']"
+                               required="context.get('action') in ['review_reject', 'reject']"/>
+                    </group>
+                    <notebook>
+                        <page name="approval_docs_list" string="Examples Documents">
+                            <field name="approval_doc_ids" context="{'default_aim': 'procedure'}">
+                                <tree editable="top">
+                                    <field name="approval_docs_sequence"/>
+                                    <field name="aim" invisible="1"/>
+                                    <field name="name"/>
+                                    <field name="description"/>
+                                    <field name="file_name" invisible="1"/>
+                                    <field name="document_file" filename="file_name" widget="binary"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+
+                <footer>
+                    <button string="Set Action" class="btn-primary" special="save" name="button_save"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="approval_line_action" model="ir.actions.act_window">
+        <field name="name">Procedure Action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">approval.tracking.line</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="context">{'create': False}</field>
+        <field name="view_id" ref="approval_line_form"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

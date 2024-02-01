@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="seq_sample_gift" model="ir.sequence">
+            <field name="name">Sample/Gift Seq</field>
+            <field name="code">sample.gift.seq</field>
+            <field name="prefix">-%(year)s-%(month)s-</field>
+        </record>
+    </data>
+</odoo>

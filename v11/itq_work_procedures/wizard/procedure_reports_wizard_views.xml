@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="procedure_reports_wizard_wizard_form">
+        <field name="name">procedure.reports.wizard.form</field>
+        <field name="model">procedure.reports.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Print Work Procedure">
+                <group>
+                    <group>
+                        <field name="latest_v" invisible="1"/>
+                        <field name="report_for" invisible="1"/>
+                        <field name="allow_general_procedure"
+                               attrs="{'invisible': [('latest_v', '=', False)]}"/>
+                        <field name="general_department_ids" widget="many2many_tags"
+                               attrs="{'invisible': ['|', ('latest_v', '=', False), ('allow_general_procedure', '=', False)]}"/>
+                        <field name="date_from" attrs="{'invisible': [('latest_v', '=', True)]}"/>
+                        <field name="group_by"
+                               attrs="{'invisible': [('report_for', 'in', ('confirmed', 'statistical'))],
+                                       'required': [('report_for', 'not in', ('confirmed', 'statistical'))],}"/>
+                        <field name="department_ids" widget="many2many_tags"
+                               attrs="{'invisible': [('report_for', '!=', 'statistical')]}"/>
+                        <field name="allowed_procedure_ids" invisible="1"/>
+                        <field name="procedure_ids" widget="many2many_tags"
+                               domain="[('id', 'in', allowed_procedure_ids)]"
+                               attrs="{'invisible': ['|', ('report_for', '!=', 'confirmed'), ('latest_v', '=', True)]}"/>
+                    </group>
+                    <group>
+                        <field name="date_to" attrs="{'invisible': [('latest_v', '=', True)]}"/>
+                        <field name="allow_departments_procedure"
+                               attrs="{'invisible': [('latest_v', '=', False)]}"/>
+                        <field name="related_department_ids" widget="many2many_tags"
+                               attrs="{'invisible': ['|', ('latest_v', '=', False), ('allow_departments_procedure', '=', False)]}"/>
+                        <field name="order_by"
+                               attrs="{'invisible': ['|', ('report_for', '=', 'statistical'),
+                                                     ('report_for', '=', 'confirmed'), ('latest_v', '=', False)],
+                                       'required': [('report_for', '!=', 'statistical')],}"/>
+                        <field name="scope_ids" widget="many2many_tags"
+                               attrs="{'invisible': [('report_for', '!=', 'statistical')]}"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_view_procedures" type="object" string="View"
+                            attrs="{'invisible': [('report_for', '=', 'statistical')]}"/>
+                    <button name="%(itq_work_procedures.print_work_procedure_pdf)d" type="action" string="Print"
+                            attrs="{'invisible': [('report_for', 'in', ('confirmed', 'statistical'))]}"/>
+                    <button name="%(itq_work_procedures.print_procedures_statistical_report_pdf)d" type="action"
+                            string="Print"
+                            attrs="{'invisible': [('report_for', '!=', 'statistical')]}"/>
+                    <button name="%(itq_work_procedures.print_confirmed_wizard_procedure_details_pdf)d" type="action"
+                            string="Print"
+                            attrs="{'invisible': [('report_for', '!=', 'confirmed')]}"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="under_review_procedure_reports_wizard_action" model="ir.actions.act_window">
+        <field name="name">Under Review Procedure Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">procedure.reports.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="context">{'default_report_for': 'under_review'}</field>
+        <field name="view_id" ref="procedure_reports_wizard_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <record id="under_confirm_procedure_reports_wizard_action" model="ir.actions.act_window">
+        <field name="name">Under Confirm Procedure Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">procedure.reports.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="context">{'default_report_for': 'under_confirmation'}</field>
+        <field name="view_id" ref="procedure_reports_wizard_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <record id="confirmed_procedure_report_wizard_action" model="ir.actions.act_window">
+        <field name="name">Confirmed Procedure Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">procedure.reports.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="context">{'default_report_for': 'confirmed'}</field>
+        <field name="view_id" ref="procedure_reports_wizard_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <record id="latest_v_confirmed_procedure_report_wizard_action" model="ir.actions.act_window">
+        <field name="name">Latest Confirmed Procedure Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">procedure.reports.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="context">{'default_report_for': 'confirmed', 'default_latest_v': True}</field>
+        <field name="view_id" ref="procedure_reports_wizard_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <record id="statistical_procedure_reports_wizard_action" model="ir.actions.act_window">
+        <field name="name">Statistical Procedure Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">procedure.reports.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="context">{'default_report_for': 'statistical'}</field>
+        <field name="view_id" ref="procedure_reports_wizard_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="under_review_procedures_menuitem" name="Under Review Procedures Report"
+              action="itq_work_procedures.under_review_procedure_reports_wizard_action"
+              parent="itq_work_procedures.work_procedure_reports_menu"
+              sequence="1"/>
+
+    <menuitem id="under_confirmation_procedures_menuitem" name="Under Confirm Procedures Report"
+              action="itq_work_procedures.under_confirm_procedure_reports_wizard_action"
+              parent="itq_work_procedures.work_procedure_reports_menu"
+              sequence="2"/>
+
+    <menuitem id="confirmed_work_procedures_menuitem" name="Confirmed Procedures Report"
+              action="itq_work_procedures.confirmed_procedure_report_wizard_action"
+              parent="itq_work_procedures.work_procedure_reports_menu"
+              sequence="3"/>
+
+    <menuitem id="latest_v_confirmed_work_procedures_menuitem" name="Confirmed Procedures Report"
+              action="itq_work_procedures.latest_v_confirmed_procedure_report_wizard_action"
+              parent="itq_work_procedures.work_procedure_reports_menu"
+              sequence="4"/>
+
+    <menuitem id="statistical_procedures_menuitem" name="Statistical Procedures Report"
+              action="itq_work_procedures.statistical_procedure_reports_wizard_action"
+              parent="itq_work_procedures.work_procedure_reports_menu"
+              sequence="5"/>
+</odoo>

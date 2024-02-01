@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id='pos_pay_assets' name='POS Summary Assets' inherit_id='point_of_sale.assets'>
+            <xpath expr='.' position='inside'>
+                <!-- POS Pay With installments -->
+                <script type="text/javascript" src="/itq_pos_installment_company_mgmt/static/src/js/models.js"/>
+                <script type="text/javascript" src="/itq_pos_installment_company_mgmt/static/src/js/PaymentScreen.js"/>
+
+                <!-- POS Return With installments -->
+                <script type="text/javascript"
+                        src="/itq_pos_installment_company_mgmt/static/src/js/ReturnInstallmentOrderPopup.js"/>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>
+

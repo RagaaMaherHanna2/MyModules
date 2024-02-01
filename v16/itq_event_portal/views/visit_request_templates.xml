@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Search Box -->
+    <template id="visit_request_search_box_input" name="Visit Request search box">
+        <t t-call="website.website_search_box_input">
+            <t t-set="_classes" t-valuef="w-100 my-1 my-lg-0 #{_classes}"/>
+            <t t-set="search_type" t-valuef="visit_requests"/>
+            <t t-set="action" t-valuef="/visit_request"/>
+            <t t-set="display_description" t-valuef="true"/>
+            <t t-set="display_detail" t-valuef="false"/>
+            <t t-set="search" t-value="search or searches and searches['search']"/>
+            <t t-set="placeholder">Search a Request...</t>
+            <t t-foreach="searches" t-as="item">
+                <input t-if="item != 'search' and item_value != 'all'" type="hidden"
+                       t-att-name="item" t-att-value="item_value"/>
+            </t>
+            <t t-out="0"/>
+        </t>
+    </template>
+
+    <template id="visit_requests_search_box" inherit_id="website.website_search_box" primary="True">
+        <xpath expr="//div[@role='search']" position="replace">
+            <form t-attf-class="o_wait_lazy_js w-100 my-1 my-lg-0 #{_classes}"
+                  t-att-action="action if action else '/visit_request'" method="get">
+                <t t-set="search" t-value="search or _searches and _searches['search']"/>
+                <t t-set="placeholder" t-value="placeholder or _placeholder"/>
+                <t>$0</t>
+                <t t-foreach="_searches" t-as="search">
+                    <input t-if="search != 'search' and search_value != 'all'" type="hidden"
+                           t-att-name="search" t-att-value="search_value"/>
+                </t>
+                <t t-out="0"/>
+            </form>
+        </xpath>
+    </template>
+
+    <template id="index_topbar" name="Topbar">
+        <nav class="navbar navbar-light border-top shadow-sm d-print-none">
+            <!--            <div class="container">-->
+            <!--                <div class="d-flex flex-column flex-sm-row justify-content-between w-100">-->
+            <!--                    <span class="navbar-brand h4 my-0 me-auto">Visit Requests</span>-->
+            <!--                    <div class="d-flex align-items-center flex-wrap ps-sm-3 pe-0">-->
+            <!--                        <t t-call="itq_event_portal.visit_request_search_box_input"/>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+            <div class="oe_structure oe_structure_solo ms-lg-4">
+                <a role="button" href="/to_visit_request" class="btn btn-primary btn_cta">Create Request</a>
+            </div>
+        </nav>
+    </template>
+    <template id="portal_my_home_visit_requests" name="Requests menu"
+              inherit_id="portal.portal_breadcrumbs" priority="100">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="replace"/>
+    </template>
+    <template id="portal_to_visit_request_template" name="Visit Request"
+              inherit_id="portal.portal_sidebar" primary="True">
+        <xpath expr="//div[hasclass('o_portal_sidebar')]" position="inside">
+            <div id="wrap" class="oe_structure oe_empty">
+                <section class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24" data-vcss="001"
+                         data-snippet="s_title" data-scroll-background-ratio="1">
+                    <span class="s_parallax_bg oe_img_bg"
+                          style="background-image: url('/web/image/website.s_banner_default_image'); background-position: 50% 0;"/>
+                    <div class="o_we_bg_filter bg-black-50"/>
+                    <div class="container">
+                        <t t-if="visit_request">
+                            <h1>VISIT REQUEST #
+                                <t t-esc="visit_request.name"/>
+                            </h1>
+                        </t>
+                        <t t-else="">
+                            <h1>Create New Visit Request</h1>
+                        </t>
+                    </div>
+                </section>
+            </div>
+            <div id="visit_request_details" class="o_visit_request_details">
+                <t t-set="disable_input"
+                   t-value="visit_request and visit_request.state != 'draft'"/>
+                <t t-set="action"
+                   t-value="'/visit_request_update/%s' % (visit_request.id) if visit_request else '/visit_request_create'"/>
+                <form id="to_visit_request"
+                      enctype="multipart/form-data"
+                      method="post"
+                      class="js_website_submit_form">
+                    <input class="o_token" type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <input class="o_visit_req" type="hidden" name="visit_request"
+                           t-att-value="visit_request.id if visit_request else ''"/>
+                    <div class="modal-content">
+                        <div id="requester_details_div" class="modal-body border-bottom">
+                            <h5 class="mt-1 pb-2 border-bottom">VISIT REQUESTER INFO</h5>
+                            <div class="row">
+                                <div class="col-lg my-2">
+                                    <label>Name *</label>
+                                    <input class="form-control o_field_value" type="text" name="requester_name"
+                                           required="This field is required"
+                                           t-att-disabled="disable_input"
+                                           t-att-value="visit_request.requester_name if visit_request else ''"/>
+                                </div>
+                                <div class="col-lg my-2">
+                                    <label>Email *</label>
+                                    <input class="form-control o_field_value" type="email" name="email"
+                                           required="This field is required"
+                                           pattren="/^[a-zA-Z0-9.!#$%’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+                                           t-att-disabled="disable_input"
+                                           t-att-value="visit_request.email if visit_request else ''"/>
+                                </div>
+                                <div class="col-lg my-2">
+                                    <label>Phone *</label>
+                                    <input class="form-control o_field_value"
+                                           type="tel" name="phone_number"
+                                           required="This field is required"
+                                           pattren="/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/"
+                                           t-att-disabled="disable_input"
+                                           t-att-value="visit_request.phone_number if visit_request else ''"/>
+                                </div>
+                            </div>
+                            <h5 class="mt-1 pb-2 border-bottom">VISITOR INFO</h5>
+                            <div class="row">
+                                <div class="col-lg my-2">
+                                    <label>Visitor Type *</label>
+                                    <select class="form-control o_visitor_type o_field_value"
+                                            name="visitor_type"
+                                            t-att-disabled="disable_input"
+                                            required="This field is required">
+                                        <option value="">Select Type...</option>
+                                        <option value="individual"
+                                                t-att-selected="visit_request and visit_request.visitor_type == 'individual'">
+                                            Individual
+                                        </option>
+                                        <option value="organization"
+                                                t-att-selected="visit_request and visit_request.visitor_type == 'organization'">
+                                            Organization
+                                        </option>
+                                    </select>
+                                </div>
+                                <div id="visitor_organization_div" class="col-lg my-2 o_visitor_organization">
+                                    <label t-att-hidden="visit_request and visit_request.visitor_type != 'organization'">
+                                        Organization
+                                    </label>
+                                    <select id="visitor_organizations" class="form-control o_field_value"
+                                            name="organization_id"
+                                            t-att-disabled="disable_input"
+                                            t-att-hidden="visit_request and visit_request.visitor_type != 'organization'">
+                                        <option value="">Select Organization...</option>
+                                        <option t-foreach="visitor_organizations" t-as="org"
+                                                t-att-value="org.id" t-key="org.id"
+                                                t-att-selected="visit_request and visit_request.organization_id.id == org.id">
+                                            <t t-esc="org.name"/>
+                                        </option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-lg my-2">
+                                    <label>Visit Reason *</label>
+                                    <textarea class="form-control o_input o_field_value"
+                                              name="visit_reason"
+                                              required="This field is required"
+                                              dir="auto"
+                                              dirname="visit_reason-direction"
+                                              t-att-disabled="disable_input">
+                                        <t t-esc="visit_request.visit_reason if visit_request else ''"/>
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="visit_details_div" class="modal-body border-bottom">
+                            <h5 class="mt-1 pb-2 border-bottom">VISIT INFO</h5>
+                            <div class="form-group row form-field">
+                                <div class="col-lg-4 col-md-4">
+                                    <label class="col-form-label" for="visit_date_from">Date From *</label>
+                                    <div class="input-group date" id="visit_date_from_div"
+                                         data-target-input="nearest">
+                                        <input id="visit_date_from_id"
+                                               type="text"
+                                               name="visit_date_from"
+                                               required="This field is required"
+                                               t-att-disabled="disable_input"
+                                               data-target="#visit_date_from_div"
+                                               class="form-control o_datepicker_input datetimepicker-input o_field_value"
+                                               t-att-value="visit_request.visit_date_from if visit_request else ''"/>
+                                        <span class="input-group-text" data-target="#visit_date_from_div"
+                                              t-att-disabled="disable_input"
+                                              data-toggle="datetimepicker">
+                                            <span class="fa fa-calendar" role="img" aria-label="Calendar"
+                                                  title="Calendar"/>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4">
+                                    <label class="col-form-label" for="visit_date_to">Date To *</label>
+                                    <div class="input-group date" id="visit_date_to_div" data-target-input="nearest">
+                                        <input id="visit_date_to_id"
+                                               type="text"
+                                               name="visit_date_to"
+                                               t-att-disabled="disable_input"
+                                               required="This field is required"
+                                               data-target="#visit_date_to_div"
+                                               class="form-control o_datepicker_input datetimepicker-input o_field_value"
+                                               t-att-value="visit_request.visit_date_to if visit_request else ''"/>
+                                        <span class="input-group-text" data-target="#visit_date_to_div"
+                                              t-att-disabled="1 if visit_request else 0"
+                                              data-toggle="datetimepicker">
+                                            <span class="fa fa-calendar" role="img" aria-label="Calendar"
+                                                  title="Calendar"/>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg my-2">
+                                    <label>Request Type *</label>
+                                    <select class="form-control o_request_type o_field_value" name="request_type"
+                                            t-att-disabled="disable_input"
+                                            required="This field is required">
+                                        <option value="">Select Type...</option>
+                                        <option value="visit"
+                                                t-att-selected="visit_request and visit_request.request_type == 'visit'">
+                                            Visit
+                                        </option>
+                                        <option value="photoshoot"
+                                                t-att-selected="visit_request and visit_request.request_type == 'photoshoot'">
+                                            Photoshoot
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-lg my-2 o_visit_type_div">
+                                    <label>Visit Type *</label>
+                                    <select id="visit_type_sel_id"
+                                            class="form-control o_visit_type o_field_value"
+                                            name="visit_type"
+                                            required="This field is required"
+                                            t-att-disabled="disable_input">
+                                        <option value="">Select Type...</option>
+                                        <option value="visit"
+                                                t-att-selected="visit_request and visit_request.visit_type == 'visit'">
+                                            Visit
+                                        </option>
+                                        <option value="meeting"
+                                                t-att-selected="visit_request and visit_request.visit_type == 'meeting'">
+                                            Meeting
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-lg my-2 o_attraction_div"
+                                     t-att-hidden="visit_request and visit_request.visit_type != 'visit'">
+                                    <label>
+                                        To Visit Attraction
+                                    </label>
+                                    <select id="visit_attraction"
+                                            class="form-control o_visit_attraction o_field_value"
+                                            name="visit_attraction_id"
+                                            t-att-hidden="visit_request and visit_request.visit_type != 'visit'"
+                                            t-att-disabled="disable_input">
+                                        <option value=""/>
+                                        <option t-foreach="visit_attractions" t-as="va"
+                                                t-att-value="va.id" t-key="va.id"
+                                                t-att-selected="visit_request and visit_request.to_visit_attraction_id.id == va.id">
+                                            <t t-esc="va.name"/>
+                                        </option>
+                                    </select>
+                                    <select id="photoshoot_attraction"
+                                            class="form-control o_photoshoot_attraction o_field_value"
+                                            name="photoshoot_attraction_id"
+                                            t-att-hidden="visit_request and visit_request.visit_type != 'photoshoot'"
+                                            t-att-disabled="disable_input">
+                                        <option value=""/>
+                                        <option t-foreach="photoshoot_attractions" t-as="pha"
+                                                t-att-value="pha.id" t-key="pha.id"
+                                                t-att-selected="visit_request and visit_request.to_visit_attraction_id.id == pha.id">
+                                            <t t-esc="pha.name"/>
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-lg my-2 o_department_div">
+                                    <label t-att-hidden="visit_request and visit_request.visit_type != 'meeting'">
+                                        To Visit Department
+                                    </label>
+                                    <select id="visit_department"
+                                            class="form-control o_visit_department o_field_value"
+                                            name="to_visit_department_id"
+                                            t-att-hidden="visit_request and visit_request.visit_type != 'meeting'"
+                                            t-att-disabled="disable_input">
+                                        <option value=""/>
+                                        <option t-foreach="departments" t-as="dep"
+                                                t-att-value="dep.id" t-key="dep.id"
+                                                t-att-selected="visit_request and visit_request.to_visit_department_id.id == dep.id">
+                                            <t t-esc="dep.name"/>
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="row o_research_div">
+                                    <div class="col-lg my-1">
+                                        <label t-att-hidden="not (visit_request and visit_request.is_research_department)">
+                                            Research Type
+                                        </label>
+                                        <select id="research_type"
+                                                class="form-control o_field_value"
+                                                name="research_type_id"
+                                                t-att-disabled="disable_input"
+                                                t-att-hidden="not (visit_request and visit_request.is_research_department)">
+                                            <option value=""/>
+                                            <option t-foreach="research_type" t-as="rt"
+                                                    t-att-value="rt.id" t-key="rt.id"
+                                                    t-att-selected="visit_request and visit_request.research_type_id == rt.id">
+                                                <t t-esc="rt.name"/>
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg my-3">
+                                        <label t-att-hidden="not (visit_request and visit_request.is_research_department)">
+                                            Research Topic
+                                        </label>
+                                        <textarea id="research_topic"
+                                                  class="form-control o_field_value"
+                                                  type="text"
+                                                  name="research_topic"
+                                                  dir="auto"
+                                                  dirname="research_topic-direction"
+                                                  t-att-disabled="disable_input"
+                                                  t-att-hidden="not (visit_request and visit_request.is_research_department)">
+                                            <t t-esc="visit_request.research_topic if visit_request else ''"/>
+                                        </textarea>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg my-2">
+                                        <label>Visit Classification</label>
+                                        <select id="visit_classification" class="form-control o_field_value"
+                                                name="visit_classification_id"
+                                                t-att-disabled="disable_input">
+                                            <option value=""/>
+                                            <option t-foreach="visit_classifications" t-as="vc"
+                                                    t-att-value="vc.id" t-key="vc.id"
+                                                    t-att-selected="visit_request and visit_request.visit_classification_id.id == vc.id">
+                                                <t t-esc="vc.name"/>
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12 mb-0 py-2 s_website_form_field s_website_form_custom"
+                                         data-type="binary" data-name="Field">
+                                        <div class="row s_col_no_resize s_col_no_bgcolor">
+                                            <label class="col-4 col-sm-auto s_website_form_label" style="width: 200px"
+                                                   for="visit_letter_id">
+                                                <span class="s_website_form_label_content">Visit Letter</span>
+                                            </label>
+                                            <div t-if="visit_request and visit_request.visit_letter_id" class="col-sm">
+                                                <a id="download"
+                                                   t-attf-href="/web/content/itq.visit.request/#{visit_request.id}/visit_letter_id?download=true"
+                                                   class="ms-1 ms-sm-2" title="Download Content" aria-label="Download"
+                                                   role="button">
+                                                    <i class="fa fa-download"/>
+                                                    <t t-esc="visit_request.file_name"/>
+                                                </a>
+                                            </div>
+                                            <div t-if="not disable_input" class="col-sm">
+                                                <input id="visit_letter_id"
+                                                       type="file"
+                                                       class="form-control s_website_form_input o_forum_file_upload o_field_value"
+                                                       name="visit_letter_id"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg my-2">
+                                    <label class="form-check-label">Document Visit ?</label>
+                                    <input type="checkbox"
+                                           t-att-checked="'checked' if visit_request and visit_request.document_visit else None"
+                                           class="form-check-input o_document_visit o_field_value"
+                                           name="document_visit" t-att-disabled="disable_input"/>
+                                </div>
+                                <div id="documentation_type" class="col-lg my-2 o_hidden o_documentation_type">
+                                    <label>Documentation Type</label>
+                                    <select id="documentation_type_id" class="form-control o_field_value"
+                                            name="documentation_type_id"
+                                            t-att-disabled="disable_input">
+                                        <option value=""/>
+                                        <option t-foreach="documentation_types" t-as="dt"
+                                                t-att-value="dt.id" t-key="dt.id"
+                                                t-att-selected="visit_request and visit_request.documentation_type_id.id == dt.id">
+                                            <t t-esc="dt.name"/>
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg my-4">
+                                    <label>Extra Notes</label>
+                                    <textarea id="extra_notes"
+                                              class="form-control o_field_value"
+                                              type="text" name="extra_notes"
+                                              dir="auto"
+                                              dirname="extra_notes-direction"
+                                              t-att-disabled="disable_input">
+                                        <t t-esc="visit_request.extra_notes if visit_request else ''"/>
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="visitors_list_div" class="modal-body border-bottom o_visitors_list_div">
+                            <div class="col-lg my-2">
+                                <label>Expected Number *</label>
+                                <input class="form-control o_expected_number o_field_value" type="number"
+                                       name="expected_number"
+                                       id="expected_number_id"
+                                       min="1"
+                                       required="This field is required"
+                                       t-att-disabled="disable_input"
+                                       t-att-value="visit_request.expected_number if visit_request else ''"/>
+                                <div t-if="visit_request and visit_request.visitor_ids"
+                                     class="modal-body border-bottom">
+                                    <label>Visitors</label>
+                                    <t t-foreach="visit_request.visitor_ids" t-as="visitor">
+                                        <t t-call="itq_event_portal.visitor_line_template"/>
+                                    </t>
+
+                                </div>
+
+                                <div t-if="not disable_input" class="col-lg my-2 o_add_visitors_div_btn">
+                                    <a role="button" class="btn btn-primary o_add_visitors">
+                                        Add Visitor
+                                    </a>
+                                </div>
+                                <div class="o_visitor"/>
+                            </div>
+                        </div>
+                        <div class="modal-footer border-0 justify-content-between">
+                            <a role="button" class="btn btn-secondary" href="/search/my/visit_requests">
+                                Cancel
+                            </a>
+                            <button t-if="visit_request and not disable_input" name="update"
+                                    class="btn btn-primary o_update_request">
+                                Update
+                            </button>
+                            <button t-if="not visit_request" name="submit" class="btn btn-primary o_submit_request">
+                                Submit To Review
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <div t-if="visit_request" id="request_chat" class="mt32">
+                    <h4>
+                        <strong>Message and communication history</strong>
+                    </h4>
+                    <t t-call="portal.message_thread">
+                        <t t-set="object" t-value="visit_request"/>
+                    </t>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="portal_all_visit_requests_template" name="Visit Requests">
+        <t t-if="not visit_requests">
+            <p>There are currently no Visit Requests.</p>
+        </t>
+        <t t-if="visit_requests" t-call="portal.portal_table">
+            <thead>
+                <tr class="active">
+                    <th>Request Number#</th>
+                    <th>Requester Name</th>
+                    <th>Requester Phone</th>
+                    <th class="text-center">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <t t-foreach="visit_requests" t-as="visit_request">
+                    <tr>
+                        <td>
+                            <a t-att-href="visit_request.get_portal_url()"
+                               t-att-title="visit_request.name">
+                                <t t-esc="visit_request.name"/>
+                            </a>
+                        </td>
+                        <td>
+                            <span t-field="visit_request.requester_name"/>
+                        </td>
+                        <td>
+                            <span t-field="visit_request.phone_number"/>
+                        </td>
+                        <td>
+                            <span t-field="visit_request.state"/>
+                        </td>
+                    </tr>
+                </t>
+            </tbody>
+        </t>
+    </template>
+
+    <template id="portal_search_my_visit_requests_template" name="Search Requests">
+        <t t-call="website.layout">
+            <div id="search_requests_div" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <form id="search_requests_form" t-attf-action="/my/visit_requests"
+                          method="post" class="js_website_submit_form">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <div class="modal-content">
+                            <div id="requester_details_div" class="modal-body border-bottom">
+                                <h5 class="mt-1 pb-2 border-bottom">Search With Request Number And Your Phone</h5>
+                                <div class="row">
+                                    <div class="col-lg my-2">
+                                        <label>Request Number *</label>
+                                        <input class="form-control" type="text" name="request_number"
+                                               required="This field is required"/>
+                                    </div>
+                                    <div class="col-lg my-2">
+                                        <label>Phone *</label>
+                                        <input class="form-control" type="tel" name="phone_number"
+                                               required="This field is required"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg my-2"/>
+                                <div class="modal-footer border-0 justify-content-between col-lg my-2">
+                                    <button type="submit" icon="fa-search-plus" class="btn btn-primary">Search</button>
+                                </div>
+                                <div class="col-lg my-2">
+                                    OR
+                                </div>
+
+                                <div class="modal-footer border-0 justify-content-between col-lg my-2">
+                                    <a role="button" href="/to_visit_request" class="btn btn-primary btn_cta">
+                                        Create New Request
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_requests_list_template" name="Requests">
+        <t t-call="website.layout">
+            <!--            <t t-set="search" t-value="original_search or search or searches['search']"/>-->
+
+            <t t-call="itq_event_portal.index_topbar"/>
+
+            <t t-call="itq_event_portal.portal_all_visit_requests_template"/>
+        </t>
+
+    </template>
+
+    <template id="visitor_line_template" name="Visitor Line">
+        <div class="col ms-3 ms-md-5">
+            <div class="row align-items-center">
+                <div class="col-11 p-0 input-group o_existing_visitor_line">
+                    <div class="input-group-text o_hidden">
+                        <input type="hidden"
+                               name="visitor_id"
+                               class="o_visitor_id_value form-control"
+                               t-att-value="visitor['id']if visitor else ''"/>
+                    </div>
+                    <div class="input-group-text">
+                        <label>Name *</label>
+                        <input type="text"
+                               name="visitor_name"
+                               required="This field is required"
+                               class="form-control o_visitor_name_value o_field_value"
+                               t-att-value="visitor['name']if visitor else ''"/>
+                    </div>
+                    <div class="input-group-text">
+                        <label>Mobile *</label>
+                        <input type="tel"
+                               name="visitor_mobile"
+                               pattren="/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/"
+                               class="form-control o_visitor_mobile_value o_field_value"
+                               t-att-value="visitor['mobile'] if visitor else ''"/>
+                    </div>
+                    <div class="input-group-text">
+                        <label>Email *</label>
+                        <input type="email"
+                               name="visitor_email"
+                               class="form-control o_visitor_email_value o_field_value"
+                               pattren="/^[a-zA-Z0-9.!#$%’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+                               t-att-value="visitor['email'] if visitor else ''"/>
+                    </div>
+                    <i class="o_remove_visitor fa fa-lg fa-trash-o col-auto p-md-2 py-2 px-1 text-muted"
+                       title="Remove this Visitor"/>
+                </div>
+            </div>
+        </div>
+    </template>
+
+</odoo>
+

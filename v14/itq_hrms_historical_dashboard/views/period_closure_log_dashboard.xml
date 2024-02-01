@@ -1,0 +1,118 @@
+<odoo>
+    <record id="period_closure_pivot" model="ir.ui.view">
+        <field name="name">view.hr.termination.type.pivot</field>
+        <field name="model">itq.period.closure.log</field>
+        <field name="arch" type="xml">
+            <pivot string="Period Closure Log pivot">
+                <field name="period_line_id" type="row"/>
+                <field name="male_count" type="measure"/>
+                <field name="female_count" type="measure"/>
+                <field name="muslim_count" type="measure"/>
+                <field name="christian_count" type="measure"/>
+                <field name="citizen_count" type="measure"/>
+                <field name="average_age" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+    <record id="period_closure_graph" model="ir.ui.view">
+        <field name="name">period.closure.log.graph</field>
+        <field name="model">itq.period.closure.log</field>
+        <field name="arch" type="xml">
+            <graph string="Period Closure Log Graph">
+                <field name="period_line_id" type="row"/>
+                <field name="male_count" type="measure"/>
+                <field name="female_count" type="measure"/>
+                <field name="muslim_count" type="measure"/>
+                <field name="christian_count" type="measure"/>
+                <field name="citizen_count" type="measure"/>
+                <field name="average_age" type="measure"/>
+            </graph>
+        </field>
+    </record>
+    <record id="itq_period_closure.action_itq_period_closure_log_view" model="ir.actions.act_window">
+        <field name="view_mode">tree,dashboard,pivot,graph</field>
+    </record>
+    <record id="view_itq_period_closure_log_form" model="ir.ui.view">
+        <field name="name">view.itq.period.closure.log.form</field>
+        <field name="model">itq.period.closure.log</field>
+        <field name="inherit_id" ref="itq_period_closure.view_itq_period_closure_log_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[1]" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button class="oe_stat_button" name="open_period_dashboard" string="Log Dashboard" type="object"
+                            icon="fa-dashboard"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="period_closure_log_dashboard" model="ir.ui.view">
+        <field name="name">itq.period.closure.log.dashboard</field>
+        <field name="model">itq.period.closure.log</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <dashboard sample="1">
+                <group>
+                    <group string="Gender">
+                        <aggregate name="male_count" string="Male Count"
+                                   field="male_count"/>
+
+                        <aggregate name="female_count" string="Female Count"
+                                   field="female_count"/>
+                    </group>
+                    <group string="Religion">
+                        <aggregate name="christian_count" string="Christian Count"
+                                   field="christian_count"/>
+
+                        <aggregate name="muslim_count" string="Muslim Count"
+                                   field="muslim_count"/>
+                    </group>
+
+                    <group string="Average Age">
+                        <aggregate name="average_age" string="Average Age" field="average_age"/>
+                    </group>
+
+                    <group string="Citizenship Percentage">
+                        <formula name="citizenship_percentage" string="Citizenship Percentage"
+                                 value="100 * (record.citizen_count / (record.citizen_count + record.non_citizen_count))"
+                                 value_label="%"/>
+                    </group>
+                </group>
+
+                <group>
+                    <group>
+                        <widget name="pie_chart" title="Assignation Percentage"
+                                attrs="{'groupby': 'business_unit_count'}"/>
+
+                    </group>
+                    <group>
+                        <widget name="pie_chart" title="Assignation Percentage"
+                                attrs="{'groupby': 'business_unit_count'}"/>
+
+                    </group>
+                </group>
+
+                <view type="graph" ref="itq_hrms_historical_dashboard.period_closure_graph"/>
+                <view type="pivot" ref="itq_hrms_historical_dashboard.period_closure_pivot"/>
+
+            </dashboard>
+        </field>
+    </record>
+    <record id="period_closure_log_search_view" model="ir.ui.view">
+        <field name="name">itq.period.closure.log.search</field>
+        <field name="model">itq.period.closure.log</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="period_line_id"/>
+                <!--                <filter name="current_period_id" string="current period" domain="[-->
+                <!--                    ('period_line_id.from_date', '&gt;=', (context_today()).strftime('%Y-%m-01')),-->
+                <!--                    ('period_line_id.to_date', '&lt;', (context_today() + relativedelta(months=1)).strftime('%Y-%m-01'))]"/>-->
+                <!--                <filter name="previous_period_id" string="Previous period" domain="[-->
+                <!--                    ('period_line_id.from_date', '&lt;', (context_today()).strftime('%Y-%m-01')),-->
+                <!--                    ('period_line_id.to_date', '&gt;=', (context_today() - relativedelta(months=1)).strftime('%Y-%m-01'))]"/>-->
+
+            </search>
+        </field>
+    </record>
+
+</odoo>

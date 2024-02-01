@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="procedures_confirm_settings_view_tree" model="ir.ui.view">
+            <field name="name">view.procedures.confirm.settings.tree</field>
+            <field name="model">procedures.confirm.settings</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="confirm_department_id"/>
+                    <field name="confirm_user_id"/>
+                    <field name="confirm_department_units"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="procedures_confirm_settings_view_form" model="ir.ui.view">
+            <field name="name">procedures.confirm.settings.view.form</field>
+            <field name="model">procedures.confirm.settings</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group string="Confirmation">
+                                <field name="confirm_department_id"/>
+                                <field name="confirm_allowed_users" invisible="1"/>
+                                <field name="confirm_user_id" domain="[('id', 'in', confirm_allowed_users)]"/>
+                                <field name="allowed_confirm_departments" invisible="1"/>
+                                <field name="confirm_department_units_ids" widget="many2many_tags"
+                                       domain="[('id', 'in', allowed_confirm_departments)]"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_procedures_confirm_settings" model="ir.actions.act_window">
+            <field name="name">Procedures Confirm Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">procedures.confirm.settings</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add a new Procedures Confirm Settings.
+                </p>
+            </field>
+        </record>
+        <menuitem id="procedures_confirm_settings_menuitem" name="Procedures Confirm Settings"
+                  action="action_procedures_confirm_settings"
+                  parent="itq_work_procedures.configurations_menuitem"
+                  sequence="2"/>
+
+    </data>
+</odoo>

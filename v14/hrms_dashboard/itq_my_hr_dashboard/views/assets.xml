@@ -1,0 +1,27 @@
+<odoo>
+     <template id="assets_backend" name="Dahsboard Assets" inherit_id="web.assets_backend">
+        <xpath expr=".">
+            <link rel="stylesheet"
+                  type="text/css"
+                  href="/itq_my_hr_dashboard/static/src/css/lib/nv.d3.css"
+                  />
+            <link rel="stylesheet"
+                  type="text/css"
+                  href="/itq_my_hr_dashboard/static/src/css/my_dashboard.css"
+                  />
+              <link rel="stylesheet"
+                  type="text/css"
+                  href="/itq_my_hr_dashboard/static/src/css/itq_customize_dashboard.css"
+                  />
+              <script
+                  type="application/javascript"
+                  src="/itq_my_hr_dashboard/static/src/js/lib/d3.min.js"
+                  />
+              <script
+                  type="application/javascript"
+                  src="/itq_my_hr_dashboard/static/src/js/my_dashboard.js"
+                  />
+
+        </xpath>
+    </template>
+</odoo>

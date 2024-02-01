@@ -1,0 +1,108 @@
+<odoo>
+
+    <record id="hrms_base_graph" model="ir.ui.view">
+        <field name="name">base.graph</field>
+        <field name="model">hr.employee.data</field>
+        <field name="arch" type="xml">
+            <graph string="HRMS Graph">
+                <field name="termination_type" type="row"/>
+                <field name="hiring_date" type="row"/>
+                <field name="is_citizen" type="col"/>
+                <field name="religion_id" type="col"/>
+                <field name="department_id" type="row"/>
+                <field name="country_id" type="row"/>
+                <field name="gender" type="col"/>
+                <field name="sponsor" type="col"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="hrms_base_pivot" model="ir.ui.view">
+        <field name="name">view.hr.termination.type.pivot</field>
+        <field name="model">hr.employee.data</field>
+        <field name="arch" type="xml">
+            <pivot string="HRMS pivot">
+                <field name="hiring_date" type="row"/>
+                <field name="termination_type" type="row"/>
+                <field name="is_citizen" type="col"/>
+                <field name="religion_id" type="col"/>
+                <field name="department_id" type="row"/>
+                <field name="country_id" type="row"/>
+                <field name="gender" type="col"/>
+                <field name="sponsor" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="hr_employee_data_dashboard" model="ir.ui.view">
+        <field name="name">hr.employee.data.dashboard</field>
+        <field name="model">hr.employee.data</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <dashboard sample="1">
+                <group>
+                    <group string="Gender">
+                        <aggregate name="male_count" string="Male Count"
+                                   field="male_count"/>
+
+                        <aggregate name="female_count" string="Female Count"
+                                   field="female_count"/>
+                    </group>
+                    <group string="Average Age">
+                        <aggregate name="age_count" string="Average Age" field="age_avg"/>
+                        <aggregate name="is_citizen_count" string="is_citizen_count " invisible="1"
+                                   field="is_citizen_count"/>
+                        <aggregate name="employees_count" string="employees_count " invisible="1"
+                                   field="employees_count"/>
+                    </group>
+
+                <group string="Citizenship Percentage">
+                    <formula name="citizenship_percentage" string="Citizenship Percentage"
+                             value="100 * (record.is_citizen_count / record.employees_count)" value_label="%"/>
+                </group>
+                </group>
+
+                <group string="Religion">
+                    <group>
+                        <widget name="pie_chart" title="Religion Percentage"
+                                attrs="{'groupby': 'religion_id'}"/>
+                    </group>
+                </group>
+                <group>
+                    <group>
+                        <widget name="pie_chart" title="Assignation Percentage"
+                                attrs="{'groupby': 'employee_assigned_to'}"/>
+                        <widget name="pie_chart" title="Citizen Percentage"
+                                attrs="{'groupby': 'citizenship'}"/>
+
+                    </group>
+                    <group>
+                        <widget name="pie_chart" title="Nationality Percentage"
+                                attrs="{'groupby': 'country_id'}"/>
+                        <widget name="pie_chart" title="Sponsor Percentage"
+                                attrs="{'groupby': 'sponsor'}"/>
+                    </group>
+                </group>
+
+                <view type="graph" ref="itq_hr_employee_data.hrms_base_graph"/>
+                <view type="pivot" ref="itq_hr_employee_data.hrms_base_pivot"/>
+
+            </dashboard>
+        </field>
+    </record>
+    <record id="hr_employee_data_action" model="ir.actions.act_window">
+        <field name="name">HRMS Dashboard</field>
+        <field name="res_model">hr.employee.data</field>
+        <field name="view_mode">dashboard</field>
+        <field name="target">current</field>
+    </record>
+    <menuitem
+            id="hrms_employee_data_dashboard_menu"
+            name="HRMS Dashboard"
+            action="hr_employee_data_action"
+            groups="itq_base_hrms_dashboard.group_hrms_dashboard_group"
+            parent="itq_hr_base.menu_hr_base_report"
+            sequence="0"/>
+<!--            web_icon="itq_base_hrms_dashboard,static/description/icon.png"-->
+
+</odoo>

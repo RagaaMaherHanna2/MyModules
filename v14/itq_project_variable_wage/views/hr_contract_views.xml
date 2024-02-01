@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Contract View -->
+    <record id="hr_contract_form_inherit" model="ir.ui.view">
+        <field name="name">hr.contract.view.form.inherit</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+            <div name="wage" position="after">
+                <field name="selected_projects_ids" invisible="1"/>
+                <field name="is_project_variable_wage"
+                       attrs="{'readonly': [('state', 'in', ['expired', 'cancel'])]}"/>
+            </div>
+            <page name="information" position="inside">
+                <notebook>
+                    <page name="projects_variables" string="Projects variables"
+                          attrs="{'invisible':[('is_project_variable_wage', '=',False)]}">
+                        <field name="project_variable_ids"
+                               attrs="{'readonly': [('state', 'in', ['expired', 'cancel'])]}">
+                            <tree editable="bottom">
+                                <field name="project_id" domain="[('id','not in', parent.selected_projects_ids)]"/>
+                                <field name="project_variable"/>
+                                <field name="has_payslips" readonly="1"/>
+                            </tree>
+                            <form string="projects_variables">
+                                <sheet>
+                                    <group>
+                                        <group>
+                                            <field name="project_id"
+                                                   domain="[('id','not in', parent.selected_projects_ids)]"/>
+                                            <field name="project_variable"/>
+                                            <field name="has_payslips" readonly="1"/>
+                                        </group>
+                                    </group>
+
+                                </sheet>
+                                <div class="oe_chatter">
+                                    <field name="message_follower_ids"/>
+                                    <field name="activity_ids"/>
+                                    <field name="message_ids"/>
+                                </div>
+                            </form>
+                        </field>
+                    </page>
+                </notebook>
+            </page>
+        </field>
+    </record>
+</odoo>

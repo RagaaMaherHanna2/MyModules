@@ -1,0 +1,114 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* itq_project_task_assignation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-08 13:12+0000\n"
+"PO-Revision-Date: 2023-10-08 13:12+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: itq_project_task_assignation
+#: model:ir.model,name:itq_project_task_assignation.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "البند التحليلي"
+
+#. module: itq_project_task_assignation
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_task_stackholder_line__country_id
+msgid "Country"
+msgstr "الحنسية"
+
+#. module: itq_project_task_assignation
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_task_stackholder_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: itq_project_task_assignation
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_task_stackholder_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: itq_project_task_assignation
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_account_analytic_line__display_name
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_project_task__display_name
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_task_stackholder_line__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: itq_project_task_assignation
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_account_analytic_line__stackholder_employees_ids
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_task_stackholder_line__employee_id
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: itq_project_task_assignation
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_project_task__stackholder_employees_ids
+msgid "Employees"
+msgstr ""
+
+#. module: itq_project_task_assignation
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_task_stackholder_line__date_end
+msgid "End Date"
+msgstr "تاريخ النهاية"
+
+#. module: itq_project_task_assignation
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_account_analytic_line__id
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_project_task__id
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_task_stackholder_line__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: itq_project_task_assignation
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_task_stackholder_line__job_id
+msgid "Jop Position"
+msgstr "الوظيفة"
+
+#. module: itq_project_task_assignation
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_account_analytic_line____last_update
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_project_task____last_update
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_task_stackholder_line____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: itq_project_task_assignation
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_task_stackholder_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: itq_project_task_assignation
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_task_stackholder_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: itq_project_task_assignation
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_task_stackholder_line__date_start
+msgid "Start Date"
+msgstr "تاريخ البداية"
+
+#. module: itq_project_task_assignation
+#: model:ir.model,name:itq_project_task_assignation.model_project_task
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_task_stackholder_line__task_id
+msgid "Task"
+msgstr "المهمة"
+
+#. module: itq_project_task_assignation
+#: model_terms:ir.ui.view,arch_db:itq_project_task_assignation.view_task_stackholder
+msgid "Task Assignees"
+msgstr "المسئولين المكلفون"
+
+#. module: itq_project_task_assignation
+#: model:ir.model,name:itq_project_task_assignation.model_task_stackholder_line
+msgid "Task Stackholder Line"
+msgstr "المسئولين المكلفون"
+
+#. module: itq_project_task_assignation
+#: model:ir.model.fields,field_description:itq_project_task_assignation.field_project_task__stackholder_line_ids
+msgid "Task Stackholders"
+msgstr "المسئولين المكلفون"

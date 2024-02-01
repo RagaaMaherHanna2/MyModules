@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--  noupdate="1" -->
+        <record model="itq.employee.checklist" id="petty_cash_checklist">
+            <field name="name">Petty-Cash Due Amounts</field>
+            <field name="checklist_type">exit</field>
+            <field name="checklist_exit_type">petty_cash</field>
+            <field name="activity_type">activity</field>
+            <field name="assignation">employee</field>
+            <field name="due_days">0</field>
+            <field name="is_required" eval="True"/>
+        </record>
+    </data>
+</odoo>

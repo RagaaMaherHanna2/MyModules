@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+   <record id="itq_permission_invitee_wizard" model="ir.ui.view">
+       <field name="name">permission invitee</field>
+       <field name="model">itq.permission.invitee.wizard</field>
+       <field name="arch" type="xml">
+           <form>
+               <notebook>
+                   <page string="Guest List">
+                       <field name="guest_list_ids"/>
+                   </page>
+                   <page string="Guest Honor">
+                       <field name="guest_honors_ids"/>
+                   </page>
+                   <page string="Guest Speaker">
+                        <field name="guest_speaker_ids"/>
+                   </page>
+               </notebook>
+               <field name="event_request_id" invisible="1"/>
+               <footer>
+                   <button name="save" string="Save" type="object" class="btn-primary"/>
+                   <button string="Cancel" type="object" name="cancel" class="oe_link" special="cancel"/>
+               </footer>
+           </form>
+       </field>
+   </record>
+   <record id="itq_invitee_wizard" model="ir.ui.view">
+       <field name="name">invitee permissions</field>
+       <field name="model">itq.permission.invitee.wizard</field>
+       <field name="arch" type="xml">
+           <form>
+               <group>
+                   <field name="permission_id" domain="[('event_request_id','=',event_request_id),('state','!=','canceled')]"/>
+                   <field name="event_request_id" invisible="1"/>
+               </group>
+               <footer>
+                   <button name="add_invitee_to_permission" string="add" type="object" class="btn-primary"/>
+                   <button string="Cancel" type="object" name="cancel" class="oe_link" special="cancel"/>
+               </footer>
+           </form>
+       </field>
+   </record>
+   <record id="itq_permission_invitee_wizard_action" model="ir.actions.act_window">
+       <field name="name">permission invitee</field>
+       <field name="res_model">itq.permission.invitee.wizard</field>
+       <field name="view_mode">form</field>
+       <field name="view_id" ref="itq_permission_invitee_wizard" />
+       <field name="target">new</field>
+   </record>
+    <record id="itq_invitee_wizard_action" model="ir.actions.act_window">
+       <field name="name">invitee permissions</field>
+       <field name="res_model">itq.permission.invitee.wizard</field>
+       <field name="view_mode">form</field>
+       <field name="view_id" ref="itq_invitee_wizard" />
+       <field name="target">new</field>
+   </record>
+</odoo>

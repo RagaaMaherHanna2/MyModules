@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_res_branch_form_inherit" model="ir.ui.view">
+            <field name="name">res.branch.inherit</field>
+            <field name="model">res.branch</field>
+            <field name="inherit_id" ref="itq_branch_base.view_branch_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="before">
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_open_pos_configs" type="object"
+                                class="oe_stat_button" icon="fa-list">
+                            <field string="Pos" name="pos_count" widget="statinfo"/>
+                        </button>
+                        <button name="action_open_warehouses" type="object"
+                                class="oe_stat_button" icon="fa-list">
+                            <field string="Warehouses" name="warehouses_count" widget="statinfo"/>
+                        </button>
+                        <button name="action_open_locations" type="object"
+                                class="oe_stat_button" icon="fa-list">
+                            <field string="Locations" name="locations_count" widget="statinfo"/>
+                        </button>
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='website']" position="after">
+                    <field name="has_warehouse"/>
+                    <field name="has_pos" attrs="{'readonly': [('has_pos_checked', '=', True)]}" force_save="1"/>
+                    <field name="has_pos_checked" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

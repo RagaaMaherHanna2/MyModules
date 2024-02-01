@@ -1,0 +1,157 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* itq_auto_generate_employee_list
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-28 07:44+0000\n"
+"PO-Revision-Date: 2023-08-28 07:44+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: itq_auto_generate_employee_list
+#: model_terms:ir.ui.view,arch_db:itq_auto_generate_employee_list.payroll_config_settings_view_form
+msgid "Activate"
+msgstr "تفعيل"
+
+#. module: itq_auto_generate_employee_list
+#: model_terms:ir.ui.view,arch_db:itq_auto_generate_employee_list.payroll_config_settings_view_form
+msgid "Activate Auto Generate Pay-slip Lists"
+msgstr "تفعيل الإنشاء التلقائي لقوائم كشوف الرواتب"
+
+#. module: itq_auto_generate_employee_list
+#: model:ir.model.fields,field_description:itq_auto_generate_employee_list.field_itq_employee_list__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: itq_auto_generate_employee_list
+#: model:ir.model.fields,field_description:itq_auto_generate_employee_list.field_res_config_settings__is_auto_generated_list
+msgid "Auto Generate Pay-slip Lists"
+msgstr "إنشاء تلقائي لقوائم كشوف الرواتب"
+
+#. module: itq_auto_generate_employee_list
+#: model_terms:ir.ui.view,arch_db:itq_auto_generate_employee_list.payroll_config_settings_view_form
+msgid "Auto Generate Payslip Employee List"
+msgstr "إنشاء تلقائي لقائمة كشف راتب الموظف"
+
+#. module: itq_auto_generate_employee_list
+#: model_terms:ir.ui.view,arch_db:itq_auto_generate_employee_list.payroll_config_settings_view_form
+msgid "Auto Generate Split Per Department"
+msgstr "تقسيم الإنشاء التلقائي لكل قسم"
+
+#. module: itq_auto_generate_employee_list
+#: model_terms:ir.ui.view,arch_db:itq_auto_generate_employee_list.payroll_config_settings_view_form
+msgid "Auto Generate Split Per Project"
+msgstr "تقسيم الإنشاء التلقائي لكل مشروع"
+
+#. module: itq_auto_generate_employee_list
+#: model:ir.model,name:itq_auto_generate_employee_list.model_res_config_settings
+msgid "Config Settings"
+msgstr "ضبط الإعدادات"
+
+#. module: itq_auto_generate_employee_list
+#: model:ir.model.fields.selection,name:itq_auto_generate_employee_list.selection__itq_employee_list__list_for__default
+msgid "Default"
+msgstr "الافتراضي"
+
+#. module: itq_auto_generate_employee_list
+#: model:ir.model,name:itq_auto_generate_employee_list.model_hr_department
+#: model:ir.model.fields,field_description:itq_auto_generate_employee_list.field_itq_employee_list__department_id
+#: model:ir.model.fields.selection,name:itq_auto_generate_employee_list.selection__itq_employee_list__list_for__department
+msgid "Department"
+msgstr "القسم"
+
+#. module: itq_auto_generate_employee_list
+#: model:ir.model.fields,field_description:itq_auto_generate_employee_list.field_hr_contract__display_name
+#: model:ir.model.fields,field_description:itq_auto_generate_employee_list.field_hr_department__display_name
+#: model:ir.model.fields,field_description:itq_auto_generate_employee_list.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:itq_auto_generate_employee_list.field_itq_employee_list__display_name
+#: model:ir.model.fields,field_description:itq_auto_generate_employee_list.field_project_project__display_name
+#: model:ir.model.fields,field_description:itq_auto_generate_employee_list.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: itq_auto_generate_employee_list
+#: model:ir.model,name:itq_auto_generate_employee_list.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: itq_auto_generate_employee_list
+#: model:ir.model,name:itq_auto_generate_employee_list.model_hr_contract
+msgid "Employee Contract"
+msgstr "عقد الموظف"
+
+#. module: itq_auto_generate_employee_list
+#: model:ir.model,name:itq_auto_generate_employee_list.model_itq_employee_list
+#: model:ir.model.fields,field_description:itq_auto_generate_employee_list.field_hr_department__employee_list_id
+#: model:ir.model.fields,field_description:itq_auto_generate_employee_list.field_project_project__employee_list_id
+msgid "Employee List"
+msgstr "قائمة موظف"
+
+#. module: itq_auto_generate_employee_list
+#: model_terms:ir.ui.view,arch_db:itq_auto_generate_employee_list.view_employee_list_search
+msgid "Group By"
+msgstr "تجميع بحسب"
+
+#. module: itq_auto_generate_employee_list
+#: model_terms:ir.ui.view,arch_db:itq_auto_generate_employee_list.view_employee_list_search
+msgid "Have Employee name"
+msgstr "لديه اسم الموظف"
+
+
+#. module: itq_auto_generate_employee_list
+#: model:ir.model.fields,field_description:itq_auto_generate_employee_list.field_hr_contract____last_update
+#: model:ir.model.fields,field_description:itq_auto_generate_employee_list.field_hr_department____last_update
+#: model:ir.model.fields,field_description:itq_auto_generate_employee_list.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:itq_auto_generate_employee_list.field_itq_employee_list____last_update
+#: model:ir.model.fields,field_description:itq_auto_generate_employee_list.field_project_project____last_update
+#: model:ir.model.fields,field_description:itq_auto_generate_employee_list.field_res_config_settings____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: itq_auto_generate_employee_list
+#: model:ir.model.fields,field_description:itq_auto_generate_employee_list.field_itq_employee_list__list_for
+msgid "List For"
+msgstr "قائمة"
+
+#. module: itq_auto_generate_employee_list
+#: model:ir.model,name:itq_auto_generate_employee_list.model_project_project
+#: model:ir.model.fields,field_description:itq_auto_generate_employee_list.field_itq_employee_list__project_id
+#: model:ir.model.fields.selection,name:itq_auto_generate_employee_list.selection__itq_employee_list__list_for__project
+msgid "Project"
+msgstr "المشروع"
+
+#. module: itq_auto_generate_employee_list
+#: model:ir.model.fields,field_description:itq_auto_generate_employee_list.field_res_config_settings__for_department
+#: model_terms:ir.ui.view,arch_db:itq_auto_generate_employee_list.payroll_config_settings_view_form
+msgid "Split Per Department"
+msgstr "تقسيم بالأقسام"
+
+#. module: itq_auto_generate_employee_list
+#: model:ir.model.fields,field_description:itq_auto_generate_employee_list.field_res_config_settings__for_project
+#: model_terms:ir.ui.view,arch_db:itq_auto_generate_employee_list.payroll_config_settings_view_form
+msgid "Split Per Project"
+msgstr "تقسيم بالمشاريع"
+
+#. module: itq_auto_generate_employee_list
+#: code:addons/itq_auto_generate_employee_list/models/itq_employee_list.py:0
+#, python-format
+msgid "You Can't Archive Employee List With auto generate lists feature"
+msgstr "لا يمكن أرشفة قائمة الموظف التي بها إنشاء تلقائي للقوائم"
+
+#. module: itq_auto_generate_employee_list
+#: code:addons/itq_auto_generate_employee_list/models/itq_employee_list.py:0
+#, python-format
+msgid "You Can't UnArchive Employee List With auto generate lists feature"
+msgstr "لا يمكن إلغاء أرشفة قائمة الموظف التي بها إنشاء تلقائي للقوائم"
+
+#. module: itq_auto_generate_employee_list
+#: model_terms:ir.ui.view,arch_db:itq_auto_generate_employee_list.view_employee_list_search
+msgid "name"
+msgstr "الاسم"

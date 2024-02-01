@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+   <record id="import_invitee_wizard" model="ir.ui.view">
+       <field name="name">invitee</field>
+       <field name="model">itq.invitee.wizard</field>
+       <field name="arch" type="xml">
+           <form string="invitee_wizard">
+               <group>
+                   <group>
+                       <field name="invitee_file"/>
+                   </group>
+               </group>
+               <footer>
+                   <button
+                       name="save_data"
+                       string="Import"
+                       type="object"
+                       class="btn-primary"
+                   />
+                   <button string="Cancel" type="object" name="cancel" class="oe_link" special="cancel"/>
+
+               </footer>
+           </form>
+       </field>
+   </record>
+   <record id="import_invitee_action" model="ir.actions.act_window">
+       <field name="name">invitee</field>
+       <field name="res_model">itq.invitee.wizard</field>
+       <field name="view_mode">form</field>
+       <field name="view_id" ref="import_invitee_wizard" />
+       <field name="target">new</field>
+   </record>
+</odoo>

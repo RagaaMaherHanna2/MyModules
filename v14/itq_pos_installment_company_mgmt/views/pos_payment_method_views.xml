@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model='ir.ui.view' id='pos_payment_method_view_form_inherit'>
+            <field name='name'>pos.payment.method.form</field>
+            <field name='model'>pos.payment.method</field>
+            <field name='inherit_id' ref='point_of_sale.pos_payment_method_view_form'/>
+            <field name='arch' type='xml'>
+                <field name='is_cash_count' position="after">
+                    <field name='is_installment_method'/>
+                    <field name='installment_company_id' attrs="{'invisible': [('is_installment_method', '=', False)],
+					'required': [('is_installment_method', '=', True)]}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

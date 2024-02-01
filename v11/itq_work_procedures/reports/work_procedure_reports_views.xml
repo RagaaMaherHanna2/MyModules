@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="work_procedure_reports_menu"
+              parent="itq_work_procedures.work_procedure_module_menu"
+              name="Work Procedures Reports"
+              sequence="2"/>
+</odoo>

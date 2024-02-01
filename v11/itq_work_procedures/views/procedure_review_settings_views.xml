@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="review_department_settings_view_tree" model="ir.ui.view">
+            <field name="name">view.review.department.settings.tree</field>
+            <field name="model">review.department.settings</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="review_department_id"/>
+                    <field name="active_department"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="review_department_settings_view_form" model="ir.ui.view">
+            <field name="name">review.department.settings.view.form</field>
+            <field name="model">review.department.settings</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group string="Review">
+                                <field name="review_department_id"/>
+                                <field name="allowed_units_ids" invisible="1"/>
+                                <field name="sub_review_units_ids"
+                                       domain="[('id', 'in', allowed_units_ids)]"
+                                       widget="many2many_tags"/>
+                                <field name="active_department"/>
+                            </group>
+                            <group/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_review_department_settings" model="ir.actions.act_window">
+            <field name="name">Review Department Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">review.department.settings</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add a new Review Department Settings.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="configurations_menuitem" parent="itq_work_procedures.work_procedure_module_menu"
+                  name="Configuration"
+                  sequence="3"/>
+        <menuitem id="review_department_settings_menuitem" name="Review Department Settings"
+                  action="action_review_department_settings"
+                  parent="itq_work_procedures.configurations_menuitem"
+                  sequence="0"/>
+
+        <record id="procedures_review_settings_view_tree" model="ir.ui.view">
+            <field name="name">view.procedures.review.settings.tree</field>
+            <field name="model">procedures.review.settings</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="review_department_id"/>
+                    <field name="review_user_id"/>
+                    <field name="review_department_units"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="procedures_review_settings_view_form" model="ir.ui.view">
+            <field name="name">procedures.review.settings.view.form</field>
+            <field name="model">procedures.review.settings</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group string="Review">
+                                <field name="review_department_id"/>
+                                <field name="review_allowed_users" invisible="1"/>
+                                <field name="review_user_id" domain="[('id', 'in', review_allowed_users)]"/>
+                                <field name="allowed_review_departments" invisible="1"/>
+                                <field name="review_department_units_ids" widget="many2many_tags"
+                                       domain="[('id', 'in', allowed_review_departments)]"/>
+                            </group>
+                            <group/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_procedures_review_settings" model="ir.actions.act_window">
+            <field name="name">Procedures review Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">procedures.review.settings</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add a new Procedures review Settings.
+                </p>
+            </field>
+        </record>
+        <menuitem id="procedures_review_settings_menuitem" name="Procedures review Settings"
+                  action="action_procedures_review_settings"
+                  parent="itq_work_procedures.configurations_menuitem"
+                  sequence="1"/>
+
+
+    </data>
+</odoo>

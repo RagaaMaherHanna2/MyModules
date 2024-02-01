@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="pos_orders_installment_template"
+           inherit_id="point_of_sale.template" xml:space="preserve">
+
+    <t t-name="PayPOSOrdersScreen" t-inherit="point_of_sale.PaymentScreen" t-inherit-mode="extension" owl="1">
+		<xpath expr="//div[hasclass('next')]" position="replace">
+			<div t-if="!currentOrder.is_installment_paid()"
+                 class="button next" t-att-class="{ highlight: currentOrder.is_paid() }"
+                 t-on-click="validateOrder(false)">
+                            <span class="next_text">Validate</span>
+                <i class="fa fa-angle-double-right fa-fw"/>
+			</div>
+		</xpath>
+        <xpath expr="//div[hasclass('next')]" position="before">
+				<t t-if="env.pos.config.allow_installment_payment and currentOrder.is_installment_paid()">
+                    <div class="button pay-installment"
+                         t-att-class="{ highlight: currentOrder.is_paid() }"
+                         t-on-click="clickInstallmentPay">
+						<span class="next_text">installment Payment</span>
+                        <i class="fa fa-angle-double-right fa-fw"/>
+					</div>
+				</t>
+			</xpath>
+        <xpath expr="//div[hasclass('back')]" position="replace">
+				<div class="button back"
+                     t-on-click="click_back">
+					<i class="fa fa-angle-double-left fa-fw"/>
+                    <span class="back_text">Back</span>
+				</div>
+			</xpath>
+		</t>
+</templates>
+
+

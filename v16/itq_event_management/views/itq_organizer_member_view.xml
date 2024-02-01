@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="itq_organizer_member_tree" model="ir.ui.view">
+            <field name="name">itq.organizer.member.tree</field>
+            <field name="model">itq.organizer.member</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="phone"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="itq_organizer_member_form" model="ir.ui.view">
+            <field name="name">itq.organizer.member.form</field>
+            <field name="model">itq.organizer.member</field>
+            <field name="arch" type="xml">
+                <form duplicate="0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" class="oe_inline"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="phone"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_itq_organizer_member" model="ir.actions.act_window">
+            <field name="name">Organizer Member</field>
+            <field name="res_model">itq.organizer.member</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new member
+                </p>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

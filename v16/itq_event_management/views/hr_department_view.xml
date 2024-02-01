@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_department_view_form_inherit" model="ir.ui.view">
+        <field name="name">hr.department.view.form.inherit</field>
+        <field name="model">hr.department</field>
+        <field name="inherit_id" ref="hr.view_department_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//group" position="inside">
+                    <field name="resource_calendar_id" required="True"
+                           options="{'no_open': True, 'no_create':True}}"/>
+                    <field name="is_visitable"/>
+                    <field name="is_research_department" attrs="{'invisible': [('is_visitable', '=', False)]}"/>
+                </xpath>
+            </data>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="procedure_resource_view_tree" model="ir.ui.view">
+            <field name="name">procedure.resource.view.tree</field>
+            <field name="model">procedure.resource</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="sequence"/>
+                    <field name="aim"/>
+                    <field name="step_id"
+                           domain="[('id','in',parent.procedure_step_ids)]"
+                           attrs="{'readonly': [('aim', '!=', 'step')], 'required': [('aim', '=', 'step')]}"/>
+                    <field name="resource_type"/>
+                    <field name="employee_categ"
+                           attrs="{'required': [('resource_type', '=', 'hr')], 'readonly': [('resource_type', '!=', 'hr')]}"/>
+                    <field name="name"/>
+                    <field name="asset_id"
+                           attrs="{'required': [('resource_type', '=', 'assets')], 'readonly': [('resource_type', '!=', 'assets')]}"/>
+
+                    <field name="job_id"
+                           attrs="{'required': [('resource_type', '=', 'hr')], 'readonly': [('resource_type', '!=', 'hr')]}"/>
+                    <field name="job_code"/>
+                    <field name="resource_description"/>
+                    <field name="jobs_access_ids" widget="many2many_tags"
+                           attrs="{'required': [('resource_type', '=', 'hr')], 'readonly': [('resource_type', '!=', 'hr')]}"/>
+                    <field name="procedure_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="procedure_resource_view_form" model="ir.ui.view">
+            <field name="name">procedure.resource.view.form</field>
+            <field name="model">procedure.resource</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="sequence"/>
+                            <field name="aim"/>
+                            <field name="step_id"
+                                   attrs="{'readonly': [('aim', '!=', 'step')], 'required': [('aim', '=', 'step')]}"/>
+                            <field name="resource_type"/>
+                            <field name="employee_categ"
+                                   attrs="{'required': [('resource_type', '=', 'hr')], 'invisible': [('resource_type', '!=', 'hr')]}"/>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="asset_id"
+                                   attrs="{'required': [('resource_type', '=', 'assets')], 'invisible': [('resource_type', '!=', 'assets')]}"/>
+
+                            <field name="job_id"
+                                   attrs="{'required': [('resource_type', '=', 'hr')], 'invisible': [('resource_type', '!=', 'hr')]}"/>
+                            <field name="job_code"/>
+                            <field name="resource_description"/>
+                            <field name="jobs_access_ids" widget="many2many_tags"
+                                   attrs="{'required': [('resource_type', '=', 'hr')], 'invisible': [('resource_type', '!=', 'hr')]}"/>
+                            <field name="procedure_id" invisible="1"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

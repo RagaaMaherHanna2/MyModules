@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="itq_reject_event_request_form" model="ir.ui.view">
+        <field name="name">Reject Event Request</field>
+        <field name="model">itq.reject.event.request</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="event_request_id" invisible="1"/>
+                    <field name="rejection_reason"/>
+                </group>
+                <footer>
+                    <button name="action_of_reject_event_request_wizard" type="object" string="Confirm"
+                            class="btn-primary"/>
+                    <button string="Cancel" type="object" name="cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="itq_reject_event_request_action" model="ir.actions.act_window">
+        <field name="name">Reject Event Request</field>
+        <field name="res_model">itq.reject.event.request</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+
+</odoo>

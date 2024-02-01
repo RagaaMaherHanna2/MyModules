@@ -1,0 +1,689 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* itq_sample_gift_request
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-19 12:03+0000\n"
+"PO-Revision-Date: 2023-07-19 12:03+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__message_needaction
+msgid "Action Needed"
+msgstr "إجراء لازم"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "الأنشطة الاستثنائية "
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_res_branch__apply_sample_limitation
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__is_products_limited
+msgid "Apply Sample/Gift limitation"
+msgstr "تطبيق حد العينة أو الهدية الشهرية"
+
+#. module: itq_sample_gift_request
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_request_form
+msgid "Approve"
+msgstr "موافقه"
+
+#. module: itq_sample_gift_request
+#: code:addons/itq_sample_gift_request/models/sample_gift_line.py:0
+#, python-format
+msgid "Assign Product Lots/serials"
+msgstr "إضافة أرقام تسلسليه/لوتات للمنتج"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_sample_limit__branch_id
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_line__branch_id
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__branch_id
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_line_search
+msgid "Branch"
+msgstr "الفرع"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_line__branch_manager_id
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__branch_manager_id
+msgid "Branch Manager"
+msgstr "مدير الفرع"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_product__branches_ids
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_template__branches_ids
+msgid "Branches"
+msgstr "الفروع"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__can_confirm
+msgid "Can Confirm"
+msgstr "يمكن التأكيد"
+
+#. module: itq_sample_gift_request
+#: code:addons/itq_sample_gift_request/models/sample_gift_request.py:0
+#, python-format
+msgid "Can archive record in draft or rejected state only."
+msgstr "لا يمكن الأرشفه سوى فى الحاله مسوده"
+
+#. module: itq_sample_gift_request
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_line_form
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.view_rejection_wizard_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_sample_limit__product_uom_category_id
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_line__product_uom_category_id
+msgid "Category"
+msgstr "الفئه"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_serial_line__company_id
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_line__company_id
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__company_id
+msgid "Company"
+msgstr "الشركه"
+
+#. module: itq_sample_gift_request
+#: model:ir.model,name:itq_sample_gift_request.model_res_branch
+msgid "Company Branches"
+msgstr "فروع الشركة"
+
+#. module: itq_sample_gift_request
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_line_form
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_request_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields.selection,name:itq_sample_gift_request.selection__sample_gift_request__state__confirmed
+msgid "Confirmed"
+msgstr "مؤكده"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,help:itq_sample_gift_request.field_product_sample_limit__product_uom_category_id
+#: model:ir.model.fields,help:itq_sample_gift_request.field_sample_gift_line__product_uom_category_id
+msgid ""
+"Conversion between Units of Measure can only occur if they belong to the same category. The conversion will be made "
+"based on the ratios."
+msgstr "التحويل بين وحدات القياس يمك ان يحدث فقط في حالة انهم ينتموا إلى نفس التصنيف. التحويل سوف يتم بناء على نسبتهم."
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__create_date
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_request_form
+msgid "Create Date"
+msgstr "تاريخ الإنشاء"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_sample_limit__create_uid
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_serial_line__create_uid
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_line__create_uid
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__create_uid
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_rejection_wizard__create_uid
+msgid "Created by"
+msgstr "تم الإنشاء بواسطة"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_sample_limit__create_date
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_serial_line__create_date
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_line__create_date
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_rejection_wizard__create_date
+msgid "Created on"
+msgstr "تاريخ الإنشاء"
+
+#. module: itq_sample_gift_request
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_line_search
+msgid "Date"
+msgstr "تاريخ"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__description
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_request_form
+msgid "Description"
+msgstr "وصف"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_sample_limit__display_name
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_serial_line__display_name
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_template__display_name
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_res_branch__display_name
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_line__display_name
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__display_name
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_rejection_wizard__display_name
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_stock_scrap__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields.selection,name:itq_sample_gift_request.selection__sample_gift_request__state__done
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_request_form
+msgid "Done"
+msgstr "مكتمل"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields.selection,name:itq_sample_gift_request.selection__sample_gift_request__state__draft
+msgid "Draft"
+msgstr "مسوده"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__effective_date
+msgid "Effective Date"
+msgstr "التاريخ الفعلى"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,help:itq_sample_gift_request.field_sample_gift_request__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة خط جميل، مثال: fa-tasks"
+
+#. module: itq_sample_gift_request
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_line_graph
+msgid "Graph Analysis"
+msgstr "تحليل المخطط"
+
+#. module: itq_sample_gift_request
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_line_search
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_request_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,help:itq_sample_gift_request.field_sample_gift_request__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة الإشارة إلى نشاط استثنائي"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,help:itq_sample_gift_request.field_sample_gift_request__message_needaction
+#: model:ir.model.fields,help:itq_sample_gift_request.field_sample_gift_request__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "بعض الرسائل بها خطأ في التسليم وذلك عند التحديد."
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,help:itq_sample_gift_request.field_sample_gift_request__message_has_error
+#: model:ir.model.fields,help:itq_sample_gift_request.field_sample_gift_request__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "بعض الرسائل بها خطأ في التسليم وذلك عند التحديد."
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__is_branch_manager
+msgid "Is Branch Manager"
+msgstr "هل مدير فرع"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__message_is_follower
+msgid "Is Follower"
+msgstr "متابع؟"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_sample_limit____last_update
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_serial_line____last_update
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_template____last_update
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_res_branch____last_update
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_line____last_update
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request____last_update
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_rejection_wizard____last_update
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_stock_scrap____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_sample_limit__write_uid
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_serial_line__write_uid
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_line__write_uid
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__write_uid
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_rejection_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_sample_limit__write_date
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_serial_line__write_date
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_line__write_date
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__write_date
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_rejection_wizard__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث بتاريخ"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_sample_limit__limit_qty
+msgid "Limit Quantity"
+msgstr "الكميه"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_serial_line__lot_id
+msgid "Lots/Serial"
+msgstr "لوت/تسلسل"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_line__lot_ids
+msgid "Lots/Serials"
+msgstr "لوت/تسلسل"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الأساسي"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields.selection,name:itq_sample_gift_request.selection__sample_gift_request__state__manager_approved
+msgid "Manager Approved"
+msgstr "موافقة المدير"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ تسليم الرسالة"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_product__variant_sample_limit_ids
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_template__sample_limit_ids
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.res_product_product_view_form
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.res_product_template_view_form
+msgid "Monthly Sample/Gift Limit"
+msgstr "حد العينة أو الهدية الشهرية"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_line__name
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_rejection_wizard__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,help:itq_sample_gift_request.field_sample_gift_request__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,help:itq_sample_gift_request.field_sample_gift_request__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,help:itq_sample_gift_request.field_sample_gift_request__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: itq_sample_gift_request
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_line_pivot
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_request_pivot
+msgid "Pivot Analysis"
+msgstr "تحليل محوري"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_sample_limit__product_id
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_serial_line__product_id
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_line__product_id
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_line_search
+msgid "Product"
+msgstr "المنتج"
+
+#. module: itq_sample_gift_request
+#: code:addons/itq_sample_gift_request/models/sample_gift_line.py:0
+#, python-format
+msgid "Product QU Must be > 0.0"
+msgstr "لابد ان تكون الكميه المطلوبه للمنتج أكثر من 0.0"
+
+#. module: itq_sample_gift_request
+#: code:addons/itq_sample_gift_request/models/product_serial_line.py:0
+#, python-format
+msgid "Product QU Must be > 0.0!"
+msgstr "لابد ان تكون الكميه المطلوبه للمنتج أكثر من 0.0"
+
+#. module: itq_sample_gift_request
+#: model:ir.model,name:itq_sample_gift_request.model_product_serial_line
+msgid "Product Serial Line"
+msgstr "رقم تسلسل المنتج"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_line__product_serial_lines
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_line_form
+msgid "Product Serials"
+msgstr "الارقام التسلسليه للمنتج"
+
+#. module: itq_sample_gift_request
+#: model:ir.model,name:itq_sample_gift_request.model_product_template
+msgid "Product Template"
+msgstr "قالب المنتج"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_sample_limit__product_uom
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_serial_line__product_uom
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_line__product_uom
+msgid "Product UOM"
+msgstr "وحدة القياس"
+
+#. module: itq_sample_gift_request
+#: code:addons/itq_sample_gift_request/models/product_sample_limit.py:0
+#, python-format
+msgid "Product limit Quantity Must be > 0.0"
+msgstr "لابد ان تكون حد الكميه للفرع > 0.0"
+
+#. module: itq_sample_gift_request
+#: code:addons/itq_sample_gift_request/models/product_sample_limit.py:0
+#, python-format
+msgid "Product QU > Product Available QTY in this location"
+msgstr "الكميه المطلوبه تتعدى الكميه المتاحه للمنتج فى هذا الموقع"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_serial_line__product_qty
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_line__product_qty
+msgid "Quantity"
+msgstr "الكميه"
+
+#. module: itq_sample_gift_request
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_request_form
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.view_rejection_wizard_form
+msgid "Reject"
+msgstr "رفض"
+
+#. module: itq_sample_gift_request
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.view_rejection_wizard_form
+msgid "Reject Reason"
+msgstr "سبب الرفض"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields.selection,name:itq_sample_gift_request.selection__sample_gift_request__state__rejected
+msgid "Rejected"
+msgstr "مرفوضه"
+
+#. module: itq_sample_gift_request
+#: code:addons/itq_sample_gift_request/models/sample_gift_request.py:0
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__rejection_reason
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_rejection_wizard__rejection_reason
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_request_form
+#, python-format
+msgid "Rejection Reason"
+msgstr "سبب الرفض"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__name
+msgid "Request ID"
+msgstr "الرقم التعريفي للطلب"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__request_scraps_ids
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_request_form
+msgid "Request Scraps"
+msgstr "الهالك"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__scraps_count
+msgid "Request Scraps Count"
+msgstr "طلب حساب الخردة"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__sample_line_ids
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_request_form
+msgid "Requested Products"
+msgstr "المنتجات المطلوبه"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_line__user_id
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__user_id
+msgid "Requester"
+msgstr "مقدم الطلب"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسئول"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ استلام الرسائل القصيرة"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_line__sample_id
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_stock_scrap__sample_id
+msgid "Sample"
+msgstr "عينة"
+
+#. module: itq_sample_gift_request
+#: model:ir.model,name:itq_sample_gift_request.model_sample_gift_line
+msgid "Sample Gift Line"
+msgstr "بند نموذج الهدية"
+
+#. module: itq_sample_gift_request
+#: model:ir.module.category,name:itq_sample_gift_request.module_sample_gift_category
+msgid "Sample Gifts"
+msgstr "عينات الهدايا"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_product_serial_line__sample_line_id
+msgid "Sample Line"
+msgstr "بند النموذج"
+
+#. module: itq_sample_gift_request
+#: model:ir.model,name:itq_sample_gift_request.model_sample_rejection_wizard
+msgid "Sample Rejection Wizard"
+msgstr "أسباب الرفض"
+
+#. module: itq_sample_gift_request
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_line_form
+msgid "Sample/Gift Form"
+msgstr "استمارة النموذج أو الهدية"
+
+#. module: itq_sample_gift_request
+#: model:ir.actions.act_window,name:itq_sample_gift_request.sample_gift_request_action
+#: model:ir.ui.menu,name:itq_sample_gift_request.sample_gift_request_menu
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_request_form
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_request_tree
+msgid "Sample/Gift Request"
+msgstr "طلب عينة /هدية"
+
+#. module: itq_sample_gift_request
+#: model:ir.actions.act_window,name:itq_sample_gift_request.sample_gift_line_action
+#: model:ir.ui.menu,name:itq_sample_gift_request.sample_gift_line_menu
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_line_search
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_line_tree
+msgid "Sample/Gift Request Analysis"
+msgstr "تقرير طلبات عينة /هدية"
+
+#. module: itq_sample_gift_request
+#: model:res.groups,name:itq_sample_gift_request.group_sample_gift_requester
+msgid "Sample/Gift Requester"
+msgstr "مقدم طلب عينة أو هدية"
+
+#. module: itq_sample_gift_request
+#: model:ir.model,name:itq_sample_gift_request.model_stock_scrap
+msgid "Scrap"
+msgstr "التوالف"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__scrap_location_id
+msgid "Scrap Location"
+msgstr "موقع الخردة"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__selected_products_ids
+msgid "Selected Products"
+msgstr "المنتجات المختارة"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__state
+msgid "State"
+msgstr "الحاله"
+
+#. module: itq_sample_gift_request
+#: model_terms:ir.ui.view,arch_db:itq_sample_gift_request.sample_gift_request_search
+msgid "Status"
+msgstr "الحاله"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,help:itq_sample_gift_request.field_sample_gift_request__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تم تمرير تاريخ الاستحقاق بالفعل\n"
+"اليوم: تاريخ النشاط اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: itq_sample_gift_request
+#: code:addons/itq_sample_gift_request/models/sample_gift_line.py:0
+#, python-format
+msgid "Total lines Quantities must = requested quantity"
+msgstr "لابد أن يكون مجموع الكميات = الكميه المطلوبه للمنتج"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,help:itq_sample_gift_request.field_sample_gift_request__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع استثناء النشاط في السجل"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل غير المقروءة"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عداد الرسائل غير المقروءة"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__warehouse_location_id
+msgid "Warehouse Location"
+msgstr "موقع المخزن"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,field_description:itq_sample_gift_request.field_sample_gift_request__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: itq_sample_gift_request
+#: model:ir.model.fields,help:itq_sample_gift_request.field_sample_gift_request__website_message_ids
+msgid "Website communication history"
+msgstr "تاريخ الاتصال بالموقع"
+
+#. module: itq_sample_gift_request
+#: code:addons/itq_sample_gift_request/models/sample_gift_request.py:0
+#, python-format
+msgid "You Cannot Delete record not in draft state."
+msgstr "!لا يمكن الحذف إلا فى حالة مسوده"
+
+#. module: itq_sample_gift_request
+#: code:addons/itq_sample_gift_request/models/sample_gift_request.py:0
+#, python-format
+msgid "You Cannot archive Done record with active Branch."
+msgstr "لا يمكن الأرشفه لطلب مؤكد على فرع نشط!"
+
+#. module: itq_sample_gift_request
+#: code:addons/itq_sample_gift_request/models/sample_gift_request.py:0
+#, python-format
+msgid "You Cannot request for product %s because the branch exceeded it's limit"
+msgstr "لا يمكن الطلب لهذا المنتج %s لإنه تخطى حد الكميه المطلوبة للفرع."
+
+#. module: itq_sample_gift_request
+#: model:ir.model,name:itq_sample_gift_request.model_product_sample_limit
+msgid "product.sample.limit"
+msgstr "حد نموذج المنتج"
+
+#. module: itq_sample_gift_request
+#: code:addons/itq_sample_gift_request/models/product_serial_line.py:0
+#, python-format
+msgid "quantity must be 1 because Product is tracking by unique serial!"
+msgstr "لابد ان تكون الكميه 1 لان المنتج تحت سياسة التسلسل الفريد! "
+
+#. module: itq_sample_gift_request
+#: model:ir.model,name:itq_sample_gift_request.model_sample_gift_request
+msgid "sample.gift.request"
+msgstr "طلب هدية عينية"
+
+#. module: itq_sample_gift_request
+#: code:addons/itq_sample_gift_request/models/product_serial_line.py:0
+#, python-format
+msgid "this serial is used and Product serial Must be unique!"
+msgstr "هئا الرقم التسلسلى تم إستخدامه من فضلك قم باختيار/ إنشاء آخر."
+
+#. module: itq_sample_gift_request
+#: code:addons/itq_sample_gift_request/models/sample_gift_request.py:0
+#, python-format
+msgid "you have to add lot serials for all products!"
+msgstr "لا بد من إضافة أرقام تسلسليه أولا!"

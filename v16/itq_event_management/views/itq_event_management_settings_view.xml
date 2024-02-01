@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="itq_event_management_settings_form" model="ir.ui.view">
+            <field name="name">itq.event.management.settings.form</field>
+            <field name="model">itq.event.management.settings</field>
+            <field name="arch" type="xml">
+                <form create="false" delete="false" duplicate="0">
+                    <sheet>
+                        <group>
+                            <field name="event_instructions" widget="html"/>
+                        </group>
+                    </sheet>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_itq_event_management_settings" model="ir.actions.act_window">
+            <field name="name">Event Management Settings</field>
+            <field name="res_model">itq.event.management.settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">form</field>
+            <field name="res_id" eval="ref('itq_event_management.itq_event_management_settings_data')"/>
+        </record>
+
+    </data>
+</odoo>

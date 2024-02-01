@@ -1,0 +1,158 @@
+<odoo>
+    <record id="sample_gift_request_form" model="ir.ui.view">
+        <field name="name">sample.gift.request.form</field>
+        <field name="model">sample.gift.request</field>
+        <field name="arch" type="xml">
+            <form string="Sample/Gift Request">
+                <header>
+                    <button name="action_confirm_request" type="object"
+                            string="Confirm"
+                            attrs="{'invisible':[('can_confirm', '=', False)]}"
+                            class="oe_highlight"/>
+                    <button name="action_approve_request" type="object"
+                            string="Approve"
+                            attrs="{'invisible':['|', ('state', '!=','confirmed'),('is_branch_manager', '=',False)]}"
+                            class="oe_highlight"/>
+                    <button name="action_reject_request" type="object"
+                            string="Reject"
+                            attrs="{'invisible':['|', ('state', 'not in',['manager_approved', 'confirmed']),('is_branch_manager', '=',False)]}"
+                            class="oe_highlight"/>
+                    <button name="action_done_request" type="object"
+                            string="Done"
+                            attrs="{'invisible':['|', ('state', '!=','manager_approved'),('is_branch_manager', '=',False)]}"
+                            class="oe_highlight"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,confirmed,manager_approved,done,rejected"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_scraps" class="oe_stat_button" type="object"
+                                icon="fa-list" attrs="{'invisible':[('scraps_count', '=', 0)]}">
+                            <field string="Request Scraps" name="scraps_count" widget="statinfo"/>
+                        </button>
+                    </div>
+
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="selected_products_ids" invisible="1"/>
+                            <field name="can_confirm" invisible="1"/>
+                            <field name="is_branch_manager" invisible="1"/>
+
+                            <field name="create_date" readonly="1" string="Create Date"/>
+                            <field name="user_id"/>
+                            <field name="effective_date" readonly="1" attrs="{'invisible': [('state', '!=', 'done')]}"/>
+                            <field name="warehouse_location_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="scrap_location_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        </group>
+                        <group>
+                            <field name="company_id" readonly="1"/>
+                            <field name="branch_manager_id" invisible="1"/>
+                            <field name="branch_id" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Requested Products" name="requested_products">
+                            <field name="sample_line_ids" widget="One2many"
+                                   attrs="{'readonly':[('state', '!=', 'draft')]}">
+                                <tree editable="bottom">
+                                    <field name="product_id"
+                                           domain="[('id', 'in', parent.selected_products_ids)]"/>
+                                    <field name="product_qty"/>
+                                    <field name="product_uom_category_id" invisible="1"/>
+                                    <field name="product_uom"/>
+                                    <field name="lot_ids" widget="many2many_tags"/>
+                                    <button name="action_assign_serials"
+                                            type="object" icon="fa-list" width="0.1"
+                                            options="{&quot;warn&quot;: true}"
+                                            attrs="{'invisible':[('parent.state', '!=', 'draft')]}"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    <separator/>
+                    <group>
+                        <notebook>
+                            <page string="Description" name="description">
+                                <field name="description" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            </page>
+                            <page string="Rejection Reason" name="rejection_reason"
+                                  attrs="{'invisible':[('state', '!=','rejected')]}">
+                                <field name="rejection_reason" readonly="1"/>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="sample_gift_request_tree" model="ir.ui.view">
+        <field name="name">sample.gift.request.tree</field>
+        <field name="model">sample.gift.request</field>
+        <field name="arch" type="xml">
+            <tree string="Sample/Gift Request">
+                <field name="name"/>
+                <field name="branch_id"/>
+                <field name="user_id"/>
+                <field name="create_date"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sample_gift_request_pivot" model="ir.ui.view">
+        <field name="name">sample.gift.request.pivot</field>
+        <field name="model">sample.gift.request</field>
+        <field name="arch" type="xml">
+            <pivot string="Pivot Analysis" disable_linking="True">
+                <field name="branch_id" type="row"/>
+                <field name="create_date" type="col"/>
+                <!--                <field name="scraps_count" type="measure"/>-->
+            </pivot>
+        </field>
+    </record>
+    <record id="sample_gift_request_search" model="ir.ui.view">
+        <field name="name">sample.gift.request.search</field>
+        <field name="model">sample.gift.request</field>
+        <field name="arch" type="xml">
+            <search string="">
+                <field name="state"/>
+                <group expand="0" string="Group By">
+                    <filter string="Status" name="status" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="sample_gift_request_action" model="ir.actions.act_window">
+        <field name="name">Sample/Gift Request</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sample.gift.request</field>
+        <field name="view_mode">tree,form,pivot</field>
+        <field name="search_view_id" ref="sample_gift_request_search"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+            </p>
+        </field>
+    </record>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="sample_gift_request_menu"
+              parent="stock.menu_stock_warehouse_mgmt"
+              action="sample_gift_request_action"
+              groups="itq_sample_gift_request.group_sample_gift_requester"
+              sequence="5"/>
+</odoo>

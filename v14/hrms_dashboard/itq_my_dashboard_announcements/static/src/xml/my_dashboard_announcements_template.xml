@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-inherit="itq_my_hr_dashboard.MyDashboardTemp" name="MyDashboardBenefitsTemp" t-inherit-mode="extension">
+         <xpath expr="//div[@name='itq-wrapper-cards']" position="inside">
+            <div class="main-section col-md-4 col-12" name="employee_announcements">
+                <div class="col-md-2 col-sm-2 dummy"/>
+                <div class="d-employee_announcements">
+                    <div class="col-md-2 col-sm-2 dummy"/>
+                    <div class="col-xs-12  hr_notification">
+                        <div class="" style="color: yellow;">
+                            <div class="hr_notification_head">
+                                Important Announcements
+                            </div>
+                    </div>
+                    <t t-if="widget.login_employee.employee_announcements">
+                        <div class="col-xs-12 text-align">
+                            <t t-foreach="widget.login_employee.employee_announcements" t-as="announcement">
+                                <div class="col-sm-12 col-lg-12" style="padding:0;">
+                                    <div class="text-color">
+                                        <div class="">
+                                            <div class="media">
+                                                <div class="media-body">
+                                                    <h2 class="text-color display-6"
+                                                        style="font-size: 15px;"><t t-esc="announcement['name']"/> </h2>
+                                                    <p>From : <t t-esc="announcement['date_start']"/> - To: <t t-esc="announcement['date_end']"/></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </t>
+                </div>
+             </div>
+            </div>
+         </xpath>
+    </t>
+</templates>

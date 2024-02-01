@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="itq_entrance_configuration_form_view" model="ir.ui.view">
+            <field name="name">itq.entrance.configuration.form</field>
+            <field name="model">itq.entrance.configuration</field>
+            <field name="arch" type="xml">
+                <form duplicate="0">
+                    <header>
+                        <button name="set_draft" string="Set To Draft" type="object" class="oe_highlight"
+                                states="archived"/>
+                        <button name="activate_button" string="Activate" type="object" class="oe_highlight"
+                                states="draft"/>
+                        <button name="archive_button" string="Archive" type="object" class="oe_highlight"
+                                states="active"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="branch_id"/>
+                            </group>
+                            <group>
+                                <field name="map_location" widget="url"/>
+                            </group>
+
+                        </group>
+                    </sheet>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="itq_entrance_configuration_tree_view" model="ir.ui.view">
+            <field name="name">itq.entrance.configuration.tree</field>
+            <field name="model">itq.entrance.configuration</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="itq_entrance_configuration_action" model="ir.actions.act_window">
+            <field name="name">Entrance Configuration</field>
+            <field name="res_model">itq.entrance.configuration</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no Entrance Configuration click here to add new .
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account_account_view_form" model="ir.ui.view">
+            <field name="name">account.account.view.form</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='security_group']" position="after">
+                    <group string="Deferred Revenue Options"
+                           attrs="{'invisible':[('is_current_liabilities', '=', False)]}">
+                    <field name="is_current_liabilities" invisible="1"/>
+                        <field name="automate_deferred_revenue" widget="radio"/>
+                        <field name="deferred_revenue_type_id"
+                               attrs="{'invisible':[('automate_deferred_revenue','=', 'no')],
+                                       'required':[('automate_deferred_revenue','=', 'create_and_validate')]}"/>
+                    </group>
+                    <group string="Deferred Expense Options"
+                           attrs="{'invisible':[('is_current_assets', '=', False)]}">
+                    <field name="is_current_assets" invisible="1"/>
+                        <field name="automate_deferred_expense" widget="radio"/>
+                        <field name="deferred_expense_type_id"
+                               attrs="{'invisible':[('automate_deferred_expense','=', 'no')],
+                                       'required':[('automate_deferred_expense','=', 'create_and_validate')]}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

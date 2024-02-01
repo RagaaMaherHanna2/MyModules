@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="itq_event_organizer_tree" model="ir.ui.view">
+            <field name="name">itq.event.organizer.tree</field>
+            <field name="model">itq.event.organizer</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="manager"/>
+                    <field name="email"/>
+                    <field name="phone"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="itq_event_organizer_form" model="ir.ui.view">
+            <field name="name">itq.event.organizer.form</field>
+            <field name="model">itq.event.organizer</field>
+            <field name="arch" type="xml">
+                <form duplicate="0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" class="oe_inline"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="manager"/>
+                            </group>
+                            <group>
+                                <field name="email"/>
+                                <field name="phone"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Members" name="capacity">
+                                <field name="member_ids">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="phone"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="name"/>
+                                        </group>
+                                        <group>
+                                            <field name="phone"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_itq_event_organizer" model="ir.actions.act_window">
+            <field name="name">Event Organizer</field>
+            <field name="res_model">itq.event.organizer</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new event organizer
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

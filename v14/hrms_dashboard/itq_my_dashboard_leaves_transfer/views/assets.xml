@@ -1,0 +1,11 @@
+<odoo>
+     <template id="assets_backend" name="Dahsboard Assets" inherit_id="web.assets_backend">
+        <xpath expr=".">
+              <script
+                  type="application/javascript"
+                  src="/itq_my_dashboard_leaves_transfer/static/src/js/my_dashboard_leaves_transfer.js"
+                  />
+
+        </xpath>
+    </template>
+</odoo>

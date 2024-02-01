@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="itq_event_request_review_form_view" model="ir.ui.view">
+            <field name="name">itq.event.request.form</field>
+            <field name="model">itq.event.request</field>
+            <field name="inherit_id" ref="itq_event_management.itq_event_request_form_view"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">true</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+                <xpath expr="//button[@name='to_under_review']" position="replace">
+                    <button name="to_under_approve" type="object" string="Approve" class="btn-primary"
+                            states='under_review'
+                            groups="itq_event_management.itq_group_event_manager,itq_event_management.itq_group_event_approver"/>
+                    <button name="%(itq_return_event_request_action)d" type="action"
+                            string="Return" class="btn-primary"
+                            states='under_review'
+                            groups="itq_event_management.itq_group_event_manager,itq_event_management.itq_group_event_approver"/>
+                    <button name="%(itq_reject_event_request_action)d" type="action" string="Reject" class="btn-primary"
+                            states='under_review'
+                            groups="itq_event_management.itq_group_event_manager,itq_event_management.itq_group_event_approver"/>
+                </xpath>
+                <xpath expr="//group[@name='invitee_buttons']" position="attributes">
+                    <attribute name="attrs">{'readonly': ['|',('state', '!=', 'under_review'),('is_ended_event','=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//page[@name='invitee_ids']//field[@name='invitee_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': ['|',('state', '!=', 'under_review'),('is_ended_event','=', True)]}</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="itq_event_request_review_tree_view" model="ir.ui.view">
+            <field name="name">itq.event.request.tree</field>
+            <field name="model">itq.event.request</field>
+            <field name="inherit_id" ref="itq_event_management.itq_event_request_tree_view"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribut name="edit">false</attribut>
+                    <attribut name="delete">false</attribut>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="itq_event_request_review_action" model="ir.actions.act_window">
+            <field name="name">Event Request Review</field>
+            <field name="res_model">itq.event.request</field>
+            <field name="view_mode">calendar,tree,form</field>
+            <field name="groups_id" eval="[(4, ref('itq_event_management.itq_group_event_manager'))]"/>
+            <field name="domain">[('state', '=', 'under_review')]</field>
+            <field name="view_ids" eval="[
+                (5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('itq_event_management.itq_event_request_review_tree_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('itq_event_management.itq_event_request_review_form_view')})]"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no Under Review Event Requests click here to add new
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

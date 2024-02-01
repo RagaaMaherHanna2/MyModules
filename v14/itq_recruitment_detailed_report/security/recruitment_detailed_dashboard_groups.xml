@@ -1,0 +1,5 @@
+<odoo>
+        <record id="recruitment_detailed_dashboard_group" model="res.groups">
+            <field name="name">Recruitment Dashboard Group</field>
+        </record>
+</odoo>

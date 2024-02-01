@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_itq_collect_custody_request_manager,itq.collect.custody.request.manager,itq_cheque_petty_cash_management.model_itq_collect_custody_request,itq_shaheen_collect_custody_access_rights.group_collect_custody_manager,1,1,1,1

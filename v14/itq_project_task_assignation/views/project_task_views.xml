@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<odoo>
+    <record id="timesheet_view_tree_user" model="ir.ui.view">
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='employee_id']" position="after">
+                <field name="stackholder_employees_ids" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='employee_id']" position="attributes">
+                <attribute name="domain">[('id', 'in', stackholder_employees_ids)]</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_task_stackholder" model="ir.ui.view">
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Task Assignees">
+                    <field name="stackholder_employees_ids" invisible="1"/>
+                    <field name="stackholder_line_ids">
+                        <tree editable="bottom">
+                            <field name="employee_id"
+                                   options="{'no_create':1,'no_edit':1}"
+                                   domain="[('id', 'in', parent.stackholder_employees_ids)]"
+                                   attrs="{'readonly': [('parent.stage_type', '=', 'done')]}"/>
+                            <field name="job_id"/>
+                            <field name="country_id"/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

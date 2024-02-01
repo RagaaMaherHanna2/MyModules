@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- view -->
+    <record id="itq_attraction_location_tree" model="ir.ui.view">
+        <field name="name">itq.attraction.location.tree</field>
+        <field name="model">itq.attraction.location</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="minimum_guest_count"/>
+                <field name="maximum_guest_count"/>
+                <field name="branch_id"/>
+                <field name="seating_type_ids" widget="many2many_tags"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="itq_attraction_location_form" model="ir.ui.view">
+        <field name="name">itq.attraction.location.form</field>
+        <field name="model">itq.attraction.location</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+                <header>
+                    <button name="set_draft" string="Set To Draft" type="object" class="oe_highlight"
+                            states="archived"/>
+                    <button name="activate_button" string="Activate" type="object" class="oe_highlight" states="draft"/>
+                    <button name="archive_button" string="Archive" type="object" class="oe_highlight" states="active"/>
+                    <button name="show_events" string="Attraction Events" type="object" class="oe_highlight"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="minimum_guest_count"/>
+                            <field name="maximum_guest_count"/>
+                            <field name="branch_id" options="{'no_create':True}"/>
+                            <field name="seating_type_ids" widget="many2many_tags" options="{'no_create':True}"/>
+                        </group>
+                        <group>
+                            <field name="resource_calendar_id" required="True"
+                                   options="{'no_open': True, 'no_create':True}}"/>
+                            <field name="is_event"/>
+                            <field name="is_visit"/>
+                            <field name="is_photo_shoot"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" options="{'open_attachments': True}"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- action -->
+    <record id="itq_attraction_location_action" model="ir.actions.act_window">
+        <field name="name">Attractions</field>
+        <field name="res_model">itq.attraction.location</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+</odoo>

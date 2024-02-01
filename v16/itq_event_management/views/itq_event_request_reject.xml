@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="itq_event_request_reject_form_view" model="ir.ui.view">
+            <field name="name">itq.event.request.form</field>
+            <field name="model">itq.event.request</field>
+            <field name="inherit_id" ref="itq_event_management.itq_event_request_form_view"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="itq_event_request_reject_tree_view" model="ir.ui.view">
+            <field name="name">itq.event.request.tree</field>
+            <field name="model">itq.event.request</field>
+            <field name="inherit_id" ref="itq_event_management.itq_event_request_tree_view"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribut name="edit">false</attribut>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="itq_event_request_reject_action" model="ir.actions.act_window">
+            <field name="name">Rejected Event Request</field>
+            <field name="res_model">itq.event.request</field>
+            <field name="view_mode">calendar,tree,form</field>
+            <field name="domain">[('state', '=', 'rejected')]</field>
+            <field name="view_ids" eval="[
+                (5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('itq_event_management.itq_event_request_reject_tree_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('itq_event_management.itq_event_request_reject_form_view')})]"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no Rejected Event Requests click here to add new
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

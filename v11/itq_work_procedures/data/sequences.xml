@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="job_code_seq" model="ir.sequence">
+            <field name="name">Job Code Seq</field>
+            <field name="code">job.code.seq</field>
+            <field name="active">TRUE</field>
+            <field name="padding">3</field>
+            <field name="implementation">no_gap</field>
+            <field name="number_increment">1</field>
+        </record>
+        <record id="procedure_name_seq" model="ir.sequence">
+            <field name="name">Procedure Name Seq</field>
+            <field name="code">procedure.name.seq</field>
+            <field name="active">TRUE</field>
+            <field name="padding">6</field>
+            <field name="implementation">no_gap</field>
+            <field name="number_increment">1</field>
+        </record>
+        <record id="work_procedure_seq" model="ir.sequence">
+            <field name="name">Work Procedure Seq</field>
+            <field name="code">work.procedure.seq</field>
+            <field name="active">TRUE</field>
+            <field name="padding">6</field>
+            <field name="implementation">no_gap</field>
+            <field name="number_increment">1</field>
+        </record>
+    </data>
+</odoo>

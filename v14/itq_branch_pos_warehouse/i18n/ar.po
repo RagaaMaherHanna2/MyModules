@@ -1,0 +1,145 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* itq_branch_pos_warehouse
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-25 13:32+0000\n"
+"PO-Revision-Date: 2023-09-25 16:51+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.3.2\n"
+
+#. module: itq_branch_pos_warehouse
+#: model:ir.model.fields,field_description:itq_branch_pos_warehouse.field_pos_config__branch_is_set
+msgid "Branch Is Set"
+msgstr "ضبط الفرع؟"
+
+#. module: itq_branch_pos_warehouse
+#: model:ir.model,name:itq_branch_pos_warehouse.model_res_branch
+msgid "Company Branches"
+msgstr "فروع الشركة"
+
+#. module: itq_branch_pos_warehouse
+#: model:ir.model,name:itq_branch_pos_warehouse.model_res_config_settings
+msgid "Config Settings"
+msgstr "الإعدادات"
+
+#. module: itq_branch_pos_warehouse
+#: model:ir.model.fields,field_description:itq_branch_pos_warehouse.field_pos_config__display_name
+#: model:ir.model.fields,field_description:itq_branch_pos_warehouse.field_res_branch__display_name
+#: model:ir.model.fields,field_description:itq_branch_pos_warehouse.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: itq_branch_pos_warehouse
+#: model:ir.model.fields,field_description:itq_branch_pos_warehouse.field_res_branch__has_pos
+msgid "Has POS"
+msgstr "له نقطة بيع؟"
+
+#. module: itq_branch_pos_warehouse
+#: model:ir.model.fields,field_description:itq_branch_pos_warehouse.field_res_branch__has_pos_checked
+msgid "Has POS Checked"
+msgstr "تم التحقق من نقاط البيع؟"
+
+#. module: itq_branch_pos_warehouse
+#: model:ir.model.fields,field_description:itq_branch_pos_warehouse.field_res_branch__has_warehouse
+msgid "Has Warehouse"
+msgstr "له مخزن؟"
+
+#. module: itq_branch_pos_warehouse
+#: model:ir.model.fields,field_description:itq_branch_pos_warehouse.field_pos_config__id
+#: model:ir.model.fields,field_description:itq_branch_pos_warehouse.field_res_branch__id
+#: model:ir.model.fields,field_description:itq_branch_pos_warehouse.field_res_config_settings__id
+msgid "ID"
+msgstr "الرقم التعريفي"
+
+#. module: itq_branch_pos_warehouse
+#: model:ir.model.fields,field_description:itq_branch_pos_warehouse.field_pos_config__image
+msgid "Image"
+msgstr "الصورة"
+
+#. module: itq_branch_pos_warehouse
+#: model:ir.model.fields,field_description:itq_branch_pos_warehouse.field_pos_config____last_update
+#: model:ir.model.fields,field_description:itq_branch_pos_warehouse.field_res_branch____last_update
+#: model:ir.model.fields,field_description:itq_branch_pos_warehouse.field_res_config_settings____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل بتاريخ"
+
+#. module: itq_branch_pos_warehouse
+#: model:ir.model.fields,field_description:itq_branch_pos_warehouse.field_res_branch__location_ids
+#: model_terms:ir.ui.view,arch_db:itq_branch_pos_warehouse.view_res_branch_form_inherit
+msgid "Locations"
+msgstr "المواقع"
+
+#. module: itq_branch_pos_warehouse
+#: model:ir.model.fields,field_description:itq_branch_pos_warehouse.field_res_branch__pos_count
+msgid "POS"
+msgstr "نقاط البيع"
+
+#. module: itq_branch_pos_warehouse
+#: model_terms:ir.ui.view,arch_db:itq_branch_pos_warehouse.res_config_settings_view_form
+msgid "POS Branch Limit"
+msgstr "حد فرع نقطة البيع"
+
+#. module: itq_branch_pos_warehouse
+#: model_terms:ir.ui.view,arch_db:itq_branch_pos_warehouse.res_config_settings_view_form
+msgid "POS Branch Limitation"
+msgstr "قيود فرع نقطة البيع"
+
+#. module: itq_branch_pos_warehouse
+#: model:ir.model.fields,field_description:itq_branch_pos_warehouse.field_res_config_settings__pos_limit
+msgid "POS Limitation"
+msgstr "قيود نقطة البيع"
+
+#. module: itq_branch_pos_warehouse
+#: model:ir.model.fields,field_description:itq_branch_pos_warehouse.field_res_branch__pos_ids
+msgid "POSs"
+msgstr "نقاط البيع"
+
+#. module: itq_branch_pos_warehouse
+#: model:ir.model,name:itq_branch_pos_warehouse.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr "إعدادات نقطة البيع"
+
+#. module: itq_branch_pos_warehouse
+#: model_terms:ir.ui.view,arch_db:itq_branch_pos_warehouse.view_res_branch_form_inherit
+msgid "Pos"
+msgstr "نقطة البيع"
+
+#. module: itq_branch_pos_warehouse
+#: model:ir.model.fields,field_description:itq_branch_pos_warehouse.field_res_branch__locations_count
+#: model:ir.model.fields,field_description:itq_branch_pos_warehouse.field_res_branch__warehouses_count
+msgid "Warehouse"
+msgstr "المخزن"
+
+#. module: itq_branch_pos_warehouse
+#: model:ir.model.fields,field_description:itq_branch_pos_warehouse.field_res_branch__warehouse_ids
+#: model_terms:ir.ui.view,arch_db:itq_branch_pos_warehouse.view_res_branch_form_inherit
+msgid "Warehouses"
+msgstr "المخازن"
+
+#. module: itq_branch_pos_warehouse
+#: code:addons/itq_branch_pos_warehouse/models/res_branch.py:0
+#, python-format
+msgid "You cannot %s Branch has related pos with active sessions!"
+msgstr "لا يمكن %s للفرع لأنه مرتبط بنقطة بيع بها جلسة نشطة"
+
+#. module: itq_branch_pos_warehouse
+#: code:addons/itq_branch_pos_warehouse/models/res_branch.py:0
+#, python-format
+msgid "You cannot %s Branch has related warehouse with active pickings!"
+msgstr "لا يمكن %s للفرع لأنه مرتبط بمخزن التحصيل به نشط"
+
+#. module: itq_branch_pos_warehouse
+#: code:addons/itq_branch_pos_warehouse/models/pos_config.py:0
+#, python-format
+msgid "You've exceeded your Account pos limit - Please contact your Administrator"
+msgstr "لقد تجاوزت الحد الحسابي المسموح به في نقطة البيع، الرجاء الاتصال بالمدير."

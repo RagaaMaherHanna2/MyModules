@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <record forcecreate="True" id="procedure_review_notification" model="ir.cron">
+            <field name="name">إشعار مراجعة الاجراءات</field>
+            <field name="model_id" ref="model_manage_notifications"/>
+            <field name="state">code</field>
+            <field name="code">model.review_procedures_notifications()</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+        </record>
+
+        <record id="notification_settings_view_tree" model="ir.ui.view">
+            <field name="name">view.notification.settings.tree</field>
+            <field name="model">notification.settings</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="notification_days"/>
+                    <field name="active_settings"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="notification_settings_view_form" model="ir.ui.view">
+            <field name="name">notification.settings.view.form</field>
+            <field name="model">notification.settings</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group string="إعدادات إشعارات المراجعه">
+                                <field name="notification_days"/>
+                                <field name="active_settings"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_notification_settings" model="ir.actions.act_window">
+            <field name="name">إعدادات إشعارات المراجعه</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">notification.settings</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add a new Notification Settings.
+                </p>
+            </field>
+        </record>
+        <menuitem id="notification_settings_menuitem" name="إعدادات إشعارات المراجعه"
+                  action="action_notification_settings"
+                  parent="itq_work_procedures.configurations_menuitem"
+                  sequence="7"/>
+    </data>
+</odoo>

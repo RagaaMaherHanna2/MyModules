@@ -1,0 +1,377 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="MyDashboardMain">
+      <div class="oh_dashboards">
+        <div class="container-fluid o_hr_dashboard">
+        </div>
+      </div>
+    </t>
+    <t t-name="MyDashboardTemp">
+      <div class="row main-section" name="employee_details">
+        <div class="side-employee-wrapper col-xl-2 col-lg-2 col-md-3 col-sm-12 col-12">
+          <div class="col-md-2 col-sm-2 dummy"/>
+            <!-- Employee Details  -->
+            <div class="itq-wrapper-employee-prof">
+            <div class="col-md-2 col-sm-2 employee-prof">
+              <div class="oh-card">
+                <div class="oh-media" style="    display: flex;
+    flex-direction: column;">
+                  <div class="employee-icon">
+                    <img class="align-self-center mr-3" alt=""
+                         t-att-src="'data:image/png;base64,'+widget.login_employee['image_1920']"/>
+                  </div>
+                    <div class="media-body employee-name">
+                                   <div class="d-flex justify-content-center align-items-center"
+                                        style=" margin-bottom: 8px;">
+                      <div style="font-weight: 500;
+font-size: 18px;
+line-height: 37px;
+
+color: #000000;
+">Welcome</div>
+
+                                       <div class="welcome-icon"></div>
+
+                    </div>
+                        <p style="display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 2px 8px;
+gap: 8px;
+width: fit-content;
+background: #EDEDED;
+border-radius: 5px; font-size: 11px;     margin-left: auto;
+    margin-right: auto;">
+<t t-esc="widget.login_employee['today']"/>
+                    </p>
+                        <h2 class="text-color display-6" style="font-weight: 500;"><t t-esc="widget.login_employee['name']" /> </h2>
+                        <t t-if="widget.login_employee['job_id']">
+                      <p class="text-light" style="    font-size: 12px;
+    line-height: initial;"><t t-esc="widget.login_employee['job_id'][1]" /></p>
+                    </t>
+                        <t t-if="!widget.login_employee['job_id']">
+                      <p class="text-light" style="color:#b6b6b6;     font-size: 12px;
+    line-height: initial;">Add job title</p>
+                    </t>
+                        <p class="text-light" style="    font-size: 12px;
+    margin-bottom: 0px;
+    line-height: initial;">
+                      <t t-if="widget.login_employee['grade']"><t t-esc="widget.login_employee['grade']" /></t>
+                            /
+                            <t t-if="widget.login_employee['grade']"><t t-esc="widget.login_employee['degree']" /></t>
+                    </p>
+                  </div>
+                    <div class="employee-details">
+                    <div style="    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+">
+                      <div class="employee-gender wrapper-square">
+                        <t t-if="widget.login_employee['gender'] == 'male'">
+                          <p><i class="fa fa-mars" /></p>
+                            <p class="text-light">Male</p>
+                        </t>
+                          <t t-if="widget.login_employee['gender'] == 'female'">
+                          <p><i class="fa fa-venus" /></p>
+                              <p class="text-light">Female</p>
+                        </t>
+                          <t t-if="widget.login_employee['gender'] == 'other'">
+                          Other
+                          <p class="text-light">Other</p>
+                        </t>
+                          <t t-if="!widget.login_employee['gender']">
+                          <p class="text-light"
+                          >Gender</p>
+                              <p class="text-light"
+                              >---</p>
+                        </t>
+                      </div>
+                        <div class="employee-age wrapper-square">
+                        <t t-if="widget.login_employee['age']">
+                           <p>Age</p>
+                            <p class="text-light"><t t-esc="widget.login_employee['age']" /></p>
+
+                        </t>
+                            <t t-if="!widget.login_employee['age']">
+                          <p class="text-light">DOB</p>
+                                <p>--/--/----</p>
+                        </t>
+                      </div>
+                        <div class="employee-department wrapper-square">
+                        <t t-if="widget.login_employee['department_id']">
+                           <p>Department</p>
+                            <p class="text-light"><t t-esc="widget.login_employee['department_id'][1]" /></p>
+
+                        </t>
+                            <t t-if="!widget.login_employee['department_id']">
+                          <p class="text-light">Department</p>
+                                <p>----</p>
+                        </t>
+                      </div>
+                        <div class="employee-allocation wrapper-square">
+                        <t t-if="widget.login_employee['employee_assigned_to']">
+                           <p>Allocation</p>
+                            <p class="text-light">
+                              <t t-esc="widget.login_employee['employee_assigned_to']"/></p>
+
+                        </t>
+                            <t t-if="!widget.login_employee['employee_assigned_to']">
+                          <p class="text-light">Allocation</p>
+                                <p>----</p>
+                        </t>
+                      </div>
+                        <t t-if="widget.login_employee['employee_assigned_to'] == 'project'">
+                          <div class="employee-project wrapper-square">
+                            <t t-if="widget.login_employee['project_id']">
+                               <p>Project</p>
+                                <p class="text-light"><t t-esc="widget.login_employee['project_id'][1]" /></p>
+
+                            </t>
+                              <t t-if="!widget.login_employee['project_id']">
+                              <p class="text-light"
+                              >Project</p>
+                                  <p>----</p>
+                            </t>
+                          </div>
+                      </t>
+                        <div class="employee-direct-manager wrapper-square">
+                        <t t-if="widget.login_employee['parent_id']">
+                          <p>Direct Manager</p>
+                            <p class="text-light"><t t-esc="widget.login_employee['parent_id']" /></p>
+
+                        </t>
+                            <t t-if="!widget.login_employee['parent_id']">
+                          <p class="text-light">Direct Manager</p>
+                                <p>----</p>
+                        </t>
+                      </div>
+                        <div class="employee-experience wrapper-square">
+                        <t t-if="widget.login_employee['date_end']">
+                          <p class="text-light">Contract Expiration Date </p>
+                            <p><t t-esc="widget.login_employee['date_end']" /></p>
+                        </t>
+                            <t t-if="!widget.login_employee['date_end']">
+                          <p class="text-light">Contract Expiration Date</p>
+                                <p class="text-light"
+                                >--/--/----</p>
+                        </t>
+                      </div>
+                        <div class="employee-country wrapper-square">
+                        <t t-if="widget.login_employee['remaining_days']">
+                          <p class="text-light">Remaining Days</p>
+                            <p class="text-light"><t t-esc="widget.login_employee['remaining_days']" /></p>
+                        </t>
+                      </div>
+                        <div class="employee-country wrapper-square">
+                        <t t-if="widget.login_employee['country_id']">
+                          <p class="text-light">Nationality</p>
+                            <p class="text-light"><t t-esc="widget.login_employee['country_id'][1]" /></p>
+                        </t>
+                            <t t-if="!widget.login_employee['country_id']">
+                          <p class="text-light"
+                          >Nationality</p>
+                                <p>- - -</p>
+                        </t>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+                <div>
+              <div class="employee-experience" style="padding-top: 10px;
+    background: #EDEDED;
+    border-radius: 10px;">
+                <t t-if="widget.login_employee['first_contract_date']">
+                  <p class="text-light">Joined Date</p>
+                    <p><t t-esc="widget.login_employee['first_contract_date']" /></p>
+                </t>
+                  <t t-if="!widget.login_employee['first_contract_date']">
+                  <p class="text-light"
+                  >Joined Date</p>
+                      <p class="text-light"
+                      >--/--/----</p>
+                </t>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="main-wrapper-employee-details-content col-xl-10 col-lg-10 col-md-9 col-sm-12 col-12">
+          <div class="card mb-3" name="main-wrapper-requests-card">
+            <div class="card-header">
+              Requests
+            </div>
+              <div class="card-body">
+              <div class="row d-flex flex-wrap" name="main-wrapper-employee-details-content">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12  hr_payslip oh-payslip">
+                  <div class="oh-card">
+                    <div class="oh-card-body">
+                      <div class="stat-widget-one">
+                        <div class="stat-icon">
+                          <div></div>
+                        </div>
+                          <div class="stat-content">
+                          <div class="stat-text">Payslips</div>
+                              <div class="stat-digit"><t t-esc="widget.login_employee['payslip_count']" /></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 hr_contract oh-payslip oh-contracts">
+                  <div class="oh-card">
+                    <div class="oh-card-body">
+                      <div class="stat-widget-one">
+                        <div class="stat-icon"> <div></div></div>
+                          <div class="stat-content">
+                          <div class="stat-text">Contracts</div>
+                              <div class="stat-digit"><t t-esc="widget.login_employee['contracts_count']" /></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+              <div class="card mb-3">
+              <div class="card-header">
+                Time Management
+              </div>
+                  <div class="card-body">
+                <div class="row" name="main-wrapper-employee-details-time-management">
+
+                </div>
+
+              </div>
+            </div>
+
+
+              <!-- Departments -->
+              <div class="row main-section" name="employee_departments">
+            <div class="col-md-2 col-sm-2 dummy"/>
+                  <div class="col-sm-12 col-lg-12 p-0 mb-3">
+              <div class="card">
+                <div class="card-header">Departments</div>
+                  <div class="card-body">
+                  <div class="col-sm-12 col-lg-12  graph_view"
+                       style="padding:0">
+                    <div class="text-color hr-chart-1">
+                      <div class="oh-card-body pb-0">
+                        <h4 class="mb-0">
+                        </h4>
+                          <div class="oh-ribbon"><span>Departments</span></div>
+                      </div>
+                        <div class="emp_departments_pie"/>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+              <!-- Jobs -->
+              <div class="row main-section" name="employee_jobs">
+            <div class="col-md-2 col-sm-2 dummy"/>
+                  <div class="col-sm-12 col-lg-12 p-0 mb-3">
+              <div class="col-sm-12 col-lg-12  graph_view"
+                   style="padding:0">
+                <div class="card">
+                  <div class="card-header">Employee Jobs</div>
+                    <div class="card-body">
+                    <div class="text-color hr-chart-1">
+                      <div class="oh-card-body pb-0">
+                        <h4 class="mb-0">
+                        </h4>
+                          <div class="oh-ribbon"><span>Jobs</span></div>
+                      </div>
+                        <div class="emp_jobs_pie"/>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+                  <div class="col-md-2 col-sm-2 dummy"/>
+          </div>
+
+              <div class="itq-wrapper-cards row main-section d-flex flex-wrap" name="itq-wrapper-cards">
+            <!-- Notifications-->
+                  <div class="col-md-4 col-12 main-section pl-0" name="employee_notifications">
+              <div class="col-md-2 col-sm-2 dummy"/>
+                      <div class="d_employee_ex_docs" name="employee_ex_docs">
+                <div class="hr_notification">
+                  <div class="" style="color: yellow;">
+                    <div class="hr_notification_head">
+                      Expiring Documents within 2 Months
+                    </div>
+                  </div>
+                    <t t-if="widget.login_employee.expiring_docs">
+                    <div class="col-xs-12 text-align">
+                      <t t-foreach="widget.login_employee.expiring_docs" t-as="ex_doc">
+                        <div class="col-sm-12 col-lg-12" style="padding:0;">
+                          <div class="text-color">
+                            <div class="">
+                              <div class="media">
+                                <div class="media-body">
+                                  <h2 class="text-color display-6"
+                                      style="font-size: 15px;"><t t-esc="ex_doc['name']" /> </h2>
+                                    <p>Expiry Date : <t t-esc="ex_doc['expiry_date']"/></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </t>
+                    </div>
+                  </t>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+              <!-- Footer-->
+              <div class="row main-section footer-section mt-4" name="footer">
+            <div class="col-md-2 col-sm-2 dummy"/>
+                  <div class="col-lg-4 col-md-6 col-sm-6 d_service_dashboard oh-payslip oh-contracts">
+              <div class="oh-card itq-oh-card-customize-own-dashboard">
+                <div class="oh-card-body">
+                  <div class="stat-widget-one">
+                    <div class="stat-content">
+                      <div class="stat-text d_service_dashboard">Service Dashboard</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+                  <div class="col-md-2 col-sm-2 dummy"/>
+                  <div class="col-lg-4 col-md-6 col-sm-6 d_custom_dashboard oh-payslip oh-contracts">
+              <div class="oh-card itq-oh-card-customize-own-dashboard">
+                <div class="oh-card-body">
+                  <div class="stat-widget-one">
+                    <div class="stat-content">
+                      <div class="stat-text d_custom_dashboard">Custom Dashboard</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </t>
+
+    <t t-name="EmployeeWarning">
+      <div>
+        <p>Error : Could not find employee linked to user</p>
+          <p>Please contact system admin for the setup</p>
+      </div>
+    </t>
+  </templates>

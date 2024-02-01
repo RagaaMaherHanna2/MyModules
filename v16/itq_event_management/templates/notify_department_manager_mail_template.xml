@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="itq_notify_department_manager_email_template" model="mail.template">
+        <field name="name">Notify Department Manager</field>
+        <field name="model_id" ref="itq_event_management.model_itq_event_request"/>
+<!--        <field name="partner_to">{{ object.partner_id.id }}</field>-->
+        <field name="subject">Notify Department Manager</field>
+        <field name="body_html" type="html">
+            <div>
+                Notify Department Manager
+            </div>
+        </field>
+        <field name="lang">en_US</field>
+    </record>
+</odoo>
+

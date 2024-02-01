@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="archive_warning_wizard_form">
+        <field name="name">archive.warning.wizard.form</field>
+        <field name="model">archive.warning.wizard</field>
+        <field name="arch" type="xml">
+            <form string="تحذير!!">
+                <h1>لا يمكن استرجاع هذا الاجراء بعد الارشفه</h1>
+                <h1>تأكيد الارشفه؟</h1>
+                <footer>
+                    <button name="action_archive" class="oe_highlight" type="object" string="تأكيد"/>
+                    <button string="إلغاء" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="archive_warning_wizard_action" model="ir.actions.act_window">
+        <field name="name">تحذير</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">archive.warning.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="archive_warning_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="procedure_scope_view_tree" model="ir.ui.view">
+            <field name="name">view.procedure.scope.tree</field>
+            <field name="model">procedure.scope</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="description"/>
+                    <field name="active_scope" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="procedure_scope_view_form" model="ir.ui.view">
+            <field name="name">procedure.scope.view.form</field>
+            <field name="model">procedure.scope</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="description" />
+                                <field name="active_scope" />
+                            </group>
+                            <group/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_procedure_scope" model="ir.actions.act_window">
+            <field name="name">Procedure Scope</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">procedure.scope</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add a new Procedure Scope.
+                </p>
+            </field>
+        </record>
+        <menuitem id="procedure_scope_menuitem" name="Procedure Scopes"
+                  action="action_procedure_scope"
+                  parent="itq_work_procedures.configurations_menuitem"
+                  sequence="4"/>
+
+    </data>
+</odoo>

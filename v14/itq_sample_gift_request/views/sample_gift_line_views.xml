@@ -1,0 +1,112 @@
+<odoo>
+
+    <record id="sample_gift_line_form" model="ir.ui.view">
+        <field name="name">sample.gift.line.form</field>
+        <field name="model">sample.gift.line</field>
+        <field name="arch" type="xml">
+            <form string="Sample/Gift Form" create="0">
+                <sheet>
+                    <group>
+                        <field name="product_id" readonly="1"/>
+                        <field name="product_qty" readonly="1"/>
+                        <field name="lot_ids" invisible="1"/>
+                    </group>
+                    <notebook>
+                        <page string="Product Serials" name="product_serial_lines">
+                            <field name="product_serial_lines" mode="tree" widget="One2many">
+                                <tree editable="bottom">
+                                    <field name="company_id" invisible="1"/>
+                                    <field name="product_id" readonly="1"/>
+                                    <field name="product_qty"/>
+                                    <field name="product_uom" readonly="1"/>
+                                    <field name="lot_id" context="{'default_product_id': product_id, 'default_company_id': company_id}"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <footer>
+                    <button string="Confirm" name="action_assign_product_serials" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="sample_gift_line_tree" model="ir.ui.view">
+        <field name="name">sample.gift.line.tree</field>
+        <field name="model">sample.gift.line</field>
+        <field name="arch" type="xml">
+            <tree string="Sample/Gift Request Analysis" create="0">
+                <field name="create_date"/>
+                <field name="product_id"/>
+                <field name="product_qty"/>
+                <field name="product_uom"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sample_gift_line_pivot" model="ir.ui.view">
+        <field name="name">sample.gift.line.pivot</field>
+        <field name="model">sample.gift.line</field>
+        <field name="arch" type="xml">
+            <pivot string="Pivot Analysis" disable_linking="True">
+                <field name="branch_id" type="row"/>
+                <field name="product_id" type="row"/>
+                <field name="create_date" type="col"/>
+                <field name="product_qty" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="sample_gift_line_graph" model="ir.ui.view">
+        <field name="name">sample.gift.line.graph</field>
+        <field name="model">sample.gift.line</field>
+        <field name="arch" type="xml">
+            <graph string="Graph Analysis">
+                <field name="branch_id" type="row"/>
+                <field name="product_id" type="row"/>
+                <field name="create_date" type="col"/>
+                <field name="product_qty" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="sample_gift_line_search" model="ir.ui.view">
+        <field name="name">sample.gift.line.search</field>
+        <field name="model">sample.gift.line</field>
+        <field name="arch" type="xml">
+            <search string="Sample/Gift Request Analysis">
+                <field name="branch_id"/>
+                <field name="product_id"/>
+                <group expand="0" string="Group By">
+                    <filter string="Date" name="date"
+                            context="{'group_by':'create_date'}"/>
+                    <filter string="Product" name="product"
+                            context="{'group_by':'product_id'}"/>
+                    <filter string="Branch" name="branch"
+                            context="{'group_by':'branch_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="sample_gift_line_action" model="ir.actions.act_window">
+        <field name="name">Sample/Gift Request Analysis</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sample.gift.line</field>
+        <field name="view_mode">tree,pivot</field>
+        <field name="search_view_id" ref="sample_gift_line_search"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+            </p>
+        </field>
+    </record>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="sample_gift_line_menu"
+              parent="stock.menu_warehouse_report"
+              action="itq_sample_gift_request.sample_gift_line_action"
+              sequence="5"/>
+</odoo>

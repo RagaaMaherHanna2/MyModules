@@ -1,0 +1,56 @@
+<odoo>
+
+    <record id="recruitment_detailed_wizard_form" model="ir.ui.view">
+        <field name="name">Recruitment Detailed wizard Form</field>
+        <field name="model">recruitment.detailed.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Recruitment Detailed Graph">
+                <group>
+                    <group>
+                        <field name="report_option"/>
+                    </group>
+                    <group/>
+                </group>
+                <group>
+                    <label for="from_month" string="Custom Period"
+                           attrs="{'invisible':[('report_option','!=','custom_range')]}"/>
+                    <div attrs="{'invisible':[('report_option','!=','custom_range')]}">
+                        <field name="from_month" class="oe_inline" nolabel="1"
+                               attrs="{'required':[('report_option','=','custom_range')]}"/>
+                        /
+                        <field name="from_year" class="oe_inline" nolabel="1"
+                               attrs="{'required':[('report_option','=','custom_range')]}"/>
+                        -
+                        <field name="to_month" class="oe_inline" nolabel="1"
+                               attrs="{'required':[('report_option','=','custom_range')]}"/>
+                        /
+                        <field name="to_year" class="oe_inline" nolabel="1"
+                               attrs="{'required':[('report_option','=','custom_range')]}"/>
+                    </div>
+                </group>
+
+                <footer>
+                    <button name="print_report_xls" string="Print XLS"
+                            type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="recruitment_detailed_wizard_action" model="ir.actions.act_window">
+        <field name="name">Recruitment Detailed wizard</field>
+        <field name="res_model">recruitment.detailed.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem
+            id="recruitment_detailed_wizard_menu"
+            name="Recruitment Detailed wizard"
+            action="recruitment_detailed_wizard_action"
+            parent="hr_recruitment.report_hr_recruitment"
+            groups="itq_recruitment_detailed_report.recruitment_detailed_dashboard_group"
+            sequence="0"/>
+</odoo>

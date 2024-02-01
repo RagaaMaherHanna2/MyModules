@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- view -->
+    <record id="itq_event_permission_view" model="ir.ui.view">
+        <field name="name">itq_event_permission_view</field>
+        <field name="model">itq.event.permission</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="permission_number"/>
+                <field name="state"/>
+                <field name="branch_id"/>
+                <field name="entrance_ids" widget="many2many_tags"/>
+                <field name="number_of_guests"/>
+                <field name="permission_start_date"/>
+                <field name="permission_end_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="itq_event_permission_form" model="ir.ui.view">
+        <field name="name">itq_event_permission_form</field>
+        <field name="model">itq.event.permission</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+                <header>
+                    <button name="set_confirmed" type="object" string="Confirm" class="btn-primary"
+                            states='draft'/>
+                    <button name="set_canceled" type="object" string="Cancel" class="btn-primary"
+                            states='confirmed,draft'/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <group>
+                    <field name="name"/>
+                    <field name="event_request_id" attrs="{'readonly': [('state', '=', 'canceled')]}"/>
+                    <field name="number_of_guests" attrs="{'readonly': [('state', '=', 'canceled')]}"/>
+                    <field name="entrance_ids" widget="many2many_tags"
+                           attrs="{'readonly': [('state', '=', 'canceled')]}"/>
+                    <h3 attrs="{'invisible': [('state', '=', 'canceled')]}">invitees</h3>
+                    <button name="%(itq_permission_invitee_wizard_action)d" type="action" string="Click" class="btn-primary"
+                            groups="itq_event_management.itq_group_event_approver"
+                            attrs="{'invisible': [('state', '=', 'canceled')]}"
+                            context="{'default_event_request_id': event_request_id, 'default_permission_id': id}"/>
+                </group>
+                <notebook>
+                    <page string="Permission Invitee">
+                        <field name="permission_invitee_ids" attrs="{'readonly':[('state', '=', 'canceled')]}">
+                            <tree editable="bottom" create="False">
+                                <field name="name"/>
+                                <field name="title"/>
+                                <field name="email"/>
+                                <field name="phone"/>
+                                <field name="res_model" invisible="1"/>
+                            </tree>
+                            <form>
+                                <field name="name"/>
+                                <field name="title"/>
+                                <field name="email"/>
+                                <field name="phone"/>
+                                <field name="res_model" invisible="1"/>
+                                <field name="res_id" invisible="1"/>
+                            </form>
+                        </field>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <!-- search -->
+    <record id="search_event_permission" model="ir.ui.view">
+        <field name="name">Event Permission Search</field>
+        <field name="model">itq.event.permission</field>
+        <field name="arch" type="xml">
+            <search string="Event Permission">
+                <field name="permission_number"/>
+                <field name="name"/>
+                <field name="permission_start_date"/>
+                <field name="permission_end_date"/>
+
+            </search>
+        </field>
+    </record>
+    <!-- action -->
+    <record id="itq_event_permission_action" model="ir.actions.act_window">
+        <field name="name">Permissions</field>
+        <field name="res_model">itq.event.permission</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+</odoo>

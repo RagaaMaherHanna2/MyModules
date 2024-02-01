@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="job_access_view_tree" model="ir.ui.view">
+            <field name="name">view.job.access.tree</field>
+            <field name="model">job.access</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+<!--                    <field name="job_id"/>-->
+                    <field name="description"/>
+                    <field name="active_job" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="job_access_view_form" model="ir.ui.view">
+            <field name="name">job.access.view.form</field>
+            <field name="model">job.access</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+<!--                                <field name="job_id"/>-->
+                                <field name="description"/>
+                                <field name="active_job"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_job_access" model="ir.actions.act_window">
+            <field name="name">Job Access</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">job.access</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add a new Job Access.
+                </p>
+            </field>
+        </record>
+        <menuitem id="job_access_menuitem" name="Job Access"
+                  action="action_job_access"
+                  parent="itq_work_procedures.configurations_menuitem"
+                  sequence="5"/>
+
+    </data>
+</odoo>

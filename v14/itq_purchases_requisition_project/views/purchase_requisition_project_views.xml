@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="itq_purchases_requisition.itq_purchase_requisition_form" model="ir.ui.view">
+            <field name="priority" eval="1"/>
+        </record>
+        <record id="itq_purchase_requisition_view_form2" model="ir.ui.view">
+            <field name="model">itq.purchase.requisition</field>
+            <field name="inherit_id" ref="itq_purchases_requisition.itq_purchase_requisition_form"/>
+            <field name="mode">primary</field>
+            <field name="priority" eval="2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='project_id']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="itq_purchase_requisition_view_form" model="ir.ui.view">
+            <field name="model">itq.purchase.requisition</field>
+            <field name="inherit_id" ref="itq_purchases_requisition.itq_purchase_requisition_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="after">
+                    <div name="title" position="after">
+                        <field name="project_is_readonly" invisible="1"/>
+                        <field name="is_out_of_task_lines" invisible="1"/>
+                        <field name="is_qty_exceeded_lines" invisible="1"/>
+                        <div attrs="{'invisible':[('is_out_of_task_lines','=',False), ('is_qty_exceeded_lines','=',False)]}">
+                            <div style="background-color: #ffc107;" class="text-center"
+                                 attrs="{'invisible':[('is_out_of_task_lines','=',False)]}">
+                                <span class="text-center">
+                                    The demanded items in yellow are not related to the planned items
+                                </span>
+                            </div>
+                            <br/>
+                            <div style="background-color: #dc3545; text-color: #f8f9fa;" class="text-center"
+                                 attrs="{'invisible':[('is_qty_exceeded_lines','=',False)]}">
+                                <span class="text-center">
+                                    The demanded Qty of the Items in red exceeded the planned Qty of the task
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='project_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('project_is_readonly','=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='purchase_requisition_line_ids']" position="replace">
+                    <field name="purchase_requisition_line_ids" attrs="{'readonly': [('state','!=','draft')]}">
+                        <tree editable="bottom"
+                              decoration-success="line_state == 'validated'"
+                              decoration-danger="line_state == 'qty_exceeded'"
+                              decoration-warning="line_state == 'out_of_task'">
+                            <field name="product_uom_category_id" invisible="1"/>
+                            <field name="product_id"/>
+                            <field name="product_uom"/>
+                            <field name="demand_quantity"/>
+                            <field name="unit_price"/>
+                            <field name="tax_id"/>
+                            <field name="sub_total"/>
+                            <field name="line_state" invisible="1"/>
+                            <field name="uom_demand_quantity" invisible="1"/>
+                        </tree>
+                    </field>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="action_purchases_requisition_project_view" model="ir.actions.act_window">
+            <field name="name">Purchase Requisitions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">itq.purchase.requisition</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('itq_purchases_requisition.itq_purchase_requisition_tree')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('itq_purchases_requisition_project.itq_purchase_requisition_view_form2')})
+            ]"/>
+        </record>
+
+        <menuitem id="purchases_requisition_project_main_menu"
+                  name="Purchase Requisitions"
+                  parent="project.menu_main_pm"
+                  sequence="6"/>
+        <menuitem id="purchases_requisition_project_menuitem"
+                  name="Purchase Requisitions"
+                  parent="itq_purchases_requisition_project.purchases_requisition_project_main_menu"
+                  action="action_purchases_requisition_project_view"
+                  sequence="1"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="FormLabel" t-inherit="web.FormLabel" t-inherit-mode="extension" owl="1">
+        <xpath expr="//sup[@class='text-info p-1']" position="replace">
+            <sup class="text-info p-1" t-if="hasTooltip"
+                 t-att="{'data-tooltip-template': 'web.FieldTooltip', 'data-tooltip-info': tooltipInfo, 'data-tooltip-touch-tap-to-show': 'true'}">
+            <t t-if="props.record.context.lang==='ar_001'">
+                ؟
+            </t>
+            <t t-else="">?</t>
+            </sup>
+        </xpath>
+    </t>
+
+</templates>

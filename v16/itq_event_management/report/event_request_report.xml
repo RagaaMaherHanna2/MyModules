@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="event_request_template_layout">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <t t-if="not branch">
+            <!-- MultiBranches -->
+            <t t-if="branch_id">
+                <t t-set="branch" t-value="branch_id"/>
+            </t>
+            <t t-elif="o and 'branch_id' in o and o.branch_id.sudo()">
+                <t t-set="branch" t-value="o.branch_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="branch"
+                   t-value="o.env['itq.holding.branch'].search([('is_default_branch', '=', True)], limit=1) or False"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="row mt32 mb32">
+                <div class="col-3 text-left">
+                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d')"/>
+                    <br/>
+                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%H:%M')"/>
+                </div>
+                <div class="col-6" align="center">
+                    <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 100px;"
+                         alt="Logo"/>
+                </div>
+                <div class="col-3 text-right">
+                    <span t-esc="company.name"/>
+                    <!--                    <span t-if="branch" t-esc="branch.name"/>-->
+                </div>
+            </div>
+            <br/>
+            <div class="row text-center">
+                <h2>Event Request</h2>
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+             t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-out="0"/>
+        </div>
+        <div class="footer">
+            <div class="text-center">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <span class="page"/>
+                    </li>
+                    <li class="list-inline-item">/</li>
+                    <li class="list-inline-item">
+                        <span class="topage"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </template>
+
+    <template id="report_event_request">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="o" t-value="o.with_context(lang=lang)"/>
+                <t t-call="itq_event_management.event_request_template_layout">
+                    <div class="page"
+                         t-att-dir="o.env['res.lang'].search([('code', '=', lang_code)], limit=1).direction">
+                        <h3>Requester Department</h3>
+                        <br/>
+                        <table width="100%" style="font-size: 14px; border-collapse: collapse;">
+                            <tr style="border: 2px solid #dee2e6;">
+                                <td width="20%" style="margin: 5px; padding: 5px;" colspan="2">
+                                    <strong>Requester:</strong>
+                                </td>
+                                <td width="30%" style="margin: 5px; padding: 5px;" colspan="2">
+                                    <p t-field="o.requester_id.name"/>
+                                </td>
+                            </tr>
+                            <tr style="border: 2px solid #dee2e6;">
+                                <td width="20%" style="margin: 5px; padding: 5px;">
+                                    <strong>Department:</strong>
+                                </td>
+                                <td width="30%" style="margin: 5px; padding: 5px;">
+                                    <p t-field="o.department_id.name"/>
+                                </td>
+                                <td width="20%" style="margin: 5px; padding: 5px;">
+                                    <strong>Department manager:</strong>
+                                </td>
+                                <td width="30%" style="margin: 5px; padding: 5px;">
+                                    <p t-field="o.department_manager_id.name"/>
+                                </td>
+                            </tr>
+                            <tr style="border: 2px solid #dee2e6;">
+                                <td width="20%" style="margin: 5px; padding: 5px;">
+                                    <strong>Contact Number:</strong>
+                                </td>
+                                <td width="30%" style="margin: 5px; padding: 5px;">
+                                    <p t-field="o.contact_number"/>
+                                </td>
+                                <td width="20%" style="margin: 5px; padding: 5px;">
+                                    <strong>Contact Email:</strong>
+                                </td>
+                                <td width="30%" style="margin: 5px; padding: 5px;">
+                                    <p t-field="o.contact_email"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                        <br/>
+                        <h3>Event Data</h3>
+                        <br/>
+                        <table width="100%" style="font-size: 14px; border-collapse: collapse;">
+
+                            <tr style="border: 2px solid #dee2e6;">
+                                <td width="20%" style="margin: 5px; padding: 5px;">
+                                    <strong>Title:</strong>
+                                </td>
+                                <td width="30%" style="margin: 5px; padding: 5px;">
+                                    <p t-field="o.name"/>
+                                </td>
+                                <td width="20%" style="margin: 5px; padding: 5px;">
+                                    <strong>Event Type:</strong>
+                                </td>
+                                <td width="30%" style="margin: 5px; padding: 5px;">
+                                    <p t-field="o.event_type_id.name"/>
+                                </td>
+                            </tr>
+                            <tr style="border: 2px solid #dee2e6;">
+                                <td width="50%" style="margin: 5px; padding: 5px;" colspan="4">
+                                    <strong>Event Goal:</strong>
+                                </td>
+                            </tr>
+                            <tr style="border: 2px solid #dee2e6;">
+                                <td width="100%" style="margin: 5px; padding: 5px;" colspan="4">
+                                    <span t-field="o.event_goal"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                        <br/>
+                        <h3>Event Timing</h3>
+                        <br/>
+                        <table width="100%" style="font-size: 14px; border-collapse: collapse;">
+                            <tr style="border: 2px solid #dee2e6;">
+                                <td width="20%" style="margin: 5px; padding: 5px;">
+                                    <strong>Event Date:</strong>
+                                </td>
+                                <td width="30%" style="margin: 5px; padding: 5px;">
+                                    <p t-field="o.event_date"/>
+                                </td>
+                                <td width="20%" style="margin: 5px; padding: 5px;">
+                                    <strong>Event Number Of Days:</strong>
+                                </td>
+                                <td width="30%" style="margin: 5px; padding: 5px;">
+                                    <p t-field="o.event_number_of_days"/>
+                                </td>
+                            </tr>
+                            <tr style="border: 2px solid #dee2e6;">
+                                <td width="20%" style="margin: 5px; padding: 5px;">
+                                    <strong>Event Attraction:</strong>
+                                </td>
+                                <td width="30%" style="margin: 5px; padding: 5px;">
+                                    <p t-field="o.event_attraction_id.name"/>
+                                </td>
+                                <td width="20%" style="margin: 5px; padding: 5px;">
+                                    <strong>Rehearsal Date:</strong>
+                                </td>
+                                <td width="30%" style="margin: 5px; padding: 5px;">
+                                    <p t-field="o.rehearsal_date"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                        <br/>
+                        <!--                        TODO table 4 ( to be added later  )-->
+                        <h3>Event Program</h3>
+                        <br/>
+                        <t t-if="o.event_program_line_ids">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Day</th>
+                                        <th>Time</th>
+                                        <th class="text-center">Activity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.event_program_line_ids.sorted(key=lambda line: (line.day_line_id,line.time))"
+                                        t-as="line">
+                                        <td>
+                                            <span t-field="line.day_line_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.time"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.activity"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </t>
+                        <t t-else="">
+                            <h4 class="text-center">No Program</h4>
+                        </t>
+                        <br/>
+                        <br/>
+                        <h3>Audience</h3>
+                        <h4>Target Audience</h4>
+                        <br/>
+                        <t t-if="o.target_audience_ids">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.target_audience_ids" t-as="audience">
+                                        <td>
+                                            <span t-field="audience.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="audience.state"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </t>
+                        <t t-else="">
+                            <h4 class="text-center">No Target Audience</h4>
+                        </t>
+                        <br/>
+                        <table width="100%" style="font-size: 14px; border-collapse: collapse;">
+                            <tr style="border: 2px solid #dee2e6;">
+                                <td width="20%" style="margin: 5px; padding: 5px;">
+                                    <strong>Expected Number Of Guests:</strong>
+                                </td>
+                                <td width="30%" style="margin: 5px; padding: 5px;">
+                                    <p t-field="o.expected_number_of_guests"/>
+                                </td>
+                                <td width="20%" style="margin: 5px; padding: 5px;">
+                                    <strong>Internal Guest Count:</strong>
+                                </td>
+                                <td width="30%" style="margin: 5px; padding: 5px;">
+                                    <p t-field="o.internal_guest_count"/>
+                                </td>
+                            </tr>
+                            <tr style="border: 2px solid #dee2e6;">
+                                <td width="50%" style="margin: 5px; padding: 5px;" colspan="4">
+                                    <strong>External Guest Count:</strong>
+                                </td>
+                            </tr>
+                            <tr style="border: 2px solid #dee2e6;">
+                                <td width="100%" style="margin: 5px; padding: 5px;" colspan="4">
+                                    <p t-field="o.external_guest_count"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                        <br/>
+                        <h3>Guests Of Honor</h3>
+                        <br/>
+                        <t t-if="o.guest_honor_ids">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Guest Title</th>
+                                        <th>Guest Name</th>
+                                        <th>Organization</th>
+                                        <th>Insider</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.guest_honor_ids" t-as="guest">
+                                        <td>
+                                            <span t-field="guest.title"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="guest.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="guest.organization"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="guest.is_insider"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </t>
+                        <t t-else="">
+                            <h4 class="text-center">No Guests Of Honor</h4>
+                        </t>
+                        <br/>
+                        <br/>
+                        <h3>Speakers List</h3>
+                        <br/>
+                        <t t-if="o.speaker_guest_ids">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Speaker Title</th>
+                                        <th>Speaker Name</th>
+                                        <th>Organization</th>
+                                        <th>Insider</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.speaker_guest_ids" t-as="speaker">
+                                        <td>
+                                            <span t-field="speaker.title"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="speaker.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="speaker.organization"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="speaker.is_insider"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </t>
+                        <t t-else="">
+                            <h4 class="text-center">No Speakers List</h4>
+                        </t>
+                        <br/>
+                        <br/>
+                        <h3>Amenities And Specifications</h3>
+                        <br/>
+                        <t t-if="o.amenity_specification_line_ids">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Amenity Name</th>
+                                        <th>Amenity items</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.amenity_specification_line_ids" t-as="line">
+                                        <td>
+                                            <span t-field="line.amenity_specification_id.name"/>
+                                        </td>
+
+                                        <td>
+                                            <ul>
+                                                <li t-foreach="line.amenity_item_ids" t-as="item">
+                                                    <t t-esc="item.name"/>
+                                                </li>
+                                            </ul>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </t>
+                        <t t-else="">
+                            <h4 class="text-center">No Amenities And Specifications</h4>
+                        </t>
+                        <br/>
+                        <br/>
+                        <h3>Catering</h3>
+                        <br/>
+                        <t t-if="o.catering_type_line_ids">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Catering Type</th>
+                                        <th>Catering items</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.catering_type_line_ids" t-as="line">
+                                        <td>
+                                            <span t-field="line.catering_type_id.name"/>
+                                        </td>
+
+                                        <td>
+                                            <ul>
+                                                <li t-foreach="line.catering_item_ids" t-as="item">
+                                                    <t t-esc="item.name"/>
+                                                </li>
+                                            </ul>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </t>
+                        <t t-else="">
+                            <h4 class="text-center">No Catering</h4>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_hr_event_request" model="ir.actions.report">
+        <field name="name">Event Request</field>
+        <field name="model">itq.event.request</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">itq_event_management.report_event_request</field>
+        <field name="report_file">itq_event_management.report_event_request</field>
+        <field name="print_report_name">'Event Request - %s - %s' % (object.request_number,
+            object.request_date.date())
+        </field>
+        <field name="binding_model_id" ref="model_itq_event_request"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

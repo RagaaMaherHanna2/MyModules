@@ -1,0 +1,335 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* itq_recruitment_detailed_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20220325\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-07 07:52+0000\n"
+"PO-Revision-Date: 2023-09-07 11:03+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.3.2\n"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_year__2013
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_year__2013
+msgid "2013"
+msgstr ""
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_year__2014
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_year__2014
+msgid "2014"
+msgstr ""
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_year__2015
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_year__2015
+msgid "2015"
+msgstr ""
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_year__2016
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_year__2016
+msgid "2016"
+msgstr ""
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_year__2017
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_year__2017
+msgid "2017"
+msgstr ""
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_year__2018
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_year__2018
+msgid "2018"
+msgstr ""
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_year__2019
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_year__2019
+msgid "2019"
+msgstr ""
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_year__2020
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_year__2020
+msgid "2020"
+msgstr ""
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_year__2021
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_year__2021
+msgid "2021"
+msgstr ""
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_year__2022
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_year__2022
+msgid "2022"
+msgstr ""
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_year__2023
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_year__2023
+msgid "2023"
+msgstr ""
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_year__2024
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_year__2024
+msgid "2024"
+msgstr ""
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_year__2025
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_year__2025
+msgid "2025"
+msgstr ""
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_year__2026
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_year__2026
+msgid "2026"
+msgstr ""
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_year__2027
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_year__2027
+msgid "2027"
+msgstr ""
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_year__2028
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_year__2028
+msgid "2028"
+msgstr ""
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_year__2029
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_year__2029
+msgid "2029"
+msgstr ""
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_year__2030
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_year__2030
+msgid "2030"
+msgstr ""
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_year__2031
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_year__2031
+msgid "2031"
+msgstr ""
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_year__2032
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_year__2032
+msgid "2032"
+msgstr ""
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_month__4
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_month__4
+msgid "April"
+msgstr "أبريل"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_month__8
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_month__8
+msgid "August"
+msgstr "أغسطس"
+
+#. module: itq_recruitment_detailed_report
+#: model_terms:ir.ui.view,arch_db:itq_recruitment_detailed_report.recruitment_detailed_wizard_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields,field_description:itq_recruitment_detailed_report.field_recruitment_detailed_wizard__create_uid
+msgid "Created by"
+msgstr "تم الإنشاء بواسطة"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields,field_description:itq_recruitment_detailed_report.field_recruitment_detailed_wizard__create_date
+msgid "Created on"
+msgstr "إنشاء بتاريخ"
+
+#. module: itq_recruitment_detailed_report
+#: model_terms:ir.ui.view,arch_db:itq_recruitment_detailed_report.recruitment_detailed_wizard_form
+msgid "Custom Period"
+msgstr "تخصيص الفترة"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__report_option__custom_range
+msgid "Custom Range"
+msgstr "تخصيص المدة"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_month__12
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_month__12
+msgid "December"
+msgstr "ديسمبر"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields,field_description:itq_recruitment_detailed_report.field_recruitment_detailed_wizard__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_month__2
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_month__2
+msgid "February"
+msgstr "فبراير"
+
+#. module: itq_recruitment_detailed_report
+#: code:addons/itq_recruitment_detailed_report/wizard/recruitment_detailed_wizard.py:0
+#, python-format
+msgid "Form content is missing, this report cannot be printed."
+msgstr "لا يمكن طباعة هذا التقرير لأن نموذج المحتوى المفقود"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields,field_description:itq_recruitment_detailed_report.field_recruitment_detailed_wizard__from_month
+msgid "From Month"
+msgstr "من شهر"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields,field_description:itq_recruitment_detailed_report.field_recruitment_detailed_wizard__from_year
+msgid "From Year"
+msgstr "من سنة"
+
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_month__1
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_month__1
+msgid "January"
+msgstr "يناير"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_month__7
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_month__7
+msgid "July"
+msgstr "يوليو"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_month__6
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_month__6
+msgid "June"
+msgstr "يونيو"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields,field_description:itq_recruitment_detailed_report.field_recruitment_detailed_wizard____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل بتاريخ"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields,field_description:itq_recruitment_detailed_report.field_recruitment_detailed_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields,field_description:itq_recruitment_detailed_report.field_recruitment_detailed_wizard__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث بتاريخ"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_month__3
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_month__3
+msgid "March"
+msgstr "مارس"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_month__5
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_month__5
+msgid "May"
+msgstr "مايو"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_month__11
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_month__11
+msgid "November"
+msgstr "نوفمبر"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_month__10
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_month__10
+msgid "October"
+msgstr "أكتوبر"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__report_option__previous_year
+msgid "Previous Year"
+msgstr "السنة السابقة"
+
+#. module: itq_recruitment_detailed_report
+#: model_terms:ir.ui.view,arch_db:itq_recruitment_detailed_report.recruitment_detailed_wizard_form
+msgid "Print XLS"
+msgstr "طباعة ملف إكسيل"
+
+#. module: itq_recruitment_detailed_report
+#: model:res.groups,name:itq_recruitment_detailed_report.recruitment_detailed_dashboard_group
+msgid "Recruitment Dashboard Group"
+msgstr "مجموعة لوحة بيانات التوظيف"
+
+#. module: itq_recruitment_detailed_report
+#: model_terms:ir.ui.view,arch_db:itq_recruitment_detailed_report.recruitment_detailed_wizard_form
+msgid "Recruitment Detailed Graph"
+msgstr "رسم بيانات التوظيف"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model,name:itq_recruitment_detailed_report.model_recruitment_detailed_wizard
+msgid "Recruitment Detailed Wizard"
+msgstr "شاشة بيانات التوظيف"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.actions.act_window,name:itq_recruitment_detailed_report.recruitment_detailed_wizard_action
+#: model:ir.ui.menu,name:itq_recruitment_detailed_report.recruitment_detailed_wizard_menu
+msgid "Recruitment Detailed wizard"
+msgstr "شاشة بيانات التوظيف"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields,field_description:itq_recruitment_detailed_report.field_recruitment_detailed_wizard__report_option
+msgid "Select Period"
+msgstr "اختيار الفترة"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__from_month__9
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__to_month__9
+msgid "September"
+msgstr "سبتمبر"
+
+#. module: itq_recruitment_detailed_report
+#: code:addons/itq_recruitment_detailed_report/wizard/recruitment_detailed_wizard.py:0
+#, python-format
+msgid "Target Month Must be grater than lunching Month of the same year"
+msgstr "يجب أن يكون الشهر الهدف أكبر من شهر الانطلاق وفي نفس السنة"
+
+#. module: itq_recruitment_detailed_report
+#: code:addons/itq_recruitment_detailed_report/wizard/recruitment_detailed_wizard.py:0
+#, python-format
+msgid "Target Year Must be grater than lunching year"
+msgstr "يجب أن يكون شهر الهدف أكبر من شهر الانطلاق"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields.selection,name:itq_recruitment_detailed_report.selection__recruitment_detailed_wizard__report_option__this_year
+msgid "This Year"
+msgstr "هذا العام"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields,field_description:itq_recruitment_detailed_report.field_recruitment_detailed_wizard__to_month
+msgid "To Month"
+msgstr "إلى شهر"
+
+#. module: itq_recruitment_detailed_report
+#: model:ir.model.fields,field_description:itq_recruitment_detailed_report.field_recruitment_detailed_wizard__to_year
+msgid "To Year"
+msgstr "إلى عام"

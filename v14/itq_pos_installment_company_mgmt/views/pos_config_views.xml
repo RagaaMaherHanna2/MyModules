@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="inherit_view_pos_config_installment_payment" model="ir.ui.view">
+            <field name="name">inherit.view.pos.config.installment.payment</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+            <field name="arch" type="xml">
+                <div id="company" position="after">
+                    <div id="installment_pay_div" class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="allow_installment_payment"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="allow_installment_payment"/>
+                        </div>
+                    </div>
+                    <div id="payment_journal" class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane"
+                             attrs="{'invisible': [('allow_installment_payment', '=', False)]}">
+                            <label for="payment_journal_id"/>
+                            <div>
+                                <field name="payment_journal_id"
+                                       options="{'no_create': True}"
+                                       attrs="{'required': [('allow_installment_payment', '=', True)]}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

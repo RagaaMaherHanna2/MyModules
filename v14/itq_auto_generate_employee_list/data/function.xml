@@ -1,0 +1,5 @@
+<odoo>
+    <data noupdate="1">
+        <function model="itq.employee.list" name="fill_default_employee_list"/>
+    </data>
+</odoo>

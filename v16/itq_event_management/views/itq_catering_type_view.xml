@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="itq_catering_type_tree" model="ir.ui.view">
+            <field name="name">itq.catering.type.tree</field>
+            <field name="model">itq.catering.type</field>
+            <field name="inherit_id" ref=""/>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="state"/>
+                    <field name="is_mandatory"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="itq_catering_type_form" model="ir.ui.view">
+            <field name="name">itq.catering.type.form</field>
+            <field name="model">itq.catering.type</field>
+            <field name="inherit_id" ref=""/>
+            <field name="arch" type="xml">
+                <form duplicate="0">
+                    <header>
+                        <button name="set_draft" string="Set To Draft" type="object" class="oe_highlight"
+                                states="archived"/>
+                        <button name="activate_button" string="Activate" type="object" class="oe_highlight"
+                                states="draft"/>
+                        <button name="archive_button" string="Archive" type="object" class="oe_highlight"
+                                states="active"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="is_mandatory"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Catering Items" name="catering_items">
+                                <field name="catering_item_ids" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="name"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_itq_catering_type" model="ir.actions.act_window">
+            <field name="name">Catering Types</field>
+            <field name="res_model">itq.catering.type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new catering type
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

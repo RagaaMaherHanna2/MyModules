@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_installment_company,access.installment.company,model_installment_company,base.group_user,1,1,1,1
+access_invoice_installment_line,access.invoice.installment.line,model_invoice_installment_line,base.group_user,1,1,1,1

@@ -1,0 +1,1682 @@
+
+
+
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* itq_deferred_expense_revenue
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20220325\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-11 11:23+0000\n"
+"PO-Revision-Date: 2023-05-11 11:23+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid " (copy)"
+msgstr "(نسخة)"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__total_depreciation_entries_count
+msgid "# Depreciation Entries"
+msgstr "قيود الإهلاك"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__gross_increase_count
+msgid "# Gross Increases"
+msgstr "#زيادة الإجمالي"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__depreciation_entries_count
+msgid "# Posted Depreciation Entries"
+msgstr "# قيود إهلاك مُرحلة"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#, python-format
+msgid "%s created from invoice"
+msgstr "تم إنشاء s% من الفاتورة"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "(prorata entry)"
+msgstr "(قيد نسبي)"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "A deferred expense has been created for this move:"
+msgstr "تم إنشاء مصروفات مؤجلة لهذه الحركة:"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "A deferred revenue has been created for this move:"
+msgstr "تم إنشاء الإيراد المقدم لهذه الحركة:"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "A document linked to %s has been deleted: "
+msgstr "المستند المرتبط بـ s% تم حذفه:"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields.selection,name:itq_deferred_expense_revenue.selection__account_asset__method__degressive_then_linear
+msgid "Accelerated Degressive"
+msgstr "إحلال متسارع"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model,name:itq_deferred_expense_revenue.model_account_account
+msgid "Account"
+msgstr "حساب"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__user_type_id
+msgid ""
+"Account Type is used for information purpose, to generate country-specific "
+"legal reports, and set the rules to close a fiscal year and generate opening"
+" entries."
+msgstr ""
+"يستخدم نوع الحساب لأغراض معلوماتية واستخراج تقارير قانونية خاصة بكل بلد ووضع"
+" قواعد إغلاق السنة المالية وإعداد القيود الافتتاحية."
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__account_depreciation_id
+msgid "Account used in the depreciation entries, to decrease the asset value."
+msgstr "الحساب مستخدم في قيود الإهلاك لتخفيض قيمة الأصل."
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__account_depreciation_expense_id
+msgid ""
+"Account used in the periodical entries, to record a part of the asset as "
+"expense."
+msgstr ""
+"الحساب المستخدم في القيود الدورية لتسجيل جزء من الأصول على أنها مصروفات."
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_expense_form
+msgid "Account used to recognize the expense"
+msgstr "الحساب المستخدم لإثبات المصروفات"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_revenue_form
+msgid "Account used to recognize the revenue"
+msgstr "الحساب المستخدم لإثبات الإيرادات"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_expense_form
+msgid "Account used to record the deferred expense"
+msgstr "الحساب المستخدم في تجيل المصروفات المؤجلة."
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_revenue_form
+msgid "Account used to record the deferred income"
+msgstr "الحساب المستخدم لتسجيل الدخول المقدمة"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__account_asset_id
+msgid ""
+"Account used to record the purchase of the asset at its original price."
+msgstr "الحساب مستخدم لتسجيل مشتريات الأصول بالسعر الأصلي."
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_res_company__gain_account_id
+msgid ""
+"Account used to write the journal item in case of gain while selling an "
+"asset"
+msgstr "الحساب مستخدم لتسجيل عنصر قيد اليومية في حالة الأرباح عند بيع الأصل."
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_res_company__loss_account_id
+msgid ""
+"Account used to write the journal item in case of loss while selling an "
+"asset"
+msgstr "الحساب مستخدم لتسجيل عنصر قيد اليومية في حالة الخسائر عند بيع الأصل."
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Accounting"
+msgstr "المحاسبة "
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__acquisition_date
+msgid "Acquisition Date"
+msgstr "تاريخ الاستحواذ"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__message_needaction
+msgid "Action Needed"
+msgstr "إجراء لازم"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__activity_ids
+msgid "Activities"
+msgstr "أنشطة"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "استثناء النشاط"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#, python-format
+msgid "All the lines should be from the same account"
+msgstr "يجب أن تكون جميع البنود من نفس الحساب"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#, python-format
+msgid "All the lines should be posted"
+msgstr "يجب نشر جميع البنود"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__already_depreciated_amount_import
+msgid "Already Depreciated Amount Import"
+msgstr "استيراد مبلغ مهلك بالفعل"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__parent_id
+msgid "An asset has a parent when it is the result of gaining value"
+msgstr "يصبح الأصل له مصدر حينما تكون النتيجة قيمة الأرباح."
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "An asset has been created for this move:"
+msgstr "تم إنشاء أصل لهذه الحركة:"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__account_analytic_id
+msgid "Analytic Account"
+msgstr "الحساب التحليلي"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__analytic_tag_ids
+msgid "Analytic Tag"
+msgstr "بطاقة تحليلية"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_search
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_search
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_revenue_model_search
+msgid "Archived"
+msgstr "تمت الأرشفة"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_bank_statement_line__asset_id
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_move__asset_id
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_payment__asset_id
+#: model:ir.model.fields.selection,name:itq_deferred_expense_revenue.selection__account_account__asset_type__purchase
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_search
+#, python-format
+msgid "Asset"
+msgstr "الأصل"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_search
+msgid "Asset Account"
+msgstr "حساب الأصل"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_bank_statement_line__asset_id_display_name
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_move__asset_id_display_name
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_payment__asset_id_display_name
+msgid "Asset Id Display Name"
+msgstr "الاسم المعروض - الرقم التعريفي للأصل"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_bank_statement_line__asset_ids_display_name
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_move__asset_ids_display_name
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_payment__asset_ids_display_name
+msgid "Asset Ids Display Name"
+msgstr "الاسم المعروض - الرقم التعريفي للأصل"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_move_line__asset_ids
+msgid "Asset Linked"
+msgstr "الأصل مرتبط"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_bank_statement_line__asset_manually_modified
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_move__asset_manually_modified
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_payment__asset_manually_modified
+msgid "Asset Manually Modified"
+msgstr "تعديل الأصل يدويًا"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_account__asset_model
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_search
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_search
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_expense_model_search
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_revenue_model_search
+msgid "Asset Model"
+msgstr "نموذج الأصل"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Asset Model name"
+msgstr "اسم نموذج الأصل"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.actions.act_window,name:itq_deferred_expense_revenue.action_account_asset_model_form
+#: model:ir.ui.menu,name:itq_deferred_expense_revenue.menu_action_account_asset_model_form
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_purchase_tree
+msgid "Asset Models"
+msgstr "نماذج الأصول"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__name
+msgid "Asset Name"
+msgstr "اسم الأصل"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_account__asset_type
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__asset_type
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_bank_statement_line__asset_asset_type
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_move__asset_asset_type
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_payment__asset_asset_type
+msgid "Asset Type"
+msgstr "نوع الأصل"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_bank_statement_line__asset_value_change
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_move__asset_value_change
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_payment__asset_value_change
+msgid "Asset Value Change"
+msgstr "تغيير قيمة الأصل"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Asset Values"
+msgstr "قيم الأصول"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "Asset created"
+msgstr ""
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_move_line__asset_ids
+msgid "Asset created from this Journal Item"
+msgstr "تم إنشاء الأصل من عنصر قيد اليومية هذا."
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "Asset paused"
+msgstr "إيقاف الأصل"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "Asset sold or disposed. Accounting entry awaiting for validation."
+msgstr ""
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#, python-format
+msgid "Asset(s)"
+msgstr "أصل/ أصول"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model,name:itq_deferred_expense_revenue.model_account_asset
+msgid "Asset/Revenue Recognition"
+msgstr "تسجيل الأصول/ الإيرادات"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#: model:ir.actions.act_window,name:itq_deferred_expense_revenue.action_account_asset_form
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_bank_statement_line__asset_ids
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_move__asset_ids
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_payment__asset_ids
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_purchase_tree
+#, python-format
+msgid "Assets"
+msgstr "أصول"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.ui.menu,name:itq_deferred_expense_revenue.menu_finance_config_assets
+msgid "Assets and Revenues"
+msgstr "أصول وإيرادات"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_search
+msgid "Assets in closed state"
+msgstr "أصول في حالة الغلق"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_search
+msgid "Assets in draft and open states"
+msgstr "الحسابات في حالة المسودة والمفتوحة"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_form_asset_inherit
+msgid "Automate Deferred Expense"
+msgstr "أتمتة المصروفات المؤجلة"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_form_asset_inherit
+msgid "Automate Deferred Revenue"
+msgstr "أتمتة الإيرادات المقدمة"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__available_account_ids
+msgid "Available Account"
+msgstr "حساب متاح"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__book_value
+msgid "Book Value"
+msgstr "القيمة الدفترية"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_account__can_create_asset
+msgid "Can Create Asset"
+msgstr "يمكن إنشاء أصل؟"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Category of asset"
+msgstr "فئة الأصل"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__children_ids
+msgid "Children"
+msgstr "الفروع"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__method
+msgid ""
+"Choose the method to use to compute the amount of depreciation lines.\n"
+"  * Straight Line: Calculated on basis of: Gross Value / Number of Depreciations\n"
+"  * Degressive: Calculated on basis of: Residual Value * Degressive Factor\n"
+"  * Accelerated Degressive: Like Degressive but with a minimum depreciation value equal to the straight line value."
+msgstr ""
+"اختر الطريقة التي ستستخدمها في حساب بنود الإهلاك. •\tالخط المستقيم: يتم الاحتساب بناء على: القيمة الإجمالية/ عدد مرات الإهلاك.\n"
+"•\tالإحلال: يتم الاحتساب بناء على: القيمة المتبقية x عامل الإحلال.\n"
+"•\tالإحلال المتسارع: مثل الإحلال ولكنه يصحبه الحد الأدنى من قيمة الإهلاك ومساوي لقيمة الخط المستقيم."
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields.selection,name:itq_deferred_expense_revenue.selection__account_asset__state__close
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_search
+msgid "Closed"
+msgstr "مغلق"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model,name:itq_deferred_expense_revenue.model_res_company
+msgid "Companies"
+msgstr "شركات"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Compute Depreciation"
+msgstr "احتساب الإهلاك"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_expense_form
+msgid "Compute Expense"
+msgstr "احتساب المصروفات"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_revenue_form
+msgid "Compute Revenue"
+msgstr "احتساب الإيراد"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.actions.server,name:itq_deferred_expense_revenue.action_account_aml_to_asset
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_account__create_asset
+msgid "Create Asset"
+msgstr "إنشاء أصل"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields.selection,name:itq_deferred_expense_revenue.selection__account_account__create_asset__validate
+msgid "Create and validate"
+msgstr "إنشاء والتحقق من الصحة"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields.selection,name:itq_deferred_expense_revenue.selection__account_account__create_asset__draft
+msgid "Create in draft"
+msgstr "إنشاء في حالة المسودة"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__create_uid
+msgid "Created by"
+msgstr "تم الإنشاء بواسطة"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__create_date
+msgid "Created on"
+msgstr "الإنشاء بتاريخ"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_bank_statement_line__asset_depreciated_value
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_move__asset_depreciated_value
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_payment__asset_depreciated_value
+msgid "Cumulative Depreciation"
+msgstr "إهلاك تراكمي"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_expense_form
+msgid "Cumulative Expense"
+msgstr "مصروفات تراكمية"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_revenue_form
+msgid "Cumulative Revenue"
+msgstr "الإيراد التراكمي"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__currency_id
+msgid "Currency"
+msgstr "العملة "
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_search
+msgid "Current"
+msgstr "الحالي"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Current Values"
+msgstr "القيم الحالية "
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_search
+msgid "Date"
+msgstr "تاريخ"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#: model:ir.model.fields.selection,name:itq_deferred_expense_revenue.selection__account_account__asset_type__expense
+#: model:ir.model.fields.selection,name:itq_deferred_expense_revenue.selection__account_asset__asset_type__expense
+#, python-format
+msgid "Deferred Expense"
+msgstr "مصروفات مؤجلة"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_expense_form
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_expense_tree
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_expense_model_search
+msgid "Deferred Expense Account"
+msgstr "حساب المصروفات المؤجلة"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_expense_form
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_expense_tree
+msgid "Deferred Expense Amount"
+msgstr "مبلغ المصروفات المؤجلة"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_form_asset_inherit
+msgid "Deferred Expense Options"
+msgstr "اختيارات المصروفات المؤجلة"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.actions.act_window,name:itq_deferred_expense_revenue.action_account_expense_model_form
+#: model:ir.ui.menu,name:itq_deferred_expense_revenue.menu_action_account_expense_model_recognition
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_form_asset_inherit
+msgid "Deferred Expense Type"
+msgstr "نوع المصروفات المؤجلة"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_expense_form
+msgid "Deferred Expense Type name"
+msgstr "اسم نوع المصروفات المؤجلة"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_expense_form
+msgid "Deferred Expense name"
+msgstr "اسم المصروفات المؤجلة"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#, python-format
+msgid "Deferred Expense(s)"
+msgstr "مصروفات مؤجلة"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#: model:ir.actions.act_window,name:itq_deferred_expense_revenue.action_account_expense_form
+#: model:ir.ui.menu,name:itq_deferred_expense_revenue.menu_action_account_expense_recognition
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_expense_tree
+#, python-format
+msgid "Deferred Expenses"
+msgstr "مصروفات مؤجلة"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_expense_tree
+msgid "Deferred Expenses Models"
+msgstr "نماذج المصروفات المؤجلة"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#: model:ir.model.fields.selection,name:itq_deferred_expense_revenue.selection__account_account__asset_type__sale
+#, python-format
+msgid "Deferred Revenue"
+msgstr "إيرادات مقدمة"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_sale_tree
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_revenue_form
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_revenue_model_search
+msgid "Deferred Revenue Account"
+msgstr "حساب الإيرادات المقدمة"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_revenue_form
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_sale_tree
+msgid "Deferred Revenue Amount"
+msgstr "حساب الإيرادات المقدمة"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_form_asset_inherit
+msgid "Deferred Revenue Options"
+msgstr "اختيارات الإيرادات المقدمة"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.actions.act_window,name:itq_deferred_expense_revenue.action_account_revenue_model_form
+#: model:ir.ui.menu,name:itq_deferred_expense_revenue.menu_action_account_revenue_model_recognition
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_form_asset_inherit
+msgid "Deferred Revenue Type"
+msgstr "نوع الإيراد المقدم"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_revenue_form
+msgid "Deferred Revenue Type name"
+msgstr "اسم نوع الإيرادات المقدمة"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_revenue_form
+msgid "Deferred Revenue name"
+msgstr "اسم الإيراد المقدم"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#, python-format
+msgid "Deferred Revenue(s)"
+msgstr "إيرادات مقدمة"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#: model:ir.actions.act_window,name:itq_deferred_expense_revenue.action_account_revenue_form
+#: model:ir.ui.menu,name:itq_deferred_expense_revenue.menu_action_account_revenue_recognition
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_sale_tree
+#, python-format
+msgid "Deferred Revenues"
+msgstr "إيرادات مقدمة"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_sale_tree
+msgid "Deferred Revenues Type"
+msgstr "نوع الإيرادات المقدمة"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#, python-format
+msgid "Deferred expense"
+msgstr "مصروفات مؤجلة"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "Deferred expense created"
+msgstr "تم إنشاء مصروفات مؤجلة"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#, python-format
+msgid "Deferred revenue"
+msgstr "إيرادات مقدمة"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "Deferred revenue created"
+msgstr "تم إنشاء إيراد مقدم"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields.selection,name:itq_deferred_expense_revenue.selection__account_asset__method__degressive
+msgid "Degressive"
+msgstr "إحلال"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__method_progress_factor
+msgid "Degressive Factor"
+msgstr "عامل الإنحلال"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__value_residual
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_bank_statement_line__asset_remaining_value
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_move__asset_remaining_value
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_payment__asset_remaining_value
+msgid "Depreciable Value"
+msgstr "قيمة الإهلاك"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Depreciated Amount"
+msgstr "قيمة الإهلاك"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Depreciation"
+msgstr "الإهلاك"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__account_depreciation_id
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_search
+msgid "Depreciation Account"
+msgstr "حساب الإهلاك"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Depreciation Board"
+msgstr "لوحة بيانات الإهلاك"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Depreciation Date"
+msgstr "تاريخ الإهلاك "
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__depreciation_move_ids
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Depreciation Lines"
+msgstr "بنود الإهلاك"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Depreciation Method"
+msgstr "طريقة الإهلاك"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__depreciation_number_import
+msgid "Depreciation Number Import"
+msgstr "استيراد عدد الإهلاك"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#, python-format
+msgid "Depreciation entry %s posted (%s)"
+msgstr "قيد الإهلاك s% تم نشر (s%)"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#, python-format
+msgid "Depreciation entry %s reversed (%s)"
+msgstr "قيد الإهلاك s% له حركة عكسية (s%)"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__display_account_asset_id
+msgid "Display Account Asset"
+msgstr "عرض حساب الأصول "
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__display_model_choice
+msgid "Display Model Choice"
+msgstr "عرض الاختيار المثالي"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_account__display_name
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__display_name
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_move__display_name
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_res_company__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "Disposal"
+msgstr "إتلاف"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__disposal_date
+msgid "Disposal Date"
+msgstr "تاريخ الطرح"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "Disposal Move"
+msgstr ""
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "Disposal Moves"
+msgstr "حركة إتلاف"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields.selection,name:itq_deferred_expense_revenue.selection__account_asset__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_bank_statement_line__draft_asset_ids
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_move__draft_asset_ids
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_payment__draft_asset_ids
+msgid "Draft Asset"
+msgstr "مسودة الأصل"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Duration"
+msgstr "المدة"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Existing Depreciation Schedule"
+msgstr "جدول الإهلاك الموجود"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Existing Depreciations"
+msgstr "الإهلاكات الموجودة"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_expense_form
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_expense_tree
+#, python-format
+msgid "Expense"
+msgstr "المصروفات"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__account_depreciation_expense_id
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_expense_form
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_expense_tree
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_search
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_expense_model_search
+msgid "Expense Account"
+msgstr "حساب المصروفات "
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_expense_form
+msgid "Expense Board"
+msgstr "لوحة المصروفات"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_expense_form
+msgid "Expense Date"
+msgstr "تاريخ المصروفات"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_expense_form
+msgid "Expense Lines"
+msgstr "بنود المصروفات"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_expense_tree
+msgid "Expense Name"
+msgstr "اسم المصروفات"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_expense_form
+msgid "Expense Recognition"
+msgstr "إثبات المصروفات"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__first_depreciation_date
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "First Depreciation Date"
+msgstr "تاريخ أول إهلاك"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__first_depreciation_date_import
+msgid "First Depreciation Date Import"
+msgstr "استيراد تاريخ أول إهلاك"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_revenue_form
+msgid "First Recognition Date"
+msgstr "تاريخ الإثبات الأول "
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__account_asset_id
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_search
+msgid "Fixed Asset Account"
+msgstr "حساب أصل ثابت"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة خط جميل، مثال: fa-tasks"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_account__form_view_ref
+msgid "Form View Ref"
+msgstr "الرقم المرجعي لنموذج العرض"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_search
+msgid "Future Activities"
+msgstr "الأنشطة المستقبلية"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_res_company__gain_account_id
+msgid "Gain Account"
+msgstr "حساب الأرباح"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+#, python-format
+msgid "Gross Increase"
+msgstr "زيادة الإجمالي"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__gross_increase_value
+msgid "Gross Increase Value"
+msgstr "قيمة زيادة الإجمالي"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_search
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_search
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_expense_model_search
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_revenue_model_search
+msgid "Group By..."
+msgstr "تجميع بحسب"
+
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة الإشارة إلى نشاط استثنائي"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__message_needaction
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "بعض الرسائل بها خطأ في التسليم وذلك عند التحديد."
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__message_has_error
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "بعض الرسائل بها خطأ في التسليم وذلك عند التحديد."
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_account__asset_model
+msgid ""
+"If this is selected, an expense/revenue will be created automatically when "
+"Journal Items on this account are posted."
+msgstr ""
+"إذا تم الاختيار فسوف يتم إنشاء مصروفات وإيرادات تلقائيًا عند تقديم عناصر قيد"
+" اليومية على هذا الحساب"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__first_depreciation_date_import
+msgid ""
+"In case of an import from another software, provide the first depreciation "
+"date in it."
+msgstr "في حالة الاستيراد من برنامج آخر قم بإدخال أول تاريخ إهلاك به."
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__depreciation_number_import
+msgid ""
+"In case of an import from another software, provide the number of "
+"depreciations already done before starting with Odoo."
+msgstr ""
+"في حالة الاستيراد من برنامج آخر قم بإدخال عدد مرات الإهلاك الموجودة بالفعل "
+"قبل البدء في برنامج أودوو."
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__already_depreciated_amount_import
+msgid ""
+"In case of an import from another software, you might need to use this field"
+" to have the right depreciation table report. This is the value that was "
+"already depreciated with entries not computed from this model"
+msgstr ""
+"في حالة الاستيراد من برنامج آخر، قد تحتاج إلى استخدام هذا الحقل للحصول على "
+"تقرير جدول الإهلاك الصحيح. هذه هي القيمة التي تم إهلاكها بالفعل مع قيود غير "
+"محسوبة من هذا النموذج."
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__prorata
+msgid ""
+"Indicates that the first depreciation entry for this asset have to be done "
+"from the asset date (purchase date) instead of the first January / Start "
+"date of fiscal year"
+msgstr ""
+"يدل على أن أول قيد إهلاك لهذا الأصل يجب أن يتم من تاريخ الأصل (تاريخ الشراء)"
+" بدلًا من الأول من يناير/ بداية السنة المالية."
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__message_is_follower
+msgid "Is Follower"
+msgstr "متابع؟"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__salvage_value
+msgid "It is the amount you plan to have that you cannot depreciate."
+msgstr "القيمة التي تخطط لامتلاكها لا يمكن إهلاكها."
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__journal_id
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_search
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_expense_model_search
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_revenue_model_search
+msgid "Journal"
+msgstr "دفتر اليومية"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "Journal Entries"
+msgstr ""
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model,name:itq_deferred_expense_revenue.model_account_move
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model,name:itq_deferred_expense_revenue.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر اليومية"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__original_move_line_ids
+#, python-format
+msgid "Journal Items"
+msgstr "عناصر القيد"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#, python-format
+msgid ""
+"Journal Items of {account} should have a label in order to generate an asset"
+msgstr ""
+"عناصر دفتر اليومية {حساب} يجب أن تحتوي على ملصق لكي يتم استحداث أصل لها."
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_account____last_update
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset____last_update
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_move____last_update
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_move_line____last_update
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_res_company____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة "
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث بتاريخ "
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_search
+msgid "Late Activities"
+msgstr "أنشطة متأخرة"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_res_company__loss_account_id
+msgid "Loss Account"
+msgstr "حساب الخسارة"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الأساسي"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ تسليم الرسالة"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__method
+msgid "Method"
+msgstr "الطريقة"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__model_id
+#: model:ir.model.fields.selection,name:itq_deferred_expense_revenue.selection__account_asset__state__model
+msgid "Model"
+msgstr "نموذج"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields.selection,name:itq_deferred_expense_revenue.selection__account_asset__method_period__1
+msgid "Months"
+msgstr "شهور"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_account__multiple_assets_per_line
+msgid "Multiple Assets per Line"
+msgstr "أصول متعددة للبند الواحد"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_account__multiple_assets_per_line
+msgid ""
+"Multiple asset items will be generated depending on the bill line quantity "
+"instead of 1 global asset."
+msgstr ""
+"يتم استحداث عناصر أصول متعددة بناء على كمية بنود الفاتورة بدلًا من أصل واحد "
+"شامل."
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_expense_form
+msgid "Next Period Expense"
+msgstr "مصروفات الفترة التالية "
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_revenue_form
+msgid "Next Period Revenue"
+msgstr "إيرادات الفترة القادمة"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields.selection,name:itq_deferred_expense_revenue.selection__account_account__create_asset__no
+msgid "No"
+msgstr "رقم"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__salvage_value
+msgid "Not Depreciable Value"
+msgstr "لا يوجد قيمة إهلاك"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__first_depreciation_date
+msgid ""
+"Note that this date does not alter the computation of the first journal "
+"entry in case of prorata temporis assets. It simply changes its accounting "
+"date"
+msgstr ""
+"يلاحظ أن هذا التاريخ لا يعدل من حساب أول قيد يومية في حالة التناسب الزمني "
+"للأصول ولكنه بكل بساطة يغير التاريخ المحاسبي."
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_bank_statement_line__number_asset_ids
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_move__number_asset_ids
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_payment__number_asset_ids
+msgid "Number Asset"
+msgstr "عدد الأصول"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__method_number
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_purchase_tree
+msgid "Number of Depreciations"
+msgstr "عدد الإهلاكات"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__method_period
+msgid "Number of Months in a Period"
+msgstr "عدد أشهر الفترة الواحدة"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_expense_tree
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_sale_tree
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_revenue_form
+msgid "Number of Recognitions"
+msgstr "عدد المرات المثبتة"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__gross_increase_count
+msgid "Number of assets made to increase the value of the asset"
+msgstr "عدد الأصول المنشئة لزيادة قيمة الأصل"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__total_depreciation_entries_count
+msgid "Number of depreciation entries (posted or not)"
+msgstr "عدد قيود الإهلاك (التي تم نشرها أو لم يتم النشر)"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields.selection,name:itq_deferred_expense_revenue.selection__account_asset__state__paused
+msgid "On Hold"
+msgstr "معلق"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__original_value
+msgid "Original Value"
+msgstr "القيمة الأصلية"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__parent_id
+msgid "Parent"
+msgstr "مصدر"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_expense_tree
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_purchase_tree
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_sale_tree
+msgid "Period length"
+msgstr "طول المدة"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Posted Entries"
+msgstr "قيود تم طرحها "
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__prorata_date
+msgid "Prorata Date"
+msgstr "تاريخ الإغلاق"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__prorata
+msgid "Prorata Temporis"
+msgstr "المدة الزمنية المنقضية"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields.selection,name:itq_deferred_expense_revenue.selection__account_asset__asset_type__purchase
+msgid "Purchase: Asset"
+msgstr "شراء: أصل"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_expense_form
+msgid "Related Expenses"
+msgstr "مصروفات ذات صلة"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Related Purchase"
+msgstr "مشتريات ذات صلة"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_revenue_form
+msgid "Related Sales"
+msgstr "المبيعات ذات الصلة "
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#, python-format
+msgid "Report of reversal for {name}"
+msgstr "تقرير عكس الحركة خرج باسم {}"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "Reset to running"
+msgstr "الإعادة إلى التشغيل "
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_expense_tree
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_revenue_form
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_sale_tree
+msgid "Residual Amount to Recognize"
+msgstr "القيمة المتبقية للإثبات"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسئول"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_revenue_form
+#, python-format
+msgid "Revenue"
+msgstr "الإيراد"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_sale_tree
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_revenue_form
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_revenue_model_search
+msgid "Revenue Account"
+msgstr "حساب الإيرادات"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_revenue_form
+msgid "Revenue Board"
+msgstr "لوحة بيانات الإيرادات"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_revenue_form
+msgid "Revenue Date"
+msgstr "تاريخ الإيراد"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_revenue_form
+msgid "Revenue Lines"
+msgstr "بنود الإيراد"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_model_sale_tree
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_sale_tree
+msgid "Revenue Name"
+msgstr "اسم الإيراد"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_revenue_form
+msgid "Revenue Recognition"
+msgstr "إثبات الإيرادات"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_bank_statement_line__reversal_move_id
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_move__reversal_move_id
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_payment__reversal_move_id
+msgid "Reversal Move"
+msgstr ""
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields.selection,name:itq_deferred_expense_revenue.selection__account_asset__state__open
+msgid "Running"
+msgstr "تشغيل"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ استلام الرسائل القصيرة"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "Sale"
+msgstr "بيع"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields.selection,name:itq_deferred_expense_revenue.selection__account_asset__asset_type__sale
+msgid "Sale: Revenue Recognition"
+msgstr "بيع: إثبات الإيرادات"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "Save model"
+msgstr "حفظ النموذج"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Set manually the original values or"
+msgstr "ضبط القيم الأصلية يدويًا أو "
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Set to Draft"
+msgstr "تعيين إلى المسودة"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Set to Running"
+msgstr "الضبط كتشغيل"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_search
+msgid "Show all records which has next action date is before today"
+msgstr "عرض جميع السجلات الذي يسبق تاريخ الإجراء التالي لها تاريخ اليوم."
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#, python-format
+msgid "Some fields are missing {}"
+msgstr "بعض الحقول مفقودة {}"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "Some required values are missing"
+msgstr "بعض القيم المطلوبة غير موجودة"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "Start Depreciating"
+msgstr "بدء الإهلاك "
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تم تمرير تاريخ الاستحقاق بالفعل\n"
+"اليوم: تاريخ النشاط اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields.selection,name:itq_deferred_expense_revenue.selection__account_asset__method__linear
+msgid "Straight Line"
+msgstr "خط مستقيم"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__book_value
+msgid ""
+"Sum of the depreciable value, the salvage value and the book value of all "
+"value increase items"
+msgstr ""
+"مجموع قيم الإهلاك والقيم المخردة والقيم الدفترية لعناصر زيادة جميع القيم."
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_account__can_create_asset
+msgid ""
+"Technical field specifying if the account can generate asset depending on "
+"it's type. It is used in the account form view."
+msgstr ""
+"يتم تحديد الحقل التقني إذا كان بإمكان الحساب استحداث أصول بناء على نوعه ويتم"
+" استخدامه في عرض نموذج الحساب."
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__method_period
+msgid "The amount of time between two depreciations"
+msgstr "الوقت المقدر بين مرتين إهلاك"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__children_ids
+msgid "The children are the gains in value of this asset"
+msgstr "الفروع هي الأرباح من قيم هذه الأصول"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__method_number
+msgid "The number of depreciations needed to depreciate your asset"
+msgstr "عدد مرات الإهلاك اللازمة لإهلاك الأصول الخاصة بك."
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "The remaining value on the last depreciation line must be 0"
+msgstr "القيمة المتبقية في آخر بند إهلاك يجب أن تكون 0"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_bank_statement_line__asset_value_change
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_move__asset_value_change
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_payment__asset_value_change
+msgid ""
+"This is a technical field set to true when this move is the result of the "
+"changing of value of an asset"
+msgstr ""
+"هذا الحقل التقني يتم ضبطه بصحيح عندما تكون هذه الحركة هي نتاج تغيير قيمة "
+"الأصل."
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_bank_statement_line__asset_manually_modified
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_move__asset_manually_modified
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_payment__asset_manually_modified
+msgid ""
+"This is a technical field stating that a depreciation line has been manually"
+" modified. It is used to recompute the depreciation table of an "
+"asset/deferred revenue."
+msgstr ""
+"هذا حقل تقني يدل على أن بند الإهلاك تم تعديله يدويًا، ويستخدم في احتساب جدول"
+" إهلاك الأصول/ الإيرادات المقدمة."
+
+#. module: itq_deferred_expense_revenue
+#. openerp-web
+#: code:addons/itq_deferred_expense_revenue/static/src/js/account_asset_reversed_widget.js:0
+#, python-format
+msgid "This move has been reversed"
+msgstr "تم عكس هذه الحركة"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_search
+msgid "Today Activities"
+msgstr "أنشطة اليوم"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "Trying to pause an asset without any future depreciation line"
+msgstr "محاولة إيقاف أصل بدون أي بنود إهلاك مستقبيلة"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#, python-format
+msgid "Turn as a deferred expense"
+msgstr "التحويل كمصروف مؤجل"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#, python-format
+msgid "Turn as a deferred revenue"
+msgstr "التحويل كإيراد مقدم"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#, python-format
+msgid "Turn as an asset"
+msgstr "التحويل كأصل"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__user_type_id
+msgid "Type of the account"
+msgstr "نوع الحساب"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي في السجل"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل غير المقروءة"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عداد الرسائل غير المقروءة"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,field_description:itq_deferred_expense_revenue.field_account_asset__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__website_message_ids
+msgid "Website communication history"
+msgstr "تاريخ الاتصال بالموقع"
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields,help:itq_deferred_expense_revenue.field_account_asset__state
+msgid ""
+"When an asset is created, the status is 'Draft'.\n"
+"If the asset is confirmed, the status goes in 'Running' and the depreciation lines can be posted in the accounting.\n"
+"The 'On Hold' status can be set manually when you want to pause the depreciation of an asset for some time.\n"
+"You can manually close an asset when the depreciation is over. If the last line of depreciation is posted, the asset automatically goes in that status."
+msgstr ""
+"حينما يتم إنشاء الأصل تصبح الحالة \"مسودة\"، وعندما يتم التأكيد عليه تصبح "
+"الحالة \"تشغيل\" ويمكن حينها نشر بنود الإهلاك في الحسابات، أما الحالة "
+"\"معلق\" يمكن ضبطها يدويًا حينما تريد وقف إهلاك الأصل لبعض الوقت وكذلك أيضًا"
+" يمكن إغلاق الأصل يدويًا عند انتهاء الإهلاك، أما إذا تم نشر آخر بند من "
+"الإهلاك فأن الأصل يصبح على تلك الحالة من تلقاء نفسه."
+
+#. module: itq_deferred_expense_revenue
+#: model:ir.model.fields.selection,name:itq_deferred_expense_revenue.selection__account_asset__method_period__12
+msgid "Years"
+msgstr "سنوات"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "You cannot archive a record that is not closed"
+msgstr "لا يمكن أرشفة سجل غير مغلق"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid ""
+"You cannot automate the journal entry for an asset that has a running gross "
+"increase. Please use 'Dispose' on the increase(s)."
+msgstr ""
+"لا يمكن أتمتة قيد اليومية لأصل به زيادة إجمالي جاري، يرجى استخدام \"إتلاف\" "
+"في حالة الزيادة."
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid ""
+"You cannot create an asset from lines containing credit and debit on the "
+"account or with a null amount"
+msgstr "لا يمكن إنشاء أصل من بنود بها دائن ومدين على الحساب أو ليس بها قيمة."
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "You cannot delete a document that is in %s state."
+msgstr "لا يمكن حذف مستند في حالة s%"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid ""
+"You cannot pause an asset with posted depreciation lines in the future."
+msgstr "لا يمكن إيقاف أصل به بنود إهلاك مؤجلة في المستقبل"
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_move.py:0
+#, python-format
+msgid ""
+"You cannot reset to draft an entry having a posted deferred revenue/expense"
+msgstr ""
+" قيد الإيرادات مقدمة أو المصروفات مؤجلة الذي تم نشره لا يمكن إعادة تعيينه "
+"إلى المسودة "
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_revenue_form
+msgid "e.g. Annual Subscription"
+msgstr "مثال: التسجيل السنوي"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_expense_form
+msgid "e.g. Annually Paid Insurance"
+msgstr "مثال: تأمينات تدفع سنويًا"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "e.g. Laptop iBook"
+msgstr "مثال: جهاز لوحي محمول - آي بوك"
+
+#. module: itq_deferred_expense_revenue
+#: model_terms:ir.ui.view,arch_db:itq_deferred_expense_revenue.view_account_asset_form
+msgid "select the related purchases"
+msgstr "اختيار مشتريات ذات صلة "
+
+#. module: itq_deferred_expense_revenue
+#: code:addons/itq_deferred_expense_revenue/models/account_asset.py:0
+#, python-format
+msgid "this move"
+msgstr "هذه الحركة"

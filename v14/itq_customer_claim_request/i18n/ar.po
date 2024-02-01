@@ -1,0 +1,752 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* itq_customer_claim_request
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-18 09:39+0000\n"
+"PO-Revision-Date: 2023-09-18 13:04+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.3.2\n"
+
+#. module: itq_customer_claim_request
+#: code:addons/itq_customer_claim_request/models/customer_claim_request.py:0
+#, python-format
+msgid " Within this period"
+msgstr "خلال هذه الفترة"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_request_form
+msgid "&amp;nbsp; &amp;nbsp;"
+msgstr ""
+
+#. module: itq_customer_claim_request
+#: code:addons/itq_customer_claim_request/models/account_payment.py:0
+#, python-format
+msgid "A payment must always belongs to a bank or cash journal."
+msgstr "يجب أن ينتمي الدفع إلى دفتر نقدي أو بنكي"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__message_needaction
+msgid "Action Needed"
+msgstr "الإجراءات اللازمة"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "استثناء النشاط"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields.selection,name:itq_customer_claim_request.selection__claim_invoices_lines__line_state__available
+msgid "Available"
+msgstr "متاح"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_request_form
+msgid "Available Invoices"
+msgstr "الفواتير المتاحة"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_request_form
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.view_rejection_wizard_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields.selection,name:itq_customer_claim_request.selection__customer_claim_request__state__cancelled
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_claim_invoices_lines__checked
+msgid "Checked"
+msgstr "تم التحديد"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_account_bank_statement_line__claim_id
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_account_move__claim_id
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_account_payment__claim_id
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_claim_invoices_lines__claim_id
+msgid "Claim"
+msgstr "طلب مدفوعات"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__claim_available_invoices_ids
+msgid "Claim Available Lines"
+msgstr "بنود المطالبة المتاحة"
+
+#. module: itq_customer_claim_request
+#: model:ir.model,name:itq_customer_claim_request.model_claim_invoices_lines
+msgid "Claim Invoices Lines"
+msgstr "بنود فواتير المطالبة"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_claim_invoices_lines__claim_perc
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__claim_perc
+msgid "Claim Perc"
+msgstr "نسبة المطالبة %"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_request_form
+msgid "Claim Perc (%)"
+msgstr "نسبة المطالبة (%)"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_report_doc
+msgid "Claim Perc:"
+msgstr "نسبة المطالبة %"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__claim_reconciled_invoices_ids
+msgid "Claim Reconciled Lines"
+msgstr "بنود مطالبات تمت تسويتها"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_claim_invoices_lines__company_currency_id
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__company_currency_id
+msgid "Company Currency"
+msgstr "عملة الشركة"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_claim_invoices_lines__create_uid
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__create_uid
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_rejection_wizard__create_uid
+msgid "Created by"
+msgstr "الإنشاء بواسطة"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_claim_invoices_lines__create_date
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__create_date
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_rejection_wizard__create_date
+msgid "Created on"
+msgstr "الإنشاء بتاريخ"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_report_doc
+msgid "Creation Date:"
+msgstr "تاريخ الإنشاء"
+
+#. module: itq_customer_claim_request
+#: model:ir.model,name:itq_customer_claim_request.model_customer_claim_request
+msgid "Customer Claim Request"
+msgstr "طلب مطالبة مدفوعات العميل"
+
+#. module: itq_customer_claim_request
+#: model:ir.actions.act_window,name:itq_customer_claim_request.customer_claim_request_action
+#: model:ir.ui.menu,name:itq_customer_claim_request.customer_claim_request_menu
+#: model:ir.ui.menu,name:itq_customer_claim_request.customer_claim_request_pos_menu
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_request_form
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_request_tree
+msgid "Customer claim Request"
+msgstr "طلب مطالبة مدفوعات العميل"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_claim_invoices_lines__invoice_date_due
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__is_date_filter
+msgid "Date Filter"
+msgstr "فلتر التاريخ"
+
+#. module: itq_customer_claim_request
+#: code:addons/itq_customer_claim_request/models/customer_claim_request.py:0
+#, python-format
+msgid "Date to must be after date from"
+msgstr "يجب أن يكون التاريخ من قبل التاريخ إلى"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_account_move__display_name
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_account_payment__display_name
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_claim_invoices_lines__display_name
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__display_name
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_rejection_wizard__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields.selection,name:itq_customer_claim_request.selection__customer_claim_request__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_claim_invoices_lines__due_amount
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_report_doc
+msgid "Due Amount"
+msgstr "المبلغ المستحق"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_report_doc
+msgid "Due Date"
+msgstr "تاريخ الاستحقاق"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,help:itq_customer_claim_request.field_customer_claim_request__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة خط جميل، مثال: fa-tasks"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__date_from
+msgid "From Date"
+msgstr "التاريخ من"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_report_doc
+msgid "From Date:"
+msgstr "التاريخ من"
+
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,help:itq_customer_claim_request.field_customer_claim_request__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة الإشارة إلى نشاط استثنائي"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,help:itq_customer_claim_request.field_customer_claim_request__message_needaction
+#: model:ir.model.fields,help:itq_customer_claim_request.field_customer_claim_request__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "تتطلب الرسائل الجديدة انتباهك وذلك عند التحديد."
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,help:itq_customer_claim_request.field_customer_claim_request__message_has_error
+#: model:ir.model.fields,help:itq_customer_claim_request.field_customer_claim_request__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "بعض الرسائل بها خطأ في التسليم وذلك عند التحديد."
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__message_is_follower
+msgid "Is Follower"
+msgstr "متابع؟"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__journal_id
+msgid "Journal"
+msgstr "دفتر اليومية"
+
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__is_invoice_type
+msgid "Is Invoice Type"
+msgstr ""
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__installment_company_id
+msgid "Installment Company"
+msgstr "شركة التقسيط"
+
+#. module: itq_customer_claim_request
+#: model:ir.model,name:itq_customer_claim_request.model_account_move
+msgid "Journal Entry"
+msgstr "قيد دفتر اليومية"
+
+#. module: itq_customer_claim_request
+#: model:ir.model,name:itq_customer_claim_request.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر دفتر اليومية"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_report_doc
+msgid "Journal:"
+msgstr "دفتر اليومية"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_account_move____last_update
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_account_move_line____last_update
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_account_payment____last_update
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_claim_invoices_lines____last_update
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request____last_update
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_rejection_wizard____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل بتاريخ"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_claim_invoices_lines__write_uid
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__write_uid
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_rejection_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_claim_invoices_lines__write_date
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__write_date
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_rejection_wizard__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث بتاريخ"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_claim_invoices_lines__line_state
+msgid "Line State"
+msgstr "حالة البند"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الأساسي"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ تسليم الرسالة"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_claim_invoices_lines__move_id
+msgid "NO"
+msgstr "رقم الفاتورة"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__name
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_rejection_wizard__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_report_doc
+msgid "Number"
+msgstr "الرقم"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,help:itq_customer_claim_request.field_customer_claim_request__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,help:itq_customer_claim_request.field_customer_claim_request__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,help:itq_customer_claim_request.field_customer_claim_request__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_claim_invoices_lines__invoice_origin
+msgid "Origin"
+msgstr "الأصل"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_claim_invoices_lines__amount_total_signed
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_report_doc
+msgid "Origin Amount"
+msgstr "المبلغ الأصلى"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_claim_invoices_lines__paid_amount
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__paid_amount
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_report_doc
+msgid "Paid Amount"
+msgstr "المبلغ المدفوع"
+
+#. module: itq_customer_claim_request
+#: code:addons/itq_customer_claim_request/models/customer_claim_request.py:0
+#, python-format
+msgid "Paid Amount Must Be > 0.0"
+msgstr "المبلغ المدفوع يجب أن يكون أكبر من 0"
+
+#. module: itq_customer_claim_request
+#: code:addons/itq_customer_claim_request/models/customer_claim_request.py:0
+#, python-format
+msgid "Paid Amount Must be <= Claim Amount"
+msgstr "يجب أن يكون المبلغ المدفوع أقل من أو يساوى المبلغ المطلوب للدفع."
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_report_doc
+msgid "Paid Amount:"
+msgstr "المبلغ المدفوع:"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields.selection,name:itq_customer_claim_request.selection__claim_invoices_lines__line_state__partially_reconciled
+#: model:ir.model.fields.selection,name:itq_customer_claim_request.selection__customer_claim_request__state__partially_reconciled
+msgid "Partially Reconciled"
+msgstr "تسوية جزئية"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_claim_invoices_lines__partner_id
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_report_doc
+msgid "Partner"
+msgstr "الشريك"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__payment_method_id
+msgid "Payment Method"
+msgstr "طرق الدفع"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_report_doc
+msgid "Payment Method:"
+msgstr "طرق الدفع"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_claim_invoices_lines__payment_state
+msgid "Payment Status"
+msgstr "حالة الدفع"
+
+#. module: itq_customer_claim_request
+#: model:ir.model,name:itq_customer_claim_request.model_account_payment
+msgid "Payments"
+msgstr "المدفوعات"
+
+#. module: itq_customer_claim_request
+#: model:ir.actions.report,name:itq_customer_claim_request.action_customer_claim_report
+msgid "Print Customer Claim Request"
+msgstr "طباعة طلب مطالبة مدفوعات العميل"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_report_doc
+msgid "Print Date:"
+msgstr "تاريخ الطباعة"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_request_form
+msgid "Print Reconciled Inv"
+msgstr "طباعة فواتير التسوية"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_request_form
+msgid "Reconcile"
+msgstr "تسوية"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields.selection,name:itq_customer_claim_request.selection__claim_invoices_lines__line_state__reconciled
+#: model:ir.model.fields.selection,name:itq_customer_claim_request.selection__customer_claim_request__state__reconciled
+msgid "Reconciled"
+msgstr "تمت التسوية"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__reconciled_checked
+msgid "Reconciled Checked"
+msgstr "تم التحقق من التسوية"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_request_form
+msgid "Reconciled Invoices"
+msgstr "فواتير العملاء التى تم تسويتها"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_request_form
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.view_rejection_wizard_form
+msgid "Reject"
+msgstr "رفض"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.view_rejection_wizard_form
+msgid "Reject Reason"
+msgstr "أسباب الرفض"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields.selection,name:itq_customer_claim_request.selection__customer_claim_request__state__rejected
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: itq_customer_claim_request
+#: code:addons/itq_customer_claim_request/models/customer_claim_request.py:0
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__rejection_reason
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_rejection_wizard__rejection_reason
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_request_form
+#, python-format
+msgid "Rejection Reason"
+msgstr "أسباب الرفض"
+
+#. module: itq_customer_claim_request
+#: model:ir.model,name:itq_customer_claim_request.model_rejection_wizard
+msgid "Rejection Wizard"
+msgstr "إدخال أسباب الرفض"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__total_paid_amount
+msgid "Request Total Paid Amount"
+msgstr "القيمه الكليه للمبلغ المدفوع"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__user_id
+msgid "Requester"
+msgstr "مقدم الطلب"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسئول"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ استلام الرسائل القصيرة"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_request_form
+msgid "Select All"
+msgstr "إختيار الكل"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_request_form
+msgid "Send"
+msgstr "إرسال"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields.selection,name:itq_customer_claim_request.selection__customer_claim_request__state__sent
+msgid "Sent"
+msgstr "تم الإرسال"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__sent_date
+msgid "Sent Date"
+msgstr "تاريخ الإرسال"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__state
+msgid "State"
+msgstr "الحاله"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,help:itq_customer_claim_request.field_customer_claim_request__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناء على الأنشطة:\n"
+"منتهي: انقضاء تاريخ الاستحقاق\n"
+"اليوم: النشاط يتم اليوم\n"
+"مقرر: أنشطة مستقبلية."
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_request_form
+msgid "Submit"
+msgstr "تقديم"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__submit_date
+msgid "Submit Date"
+msgstr "تاريخ التقديم"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields.selection,name:itq_customer_claim_request.selection__customer_claim_request__state__submitted
+msgid "Submitted"
+msgstr "تم التقديم"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,help:itq_customer_claim_request.field_claim_invoices_lines__invoice_origin
+msgid "The document(s) that generated the invoice."
+msgstr "المستندات التي تم إصدار الفاتورة بناء عليها"
+
+#. module: itq_customer_claim_request
+#: code:addons/itq_customer_claim_request/models/account_payment.py:0
+#, python-format
+msgid ""
+"The journal entry %s reached an invalid state relative to its payment.\n"
+"To be consistent, the journal entry must always contains:\n"
+"- one journal item involving the outstanding payment/receipts account.\n"
+"- one journal item involving a receivable/payable account.\n"
+"- optional journal items, all sharing the same account.\n"
+"\n"
+msgstr ""
+"حالة قيد اليومية %s غير صحيحة نسبة إلى المدفوعات:\n"
+"للحفاظ على النسق يجب أن يحتوي الدفتر على:\n"
+"- بند دفتر يومية في حساب المدفوعات المستحقة على العملاء.\n"
+"- بند دفتر يومية في حساب المدفوعات المستحقة على الموردين.\n"
+"- بنود دفتر يومية اختيارية جميعها في حساب واحد.\n"
+
+#. module: itq_customer_claim_request
+#: code:addons/itq_customer_claim_request/models/account_payment.py:0
+#, python-format
+msgid ""
+"The journal entry %s reached an invalid state relative to its payment.\n"
+"To be consistent, the journal items must share the same currency."
+msgstr ""
+"حالة قيد اليومية %s غير صحيحة نسبة إلى المدفوعات:\n"
+"للحفاظ على النسق يجب أن تتواجد نفس العملة في جميع بنود الدفاتر."
+
+#. module: itq_customer_claim_request
+#: code:addons/itq_customer_claim_request/models/account_payment.py:0
+#, python-format
+msgid ""
+"The journal entry %s reached an invalid state relative to its payment.\n"
+"To be consistent, the journal items must share the same partner."
+msgstr ""
+"حالة قيد اليومية %s غير صحيحة نسبة إلى المدفوعات:\n"
+"للحفاظ على النسق يجب أن يتواجد نفس الشريك في جميع بنود الدفاتر."
+
+#. module: itq_customer_claim_request
+#: code:addons/itq_customer_claim_request/models/customer_claim_request.py:0
+#, python-format
+msgid "There's already running Request for this journal"
+msgstr "يوجد على هذا الدفتر طلب ساري!"
+
+#. module: itq_customer_claim_request
+#: code:addons/itq_customer_claim_request/models/customer_claim_request.py:0
+#, python-format
+msgid "This Journal has no Due Invoices"
+msgstr "لا يوجد فواتير مستحقة على هذا الدفتر"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__claim_amount
+msgid "To Claim Amount"
+msgstr "مبلغ المطالبة"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__date_to
+msgid "To Date"
+msgstr "التاريخ إلى"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_report_doc
+msgid "To Method:"
+msgstr "طريقة الدفع:"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_claim_invoices_lines__to_pay
+msgid "To Pay Amount"
+msgstr "دفع المبلغ"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields.selection,name:itq_customer_claim_request.selection__claim_invoices_lines__line_state__to_reconcile
+msgid "To Reconcile"
+msgstr "تسوية"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_request_form
+msgid "To Reconcile All"
+msgstr "تسوية الجميع"
+
+#. module: itq_customer_claim_request
+#: model_terms:ir.ui.view,arch_db:itq_customer_claim_request.customer_claim_request_form
+msgid "To Reconcile Invoice"
+msgstr "تسوية الفاتورة"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,help:itq_customer_claim_request.field_customer_claim_request__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي في السجل"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل غير المقروءة"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عداد الرسائل غير المقروءة"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,field_description:itq_customer_claim_request.field_customer_claim_request__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: itq_customer_claim_request
+#: model:ir.model.fields,help:itq_customer_claim_request.field_customer_claim_request__website_message_ids
+msgid "Website communication history"
+msgstr "تاريخ الاتصال بالموقع"
+
+#. module: itq_customer_claim_request
+#: code:addons/itq_customer_claim_request/models/claim_invoices_lines.py:0
+#, python-format
+msgid "You cannot delete This line except draft status!"
+msgstr "لا يمكن حذف البند إلا فى حالة مسودة!"
+
+#. module: itq_customer_claim_request
+#: code:addons/itq_customer_claim_request/models/customer_claim_request.py:0
+#, python-format
+msgid "You cannot delete except draft state only!"
+msgstr "لا يمكن الحذف سوى في حالة مسودة فقط!"
+
+#. module: itq_customer_claim_request
+#: code:addons/itq_customer_claim_request/models/account_move.py:0
+#, python-format
+msgid "You cannot take this action on invoice has a claim request!"
+msgstr "لا يمكن تنفيذ هذا الإجراء على فاتورة لديها طلب مدفوعات!"
+
+#. module: itq_customer_claim_request
+#: code:addons/itq_customer_claim_request/models/customer_claim_request.py:0
+#, python-format
+msgid "You dont have reconcile lines to submit!!"
+msgstr "لا يوجد بنود تسوية ليتم إرسالها!"

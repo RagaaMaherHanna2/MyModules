@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="itq.employee.list" id="default_employee_list">
+            <field name="name">Default Employee List</field>
+            <field name="list_for">default</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="event_instruction_wizard" model="ir.ui.view">
+        <field name="name">event.instruction.wizard</field>
+        <field name="model">itq.event.instruction.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="event_instructions" widget="html"/>
+                <field name="is_read_instruction"/>
+                <label for="is_read_instruction"/>
+                <footer>
+<!--                    <span style="color:blue">By clicking confirm you agreed that you have read instructions.</span>-->
+                    <button name="approve_button" type="object" string="Confirm"
+                            class="btn-primary" attrs="{'invisible': [('is_read_instruction', '=', False)]}"/>
+                    <button string="Cancel" type="object" name="cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

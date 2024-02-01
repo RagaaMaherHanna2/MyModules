@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_employee_data,access_hr_employee_data,model_hr_employee_data,itq_base_hrms_dashboard.group_hrms_dashboard_group,1,1,1,1

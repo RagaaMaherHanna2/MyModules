@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="itq_day_line_form_view" model="ir.ui.view">
+            <field name="name">itq.day.line.form</field>
+            <field name="model">itq.day.line</field>
+            <field name="inherit_id" ref=""/>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="display_name" stirng="Name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="itq_day_line_tree_view" model="ir.ui.view">
+            <field name="name">itq.day.line.tree</field>
+            <field name="model">itq.day.line</field>
+            <field name="inherit_id" ref=""/>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="display_name" string="Name"/>
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</odoo>

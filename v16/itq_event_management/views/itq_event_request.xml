@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="itq_event_request_form_view" model="ir.ui.view">
+            <field name="name">itq.event.request.form</field>
+            <field name="model">itq.event.request</field>
+            <field name="arch" type="xml">
+                <form duplicate="0">
+                    <header>
+                        <button name="to_under_review" type="object" string="send to review" class="btn-primary"
+                                states='draft'/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group string="Requester Department">
+                                <field name="requester_id" options="{'no_open': True}"/>
+                                <field name="department_id" options="{'no_open': True}"/>
+                                <field name="department_manager_id" options="{'no_open': True}"/>
+                                <field name="contact_number" class="o_force_ltr"/>
+                                <field name="contact_email"/>
+                            </group>
+                            <group string="Event Data">
+                                <field name="request_number" attrs="{'invisible':[('request_number', '=', False)]}"/>
+                                <field name="request_date"/>
+                                <field name="name"/>
+                                <field name="event_type_id" options="{'no_create':1, 'no_open':1}"/>
+                                <field name="event_date"/>
+                                <field name="event_number_of_days"/>
+                                <field name="event_attraction_id" options="{'no_create':1, 'no_open':1}"/>
+                                <field name="is_other_attraction" invisible="1"/>
+                                <field name="is_ended_event" invisible="1"/>
+                                <field name="other_event_attraction"
+                                       attrs="{'invisible': [('is_other_attraction', '=', False)],'required': [('is_other_attraction', '=', True)]}"/>
+
+                                <field name="rehearsal_date"/>
+                                <field name="budget"/>
+                            </group>
+                            <group string="Audience">
+                                <field name="target_audience_ids" widget="many2many_tags"
+                                       options="{'no_create':1, 'no_open':1}"/>
+                                <field name="expected_number_of_guests"/>
+                                <field name="internal_guest_count"/>
+                                <field name="external_guest_count"/>
+                                <field name="guest_list" widget="many2many_binary"/>
+                            </group>
+                            <group string="Guest Responsible">
+                                <field name="guest_responsible_name"/>
+                                <field name="guest_responsible_mobile" class="o_force_ltr"/>
+                                <field name="guest_responsible_phone" class="o_force_ltr"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="event_goal" widget="html"/>
+                        </group>
+                        <group attrs="{'invisible': [('return_reason','=', False)]}">
+                            <field name="return_reason" readonly="1"/>
+                        </group>
+                        <group attrs="{'invisible': [('rejection_reason','=', False)]}">
+                            <field name="rejection_reason" readonly="1"/>
+                        </group>
+                        <notebook>
+                            <page name="event_program_attachment_ids" string="Event Program">
+                                <group>
+                                    <field name="event_program_attachment_ids" widget="many2many_binary"/>
+                                </group>
+                                <field name="event_program_line_ids">
+                                    <tree editable="bottom">
+                                        <field name="day_line_id" options="{'no_create':1, 'no_open':1}" required="1"/>
+                                        <field name="time" widget="float_time"/>
+                                        <field name="activity"/>
+                                    </tree>
+                                    <form>
+                                        <sheet>
+                                            <group>
+                                                <group>
+                                                    <field name="day_line_id" readonly="1"/>
+                                                    <field name="time" widget="float_time" readonly="1"/>
+                                                </group>
+                                                <group>
+                                                    <field name="activity" readonly="1"/>
+                                                </group>
+                                            </group>
+                                        </sheet>
+                                        <div class="oe_chatter" style="display:block;">
+                                            <field name="message_follower_ids" widget="mail_followers"/>
+                                            <field name="message_ids" widget="mail_thread"/>
+                                        </div>
+                                    </form>
+                                </field>
+                            </page>
+                            <page name="team_member_ids" string="Organizer Team">
+                                <group>
+                                    <field name="organizer_team"/>
+                                </group>
+                                <group name="team_member_values"
+                                       attrs="{'invisible': [('organizer_team', '!=', 'event_agency')]}">
+                                    <field name="organizer_name"/>
+                                    <field name="organizer_phone" class="o_force_ltr"/>
+                                    <field name="organizer_mobile" class="o_force_ltr"/>
+                                    <field name="organizer_email"/>
+                                </group>
+
+                                <label for="team_member_ids" string="Team Members"
+                                       attrs="{'invisible': [('organizer_team', '!=', 'public_relation_department')]}"/>
+                                <field name="team_member_ids" widget="one2many"
+                                       attrs="{'invisible': [('organizer_team', '!=', 'public_relation_department')]}">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="title"/>
+                                        <field name="mobile"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="name"/>
+                                            <field name="title"/>
+                                            <field name="mobile" class="o_force_ltr"/>
+                                        </group>
+
+                                    </form>
+                                </field>
+
+                            </page>
+                            <page name="invitee_ids" string="Invitees">
+                                <group name="invitee_buttons"
+                                       attrs="{'invisible': ['|',('is_ended_event','=', True),('state', '!=', 'draft')]}">
+                                    <button string="Export" type="object" class="oe_highlight"
+                                            name="download_excel_button"/>
+                                    <button string="Import" type="action" class="oe_highlight"
+                                            name="%(import_invitee_action)d"/>
+                                </group>
+                                <field name="invitee_ids"
+                                       attrs="{'readonly': ['|',('is_ended_event','=', True),('state', '!=', 'draft')]}">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="mobile"/>
+                                        <field name="nationality"/>
+                                        <field name="email"/>
+                                        <field name="identification"/>
+                                        <field name="has_event_permission" invisible="1"/>
+                                        <field name="event_state" invisible="1"/>
+                                        <field name="event_request_id" invisible="1"/>
+                                        <button name="%(itq_invitee_wizard_action)d" type="action" string="add" class="btn-primary"
+                                        groups="itq_event_management.itq_group_event_approver"
+                                        attrs="{'invisible': ['|',('has_event_permission','=', True),('event_state','!=','confirmed')]}"
+                                        context="{'default_event_request_id': event_request_id}"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="name"/>
+                                            <field name="mobile" class="o_force_ltr"/>
+                                            <field name="nationality"/>
+                                            <field name="email"/>
+                                            <field name="identification"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page name="guest_honor_ids" string="Guests Of Honor">
+                                <field name="guest_honor_ids">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="title"/>
+                                        <field name="organization"/>
+                                        <field name="is_insider"/>
+                                        <field name="has_event_permission" invisible="1"/>
+                                        <field name="event_state" invisible="1"/>
+                                        <field name="event_request_id" invisible="1"/>
+                                        <button name="%(itq_invitee_wizard_action)d" type="action" string="add" class="btn-primary"
+                                        groups="itq_event_management.itq_group_event_approver"
+                                        attrs="{'invisible': ['|',('has_event_permission','=', True),('event_state','!=','confirmed')]}"
+                                        context="{'default_event_request_id': event_request_id}"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="name"/>
+                                                <field name="title"/>
+                                            </group>
+                                            <group>
+                                                <field name="organization"/>
+                                                <field name="is_insider"/>
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page name="speaker_guest_ids" string="Speaker Guests">
+                                <field name="speaker_guest_ids">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="title"/>
+                                        <field name="organization"/>
+                                        <field name="is_insider"/>
+                                        <field name="has_event_permission" invisible="1"/>
+                                        <field name="event_state" invisible="1"/>
+                                        <field name="event_request_id" invisible="1"/>
+                                        <button name="%(itq_invitee_wizard_action)d" type="action" string="add" class="btn-primary"
+                                        groups="itq_event_management.itq_group_event_approver"
+                                        attrs="{'invisible': ['|',('has_event_permission','=', True),('event_state','!=','confirmed')]}"
+                                        context="{'default_event_request_id': event_request_id}"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="name"/>
+                                                <field name="title"/>
+                                            </group>
+                                            <group>
+                                                <field name="organization"/>
+                                                <field name="is_insider"/>
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page name="amenity_specification_line_ids" string="Amenities And Specifications">
+                                <field name="used_amenity_specification_ids" invisible="1" widget="many2many_tags"/>
+                                <field name="amenity_specification_line_ids">
+                                    <tree editable="bottom">
+                                        <field name="amenity_specification_id" options="{'no_create':1, 'no_open':1}"
+                                               domain="[('id', 'not in', parent.used_amenity_specification_ids)]"/>
+                                        <field name="amenity_item_ids" widget="many2many_tags"
+                                               options="{'no_create':1, 'no_open':1}"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="amenity_specification_id" readonly="1"/>
+                                            <field name="amenity_item_ids" widget="many2many_tags" readonly="1"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page name="catering_type_line_ids" string="Catering Type">
+                                <field name="used_catering_type_ids" invisible="1" widget="many2many_tags"/>
+                                <field name="catering_type_line_ids">
+                                    <tree editable="bottom">
+                                        <field name="catering_type_id" options="{'no_create':1, 'no_open':1}"
+                                               domain="[('id', 'not in', parent.used_catering_type_ids)]"/>
+                                        <field name="catering_item_ids" widget="many2many_tags"
+                                               options="{'no_create':1, 'no_open':1}"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="catering_type_id" readonly="1"/>
+                                            <field name="catering_item_ids" widget="many2many_tags" readonly="1"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="itq_event_request_tree_view" model="ir.ui.view">
+            <field name="name">itq.event.request.tree</field>
+            <field name="model">itq.event.request</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="request_number"/>
+                    <field name="event_type_id"/>
+                    <field name="request_date"/>
+                    <field name="event_date"/>
+                    <field name="department_id"/>
+                    <field name="expected_number_of_guests"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="itq_event_request_calendar_view" model="ir.ui.view">
+            <field name="name">itq.event.request.calendar</field>
+            <field name="model">itq.event.request</field>
+            <field name="arch" type="xml">
+                <calendar date_start="event_date" date_stop="event_date_end" mode="month" color="event_type_id"
+                          quick_add="False"
+                          event_open_popup="False" create_name_field="calendar_name" event_limit="5" delete="0"
+                          create="0">
+                    <field name="display_name" context="{'is_calendar':True}"/>
+                    <field name="event_type_id" filters="1" context="{'is_calendar':True}"/>
+                    <field name="event_attraction_id" filters="1"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="itq_event_request_search" model="ir.ui.view">
+            <field name="name">itq.event.request.search</field>
+            <field name="model">itq.event.request</field>
+            <field name="arch" type="xml">
+                <search>
+                    <filter string="Draft" name="state" domain="[('state', '=', 'draft')]"
+                            context="{'search_default_state': 'draft'}"/>
+                    <field name="name"/>
+                    <field name="request_number"/>
+                    <field name="event_type_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="itq_event_request_action" model="ir.actions.act_window">
+            <field name="name">Event Request</field>
+            <field name="res_model">itq.event.request</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="context">{'search_default_state': 'draft'}</field>
+            <field name="view_ids" eval="[
+                (5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('itq_event_management.itq_event_request_tree_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('itq_event_management.itq_event_request_form_view')})]"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no Event Requests click here to add new
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

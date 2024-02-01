@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_recruitment_detailed_wizard,access_recruitment_detailed_wizard,model_recruitment_detailed_wizard,itq_recruitment_detailed_report.recruitment_detailed_dashboard_group,1,1,1,1

@@ -1,0 +1,2626 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* itq_event_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-25 13:53+0000\n"
+"PO-Revision-Date: 2024-01-16 11:58+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: itq_event_management
+#: model:ir.actions.report,print_report_name:itq_event_management.action_report_hr_event_request
+msgid ""
+"'Event Request - %s - %s' % (object.request_number,\n"
+"            object.request_date.date())\n"
+"        "
+msgstr ""
+"'طلب فعالية - %s - %s' % (object.request_number,\n"
+"            object.request_date.date())\n"
+"        "
+
+#. module: itq_event_management
+#: model:mail.template,body_html:itq_event_management.itq_notify_department_manager_email_template
+msgid ""
+"<div>\n"
+"                Notify Department Manager\n"
+"            </div>\n"
+"        "
+msgstr ""
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "<strong>Contact Email:</strong>"
+msgstr "<strong>البريد الالكتروني:</strong>"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "<strong>Contact Number:</strong>"
+msgstr "<strong>رقم التواصل المباشر:</strong>"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "<strong>Department manager:</strong>"
+msgstr "<strong>مدير الادارة:</strong>"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "<strong>Department:</strong>"
+msgstr "<strong>الادارة:</strong>"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "<strong>Event Attraction:</strong>"
+msgstr "<strong>موقع الفعالية:</strong>"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "<strong>Event Date:</strong>"
+msgstr "<strong>تاريخ الفعالية:</strong>"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "<strong>Event Goal:</strong>"
+msgstr "هدف الفعالية:"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "<strong>Event Number Of Days:</strong>"
+msgstr "<strong>عدد الايام:</strong>"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "<strong>Event Type:</strong>"
+msgstr "<strong>نوع الفعالية:</strong>"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "<strong>Expected Number Of Guests:</strong>"
+msgstr "<strong>عدد الحضور المتوقع:</strong>"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "<strong>External Guest Count:</strong>"
+msgstr "<strong>العدد الخارجي:</strong>"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "<strong>Internal Guest Count:</strong>"
+msgstr "<strong>العدد الداخلى:</strong>"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "<strong>Rehearsal Date:</strong>"
+msgstr "<strong>تاريخ البروفة:</strong>"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "Rehearsal Date must be less than Event Date"
+msgstr "يجب أن يكون تاريخ البروفة أقل من تاريخ الفعالية"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "<strong>Requester:</strong>"
+msgstr "<strong>مقدم الطلب:</strong>"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "<strong>Title:</strong>"
+msgstr "<strong>المنصب:</strong>"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_permission
+msgid "<strong>Source:</strong>"
+msgstr "المصدر"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_permission
+msgid "<strong>Branch ID:</strong>"
+msgstr "الفرع"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_permission
+msgid "<strong>Email</strong>"
+msgstr "البريد الالكتروني"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_permission
+msgid "<strong>Entrance:</strong>"
+msgstr "المدخل"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_permission
+msgid "<strong>Model</strong>"
+msgstr "المصدر"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_permission
+msgid "<strong>Title</strong>"
+msgstr "المنصب"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_permission
+msgid "<strong>Name</strong>"
+msgstr "الاسم"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_permission
+msgid "<strong>Number Of Guests:</strong>"
+msgstr "عدد الحضور"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_permission
+msgid "<strong>Permission Number:</strong>"
+msgstr "رقم التصريح"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_permission
+msgid "<strong>Phone</strong>"
+msgstr "الهاتف"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_permission
+msgid "<strong>Start Date:</strong>"
+msgstr "تاريخ البداية"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_permission
+msgid "<strong>End Date:</strong>"
+msgstr "تاريخ النهاية"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_permission
+msgid "<strong>Event:</strong>"
+msgstr "الفعالية"
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_abstract_event_lookup__message_needaction
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification__message_needaction
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification_line__message_needaction
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__message_needaction
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_item__message_needaction
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type__message_needaction
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type_line__message_needaction
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration__message_needaction
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_management_settings__message_needaction
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__message_needaction
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__message_needaction
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_seating_type__message_needaction
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_type__message_needaction
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__message_needaction
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch__message_needaction
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member__message_needaction
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__message_needaction
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_target_audience__message_needaction
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_research_type__message_needaction
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_visit_classification__message_needaction
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_documentation_type__message_needaction
+msgid "Action Needed"
+msgstr "يحتاج إتخاذ إجراء"
+
+#. module: itq_event_management
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_abstract_event_lookup__state__active
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_amenity_specification__state__active
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_attraction_location__state__active
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_catering_type__state__active
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_entrance_configuration__state__active
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_event_seating_type__state__active
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_event_type__state__active
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_holding_branch__state__active
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_target_audience__state__active
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_research_type__state__active
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_visit_classification__state__active
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_documentation_type__state__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_amenity_specification_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_attraction_location_form
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_catering_type_form
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_documentation_type_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_entrance_configuration_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_seating_type_form
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_type_form
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_holding_branch_form
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_research_type_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_target_audience_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_visit_classification_form_view
+msgid "Activate"
+msgstr "تنشيط"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_program_line__activity
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Activity"
+msgstr "النشاط"
+
+#. module: itq_event_management
+#: model:res.groups,name:itq_event_management.itq_group_event_admin
+msgid "Admin"
+msgstr "مدير نظام"
+
+#. module: itq_event_management
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_event_request__budget__advance_payment
+msgid "Advance Payment"
+msgstr "سلفة"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__seating_type_ids
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_attraction_location_form
+msgid "Allowed Seating Types"
+msgstr "اشكال الجلوس المتاحة"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_amenity_specification.py:0
+#: model:ir.actions.act_window,name:itq_event_management.itq_amenity_specification_action
+#: model:ir.model,name:itq_event_management.model_itq_amenity_specification
+#: model:ir.ui.menu,name:itq_event_management.itq_amenity_specification_menu
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+#, python-format
+msgid "Amenities And Specifications"
+msgstr "التجهيزات"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_amenity_specification_line.py:0
+#: model:ir.model,name:itq_event_management.model_itq_amenity_specification_line
+#, python-format
+msgid "Amenities And Specifications Line"
+msgstr "التجهيزات"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_amenities_items.py:0
+#: model:ir.model,name:itq_event_management.model_itq_amenity_item
+#, python-format
+msgid "Amenities Items"
+msgstr "عناصر التجهيزات"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_amenity_specification.py:0
+#, python-format
+msgid "Amenities Items should not be empty ."
+msgstr "يجب ألا تكون عناصر الجدول فارغة"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification_line__amenity_specification_id
+msgid "Amenity"
+msgstr "نوع التجهيز"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Amenity Name"
+msgstr "التجهيز"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_item__amenity_specification_id
+msgid "Amenity Specification"
+msgstr "مواصفات الراحة"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__amenity_specification_line_ids
+msgid "Amenity Specification Line"
+msgstr "التجهيزات"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Amenity items"
+msgstr "العناصر"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_amenity_specification_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_attraction_location_form
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_catering_type_form
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_entrance_configuration_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_seating_type_form
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_type_form
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_holding_branch_form
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_target_audience_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_research_type_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_visit_classification_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_documentation_type_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_abstract_event_lookup_form_view
+msgid "Archive"
+msgstr "أرشفة"
+
+#. module: itq_event_management
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_abstract_event_lookup__state__archived
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_amenity_specification__state__archived
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_attraction_location__state__archived
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_catering_type__state__archived
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_entrance_configuration__state__archived
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_event_seating_type__state__archived
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_event_type__state__archived
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_holding_branch__state__archived
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_target_audience__state__archived
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_research_type__state__archived
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_visit_classification__state__archived
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_documentation_type__state__archived
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_abstract_event_lookup__message_attachment_count
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification__message_attachment_count
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification_line__message_attachment_count
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__message_attachment_count
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_item__message_attachment_count
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type__message_attachment_count
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type_line__message_attachment_count
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration__message_attachment_count
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_management_settings__message_attachment_count
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__message_attachment_count
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__message_attachment_count
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_seating_type__message_attachment_count
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_type__message_attachment_count
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__message_attachment_count
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch__message_attachment_count
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member__message_attachment_count
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__message_attachment_count
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_target_audience__message_attachment_count
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_research_type__message_attachment_count
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_visit_classification__message_attachment_count
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_documentation_type__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_attraction_location.py:0
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_attraction_location_form
+#, python-format
+msgid "Attraction Events"
+msgstr "فعاليات الموقع"
+
+#. module: itq_event_management
+#: model:ir.actions.act_window,name:itq_event_management.itq_attraction_location_action
+#: model:ir.ui.menu,name:itq_event_management.menu_itq_attraction_location
+msgid "Attractions"
+msgstr "مواقع الزيارات و الفعاليات"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Audience"
+msgstr "الجمهور"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_holding_branch.py:0
+#: model:ir.model,name:itq_event_management.model_itq_holding_branch
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__branch_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration__branch_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_permission__branch_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch__name
+#, python-format
+msgid "Branch"
+msgstr "الفرع"
+
+#. module: itq_event_management
+#: model:ir.actions.act_window,name:itq_event_management.action_itq_holding_branch
+#: model:ir.ui.menu,name:itq_event_management.menu_action_itq_holding_branch
+msgid "Branches"
+msgstr "الفروع"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__budget
+msgid "Budget"
+msgstr "الميزانية"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type_line__catering_type_id
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Catering"
+msgstr "نوع الضيافة"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_catering_item.py:0
+#: model:ir.model,name:itq_event_management.model_itq_catering_item
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_item__name
+#, python-format
+msgid "Catering Item"
+msgstr "عنصر الضيافة"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type__catering_item_ids
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_catering_type_form
+msgid "Catering Items"
+msgstr "عناصر الضيافة"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_catering_type.py:0
+#: model:ir.model,name:itq_event_management.model_itq_catering_type
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_item__catering_type_id
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+#, python-format
+msgid "Catering Type"
+msgstr "نوع الضيافة"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_catering_type_line.py:0
+#: model:ir.model,name:itq_event_management.model_itq_catering_type_line
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__catering_type_line_ids
+#, python-format
+msgid "Catering Type Line"
+msgstr "الضيافة"
+
+#. module: itq_event_management
+#: model:ir.actions.act_window,name:itq_event_management.action_itq_catering_type
+#: model:ir.ui.menu,name:itq_event_management.menu_action_itq_catering_type
+msgid "Catering Types"
+msgstr "أنواع الضيافة"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Catering items"
+msgstr "العناصر"
+
+#. module: itq_event_management
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_event_permission__state__confirmed
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_event_request__state__confirmed
+msgid "Confirmed"
+msgstr "معتمد"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__contact_email
+msgid "Contact Email"
+msgstr "البريد الإلكتروني للاتصال"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__contact_number
+msgid "Contact Number"
+msgstr "رقم الاتصال"
+
+#. module: itq_event_management
+#: model_terms:ir.actions.act_window,help:itq_event_management.action_itq_holding_branch
+msgid "Create a new Branch"
+msgstr "قم بإضافة فرع جديد"
+
+#. module: itq_event_management
+#: model_terms:ir.actions.act_window,help:itq_event_management.action_itq_event_type
+msgid "Create a new Event Type"
+msgstr "قم بإنشاء نوع فعالية جديد"
+
+#. module: itq_event_management
+#: model_terms:ir.actions.act_window,help:itq_event_management.action_itq_catering_type
+msgid "Create a new catering type"
+msgstr "إنشاء نوع ضيافة جديد"
+
+#. module: itq_event_management
+#: model_terms:ir.actions.act_window,help:itq_event_management.action_itq_event_organizer
+msgid "Create a new event organizer"
+msgstr "انشاء منظم فعالية جديد"
+
+#. module: itq_event_management
+#: model_terms:ir.actions.act_window,help:itq_event_management.action_itq_organizer_member
+msgid "Create a new member"
+msgstr "انشاء عضو جديد"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_item__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification_line__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_item__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type_line__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_day_line__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_management_settings__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_program_line__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_seating_type__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_type__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_target_audience__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_research_type__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_visit_classification__create_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_documentation_type__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_item__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification_line__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_item__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type_line__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_day_line__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_management_settings__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_program_line__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_seating_type__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_type__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_target_audience__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_research_type__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_visit_classification__create_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_documentation_type__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_program_line__day_line_id
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Day"
+msgstr "اليوم"
+
+#. module: itq_event_management
+#: model:ir.model,name:itq_event_management.model_itq_day_line
+msgid "Day Line"
+msgstr ""
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__department_id
+msgid "Department"
+msgstr "الادارة"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__department_manager_id
+msgid "Department Manager"
+msgstr "مدير الادارة"
+
+#. module: itq_event_management
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_event_request__budget__direct
+msgid "Direct"
+msgstr "شراء مباشر"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_item__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification_line__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_item__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type_line__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_day_line__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_documentation_type__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_management_settings__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_program_line__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_seating_type__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_type__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_research_type__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_target_audience__display_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_visit_classification__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: itq_event_management
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_abstract_event_lookup__state__draft
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_amenity_specification__state__draft
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_attraction_location__state__draft
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_catering_type__state__draft
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_documentation_type__state__draft
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_entrance_configuration__state__draft
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_event_permission__state__draft
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_event_request__state__draft
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_event_seating_type__state__draft
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_event_type__state__draft
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_holding_branch__state__draft
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_research_type__state__draft
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_target_audience__state__draft
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_visit_classification__state__draft
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_search
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__email
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__organizer_email
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_invitee__email
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_permission_invitee__email
+msgid "Email"
+msgstr "البريد الالكتروني"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_entrance_configuration.py:0
+#: model:ir.actions.act_window,name:itq_event_management.itq_entrance_configuration_action
+#: model:ir.model,name:itq_event_management.model_itq_entrance_configuration
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch__entrance_configuration_ids
+#: model:ir.ui.menu,name:itq_event_management.itq_entrance_configuration_menu
+#, python-format
+msgid "Entrance Configuration"
+msgstr "تعريف المداخل"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration__name
+msgid "Entrance Name"
+msgstr "اسم المدخل"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__event_attraction_id
+msgid "Event Attraction"
+msgstr "موقع الفعالية"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Event Data"
+msgstr "بيانات الفعالية"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__event_date
+msgid "Event Start Date"
+msgstr "تاريخ الفعالية"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__event_goal
+msgid "Event Goal"
+msgstr "الهدف"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_management_settings.py:0
+#: model:ir.actions.act_window,name:itq_event_management.action_itq_event_management_settings
+#: model:ir.model,name:itq_event_management.model_itq_event_management_settings
+#: model:ir.ui.menu,name:itq_event_management.menu_itq_event_management_settings
+#, python-format
+msgid "Event Management Settings"
+msgstr "إعدادات إدارة الفعالية"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__event_number_of_days
+msgid "Event Number Of Days"
+msgstr "عدد الايام"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "Event Number of Days must be greater than 0"
+msgstr "يجب أن يكون عدد أيام الحدث أكبر من 0"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "Event Number of Days must be less than or equal 100"
+msgstr "يجب أن يكون عدد أيام الفعالية أقل من او يساوي 100 يوم"
+
+#. module: itq_event_management
+#: model:ir.actions.act_window,name:itq_event_management.action_itq_event_organizer
+#: model:ir.model,name:itq_event_management.model_itq_event_organizer
+#: model:ir.ui.menu,name:itq_event_management.menu_action_itq_event_organizer
+msgid "Event Organizer"
+msgstr "منظم الفعالية"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Event Program"
+msgstr "برنامج الفعالية"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__event_program_attachment_ids
+msgid "Event Program Attachment"
+msgstr " برنامج الفعالية"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#: model:ir.actions.act_window,name:itq_event_management.itq_event_request_action
+#: model:ir.actions.report,name:itq_event_management.action_report_hr_event_request
+#: model:ir.model,name:itq_event_management.model_itq_event_request
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification_line__event_request_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__event_request_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type_line__event_request_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_program_line__event_request_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__event_request_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__event_request_id
+#: model:ir.ui.menu,name:itq_event_management.itq_event_management_menu
+#: model_terms:ir.ui.view,arch_db:itq_event_management.event_request_template_layout
+#, python-format
+msgid "Event Request"
+msgstr "طلب إقامة فعالية"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_seating_type.py:0
+#: model:ir.model,name:itq_event_management.model_itq_event_seating_type
+#, python-format
+msgid "Event Seating Type"
+msgstr "نوع الجلوس للفعالية"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Event Timing"
+msgstr "موعد الفعالية"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_type.py:0
+#: model:ir.model,name:itq_event_management.model_itq_event_type
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__event_type_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_type__name
+#, python-format
+msgid "Event Type"
+msgstr "نوع الفعالية"
+
+#. module: itq_event_management
+#: model:ir.actions.act_window,name:itq_event_management.action_itq_event_type
+#: model:ir.ui.menu,name:itq_event_management.menu_action_itq_event_type
+msgid "Event Types"
+msgstr "أنواع الفعاليات"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_form_view
+msgid "Event instructions"
+msgstr "التعليمات"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__event_instructions
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Events Instructions"
+msgstr "تعليمات الفعالية"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_management_settings__event_instructions
+msgid "Instructions"
+msgstr "التعليمات"
+
+#. module: itq_event_management
+#: model:ir.module.category,name:itq_event_management.itq_event_management_category
+#: model:ir.ui.menu,name:itq_event_management.event_management_menu
+msgid "Events Management"
+msgstr "إدارة الفعاليات"
+
+#. module: itq_event_management
+#: model:ir.ui.menu,name:itq_event_management.event_management_system_menu
+msgid "Events Management System"
+msgstr "نظام إدارة الفعاليات"
+
+#. module: itq_event_management
+#: model:ir.model.fields,help:itq_event_management.field_itq_event_management_settings__event_instructions
+msgid "Events instructions in HTML format."
+msgstr "تعليمات الفعالية في هيئة HTML."
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__expected_number_of_guests
+msgid "Expected Number Of Guests"
+msgstr "عدد الحضور المتوقع"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "Expected Number of Guests must be greater than 0"
+msgstr "يجب أن يكون عدد الحضور المتوقع أكبر من 0"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__external_guest_count
+msgid "External Guest Count"
+msgstr "العدد الخارجي"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "External Guest Count must be greater than or equal 0"
+msgstr "يجب أن يكون عدد الحضور الخارجيين أكبر من أو يساوي 0"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_abstract_event_lookup__message_follower_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification__message_follower_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification_line__message_follower_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__message_follower_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_item__message_follower_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type__message_follower_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type_line__message_follower_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration__message_follower_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_management_settings__message_follower_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__message_follower_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__message_follower_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_seating_type__message_follower_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_type__message_follower_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__message_follower_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch__message_follower_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member__message_follower_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__message_follower_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_target_audience__message_follower_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_research_type__message_follower_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_visit_classification__message_follower_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_documentation_type__message_follower_ids
+msgid "Followers"
+msgstr "متابعين"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_abstract_event_lookup__message_partner_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification__message_partner_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification_line__message_partner_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__message_partner_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_item__message_partner_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type__message_partner_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type_line__message_partner_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration__message_partner_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_management_settings__message_partner_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__message_partner_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__message_partner_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_seating_type__message_partner_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_type__message_partner_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__message_partner_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch__message_partner_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member__message_partner_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__message_partner_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_target_audience__message_partner_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_research_type__message_partner_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_visit_classification__message_partner_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_documentation_type__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "متابعين (شركاء)"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__guest_honor_ids
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_permission_invitee_wizard
+msgid "Guest Honor"
+msgstr "ضيف الشرف"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__guest_list
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_permission_invitee_wizard__guest_list_ids
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_permission_invitee_wizard
+msgid "Guest List"
+msgstr "قائمة الحضور"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__name
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Guest Name"
+msgstr "الاسم"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_form_view
+msgid "Guest Responsible"
+msgstr "مسؤول الحضور"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__title
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__title
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Guest Title"
+msgstr "المنصب"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_guests_honor.py:0
+#: model:ir.model,name:itq_event_management.model_itq_guest_honor
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+#, python-format
+msgid "Guests Of Honor"
+msgstr "ضيوف الشرف"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_abstract_event_lookup__has_message
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification__has_message
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification_line__has_message
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__has_message
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_item__has_message
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type__has_message
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type_line__has_message
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration__has_message
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_management_settings__has_message
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__has_message
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__has_message
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_seating_type__has_message
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_type__has_message
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__has_message
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch__has_message
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member__has_message
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__has_message
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_target_audience__has_message
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_research_type__has_message
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_visit_classification__has_message
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_documentation_type__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_item__id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification__id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification_line__id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_item__id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type__id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type_line__id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_day_line__id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration__id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_management_settings__id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_program_line__id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_seating_type__id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_type__id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch__id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member__id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_target_audience__id
+msgid "ID"
+msgstr "الرقم التعريفي"
+
+#. module: itq_event_management
+#: model:ir.model.fields,help:itq_event_management.field_itq_abstract_event_lookup__message_needaction
+#: model:ir.model.fields,help:itq_event_management.field_itq_amenity_specification__message_needaction
+#: model:ir.model.fields,help:itq_event_management.field_itq_amenity_specification_line__message_needaction
+#: model:ir.model.fields,help:itq_event_management.field_itq_attraction_location__message_needaction
+#: model:ir.model.fields,help:itq_event_management.field_itq_catering_item__message_needaction
+#: model:ir.model.fields,help:itq_event_management.field_itq_catering_type__message_needaction
+#: model:ir.model.fields,help:itq_event_management.field_itq_catering_type_line__message_needaction
+#: model:ir.model.fields,help:itq_event_management.field_itq_entrance_configuration__message_needaction
+#: model:ir.model.fields,help:itq_event_management.field_itq_event_management_settings__message_needaction
+#: model:ir.model.fields,help:itq_event_management.field_itq_event_organizer__message_needaction
+#: model:ir.model.fields,help:itq_event_management.field_itq_event_request__message_needaction
+#: model:ir.model.fields,help:itq_event_management.field_itq_event_seating_type__message_needaction
+#: model:ir.model.fields,help:itq_event_management.field_itq_event_type__message_needaction
+#: model:ir.model.fields,help:itq_event_management.field_itq_guest_honor__message_needaction
+#: model:ir.model.fields,help:itq_event_management.field_itq_holding_branch__message_needaction
+#: model:ir.model.fields,help:itq_event_management.field_itq_organizer_member__message_needaction
+#: model:ir.model.fields,help:itq_event_management.field_itq_speaker_guest__message_needaction
+#: model:ir.model.fields,help:itq_event_management.field_itq_target_audience__message_needaction
+#: model:ir.model.fields,help:itq_event_management.field_itq_research_type__message_needaction
+#: model:ir.model.fields,help:itq_event_management.field_itq_visit_classification__message_needaction
+#: model:ir.model.fields,help:itq_event_management.field_itq_documentation_type__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديدها، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: itq_event_management
+#: model:ir.model.fields,help:itq_event_management.field_itq_abstract_event_lookup__message_has_error
+#: model:ir.model.fields,help:itq_event_management.field_itq_amenity_specification__message_has_error
+#: model:ir.model.fields,help:itq_event_management.field_itq_amenity_specification_line__message_has_error
+#: model:ir.model.fields,help:itq_event_management.field_itq_attraction_location__message_has_error
+#: model:ir.model.fields,help:itq_event_management.field_itq_catering_item__message_has_error
+#: model:ir.model.fields,help:itq_event_management.field_itq_catering_type__message_has_error
+#: model:ir.model.fields,help:itq_event_management.field_itq_catering_type_line__message_has_error
+#: model:ir.model.fields,help:itq_event_management.field_itq_entrance_configuration__message_has_error
+#: model:ir.model.fields,help:itq_event_management.field_itq_event_management_settings__message_has_error
+#: model:ir.model.fields,help:itq_event_management.field_itq_event_organizer__message_has_error
+#: model:ir.model.fields,help:itq_event_management.field_itq_event_request__message_has_error
+#: model:ir.model.fields,help:itq_event_management.field_itq_event_seating_type__message_has_error
+#: model:ir.model.fields,help:itq_event_management.field_itq_event_type__message_has_error
+#: model:ir.model.fields,help:itq_event_management.field_itq_guest_honor__message_has_error
+#: model:ir.model.fields,help:itq_event_management.field_itq_holding_branch__message_has_error
+#: model:ir.model.fields,help:itq_event_management.field_itq_organizer_member__message_has_error
+#: model:ir.model.fields,help:itq_event_management.field_itq_speaker_guest__message_has_error
+#: model:ir.model.fields,help:itq_event_management.field_itq_target_audience__message_has_error
+#: model:ir.model.fields,help:itq_event_management.field_itq_research_type__message_has_error
+#: model:ir.model.fields,help:itq_event_management.field_itq_visit_classification__message_has_error
+#: model:ir.model.fields,help:itq_event_management.field_itq_documentation_type__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فإن بعض الرسائل تحتوي على خطأ في التسليم."
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__is_insider
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__is_insider
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Insider"
+msgstr "داخلي"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__internal_guest_count
+msgid "Internal Guest Count"
+msgstr "العدد الداخلي"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "Internal Guest Count must be greater than or equal 0"
+msgstr "يجب أن يكون عدد الحضور الداخليين أكبر من أو يساوي 0"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "Invalid Contact email format"
+msgstr "تنسيق البريد الإلكتروني للاتصال غير صحيح"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "Invalid Guest responsible mobile format"
+msgstr "تنسيق رقم جوال المسؤول عن الحضور غير صحيح"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "Invalid Guest responsible phone format"
+msgstr "تنسيق رقم هاتف المسؤول عن الحضور غير صحيح"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "Invalid contact number format"
+msgstr "تنسيق رقم الاتصال غير صحيح"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch__is_default_branch
+msgid "Is Default Branch?"
+msgstr "فرع إفتراضى؟"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_abstract_event_lookup__message_is_follower
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification__message_is_follower
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification_line__message_is_follower
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__message_is_follower
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_item__message_is_follower
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type__message_is_follower
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type_line__message_is_follower
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration__message_is_follower
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_management_settings__message_is_follower
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__message_is_follower
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__message_is_follower
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_seating_type__message_is_follower
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_type__message_is_follower
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__message_is_follower
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch__message_is_follower
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member__message_is_follower
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__message_is_follower
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_target_audience__message_is_follower
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_research_type__message_is_follower
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_visit_classification__message_is_follower
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_documentation_type__message_is_follower
+msgid "Is Follower"
+msgstr "هل متابع"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification__amenity_item_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification_line__amenity_item_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type_line__catering_item_ids
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_amenity_specification_form_view
+msgid "Items"
+msgstr "العناصر"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_item____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification_line____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_item____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type_line____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_day_line____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_management_settings____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_program_line____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_seating_type____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_type____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_target_audience____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_research_type____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_visit_classification____last_update
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_documentation_type____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_item__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification_line__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_item__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type_line__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_day_line__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_management_settings__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_program_line__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_seating_type__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_type__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_target_audience__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_research_type__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_visit_classification__write_uid
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_documentation_type__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_item__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification_line__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_item__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type_line__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_day_line__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_management_settings__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_program_line__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_seating_type__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_type__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_target_audience__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_research_type__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_visit_classification__write_date
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_documentation_type__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث بتاريخ"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_attraction_location.py:0
+#: model:ir.model,name:itq_event_management.model_itq_attraction_location
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__name
+#, python-format
+msgid "Location Attraction"
+msgstr "موقع الفعالية"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.event_request_template_layout
+msgid "Logo"
+msgstr ""
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_abstract_event_lookup__message_main_attachment_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification__message_main_attachment_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification_line__message_main_attachment_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__message_main_attachment_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_item__message_main_attachment_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type__message_main_attachment_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type_line__message_main_attachment_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration__message_main_attachment_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_management_settings__message_main_attachment_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__message_main_attachment_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__message_main_attachment_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_seating_type__message_main_attachment_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_type__message_main_attachment_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__message_main_attachment_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch__message_main_attachment_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member__message_main_attachment_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__message_main_attachment_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_target_audience__message_main_attachment_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_research_type__message_main_attachment_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_visit_classification__message_main_attachment_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_documentation_type__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_management_settings__name
+#: model:itq.event.management.settings,name:itq_event_management.itq_event_management_settings_data
+msgid "Main Settings"
+msgstr "الإعدادات الرئيسية"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__manager
+#: model:res.groups,name:itq_event_management.itq_group_event_manager
+msgid "Manager"
+msgstr "مدير"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification__is_mandatory
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type__is_mandatory
+msgid "Mandatory"
+msgstr "إلزامي"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration__map_location
+msgid "Map Location"
+msgstr "رابط الخريطة"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__maximum_guest_count
+msgid "Max Number Of Guests"
+msgstr "الحد الأقصى لعدد الضيوف"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__member_ids
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_organizer_form
+msgid "Members"
+msgstr "الاعضاء"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_abstract_event_lookup__message_has_error
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification__message_has_error
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification_line__message_has_error
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__message_has_error
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_item__message_has_error
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type__message_has_error
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type_line__message_has_error
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration__message_has_error
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_management_settings__message_has_error
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__message_has_error
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__message_has_error
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_seating_type__message_has_error
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_type__message_has_error
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__message_has_error
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch__message_has_error
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member__message_has_error
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__message_has_error
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_target_audience__message_has_error
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_research_type__message_has_error
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_visit_classification__message_has_error
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_documentation_type__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_abstract_event_lookup__message_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification__message_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification_line__message_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__message_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_item__message_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type__message_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type_line__message_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration__message_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_management_settings__message_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__message_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__message_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_seating_type__message_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_type__message_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__message_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch__message_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member__message_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__message_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_target_audience__message_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_research_type__message_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_documentation_type__message_ids
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_visit_classification__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__minimum_guest_count
+msgid "Min Number Of Guests "
+msgstr "الحد الأدنى لعدد الضيوف"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_attraction_location.py:0
+#, python-format
+msgid "Minimum Guest Count cannot be greater than Maximum Guest Count"
+msgstr ""
+"لا يمكن أن يكون الحد الأدنى لعدد الضيوف أكبر من الحد الأقصى لعدد الضيوف"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_attraction_location.py:0
+#, python-format
+msgid "Minimum Guest Count cannot be less than 1"
+msgstr "لا يمكن أن يكون الحد الأدنى لعدد الضيوف أقل من 1"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_type__minimum_days_before_request
+msgid "Minimum Number Of Days Before Event Request"
+msgstr "الحد الأدنى من الأيام لطلب فعالية"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_type.py:0
+#, python-format
+msgid "Minimum Number Of Days Before Event Request cannot be less than 0"
+msgstr "لا يمكن أن يكون الحد الأدنى من الأيام لطلب فعالية أقل من 0"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__guest_responsible_mobile
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__organizer_mobile
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member__mobile
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_team__mobile
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_invitee__mobile
+msgid "Mobile"
+msgstr "الجوال"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_abstract_event_lookup__name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_item__name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_day_line__name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_documentation_type__name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__guest_responsible_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member__name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_team__name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_permission_invitee__name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_research_type__name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_target_audience__name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_visit_classification__name
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_day_line_tree_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Name"
+msgstr "الاسم"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "No Amenities And Specifications"
+msgstr "لا توجد تجهيزات"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "No Catering"
+msgstr "لا توجد ضيافة"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "No Guests Of Honor"
+msgstr "لا يوجد ضيوف شرف"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "No Program"
+msgstr "لا يوجد برنامج"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "No Speakers List"
+msgstr "لا توجد قائمة متكلمين"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "No Target Audience"
+msgstr "لا توجد فئات مستهدفة"
+
+#. module: itq_event_management
+#: model:mail.template,name:itq_event_management.itq_notify_department_manager_email_template
+#: model:mail.template,subject:itq_event_management.itq_notify_department_manager_email_template
+msgid "Notify Department Manager"
+msgstr ""
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_abstract_event_lookup__message_needaction_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification__message_needaction_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification_line__message_needaction_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__message_needaction_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_item__message_needaction_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type__message_needaction_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type_line__message_needaction_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration__message_needaction_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_management_settings__message_needaction_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__message_needaction_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__message_needaction_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_seating_type__message_needaction_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_type__message_needaction_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__message_needaction_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch__message_needaction_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member__message_needaction_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__message_needaction_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_target_audience__message_needaction_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_research_type__message_needaction_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_visit_classification__message_needaction_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_documentation_type__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_abstract_event_lookup__message_has_error_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification__message_has_error_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification_line__message_has_error_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__message_has_error_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_item__message_has_error_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type__message_has_error_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type_line__message_has_error_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration__message_has_error_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_management_settings__message_has_error_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__message_has_error_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__message_has_error_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_seating_type__message_has_error_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_type__message_has_error_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__message_has_error_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch__message_has_error_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member__message_has_error_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__message_has_error_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_target_audience__message_has_error_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_research_type__message_has_error_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_visit_classification__message_has_error_counter
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_documentation_type__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: itq_event_management
+#: model:ir.model.fields,help:itq_event_management.field_itq_abstract_event_lookup__message_needaction_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_amenity_specification__message_needaction_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_amenity_specification_line__message_needaction_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_attraction_location__message_needaction_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_catering_item__message_needaction_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_catering_type__message_needaction_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_catering_type_line__message_needaction_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_entrance_configuration__message_needaction_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_event_management_settings__message_needaction_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_event_organizer__message_needaction_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_event_request__message_needaction_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_event_seating_type__message_needaction_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_event_type__message_needaction_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_guest_honor__message_needaction_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_holding_branch__message_needaction_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_organizer_member__message_needaction_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_speaker_guest__message_needaction_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_target_audience__message_needaction_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_research_type__message_needaction_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_visit_classification__message_needaction_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_documentation_type__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: itq_event_management
+#: model:ir.model.fields,help:itq_event_management.field_itq_abstract_event_lookup__message_has_error_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_amenity_specification__message_has_error_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_amenity_specification_line__message_has_error_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_attraction_location__message_has_error_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_catering_item__message_has_error_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_catering_type__message_has_error_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_catering_type_line__message_has_error_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_entrance_configuration__message_has_error_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_event_management_settings__message_has_error_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_event_organizer__message_has_error_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_event_request__message_has_error_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_event_seating_type__message_has_error_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_event_type__message_has_error_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_guest_honor__message_has_error_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_holding_branch__message_has_error_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_organizer_member__message_has_error_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_speaker_guest__message_has_error_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_target_audience__message_has_error_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_research_type__message_has_error_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_visit_classification__message_has_error_counter
+#: model:ir.model.fields,help:itq_event_management.field_itq_documentation_type__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__organization
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member__event_organizer_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__organization
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Organization"
+msgstr "منظمة"
+
+#. module: itq_event_management
+#: model:ir.actions.act_window,name:itq_event_management.action_itq_organizer_member
+#: model:ir.model,name:itq_event_management.model_itq_organizer_member
+msgid "Organizer Member"
+msgstr "عضو منظم"
+
+#. module: itq_event_management
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_event_request__budget__other
+msgid "Other"
+msgstr "اخري"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_organizer__phone
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__guest_responsible_phone
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__organizer_phone
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_member__phone
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_permission_invitee__phone
+msgid "Phone"
+msgstr "رقم الهاتف"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification__name
+msgid "Preparation"
+msgstr "التجهيز"
+
+#. module: itq_event_management
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_event_request__budget__purchase_order
+msgid "Purchase Order"
+msgstr "تعميد"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__rehearsal_date
+msgid "Rehearsal Date"
+msgstr "تاريخ البروفة"
+
+#. module: itq_event_management
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_event_request__state__rejected
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__request_date
+msgid "Request Date"
+msgstr "تاريخ الطلب"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__request_number
+msgid "Request Number"
+msgstr "رقم الطلب"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__requester_id
+msgid "Requester"
+msgstr "مقدم الطلب"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Requester Department"
+msgstr "الجهة الطالبة للفعالية"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_seating_type__name
+msgid "Seating Type"
+msgstr "شكل الجلوس"
+
+#. module: itq_event_management
+#: model:ir.actions.act_window,name:itq_event_management.itq_event_seating_type_action
+#: model:ir.ui.menu,name:itq_event_management.menu_itq_event_seating_type
+msgid "Seating Types"
+msgstr "اشكال الجلوس"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_attraction_location.py:0
+#, python-format
+msgid "Seating Types must be active!"
+msgstr "يجب أن تكون أشكال الجلوس نشطة!"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_amenity_specification_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_attraction_location_form
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_catering_type_form
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_entrance_configuration_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_seating_type_form
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_type_form
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_holding_branch_form
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_target_audience_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_research_type_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_visit_classification_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_documentation_type_form_view
+msgid "Set To Draft"
+msgstr "وضع كمسودة"
+
+#. module: itq_event_management
+#: model:ir.ui.menu,name:itq_event_management.settings_menu
+msgid "Settings"
+msgstr "الإعدادات"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__speaker_guest_ids
+msgid "Speaker Guest"
+msgstr "قائمة المتحدثين"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_speaker_guests.py:0
+#: model:ir.model,name:itq_event_management.model_itq_speaker_guest
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_form_view
+#, python-format
+msgid "Speaker Guests"
+msgstr "المتحدثين"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Speaker Name"
+msgstr "الإسم"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Speaker Title"
+msgstr "المنصب"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Speakers List"
+msgstr "قائمة المتحدثين"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_permission__state
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__state
+msgid "State"
+msgstr "الحاله"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/abstract_models/itq_abstract_event_lookup.py:0
+#, python-format
+msgid "State cannot be changed to active."
+msgstr "لا يمكن تغيير الحالة إلى نشط."
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/abstract_models/itq_abstract_event_lookup.py:0
+#, python-format
+msgid "State cannot be changed to archived."
+msgstr "لا يمكن تغيير الحالة إلى مؤرشف."
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/abstract_models/itq_abstract_event_lookup.py:0
+#, python-format
+msgid "State cannot be changed to draft."
+msgstr "لا يمكن تغيير الحالة إلى مسودة."
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_abstract_event_lookup__state
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_amenity_specification__state
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__state
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type__state
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_documentation_type__state
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_entrance_configuration__state
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_seating_type__state
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_type__state
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_holding_branch__state
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_research_type__state
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_target_audience__state
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_visit_classification__state
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Status"
+msgstr "الحالة"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_target_audience.py:0
+#: model:ir.actions.act_window,name:itq_event_management.itq_target_audience_action
+#: model:ir.model,name:itq_event_management.model_itq_target_audience
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__target_audience_ids
+#: model:ir.ui.menu,name:itq_event_management.itq_target_audience_menu
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+#, python-format
+msgid "Target Audience"
+msgstr "الفئة المستهدفة"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_organizer.py:0
+#, python-format
+msgid "The event must have at least one person in the event."
+msgstr "يجب أن تضم الفعالية شخصًا واحدًا على الأقل."
+
+#. module: itq_event_management
+#: model:ir.model.constraint,message:itq_event_management.constraint_itq_event_organizer_name
+msgid "The name must be unique per event !"
+msgstr "يجب أن يكون الاسم فريدًا لكل فعالية !"
+
+#. module: itq_event_management
+#: model_terms:ir.actions.act_window,help:itq_event_management.itq_amenity_specification_action
+msgid "There is no Amenities And Specifications click here to add new ."
+msgstr "لا توجد تجهيزات اضغط هنا لإضافة جديد"
+
+#. module: itq_event_management
+#: model_terms:ir.actions.act_window,help:itq_event_management.itq_entrance_configuration_action
+msgid "There is no Entrance Configuration click here to add new ."
+msgstr "لا يوجد تعريف للمداخل اضغط هنا لإضافة جديد"
+
+#. module: itq_event_management
+#: model_terms:ir.actions.act_window,help:itq_event_management.itq_event_request_action
+msgid "There is no Event Requests click here to add new"
+msgstr "لا توجد طلبات إقامة فعاليات اضغط هنا لإضافة جديد"
+
+#. module: itq_event_management
+#: model_terms:ir.actions.act_window,help:itq_event_management.itq_target_audience_action
+msgid "There is no Target Audience click here to add new ."
+msgstr "لا يوجد فئة مستهدفة اضغط هنا لإضافة جديد"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_program_line__time
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_request
+msgid "Time"
+msgstr "التوقيت"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_team__title
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_permission_invitee__title
+msgid "Title"
+msgstr "العنوان"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_catering_type__name
+msgid "Type"
+msgstr "النوع"
+
+#. module: itq_event_management
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_event_request__state__under_approve
+msgid "Under Approve"
+msgstr "للاعتماد"
+
+#. module: itq_event_management
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_event_request__state__under_review
+msgid "Under Review"
+msgstr "للمراجعة"
+
+#. module: itq_event_management
+#: model:res.groups,name:itq_event_management.itq_group_event_user
+msgid "User"
+msgstr "مستخدم"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_holding_branch.py:0
+#, python-format
+msgid "You Cannot have more than one default branch active!"
+msgstr "لا يجب ان يكون اكثر من فرع إفتراضى واحد!"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/abstract_models/itq_abstract_event_lookup.py:0
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "You can delete record in draft state only."
+msgstr "يمكنك حذف السجل في حالة المسودة فقط."
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_catering_item.py:0
+#, python-format
+msgid "You cannot duplicate catering item."
+msgstr "لا يمكنك تكرار عنصر الضيافة."
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_day_line.py:0
+#, python-format
+msgid "You cannot duplicate {}"
+msgstr "{} لا يمكنك تكرار"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_program_line.py:0
+#, python-format
+msgid "You cannot duplicate {} and {}."
+msgstr "{} {} لا يمكنك تكرار"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/abstract_models/itq_abstract_event_lookup.py:0
+#: code:addons/itq_event_management/models/itq_amenities_items.py:0
+#: code:addons/itq_event_management/models/itq_amenity_specification_line.py:0
+#: code:addons/itq_event_management/models/itq_catering_type_line.py:0
+#, python-format
+msgid "You cannot duplicate {}."
+msgstr "لا يمكنك تكرار {}."
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid ""
+"You must fill at least one of Event Program Attachment or Event Program "
+"Lines"
+msgstr ""
+"يجب عليك ملء واحد على الأقل من مرفقات برنامج الفعالية او برنامج الفعالية"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_catering_type.py:0
+#, python-format
+msgid "You must have at least one catering item."
+msgstr "يجب ان يتواجد على الاقل عنصر ضيافة واحد في نوع الضيافة."
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_day_line.py:0
+#, python-format
+msgid "day "
+msgstr "اليوم"
+
+#. module: itq_event_management
+#: model:ir.model,name:itq_event_management.model_itq_abstract_event_lookup
+msgid "itq.abstract.event.lookup"
+msgstr "عمليات البحث الخاص بإتقان"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_form_view
+msgid "send to review"
+msgstr "إرسال للمراجعة"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "Event Number of Days must be less than 100"
+msgstr "يجب أن يكون عدد أيام الفعالية أقل من 100 يوم"
+
+#. module: itq_event_management
+#: model:ir.ui.menu,name:itq_event_management.itq_event_request_review_menu
+msgid "Event Request Review"
+msgstr "مراجعة طلب الفعالية"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_review_form_view
+msgid "approve"
+msgstr "اعتماد"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_approve_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_review_form_view
+msgid "reject"
+msgstr "رفض"
+
+#. module: itq_event_management
+#: model:ir.actions.act_window,name:itq_event_management.itq_return_event_request_action
+#: model:ir.model,name:itq_event_management.model_itq_return_event_request
+msgid "Return Event Request"
+msgstr "إعادة طلب اقامة الفعالية"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__return_reason
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_return_event_request__return_reason
+msgid "Return Reason"
+msgstr "سبب الإعادة"
+
+#. module: itq_event_management
+#: model:ir.actions.act_window,name:itq_event_management.itq_reject_event_request_action
+#: model:ir.model,name:itq_event_management.model_itq_reject_event_request
+msgid "Reject Event Request"
+msgstr " رفض طلب اقامة الفعالية"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_reject_event_request__rejection_reason
+msgid "Reject Reason"
+msgstr "سبب الرفض"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__rejection_reason
+msgid "Rejection Reason"
+msgstr "سبب الرفض"
+
+#. module: itq_event_management
+#: model:ir.ui.menu,name:itq_event_management.itq_event_request_rejected_menu
+msgid "Event Request Rejected"
+msgstr "طلب اقامة الفعالية المرفوض"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "State must be Under Review"
+msgstr "الحالة يجب ان تكون تحت المراجعة"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/wizards/itq_reject_event_request.py:0
+#, python-format
+msgid "Reject Reason cannot be empty"
+msgstr "لا يمكن ترك سبب الرفض فارغًا"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/wizards/itq_return_event_request.py:0
+#, python-format
+msgid "Return Reason cannot be empty"
+msgstr "لا يمكن ترك سبب الإعادة فارغًا"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_program_line.py:0
+#, python-format
+msgid "Time must be greater than or equal 00:00 and less than 24:00"
+msgstr "يجب أن يكون الوقت أكبر من أو يساوي 00:00 وأقل من 24:00"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_entrance_configuration.py:0
+#, python-format
+msgid "The entrance {} already exist at {}"
+msgstr "المدخل {} موجود بالفعل في {}"
+
+#. module: itq_event_management
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "Event start date must be greater than {}"
+msgstr "تاريخ بدء الفعالية يجب أن يكون أكبر من {}"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_program_line.py:0
+#, python-format
+msgid "You cannot create two event program with the same date."
+msgstr ".لا يمكنك إنشاء برنامجين للفعالية بنفس التاريخ"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "External Guest Count must be less than or equal Expected Number of Guests"
+msgstr "يجب أن يكون عدد الضيوف الخارجيين أقل من أو يساوي العدد المتوقع للضيوف"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "Internal Guest Count must be less than or equal Expected Number of Guests"
+msgstr "يجب أن يكون عدد الضيوف الداخليين أقل من أو يساوي العدد المتوقع للضيوف"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_amenity_specification_line.py:0
+#: code:addons/itq_event_management/models/itq_catering_type_line.py:0
+#, python-format
+msgid "Items must have at least one item"
+msgstr "يجب أن تحتوي العناصر على عنصر واحد على الأقل"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__team_members
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_form_view
+msgid "Team Members"
+msgstr "اعضاء التيم"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_attraction_location.py:0
+#, python-format
+msgid "You can not delete this record."
+msgstr ".لا يمكنك حذف هذا السجل"
+
+#. module: itq_event_management
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_event_request__organizer_team__public_relation_department
+msgid "Public Relation Department"
+msgstr "إدارة العلاقات العامة"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__other_event_attraction
+msgid "Other Event Attraction"
+msgstr "موقع فاغلية اخر"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__organizer_name
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_organizer_team__name
+msgid "Organizer Name"
+msgstr "الاسم"
+
+#. module: itq_event_management
+#: model:ir.model,name:itq_event_management.model_itq_organizer_team
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__organizer_team
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_form_view
+msgid "Organizer Team"
+msgstr "فريق التنظيم"
+
+#. module: itq_event_management
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_event_request__organizer_team__event_agency
+msgid "Event Agency"
+msgstr "شركة فعاليات و مؤتمرات"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_program_line.py:0
+#: model:ir.model,name:itq_event_management.model_itq_event_program_line
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__event_program_line_ids
+#, python-format
+msgid "Event Program Line"
+msgstr "برنامج الفعالية"
+
+#. module: itq_event_management
+#: model:ir.actions.act_window,name:itq_event_management.itq_event_request_approve_action
+#: model:ir.ui.menu,name:itq_event_management.itq_event_request_approval_menu
+msgid "Event Request Approval"
+msgstr "الموافقة على طلب الفعالية"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_organizer_team.py:0
+#, python-format
+msgid "Invalid mobile format"
+msgstr "تنسيق الجوال غير صالح"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "Invalid organizer email format"
+msgstr "تنسيق البريد الإلكتروني للمنظم غير صالح"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "Invalid organizer mobile format"
+msgstr "تنسيق جوال المنظم غير صالح"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "Invalid organizer phone format"
+msgstr "تنسيق هاتف المنظم غير صالح"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "State must be Under Approve"
+msgstr "يجب أن تكون الحالة تحت الموافقة"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "State must be Under Review Or Under Approve"
+msgstr "جب أن تكون الحالة قيد المراجعة أو قيد الموافقة"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__team_member_ids
+msgid "Team Member"
+msgstr "عضو الفريق"
+
+#. module: itq_event_management
+#: model_terms:ir.actions.act_window,help:itq_event_management.itq_event_request_approve_action
+msgid "There is no Under Approve Event Requests click here to add new"
+msgstr "لا يوجد ضمن الموافقة على طلبات الأحداث انقر هنا لإضافة جديد"
+
+#. module: itq_event_management
+#: model:ir.actions.act_window,name:itq_event_management.itq_event_request_review_action
+msgid "Under Review Event Request"
+msgstr "طلب الحدث قيد المراجعة"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__used_amenity_specification_ids
+msgid "Used Amenity Specification"
+msgstr "مواصفات وسائل الراحة المستخدمة"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "The organizer team must have at least one record"
+msgstr "يجب أن يكون لدى الفريق المنظم سجل واحد على الأقل"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_invitee__identification
+msgid "Identification"
+msgstr "رقم الهوية"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_invitee.py:0
+#, python-format
+msgid "Invalid invitee's email format"
+msgstr "تنسيق البريد الإلكتروني للمدعو غير صالح"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__invitee_ids
+msgid "Invitee"
+msgstr "المدعو"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_invitee__name
+msgid "Invitee name"
+msgstr "اسم المدعو"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_form_view
+msgid "Invitees"
+msgstr "المدعوون"
+
+#. module: itq_event_management
+#: model:ir.model,name:itq_event_management.model_itq_invitee
+msgid "Itq Invitee"
+msgstr "المدعو"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_invitee__nationality
+msgid "Nationality"
+msgstr "الجنسية"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_invitee.py:0
+#, python-format
+msgid "Invalid invitee's mobile format"
+msgstr "تنسيق الهاتف المحمول للمدعو غير صالح"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_hr_department__is_research_department
+msgid "Is Research Department"
+msgstr "إدارة ابحاث"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_hr_department__is_visitable
+msgid "Is Visitable"
+msgstr "قابل للزيارة"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_hr_department__resource_calendar_id
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__resource_calendar_id
+msgid "Working Schedule"
+msgstr "جدول العمل"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_visit_classification.py:0
+#: model:ir.actions.act_window,name:itq_event_management.itq_visit_classification_action
+#: model:ir.model,name:itq_event_management.model_itq_visit_classification
+#: model:ir.ui.menu,name:itq_event_management.menu_itq_visit_classification
+#, python-format
+msgid "Visit Classification"
+msgstr "تصنيف الزيارات"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_documentation_type.py:0
+#: model:ir.actions.act_window,name:itq_event_management.itq_documentation_type_action
+#: model:ir.model,name:itq_event_management.model_itq_documentation_type
+#: model:ir.ui.menu,name:itq_event_management.menu_itq_documentation_type
+#, python-format
+msgid "Documentation Type"
+msgstr "انواع التوثيق"
+
+#. module: itq_event_management
+#: model:ir.ui.menu,name:itq_event_management.general_settings_menu
+msgid "General Settings"
+msgstr "إعدادات عامة"
+
+#. module: itq_event_management
+#: model_terms:ir.actions.act_window,help:itq_event_management.itq_visit_classification_action
+msgid "There is no Visit Classification click here to add new."
+msgstr "لا يوحد تصنيف زيارة اضغط هنا لاضافة جديد."
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_approve_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_review_form_view
+msgid "Return"
+msgstr "إعادة"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_review_form_view
+msgid "Approve"
+msgstr "اعتماد"
+
+#. module: itq_event_management
+#: model:res.groups,name:itq_event_management.itq_group_event_approver
+msgid "Approver"
+msgstr "المعتمد"
+
+#. module: itq_event_management
+#: model:ir.ui.menu,name:itq_event_management.menu_itq_visitor_management
+msgid "Visitor Management"
+msgstr "نظام إدارة الزوار"
+
+#. module: itq_event_management
+#: model:ir.ui.menu,name:itq_event_management.menu_itq_visitor_management_settings
+msgid "Visitor Management Settings"
+msgstr "إعدادات الزوار"
+
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__is_photo_shoot
+msgid "Is Photo Shoot"
+msgstr "للتصوير"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__is_visit
+msgid "Is Visit"
+msgstr "للزيارات"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__is_event
+msgid "Is Event"
+msgstr "للفعاليات"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_attraction_location__resource_calendar_id
+msgid "Working Schedule"
+msgstr "جدول العمل"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_form_view
+msgid "Export"
+msgstr "تصدير"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.import_invitee_wizard
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_form_view
+msgid "Import"
+msgstr "استيراد"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_invitee_wizard__file
+msgid "File"
+msgstr "الملف"
+
+#. module: itq_event_management
+#: model:ir.actions.act_window,name:itq_event_management.import_invitee_action
+msgid "invitee"
+msgstr "المدعو"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/wizards/itq_invitee.py:0
+#, python-format
+msgid "we have a person with same identification"
+msgstr "لدينا شخص بنفس الهوية"
+
+#. module: itq_event_management
+#: model_terms:ir.actions.act_window,help:itq_event_management.itq_event_request_review_action
+msgid "There is no Under Review Event Requests click here to add new"
+msgstr "لا توجد طلبات حدث قيد المراجعة، انقر هنا لإضافة جديد"
+
+#. module: itq_event_management
+#: model_terms:ir.actions.act_window,help:itq_event_management.itq_research_type_action
+msgid "There is no Research Type click here to add new ."
+msgstr "لا يوجد نوع بحث اضغط هنا لاضافة جديدة."
+
+#. module: itq_event_management
+#: model_terms:ir.actions.act_window,help:itq_event_management.itq_documentation_type_action
+msgid "There is no Documentation Type click here to add new ."
+msgstr "لا يوحد نوع توثيق اضغط هنا لاضافة جديد."
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/wizards/itq_invitee.py:0
+#, python-format
+msgid "please check your file format"
+msgstr "يرجى التحقق من تنسيق الملف الخاص بك"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_research_type.py:0
+#: model:ir.actions.act_window,name:itq_event_management.itq_research_type_action
+#: model:ir.model,name:itq_event_management.model_itq_research_type
+#: model:ir.ui.menu,name:itq_event_management.menu_itq_research_type
+#, python-format
+msgid "Research Type"
+msgstr "انواع الابحاث"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_approve_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_review_form_view
+msgid "Reject"
+msgstr "رفض"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.event_instruction_wizard
+msgid ""
+"<span style=\"color:blue\">By clicking confirm you agreed that you have read"
+" instructions.</span>"
+msgstr ""
+"<span style=\"color:blue\">بالنقر فوق تأكيد، فإنك توافق على أنك قرأت التعليمات"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.event_instruction_wizard
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_permission_form
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_approve_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_reject_event_request_form
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_return_event_request_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.event_instruction_wizard
+#: model_terms:ir.ui.view,arch_db:itq_event_management.import_invitee_wizard
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_permission_form
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_invitee_wizard
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_permission_invitee_wizard
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_reject_event_request_form
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_return_event_request_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_instruction_wizard__is_read_instruction
+msgid "I Have Read Instructions"
+msgstr "لقد قرأت التعليمات"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "Event Instructions"
+msgstr "تعليمات الفعالية"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "state must be draft"
+msgstr "يجب أن تكون الحالة مسودة"
+
+#. module: itq_event_management
+#: model:ir.actions.act_window,name:itq_event_management.confirmed_requests_action
+#: model:ir.ui.menu,name:itq_event_management.confirmed_event_requests_menu
+msgid "Confirmed Events"
+msgstr "الفعاليات المعتمدة"
+
+#. module: itq_event_management
+#: model:ir.actions.report,name:itq_event_management.action_event_permission
+#: model:ir.model,name:itq_event_management.model_itq_event_permission
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_request__event_permission_ids
+#: model:ir.ui.menu,name:itq_event_management.itq_event_permission_menu
+#: model_terms:ir.ui.view,arch_db:itq_event_management.event_request_template_layout
+#: model_terms:ir.ui.view,arch_db:itq_event_management.search_event_permission
+msgid "Event Permission"
+msgstr "تصريح الفعالية"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "Event Permissions"
+msgstr "تصاريح الفعالية"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_permission.py:0
+#, python-format
+msgid "Event request must be confirmed."
+msgstr "الفعالية يجب ان تكون معتمدة"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/wizards/itq_event_invitee_permissions_wizard.py:0
+#, python-format
+msgid "Invitee already added to this permission"
+msgstr "تمت إضافة المدعو بالفعل إلى هذا التصريح"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__is_event_confirmed
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_invitee__is_event_confirmed
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__is_event_confirmed
+msgid "Is Event Confirmed"
+msgstr "هل تم تأكيد الفعالية"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_permission_invitee__permission_id
+msgid "Permission"
+msgstr ""
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_permission__permission_end_date
+msgid "Permission End Date"
+msgstr "تاريخ انتهاء التصريح"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_permission
+msgid "Permission Information"
+msgstr "معلومات التصريح"
+
+#. module: itq_event_management
+#: model:ir.model,name:itq_event_management.model_itq_permission_invitee
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_permission__permission_invitee_ids
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_permission_form
+#: model_terms:ir.ui.view,arch_db:itq_event_management.report_event_permission
+msgid "Permission Invitee"
+msgstr "مدعو التصريح"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_permission__permission_number
+msgid "Permission Number"
+msgstr "رقم التصريح"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_permission__permission_start_date
+msgid "Permission Start Date"
+msgstr "تاريخ بدء التصريح"
+
+#. module: itq_event_management
+#: model:ir.actions.act_window,name:itq_event_management.itq_event_permission_action
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_invitee_permission_wizard__permission_ids
+msgid "Permissions"
+msgstr "التصاريح"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_permission__qr_code
+msgid "QR Code"
+msgstr "رمز الاستجابة السريعة"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_request_form_view
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_invitee_wizard
+msgid "add"
+msgstr "اضافة"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_permission_form
+msgid "cancel"
+msgstr "إلغاء"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_permission_form
+msgid "Click"
+msgstr "انقر"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_permission_form
+msgid "confirm"
+msgstr "تأكيد"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_event_permission_form
+msgid "invitees"
+msgstr "المدعوون"
+
+#. module: itq_event_management
+#: model:ir.actions.act_window,name:itq_event_management.itq_permission_invitee_wizard_action
+msgid "permission invitee"
+msgstr "مدعو التصريح"
+
+#. module: itq_event_management
+#: model:ir.actions.act_window,name:itq_event_management.itq_invitee_permissions_wizard_action
+msgid "permissions"
+msgstr "التصاريح"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_permission_invitee.py:0
+#, python-format
+msgid "we have a person with same email"
+msgstr "لدينا شخص لديه نفس البريد الإلكتروني"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/wizards/itq_permission_invitee_wizard.py:0
+#: code:addons/itq_event_management/wizards/itq_permission_invitee_wizard.py:0
+#: code:addons/itq_event_management/wizards/itq_permission_invitee_wizard.py:0
+#, python-format
+msgid "you selected this person before"
+msgstr "لقد حددت هذا الشخص من قبل"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.confirmed_requests_form
+msgid "Show Event Permissions"
+msgstr "عرض تصاريح الفعالية"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_permission__name
+msgid "Source"
+msgstr "المصدر"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.confirmed_requests_form
+msgid "Add Event Permission"
+msgstr "إضافة تصريح الفعالية"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_permission__entrance
+msgid "Entrance"
+msgstr "المدخل"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_permission__number_of_guests
+msgid "Number Of Guests"
+msgstr "عدد الضيوف"
+
+#. module: itq_event_management
+#: model:ir.model.fields.selection,name:itq_event_management.selection__itq_event_permission__state__canceled
+msgid "Canceled"
+msgstr "ألغيت"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_permission_invitee__res_model
+msgid "Rec Model"
+msgstr "المصدر"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_permission__event_request_id
+msgid "Event"
+msgstr "الفعالية"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_permission_invitee_wizard
+msgid "Guest Speaker"
+msgstr "المتحدث"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_permission_invitee_wizard__guest_speaker_ids
+msgid "Guest Speakers"
+msgstr "المتحدثون"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_permission_invitee_wizard__guest_honors_ids
+msgid "Guest Honors"
+msgstr "ضيوف الشرف"
+
+#. module: itq_event_management
+#: model_terms:ir.ui.view,arch_db:itq_event_management.itq_permission_invitee_wizard
+msgid "Save"
+msgstr "حفظ"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_invitee_wizard__invitee_file
+msgid "File"
+msgstr "ملف"
+
+#. module: itq_event_management
+#: model_terms:ir.actions.act_window,help:itq_event_management.itq_event_request_reject_action
+msgid "There is no Rejected Event Requests click here to add new"
+msgstr "لا توجد طلبات فعاليات مرفوضة انقر هنا لإضافة جديد"
+
+#. module: itq_event_management
+#: model:ir.actions.act_window,name:itq_event_management.itq_event_request_reject_action
+msgid "Rejected Event Request"
+msgstr "طلب إقامة الفعالية المرفوضة"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_request.py:0
+#, python-format
+msgid "Organizer Team is required"
+msgstr "فريق التنظيم مطلوب"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/wizards/itq_invitee.py:0
+#, python-format
+msgid "invitee name is required"
+msgstr "اسم المدعو مطلوب"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_event_permission__entrance_ids
+msgid "Entrance"
+msgstr "المدخل"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_permission.py:0
+#, python-format
+msgid "Event "
+msgstr "الفعالية"
+
+#. module: itq_event_management
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_abstract_event_guest__has_event_permission
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_guest_honor__has_event_permission
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_invitee__has_event_permission
+#: model:ir.model.fields,field_description:itq_event_management.field_itq_speaker_guest__has_event_permission
+msgid "Has Event Permission"
+msgstr "لديه تصريح فعالية"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_permission.py:0
+#, python-format
+msgid "State cannot be changed to canceled."
+msgstr "لا يمكن تغيير الحالة الي ملغي"
+
+#. module: itq_event_management
+#. odoo-python
+#: code:addons/itq_event_management/models/itq_event_permission.py:0
+#, python-format
+msgid "State cannot be changed to confirmed."
+msgstr "لا يمكن تغيير الحالة الي معتمد"
+
+
+#. module: itq_event_management
+#: model:ir.model,name:itq_event_management.model_itq_invitee_wizard
+msgid "itq.invitee.wizard"
+msgstr "المدعو"
+
+#. module: itq_event_management
+#: model:ir.model,name:itq_event_management.model_itq_permission_invitee_wizard
+msgid "itq.permission.invitee.wizard"
+msgstr "تصريح المدعو"

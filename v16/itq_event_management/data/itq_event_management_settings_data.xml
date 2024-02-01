@@ -1,0 +1,7 @@
+<odoo>
+    <data>
+        <record model="itq.event.management.settings" id="itq_event_management_settings_data">
+            <field name="name">Main Settings</field>
+        </record>
+    </data>
+</odoo>

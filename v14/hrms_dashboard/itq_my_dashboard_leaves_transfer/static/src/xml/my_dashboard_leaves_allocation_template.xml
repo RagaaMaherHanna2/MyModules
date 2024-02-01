@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+        <t t-name="MyDashboardYearsAllocationsTemp">
+            <!-- Leaves-->
+            <t t-if="year_allocation_details">
+                <div>
+                    <h2 class="text-color display-6 card-header"
+                        style="font-size: 15px; display: flex; justify-content: space-between; align-items: center;"
+                        name="year_allocation_card_header">
+                        <div>
+                            <div class="main-section d_allocation_options" name="d_allocation_options">
+                                <div class="d-flex">
+                                    <label for="options"
+                                           style="width: 150px; margin-bottom: 0px;">Choose year:</label>
+                                    <select name="options" id="allocation_options" class="form-control">
+                                        <option id="this_year" value="this_year" t-att-selected="option === 'this_year' ? 'selected' : undefined">This Year</option>
+                                        <option id="year" value="p_year" t-att-selected="option === 'p_year' ? 'selected' : undefined">Previous Year</option>
+                                        <option id="joining" value="joining" t-att-selected="option === 'joining' ? 'selected' : undefined">Since Joining</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </h2>
+                    <t t-foreach="year_allocation_details" t-as="year_allocation">
+                        <div class="card">
+                            <h2 class="text-color display-6 card-header"
+                                style="font-size: 15px; display: flex; justify-content: space-between; align-items: center;"
+                                name="year_allocation_card_header">
+                                Leaves Allocation Details  <t t-esc="year_allocation['year']"/>
+                            </h2>
+                            <div class="row card-body">
+                                <t t-foreach="year_allocation['month_allocations']" t-as="month_allocation">
+                                    <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="hr_notification">
+                                            <div class="hr_notification_head">
+                                                <t t-esc="month_allocation['month_name']"/>
+                                                Leaves Allocation Details
+                                            </div>
+
+                                            <div>
+                                                <t t-foreach="month_allocation['month_allocation_details']"
+                                                   t-as="month_allocation_detail">
+                                                    <div class="text-align">
+                                                        <div class="col-sm-12 col-lg-12" style="padding:0;">
+                                                            <div class="text-color">
+                                                                <div class="">
+                                                                    <div class="media">
+                                                                        <div class="media-body">
+                                                                            <h2 class="text-color display-6"
+                                                                                style="font-size: 15px;"><t t-esc="month_allocation_detail['leave_type']" /> </h2>
+                                                                            <p>Allocated : <t
+                                                                                    t-esc="month_allocation_detail['leave_type_allocated_days']"/>
+                                                                                - Taken:
+                                                                                <t t-esc="month_allocation_detail['leave_type_taken_days']"/>
+                                                                                - Remaining:
+                                                                                <t t-esc="month_allocation_detail['leave_type_remaining_days']"/></p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </t>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+
+            </t>
+        </t>
+    </templates>

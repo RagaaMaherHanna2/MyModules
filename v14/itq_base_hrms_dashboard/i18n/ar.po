@@ -1,0 +1,297 @@
+
+
+
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* itq_base_hrms_dashboard
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20220325\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-07 09:36+0000\n"
+"PO-Revision-Date: 2023-05-07 09:36+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields.selection,name:itq_base_hrms_dashboard.selection__hr_employee_data__employee_state__active
+msgid "Active"
+msgstr "نشيط"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee__employee_age
+msgid "Age"
+msgstr "العمر"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee_data__age_avg
+msgid "Age Avg"
+msgstr "متوسط العمر"
+
+#. module: itq_base_hrms_dashboard
+#: model_terms:ir.ui.view,arch_db:itq_base_hrms_dashboard.hr_employee_data_dashboard
+msgid "Assignation Percentage"
+msgstr "نسبة التعيين"
+
+#. module: itq_base_hrms_dashboard
+#: model_terms:ir.ui.view,arch_db:itq_base_hrms_dashboard.hr_employee_data_dashboard
+msgid "Average Age"
+msgstr "متوسط العمر"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields.selection,name:itq_base_hrms_dashboard.selection__hr_employee_data__employee_assigned_to__business_unit
+msgid "Business Unit"
+msgstr "وحدة العمل"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields.selection,name:itq_base_hrms_dashboard.selection__hr_employee_data__citizenship__citizen
+msgid "Citizen"
+msgstr "مواطن"
+
+#. module: itq_base_hrms_dashboard
+#: model_terms:ir.ui.view,arch_db:itq_base_hrms_dashboard.hr_employee_data_dashboard
+msgid "Citizen Percentage"
+msgstr "نسبة المواطنين"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee_data__citizenship
+msgid "Citizenship"
+msgstr "المواطنة "
+
+#. module: itq_base_hrms_dashboard
+#: model_terms:ir.ui.view,arch_db:itq_base_hrms_dashboard.hr_employee_data_dashboard
+msgid "Citizenship Percentage"
+msgstr "نسبة المواطنة"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields.selection,name:itq_base_hrms_dashboard.selection__hr_employee_data__sponsor__company
+msgid "Company"
+msgstr "الشركة"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee_data__country_id
+msgid "Country"
+msgstr "البلد"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee_data__department_id
+msgid "Department"
+msgstr "القسم "
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee_data__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model,name:itq_base_hrms_dashboard.model_hr_employee
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee_data__employee_id
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee_data__employee_assigned_to
+msgid "Employee Assigned To"
+msgstr "الموظف معين إلى "
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee_data__employee_state
+msgid "Employee State"
+msgstr "حالة الموظف "
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee_data__employees_count
+msgid "Employees Count"
+msgstr "عدد الموظفين"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields.selection,name:itq_base_hrms_dashboard.selection__hr_employee_data__employee_state__extended
+msgid "Extended"
+msgstr "امتداد"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields.selection,name:itq_base_hrms_dashboard.selection__hr_employee_data__gender__female
+msgid "Female"
+msgstr "أنثى"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee_data__female_count
+#: model_terms:ir.ui.view,arch_db:itq_base_hrms_dashboard.hr_employee_data_dashboard
+msgid "Female Count"
+msgstr "عدد الإناث"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee__hiring_date
+msgid "First Contract Date"
+msgstr "تاريخ أول اتصال"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields.selection,name:itq_base_hrms_dashboard.selection__hr_employee_data__sponsor__free
+msgid "Free"
+msgstr "مجانًا"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee_data__gender
+#: model_terms:ir.ui.view,arch_db:itq_base_hrms_dashboard.hr_employee_data_dashboard
+msgid "Gender"
+msgstr "النوع"
+
+#. module: itq_base_hrms_dashboard
+#: model:res.groups,name:itq_base_hrms_dashboard.group_hrms_dashboard_group
+msgid "HR Dashboard"
+msgstr "لوحة بيانات الموارد البشرية"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.actions.act_window,name:itq_base_hrms_dashboard.hr_employee_dashboard_action
+#: model:ir.ui.menu,name:itq_base_hrms_dashboard.hrms_employee_dashboard_menu
+msgid "HRMS Dashboard"
+msgstr "لوحة بيانات نظام إدارة الموارد البشرية "
+
+#. module: itq_base_hrms_dashboard
+#: model_terms:ir.ui.view,arch_db:itq_base_hrms_dashboard.hrms_base_graph
+msgid "HRMS Graph"
+msgstr "التصور البياني لنظام إدارة الموارد البشرية"
+
+#. module: itq_base_hrms_dashboard
+#: model_terms:ir.ui.view,arch_db:itq_base_hrms_dashboard.hrms_base_pivot
+msgid "HRMS pivot"
+msgstr "الجدول المحوري لنظام إدارة الموارد البشرية"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee_data__hiring_date
+msgid "Hiring Date"
+msgstr "تاريخ التعيين"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model,name:itq_base_hrms_dashboard.model_hr_employee_data
+msgid "Hr Employee Data"
+msgstr "بيانات موظف الموارد البشرية"
+
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields.selection,name:itq_base_hrms_dashboard.selection__hr_employee_data__employee_state__inactive
+msgid "Inactive"
+msgstr "غير نشط"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee_data__is_citizen
+msgid "Is Citizen"
+msgstr "مواطن؟"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee_data__is_citizen_count
+msgid "Is Citizen Count"
+msgstr "اعتبار عدد الموظفين"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee_data____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields.selection,name:itq_base_hrms_dashboard.selection__hr_employee_data__gender__male
+msgid "Male"
+msgstr "ذكر"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee_data__male_count
+#: model_terms:ir.ui.view,arch_db:itq_base_hrms_dashboard.hr_employee_data_dashboard
+msgid "Male Count"
+msgstr "عدد الذكور"
+
+#. module: itq_base_hrms_dashboard
+#: model_terms:ir.ui.view,arch_db:itq_base_hrms_dashboard.hr_employee_data_dashboard
+msgid "Nationality Percentage"
+msgstr "نسبة الجنسية"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields.selection,name:itq_base_hrms_dashboard.selection__hr_employee_data__employee_state__new_hire
+msgid "New-Hire"
+msgstr "موظف جديد"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields.selection,name:itq_base_hrms_dashboard.selection__hr_employee_data__citizenship__non_citizen
+msgid "Non-Citizen"
+msgstr "غير مواطن"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields.selection,name:itq_base_hrms_dashboard.selection__hr_employee_data__employee_state__onboarding
+msgid "Onboarding"
+msgstr "مرحلة الاستقدام"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields.selection,name:itq_base_hrms_dashboard.selection__hr_employee_data__employee_state__pending_deactivation
+msgid "Pending Deactivation"
+msgstr "تعطيل معلق"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields.selection,name:itq_base_hrms_dashboard.selection__hr_employee_data__employee_assigned_to__project
+msgid "Project"
+msgstr "المشروع"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee_data__religion_id
+msgid "Religion"
+msgstr "الدين"
+
+#. module: itq_base_hrms_dashboard
+#: model_terms:ir.ui.view,arch_db:itq_base_hrms_dashboard.hr_employee_data_dashboard
+msgid "Religion Percentage"
+msgstr "نسبة الدين"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields.selection,name:itq_base_hrms_dashboard.selection__hr_employee_data__sponsor__sister_company
+msgid "Sister Company"
+msgstr "شركة شقيقة"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee_data__sponsor
+msgid "Sponsor"
+msgstr "الكفيل"
+
+#. module: itq_base_hrms_dashboard
+#: model_terms:ir.ui.view,arch_db:itq_base_hrms_dashboard.hr_employee_data_dashboard
+msgid "Sponsor Percentage"
+msgstr "نسبة الكفالة"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee_data__terminated_date
+msgid "Terminated Date"
+msgstr "تاريخ النهاية"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields.selection,name:itq_base_hrms_dashboard.selection__hr_employee_data__employee_state__termination_process
+msgid "Termination Process"
+msgstr "عملية الانهاء"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields,field_description:itq_base_hrms_dashboard.field_hr_employee_data__termination_type
+msgid "Termination Type"
+msgstr "نوع النهاية"
+
+#. module: itq_base_hrms_dashboard
+#: model:ir.model.fields.selection,name:itq_base_hrms_dashboard.selection__hr_employee_data__employee_state__under_review
+msgid "Under Review"
+msgstr "قيد المراجعة"
+
+#. module: itq_base_hrms_dashboard
+#: model_terms:ir.ui.view,arch_db:itq_base_hrms_dashboard.hrms_base_search
+msgid "employee status"
+msgstr "حالة الموظف "
+
+#. module: itq_base_hrms_dashboard
+#: model_terms:ir.ui.view,arch_db:itq_base_hrms_dashboard.hr_employee_data_dashboard
+msgid "employees_count"
+msgstr "عدد الموظفين"
+
+#. module: itq_base_hrms_dashboard
+#: model_terms:ir.ui.view,arch_db:itq_base_hrms_dashboard.hr_employee_data_dashboard
+msgid "is_citizen_count"
+msgstr "اعتبار عدد الموظفين"

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="event_request_template_layout">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <t t-if="not branch">
+            <!-- MultiBranches -->
+            <t t-if="branch_id">
+                <t t-set="branch" t-value="branch_id"/>
+            </t>
+            <t t-elif="o and 'branch_id' in o and o.branch_id.sudo()">
+                <t t-set="branch" t-value="o.branch_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="branch"
+                   t-value="o.env['itq.holding.branch'].search([('is_default_branch', '=', True)], limit=1) or False"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="row mt32 mb32">
+                <div class="col-3 text-left">
+                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d')"/>
+                    <br/>
+                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%H:%M')"/>
+                </div>
+                <div class="col-6" align="center">
+                    <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 100px;"
+                         alt="Logo"/>
+                </div>
+                <div class="col-3 text-right">
+                    <span t-esc="company.name"/>
+                    <!--                    <span t-if="branch" t-esc="branch.name"/>-->
+                </div>
+            </div>
+            <br/>
+            <div class="row text-center">
+                <h2>Event Permission</h2>
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+             t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-out="0"/>
+        </div>
+        <div class="footer">
+            <div class="text-center">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <span class="page"/>
+                    </li>
+                    <li class="list-inline-item">/</li>
+                    <li class="list-inline-item">
+                        <span class="topage"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </template>
+
+    <template id="report_event_permission">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="o" t-value="o.with_context(lang=lang)"/>
+                <t t-call="itq_event_management.event_request_template_layout">
+                    <div class="page"
+                         t-att-dir="o.env['res.lang'].search([('code', '=', lang_code)], limit=1).direction">
+
+                        <table width="100%" style="font-size: 14px; border-collapse: collapse; border: none;">
+                            <tr style="border: 2px solid white;">
+                                <td width="80%" style="margin: 5px; padding: 5px;">
+                                    <strong><h3>Permission Information</h3></strong>
+                                </td>
+                                <td width="20%" style="margin: 5px; padding: 5px;">
+                                         <img t-att-src="'data:image/png;base64,%s' % quote_plus(o.qr_code)" style="width:150px; height: 150px;"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                        <table width="100%" style="font-size: 14px; border-collapse: collapse;">
+                            <tr style="border: 2px solid #dee2e6;">
+                                <td width="20%" style="margin: 5px; padding: 5px;">
+                                    <strong>Source:</strong>
+                                </td>
+                                <td width="30%" style="margin: 5px; padding: 5px;">
+                                    <p t-field="o.name"/>
+                                </td>
+                            </tr>
+                            <tr style="border: 2px solid #dee2e6;">
+                                <td width="20%" style="margin: 5px; padding: 5px;">
+                                    <strong>Permission Number:</strong>
+                                </td>
+                                <td width="30%" style="margin: 5px; padding: 5px;">
+                                    <p t-field="o.permission_number"/>
+                                </td>
+                            </tr>
+                            <tr style="border: 2px solid #dee2e6;">
+                                <td width="20%" style="margin: 5px; padding: 5px;">
+                                    <strong>Branch ID:</strong>
+                                </td>
+                                <td width="30%" style="margin: 5px; padding: 5px;">
+                                    <p t-field="o.branch_id"/>
+                                </td>
+                            </tr>
+                             <tr style="border: 2px solid #dee2e6;">
+                                <td width="20%" style="margin: 5px; padding: 5px;">
+                                    <strong>Entrance:</strong>
+                                </td>
+                                <td width="30%" style="margin: 5px; padding: 5px;">
+                                    <p t-field="o.entrance_ids"/>
+                                </td>
+                            </tr>
+                             <tr style="border: 2px solid #dee2e6;">
+                                <td width="20%" style="margin: 5px; padding: 5px;">
+                                    <strong>Number Of Guests:</strong>
+                                </td>
+                                <td width="30%" style="margin: 5px; padding: 5px;">
+                                    <p t-field="o.number_of_guests"/>
+                                </td>
+                            </tr>
+                             <tr style="border: 2px solid #dee2e6;">
+                                <td width="20%" style="margin: 5px; padding: 5px;">
+                                    <strong>Start Date:</strong>
+                                </td>
+                                <td width="30%" style="margin: 5px; padding: 5px;">
+                                    <p t-field="o.permission_start_date"/>
+                                </td>
+                            </tr>
+                            <tr style="border: 2px solid #dee2e6;">
+                                <td width="20%" style="margin: 5px; padding: 5px;">
+                                    <strong>End Date:</strong>
+                                </td>
+                                <td width="30%" style="margin: 5px; padding: 5px;">
+                                    <p t-field="o.permission_end_date"/>
+                                </td>
+                            </tr>
+                            <tr style="border: 2px solid #dee2e6;">
+                                <td width="20%" style="margin: 5px; padding: 5px;">
+                                    <strong>Event:</strong>
+                                </td>
+                                <td width="30%" style="margin: 5px; padding: 5px;">
+                                    <p t-field="o.event_request_id"/>
+                                </td>
+                            </tr>
+
+                        </table>
+                        <br/>
+                        <br/>
+                        <h3>Permission Invitee</h3>
+                        <br/>
+                       <table width="100%" style="font-size: 14px; border-collapse: collapse;">
+                           <thead>
+                                <tr style="border: 2px solid #dee2e6;">
+                                    <th style="padding: 5px;"><strong>Name</strong></th>
+                                    <th style="padding: 5px;"><strong>Title</strong></th>
+                                    <th style="padding: 5px;"><strong>Email</strong></th>
+                                    <th style="padding: 5px;"><strong>Phone</strong></th>
+                                </tr>
+                           </thead>
+                            <t t-foreach="o.permission_invitee_ids" t-as="invitee">
+                                    <tbody>
+                                        <tr style="border: 2px solid #dee2e6;">
+                                            <td style="padding: 5px;"><span t-field="invitee.name"/></td>
+                                            <td style="padding: 5px;"><span t-field="invitee.title"/></td>
+                                            <td style="padding: 5px;"><span t-field="invitee.email"/></td>
+                                            <td style="padding: 5px;"><span t-field="invitee.phone"/></td>
+                                        </tr>
+                                    </tbody>
+                                </t>
+                            </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_event_permission" model="ir.actions.report">
+        <field name="name">Event Permission</field>
+        <field name="model">itq.event.permission</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">itq_event_management.report_event_permission</field>
+        <field name="report_file">itq_event_management.report_event_permission</field>
+        <field name="print_report_name">'Event Permission - %s' % (object.permission_number)
+        </field>
+        <field name="binding_model_id" ref="model_itq_event_permission"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

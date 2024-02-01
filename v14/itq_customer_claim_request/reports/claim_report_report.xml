@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="customer_claim_report_doc">
+        <t t-call="web.external_layout">
+            <t t-set="o" t-value="o.with_context()"/>
+            <div class="page">
+                <div class="oe_structure"/>
+                <center>
+                    <h2>
+                        <span t-field="o.name"/>
+                    </h2>
+                </center>
+                <div class="row mt32">
+                    <div class="col-6">
+                        <h5>Creation Date:
+                            <span t-field="o.create_date"/>
+                        </h5>
+                    </div>
+                    <div class="col-6">
+                        <h5>Installment Company:
+                            <span t-field="o.installment_company_id.name"/>
+                        </h5>
+                    </div>
+                </div>
+                <div class="row mt32">
+                    <div class="col-6">
+
+                        <h5>Print Date:
+                            <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%m/%d/%Y %H:%M:%S')"/>
+                        </h5>
+                    </div>
+                    <div class="col-6">
+                        <h5>Payment Method:
+                            <span t-field="o.payment_method_id.name"/>
+                        </h5>
+                    </div>
+                </div>
+                <t t-if="o.is_date_filter">
+                    <div class="row mt32">
+                        <div class="col-6">
+                            <h5>From Date:
+                                <span t-field="o.date_from"/>
+                            </h5>
+                        </div>
+                        <div class="Date-6">
+                            <h5>To Method:
+                                <span t-field="o.date_to"/>
+                            </h5>
+                        </div>
+                    </div>
+                </t>
+                <left>
+                    <h5>Paid Amount:
+                        <span t-field="o.paid_amount"/>
+                    </h5>
+                    <h5>Claim Perc:
+                        <span t-field="o.claim_perc"/>
+                        %
+                    </h5>
+                </left>
+                <br/>
+                <br/>
+                <t t-if="o.claim_reconciled_invoices_ids">
+                    <table class="table table-sm o_main_table">
+                        <thead style="display: table-row-group;">
+                            <tr>
+                                <th>Partner</th>
+                                <th>Number</th>
+                                <th>Due Date</th>
+                                <th>Due Amount</th>
+                                <th>Origin Amount</th>
+                                <th>Paid Amount</th>
+
+                            </tr>
+                        </thead>
+                        <tbody class="sale_tbody">
+                            <t t-set="due_amount" t-value="0.0"/>
+                            <t t-set="total_amount" t-value="0.0"/>
+                            <t t-set="paid_amount" t-value="0.0"/>
+                            <t t-foreach="o.claim_available_invoices_ids" t-as="line">
+                                <t t-set="due_amount" t-value="due_amount+line.due_amount"/>
+                                <t t-set="total_amount" t-value="total_amount+line.amount_total_signed"/>
+                                <t t-set="paid_amount" t-value="paid_amount+line.paid_amount"/>
+                                <tr style="color: #0a8ea4;">
+                                    <td>
+                                        <span t-field="line.partner_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="line.move_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="line.invoice_date_due"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="line.due_amount"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="line.amount_total_signed"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="line.paid_amount"/>
+                                    </td>
+                                </tr>
+                            </t>
+                            <tr>
+                                <td/>
+                                <td/>
+                                <td/>
+                                <td>
+                                    <b>
+                                        <t t-esc="'%.2f'%due_amount"/>
+                                    </b>
+                                </td>
+                                <td>
+                                    <b>
+                                        <t t-esc="'%.2f'%total_amount"/>
+                                    </b>
+                                </td>
+                                <td>
+                                    <b>
+                                        <t t-esc="'%.2f'%paid_amount"/>
+                                    </b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </t>
+            </div>
+        </t>
+    </template>
+    <template id="customer_claim_report_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="itq_customer_claim_request.customer_claim_report_doc"/>
+            </t>
+        </t>
+    </template>
+    <record id="action_customer_claim_report" model="ir.actions.report">
+        <field name="name">Print Customer Claim Request</field>
+        <field name="model">customer.claim.request</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">itq_customer_claim_request.customer_claim_report_template</field>
+        <field name="report_file">itq_customer_claim_request.customer_claim_report_template</field>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

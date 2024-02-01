@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="FormErrorDialog" t-inherit="web.FormErrorDialog" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div//h1[@class='text-danger']" position="replace">
+            <h1 class="text-danger">Error</h1>
+        </xpath>
+    </t>
+</templates>

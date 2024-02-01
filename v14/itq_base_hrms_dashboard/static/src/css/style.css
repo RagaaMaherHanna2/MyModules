@@ -1,0 +1,16 @@
+body > div.o_action_manager > div > div.o_content > div.o_dashboard_view > div.o_group:nth-child(1){
+    justify-content: space-between;
+    margin: 25px 10px;
+}
+
+body > div.o_action_manager > div > div.o_content > div.o_dashboard_view > div.o_group:nth-child(1) > .o_group.o_group_col_2{
+    background: #fff;
+    border: 1px solid #f2f2f2;
+    padding: 15px;
+    width: 33%;
+    flex: none;
+}
+
+.o_dashboard_view > .o_group > .o_group.o_group_col_2.o_has_widget{
+        justify-content: space-between;
+}

@@ -1,0 +1,1565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="procedures_internal_layout">
+            <div class="header">
+                <div class="row">
+                    <div class="col-xs-4" style="text-left">
+                        <div style="width:fit-content; margin-right : 45%" class="text-right">
+                            <div>
+                                <span t-esc="docs._get_hijri_date((datetime.datetime.today() + relativedelta(hours=2)).strftime('%Y-%m-%d'))"/>
+                                <span>
+                                    : التاريخ
+                                </span>
+                            </div>
+                            <div>
+                                <t t-esc="(datetime.datetime.today() + relativedelta(hours=2)).strftime('%I:%M %p')"/>
+                                <span>
+                                    : الوقت
+                                </span>
+                            </div>
+                            <div>
+                                <span t-field="user.name"/>
+                                <span>
+                                    : قام بالطباعة
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4" style="direction : rtl;">
+                        <div class="text-center" style="White-space: nowrap; font-size : 18px"/>
+                        <div class="row text-center">
+                            <img t-if="company.logo"
+                                 style="max-height:75px; max-width:75px; border-radius : 50px;"
+                                 t-att-src="'data:image/png;base64,%s' % to_text(res_company.logo)"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-xs-4" style="direction : rtl;">
+                        <div t-esc="company.country_id.name"/>
+                        <div>
+                            <span>فصل (
+                                <span t-esc="company.line1_code"/>
+                                ) :
+                            </span>
+                            <span>
+                                <span t-esc="company.line1_name"/>
+                            </span>
+                        </div>
+                        <div>
+
+                            <span>فرع (
+                                <span t-esc="company.line2_code"/>
+                                ) :
+                            </span>
+                            <span>
+                                <span t-esc="company.line2_name"/>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row text-center">
+                        <span style="font-size:20px; font-weight : bold;">
+                            <t t-esc="report_title"/>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="article">
+                <t t-raw="0"/>
+            </div>
+            <div class="footer">
+                <div class="row">
+                    <div class="row text-center">
+                        <ul class="list-inline">
+                            <li>
+                                <span class="topage"/>
+                            </li>
+                            <li>/</li>
+                            <li>
+                                <span class="page"/>
+                            </li>
+                            <li>
+                                <span>:الصفحة</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="procedures_template">
+            <table style="text-align:center; width: 100%; direction:rtl; margin-bottom:5px; margin-top:15px"
+                   border="1">
+                <t t-if="p_doc.procedure_availability == 'secret'">
+                    <div style="position: relative;">
+                        <div style="position: absolute; opacity: 0.3; font-size: 100px; transform: rotate(-45deg) !important ;-webkit-transform: rotate(-45deg) ;color: red; top: 160px; right:340px; text-align: center;">
+                            سري
+                        </div>
+                    </div>
+                </t>
+                <tr>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                        <div>
+                            <span style="font-size:20px; font-weight : bold;">
+                                إسم الإجراء:
+                            </span>
+                        </div>
+                    </td>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                        <div>
+                            <span style="font-size:20px;">
+                                <t t-esc="p_doc.name"/>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                        <div>
+                            <span style="font-size:20px; font-weight : bold;">
+                                رمز الإجراء:
+                            </span>
+                        </div>
+                    </td>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                        <div>
+
+                            <span style="font-size:20px;">
+                                <t t-esc="p_doc.code"/>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                        <div>
+                            <span style="font-size:20px; font-weight : bold;">
+                                رقم الإصدار:
+                            </span>
+                        </div>
+                    </td>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                        <div>
+
+                            <span style="font-size:20px;">
+                                <t t-esc="p_doc.version_no"/>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                        <div>
+                            <span style="font-size:20px; font-weight : bold;">
+                                تاريخ الإصدار:
+                            </span>
+                        </div>
+                    </td>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                        <div>
+                            <span style="font-size:20px;">
+                                <t t-esc="docs._get_hijri_date((datetime.datetime.strptime(p_doc.create_date, '%Y-%m-%d %H:%M:%S') + relativedelta(hours=2)).strftime('%Y-%m-%d'))"/>
+                                -
+                                <t t-esc="(datetime.datetime.strptime(p_doc.create_date , '%Y-%m-%d %H:%M:%S')+ relativedelta(hours=2)).strftime('%I:%M %p')"/>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                        <div>
+                            <span style="font-size:20px; font-weight : bold;">
+                                القسم:
+                            </span>
+                        </div>
+                    </td>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                        <div>
+                            <span style="font-size:20px;">
+                                <t t-esc="p_doc.department_id.name"/>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                        <div>
+                            <span style="font-size:20px; font-weight : bold;">
+                                جهة الإعداد:
+                            </span>
+                        </div>
+                    </td>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                        <div>
+                            <span style="font-size:20px;">
+                                <t t-esc="p_doc.setting_side_department_id.name"/>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                        <div>
+                            <span style="font-size:20px; font-weight : bold;">
+                                جهة المراجعة:
+                            </span>
+                        </div>
+                    </td>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                        <div>
+                            <span style="font-size:20px;">
+                                <t t-esc="p_doc.procedure_review_department_id.name"/>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                        <div>
+                            <span style="font-size:20px; font-weight : bold;">
+                                جهة الإعتماد:
+                            </span>
+                        </div>
+                    </td>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                        <div>
+                            <span style="font-size:20px;">
+                                <t t-esc="p_doc.procedure_confirm_department_id.name"/>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                        <div>
+                            <span style="font-size:20px; font-weight : bold;">
+                                نطاق تطبيق الإجراء:
+                            </span>
+                        </div>
+                    </td>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                        <div>
+                            <span style="font-size:20px;">
+                                <t t-esc="p_doc.scope_id.name"/>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                        <div>
+                            <span style="font-size:20px; font-weight : bold;">
+                                الهدف من الإجراء:
+                            </span>
+                        </div>
+                    </td>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                        <div>
+                            <span style="font-size:20px;">
+                                <t t-esc="p_doc.target"/>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                        <div>
+                            <span style="font-size:20px; font-weight : bold;">
+                                المسؤول عن الإجراء:
+                            </span>
+                        </div>
+                    </td>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                        <div>
+                            <span style="font-size:20px;">
+                                <t t-esc="p_doc.user_id.name"/>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                        <div>
+                            <span style="font-size:20px; font-weight : bold;">
+                                طبيعة وسبب الاصدار:
+                            </span>
+                        </div>
+                    </td>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                        <div>
+                            <span style="font-size:20px;">
+                                <t t-esc="p_doc.version_reason"/>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                        <div>
+                            <span style="font-size:20px; font-weight : bold;">
+                                المسئولية:
+                            </span>
+                        </div>
+                    </td>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                        <div>
+                            <span style="font-size:20px;">
+                                <t t-esc="p_doc.responsibility_department_id.name"/>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                        <div>
+                            <span style="font-size:20px; font-weight : bold;">
+                                المدخلات:
+                            </span>
+                        </div>
+                    </td>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                        <div>
+                            <span style="font-size:20px;">
+                                <t t-esc="p_doc.inputs"/>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                        <div>
+                            <span style="font-size:20px; font-weight : bold;">
+                                المخرجات:
+                            </span>
+                        </div>
+                    </td>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                        <div>
+                            <span style="font-size:20px;">
+                                <t t-esc="p_doc.outputs"/>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                        <div>
+                            <span style="font-size:20px; font-weight : bold;">
+                                معايير ضبط الاجراء:
+                            </span>
+                        </div>
+                    </td>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                        <div>
+                            <span style="font-size:20px;">
+                                <t t-raw="p_doc.procedure_settings_criteria"/>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                        <div>
+                            <span style="font-size:20px; font-weight : bold;">
+                                الزمن الكلي لتنفيذ الاجراء:
+                            </span>
+                        </div>
+                    </td>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                        <div>
+                            <span style="font-size:20px;">
+                                <span style="font-size:20px;">
+                                    <t t-esc="p_doc.procedure_execution_days"/>
+                                    يوم
+                                </span>
+                                <span style="font-size:20px;">
+                                    <t t-esc="p_doc.procedure_execution_hours"/>
+                                    ساعه
+                                </span>
+                                <span style="font-size:20px;">
+                                    <t t-esc="p_doc.procedure_execution_mints"/>
+                                    دقيقه
+                                </span>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                        <div>
+                            <span style="font-size:20px; font-weight : bold;">
+                                تاريخ ارسال للمراجعة:
+                            </span>
+                        </div>
+                    </td>
+                    <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                        <div>
+                            <t t-if="p_doc.procedure_request_review_date">
+
+                                <span style="font-size:20px;">
+                                    <t t-esc="p_doc._get_hijri_date((datetime.datetime.strptime(p_doc.procedure_request_review_date, '%Y-%m-%d') + relativedelta(hours=2)).strftime('%Y-%m-%d'))"/>
+                                </span>
+                            </t>
+                            <t t-else="">
+                                <span style="font-size:20px;">---------------------</span>
+
+                            </t>
+                        </div>
+                    </td>
+                </tr>
+                <t t-if="p_doc.state != 'under_review'">
+                    <tr>
+                        <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                            <div>
+                                <span style="font-size:20px; font-weight : bold;">
+                                    تاريخ آخر إرسال للإعتماد:
+                                </span>
+                            </div>
+                        </td>
+                        <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                            <div>
+                                <t t-if="p_doc.procedure_review_date">
+
+                                    <span style="font-size:20px;">
+                                        <t t-esc="p_doc._get_hijri_date((datetime.datetime.strptime(p_doc.procedure_review_date, '%Y-%m-%d') + relativedelta(hours=2)).strftime('%Y-%m-%d'))"/>
+                                    </span>
+                                </t>
+                                <t t-else="">
+                                    <span style="font-size:20px;">---------------------</span>
+
+                                </t>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                            <div>
+                                <span style="font-size:20px; font-weight : bold;">
+                                    المراجع:
+                                </span>
+                            </div>
+                        </td>
+                        <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                            <div>
+                                <span style="font-size:20px;">
+                                    <t t-esc="p_doc.latest_procedure_review_user_id.name"/>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                </t>
+                <t t-if="p_doc.state == 'confirmed'">
+                    <tr>
+                        <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                            <div>
+                                <span style="font-size:20px; font-weight : bold;">
+                                    تاريخ آخر إعتماد:
+                                </span>
+                            </div>
+                        </td>
+                        <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                            <div>
+                                <span style="font-size:20px;">
+                                    <t t-esc="p_doc._get_hijri_date((datetime.datetime.strptime(p_doc.procedure_confirmation_date, '%Y-%m-%d') + relativedelta(hours=2)).strftime('%Y-%m-%d'))"/>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 30%; ">
+                            <div>
+                                <span style="font-size:20px; font-weight : bold;">
+                                    المعتمد:
+                                </span>
+                            </div>
+                        </td>
+                        <td style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 70%;">
+                            <div>
+                                <span style="font-size:20px;">
+                                    <t t-esc="p_doc.latest_procedure_confirm_user_id.name"/>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <t t-if="p_doc.child_ids">
+                        <table style="text-align:right; width: 100%; direction:rtl; margin-bottom:5px; margin-top:15px"
+                               border="1">
+                            <thead>
+                                <tr style="font-size:12px;">
+                                    <th colspan="3">
+                                        <div class="row text-center">
+                                            <span style="font-size:20px; font-weight : bold; margin-top:15px;">
+                                                إصدارات وتعديلات الوثيقة
+                                            </span>
+                                        </div>
+                                    </th>
+                                </tr>
+                                <tr style="font-size:12px;">
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        تاريخ الاصدار / التعديل
+                                    </th>
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        رقم الاصدار
+                                    </th>
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        طبيعة وسبب وملخص التعديل
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody style="position:relative;">
+                                <t t-foreach="p_doc.child_ids" t-as="line">
+                                    <tr>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                            <span t-esc="line.create_date"/>
+                                        </td>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                            <span t-esc="line.version_no"/>
+                                        </td>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                            <t t-esc="dict(line.fields_get(allfields=['state'])['state']['selection'])[line.state]"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                        <br/>
+                    </t>
+                </t>
+            </table>
+            <p style="page-break-after:always;"/>
+            <span t-esc="p_doc.action_create_actions_tracking(action_type='print')"/>
+        </template>
+
+        <template id="work_procedure_report_template">
+            <t t-call="web.html_container">
+                <t t-set="procedures" t-value="docs.get_procedures()"/>
+                <t t-set="report_title" t-value="docs.get_report_title()"/>
+                <t t-call="itq_work_procedures.procedures_internal_layout">
+                    <div class="page">
+                        <t t-if="o and 'company_id' in o">
+                            <t t-set="company" t-value="o.company_id"/>
+                        </t>
+                        <t t-if="not o or not 'company_id' in o">
+                            <t t-set="company" t-value="res_company"/>
+                        </t>
+                        <t t-if="procedures">
+                            <t t-if="docs.group_by == 'department'">
+                                <t t-set="departments" t-value="procedures.mapped('department_id')"/>
+                                <t t-foreach="departments" t-as="department">
+                                    <t t-set="procedures_docs"
+                                       t-value="procedures.filtered(lambda p: p.department_id == department)"/>
+                                    <div class="row" style="direction : rtl">
+                                        <div>
+                                            <span style="font-size:25px; font-weight : bold;">
+                                                الإجراءات الخاصه بالإداره:
+                                            </span>
+                                            <span style="font-size:20px;">
+                                                <span t-esc="department.name"/>
+                                            </span>
+                                        </div>
+
+                                        <div>
+                                            <span style="font-size:20px; font-weight : bold;">
+                                                إجمالي عدد الاجراءات علي مستوي الاداره =
+                                            </span>
+                                            <span style="font-size:20px;">
+                                                <t t-esc="len(procedures_docs)"/>
+                                            </span>
+                                        </div>
+                                        <t t-foreach="procedures_docs" t-as="p_doc">
+                                            <t t-call="itq_work_procedures.procedures_template"/>
+                                        </t>
+                                    </div>
+                                </t>
+                            </t>
+                            <t t-else="">
+                                <t t-set="scopes" t-value="procedures.mapped('scope_id')"/>
+                                <t t-foreach="scopes" t-as="scope">
+                                    <t t-set="procedures_docs"
+                                       t-value="procedures.filtered(lambda p: p.scope_id == scope)"/>
+                                    <div class="row" style="direction : rtl">
+                                        <div>
+                                            <span style="font-size:25px; font-weight : bold;">
+                                                الإجراءات الخاصه بالنطاق:
+                                            </span>
+                                            <span>
+                                                <span t-esc="scope.name"/>
+                                            </span>
+                                        </div>
+
+                                        <div>
+                                            <span style="font-size:20px; font-weight : bold;">
+                                                إجمالي عدد الاجراءات علي مستوي النطاق =
+                                            </span>
+                                            <span style="font-size:20px;">
+                                                <t t-esc="len(procedures_docs)"/>
+                                            </span>
+                                        </div>
+                                        <t t-foreach="procedures_docs" t-as="p_doc">
+                                            <t t-call="itq_work_procedures.procedures_template"/>
+                                        </t>
+                                    </div>
+                                </t>
+                            </t>
+                            <div style="direction:rtl;">
+                                <span style="font-size:20px; font-weight : bold;">
+                                    إجمالي عدد الاجراءات =
+                                </span>
+                                <span style="font-size:20px;">
+                                    <t t-esc="len(procedures)"/>
+                                </span>
+                            </div>
+                        </t>
+                        <t t-else="">
+                            <div class="row">
+                                <div class="row text-center">
+                                    <span style="font-size:20px; font-weight : bold;">
+                                        لا توجد إجراءات
+                                        <t t-esc="report_title"/>
+                                        فى الفتره المختاره
+                                    </span>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <report id="print_work_procedure_pdf"
+                model='procedure.reports.wizard'
+                string="Work Procedures"
+                report_type="qweb-html"
+                name="itq_work_procedures.work_procedure_report_template"
+                file="itq_work_procedures.work_procedure_report_template"/>
+
+        <template id="procedure_details_template">
+            <div class="row">
+                <t t-if="p_doc.procedure_availability == 'secret'">
+                    <div style="position: relative;">
+                        <div style="position: absolute; opacity: 0.3; font-size: 100px; transform: rotate(-45deg) !important ;-webkit-transform: rotate(-45deg) ;color: red; top: 160px; right:340px; text-align: center;">
+                            سري
+                        </div>
+                    </div>
+                </t>
+                <div class="row text-center">
+                    <span style="font-size:20px; font-weight : bold;">
+                        الخطوات /الفعاليات
+                    </span>
+                </div>
+                <table style="text-align:right; width: 100%; direction:rtl; margin-bottom:5px; margin-top:15px"
+                       border="1">
+                    <thead>
+                        <tr style="font-size:12px;">
+                            <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                مسلسل
+                            </th>
+                            <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                مسمي الخطوة/الفعالية
+                            </th>
+                            <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                وصف تفصيلي للخطوة
+                            </th>
+                            <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                النظام
+                            </th>
+                            <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                الاتصال
+                            </th>
+                            <th colspan="3"
+                                style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody style="position:relative;">
+                        <t t-foreach="p_doc.procedure_step_ids" t-as="line">
+                            <tr>
+                                <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                    <span t-esc="line.sequence"/>
+                                </td>
+                                <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                    <span t-esc="line.name"/>
+                                </td>
+                                <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                    <span t-esc="line.description"/>
+                                </td>
+                                <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                    <span t-esc="line.system"/>
+                                </td>
+                                <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                    <span t-esc="line.communication_tool"/>
+                                </td>
+                                <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                    <span t-esc="line.execution_days"/>
+                                    يوما
+                                </td>
+                                <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                    <span t-esc="line.execution_hours"/>
+                                    ساعه
+                                </td>
+                                <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                    <span t-esc="line.execution_mints"/>
+                                    دقيقه
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+                <br/>
+                <br/>
+                <div class="row text-center">
+                    <span style="font-size:20px; font-weight : bold;">
+                        سجل العلاقات مع الإجراءات الأخرى
+                    </span>
+                </div>
+                <table style="text-align:right; width: 100%; direction:rtl; margin-bottom:5px; margin-top:15px"
+                       border="1">
+                    <thead>
+                        <tr style="font-size:12px;">
+                            <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                مسلسل
+                            </th>
+                            <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                الاجراء الاخر
+                            </th>
+                            <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                وصف تفصيلي للعلاقة
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody style="position:relative;">
+                        <t t-foreach="p_doc.related_procedure_ids" t-as="line">
+                            <tr>
+                                <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                    <span t-esc="line.serial_number"/>
+                                </td>
+                                <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                    <span t-esc="line.related_procedure_id.name"/>
+                                </td>
+                                <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                    <span t-esc="line.relation"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+                <br/>
+                <br/>
+                <div class="row text-center">
+                    <span style="font-size:20px; font-weight : bold; margin-top:15px;">
+                        الموارد
+                    </span>
+                </div>
+                <t t-if="p_doc.procedure_resource_ids">
+                    <t t-set="hr_resources"
+                       t-value="p_doc.procedure_resource_ids.filtered(lambda l: l.resource_type == 'hr')"/>
+                    <t t-set="assets_resources"
+                       t-value="p_doc.procedure_resource_ids.filtered(lambda l: l.resource_type == 'assets')"/>
+                    <t t-set="other_resources"
+                       t-value="p_doc.procedure_resource_ids.filtered(lambda l: l.resource_type in ['contacts', 'offices', 'other'])"/>
+                    <t t-if="hr_resources">
+                        <div class="row text-center">
+                            <span style="font-size:20px; font-weight : bold; margin-top:15px;">
+                                الموارد من نوع الموارد البشريه
+                            </span>
+                        </div>
+                        <table style="text-align:right; width: 100%; direction:rtl; margin-bottom:5px; margin-top:15px"
+                               border="1">
+                            <thead>
+                                <tr style="font-size:12px;">
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        مسلسل
+                                    </th>
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        غرض المورد
+                                    </th>
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        إسم الخطوه/ الاجراء
+                                    </th>
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        التصنيف العام للموارد البشرية
+                                    </th>
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        اسم المورد
+                                    </th>
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        مسمى الوظيفة
+                                    </th>
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        رمز الوظيفة
+                                    </th>
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        وصف للمورد
+                                    </th>
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        صلاحية المسمى الوظيفي
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody style="position:relative;">
+                                <t t-foreach="hr_resources" t-as="line">
+                                    <tr>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                            <span t-esc="line.sequence"/>
+                                        </td>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                            <t t-esc="dict(line.fields_get(allfields=['aim'])['aim']['selection'])[line.aim]"/>
+                                        </td>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+
+                                            <t t-if="line.aim == 'step'">
+                                                <span t-esc="line.step_id.name"/>
+                                            </t>
+                                            <t t-if="line.aim == 'procedure'">
+                                                <span t-esc="line.procedure_id.name"/>
+                                            </t>
+
+                                        </td>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                            <t t-esc="dict(line.fields_get(allfields=['employee_categ'])['employee_categ']['selection'])[line.employee_categ]"/>
+                                        </td>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                            <span t-esc="line.name"/>
+                                        </td>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                            <span t-esc="line.job_id.name"/>
+                                        </td>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                            <span t-esc="line.job_code"/>
+                                        </td>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                            <span t-esc="line.resource_description"/>
+                                        </td>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                            <t t-foreach="line.jobs_access_ids" t-as="jobs_access">
+                                                -
+                                                <span t-esc="jobs_access.name"/>
+                                                <br/>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </t>
+                    <t t-if="assets_resources">
+                        <div class="row text-center">
+                            <span style="font-size:20px; font-weight : bold; margin-top:15px;">
+                                الموارد من نوع الأصول
+                            </span>
+                        </div>
+                        <table style="text-align:right; width: 100%; direction:rtl; margin-bottom:5px; margin-top:15px"
+                               border="1">
+                            <thead>
+                                <tr style="font-size:12px;">
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        مسلسل
+                                    </th>
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        غرض المورد
+                                    </th>
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        إسم الخطوه/ الاجراء
+                                    </th>
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        المورد
+                                    </th>
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        الأصل
+                                    </th>
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        وصف للمورد
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody style="position:relative;">
+                                <t t-foreach="assets_resources" t-as="line">
+                                    <tr>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                            <span t-esc="line.sequence"/>
+                                        </td>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                            <t t-esc="dict(line.fields_get(allfields=['aim'])['aim']['selection'])[line.aim]"/>
+                                        </td>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+
+                                            <t t-if="line.aim == 'step'">
+                                                <span t-esc="line.step_id.name"/>
+                                            </t>
+                                            <t t-if="line.aim == 'procedure'">
+                                                <span t-esc="line.procedure_id.name"/>
+                                            </t>
+
+                                        </td>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                            <span t-esc="line.name"/>
+                                        </td>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                            <span t-esc="line.asset_id.name"/>
+                                        </td>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                            <span t-esc="line.resource_description"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </t>
+                    <t t-if="other_resources">
+                        <div class="row text-center">
+                            <span style="font-size:20px; font-weight : bold; margin-top:15px;">
+                                الموارد الاخرى
+                            </span>
+                        </div>
+                        <table style="text-align:right; width: 100%; direction:rtl; margin-bottom:5px; margin-top:15px"
+                               border="1">
+                            <thead>
+                                <tr style="font-size:12px;">
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        مسلسل
+                                    </th>
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        غرض المورد
+                                    </th>
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        إسم الخطوه/ الاجراء
+                                    </th>
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        النوع
+                                    </th>
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        المورد
+                                    </th>
+                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                        وصف للمورد
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody style="position:relative;">
+                                <t t-foreach="other_resources" t-as="line">
+                                    <tr>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                            <span t-esc="line.sequence"/>
+                                        </td>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                            <t t-esc="dict(line.fields_get(allfields=['aim'])['aim']['selection'])[line.aim]"/>
+                                        </td>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+
+                                            <t t-if="line.aim == 'step'">
+                                                <span t-esc="line.step_id.name"/>
+                                            </t>
+                                            <t t-if="line.aim == 'procedure'">
+                                                <span t-esc="line.procedure_id.name"/>
+                                            </t>
+
+                                        </td>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                            <t t-esc="dict(line.fields_get(allfields=['resource_type'])['resource_type']['selection'])[line.resource_type]"/>
+                                        </td>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                            <span t-esc="line.name"/>
+                                        </td>
+                                        <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                            <span t-esc="line.resource_description"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </t>
+                </t>
+                <t t-else="">
+                    <table style="text-align:right; width: 100%; direction:rtl; margin-bottom:5px; margin-top:15px"
+                           border="1">
+                        <thead>
+                            <tr style="font-size:12px;">
+                                <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                    مسلسل
+                                </th>
+                                <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                    غرض المورد
+                                </th>
+                                <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                    إسم الخطوه/ الاجراء
+                                </th>
+                                <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                    المورد
+                                </th>
+                                <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                    وصف للمورد
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </t>
+                <br/>
+                <br/>
+                <div class="row text-center">
+                    <span style="font-size:20px; font-weight : bold; margin-top:15px;">
+                        النماذج
+                    </span>
+                </div>
+                <table style="text-align:right; width: 100%; direction:rtl; margin-bottom:5px; margin-top:15px"
+                       border="1">
+                    <thead>
+                        <tr style="font-size:12px;">
+                            <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                مسلسل
+                            </th>
+                            <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                غرض النموذج
+                            </th>
+                            <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                إسم الخطوه/ الاجراء
+                            </th>
+                            <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                اسم النموذج
+                            </th>
+                            <th style="text-align : center;  padding : 3px 3px; border:1px black solid;  font-weight: bold">
+
+                                الوصف
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody style="position:relative;">
+                        <t t-foreach="p_doc.procedure_doc_ids" t-as="line">
+                            <tr>
+                                <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                    <span t-esc="line.procedure_docs_sequence"/>
+                                </td>
+                                <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                    <t t-esc="dict(line.fields_get(allfields=['aim'])['aim']['selection'])[line.aim]"/>
+                                </td>
+                                <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                    <t t-if="line.aim == 'step'">
+                                        <span t-esc="line.step_id.name"/>
+                                    </t>
+                                    <t t-if="line.aim == 'procedure'">
+                                        <span t-esc="line.procedure_id.name"/>
+                                    </t>
+                                </td>
+                                <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                    <span t-esc="line.name"/>
+                                </td>
+                                <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                    <span t-esc="line.description"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+                <br/>
+                <br/>
+            </div>
+            <p style="page-break-after:always;"/>
+        </template>
+        <template id="single_procedure_detailed_report_template">
+            <div class="page">
+                <t t-if="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id"/>
+                </t>
+                <t t-if="not o or not 'company_id' in o">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+                <div class="row text-center">
+                    <span style="font-size:20px; font-weight : bold;">
+                        <p>
+                            تصنيف الوثيقة:
+                            <t t-esc="dict(p_doc.with_context(lang=env.user.lang).fields_get(allfields=['procedure_availability'])['procedure_availability']['selection'])[p_doc.procedure_availability]"/>
+                        </p>
+                    </span>
+                </div>
+                <t t-call="itq_work_procedures.procedures_template"/>
+                <t t-call="itq_work_procedures.procedure_details_template"/>
+            </div>
+        </template>
+
+        <template id="confirmed_procedures_detailed_report_template">
+            <t t-call="web.html_container">
+                <t t-call="itq_work_procedures.procedures_internal_layout">
+                    <t t-set="report_title" t-value="docs.get_report_title()"/>
+                    <t t-set="procedures" t-value="docs.with_context(lang=env.user.lang).get_procedures()"/>
+                    <t t-if="procedures">
+                        <div class="row">
+                            <div class="row text-center">
+                                <hr width="100%;" size="10"/>
+                                <div style="font-size:20px; font-weight : bold; direction: rtl">
+                                    <div style="text-align: center; margin-bottom: 10px">
+                                        <span style="padding: 5px; border-bottom: 1px solid black">
+                                            نموذج دليل إرشادي لوثيقة اعداد وتوثيق إجراءات العمل والنماذج المرتبطة
+                                            بها
+                                        </span>
+                                    </div>
+                                    <div style="text-align: center; margin-bottom: 10px">
+                                        <span>
+                                            "
+                                            بالنسبة
+                                            لتوثيق
+                                            إجراءات العمل يتم طبقاً للهيكل التنظيمي المعتمد لكل إدارة بحيث يكون
+                                            يعتمد
+                                            على
+                                            المهام
+                                            التنفيذية
+                                            لأقل وحدة إدارة بالجهات وباستخدام النموذج التالي
+                                        </span>
+                                        <span>:</span>
+                                    </div>
+                                </div>
+                                <hr width="100%;" size="10"/>
+                            </div>
+                        </div>
+                        <t t-if="docs.latest_v">
+                            <t t-foreach="procedures.mapped('department_id').sorted(key=lambda d: d.name)"
+                               t-as="department">
+                                <div class="row" style="direction : rtl">
+                                    <div>
+                                        <span style="font-size:25px; font-weight : bold;">
+                                            الإجراءات الخاصه بالإداره:
+                                        </span>
+                                        <span style="font-size:20px;">
+                                            <span t-esc="department.name"/>
+                                        </span>
+                                    </div>
+                                </div>
+                                <t t-set="dep_procedures"
+                                   t-value="procedures.filtered(lambda p: p.department_id == department).sorted(key=lambda p: p.procedure_confirmation_date if docs.order_by == 'confirm_date' else p.name)"/>
+                                <t t-foreach="dep_procedures" t-as="p_doc">
+                                    <t t-call="itq_work_procedures.single_procedure_detailed_report_template"/>
+                                </t>
+                            </t>
+                        </t>
+                        <t t-else="">
+                            <t t-foreach="procedures" t-as="p_doc">
+                                <t t-call="itq_work_procedures.single_procedure_detailed_report_template"/>
+                            </t>
+                        </t>
+                    </t>
+                    <t t-else="">
+                        <div class="row">
+                            <div class="row text-center">
+                                <span style="font-size:20px; font-weight : bold;">
+                                    لا توجد إجراءات
+                                    <t t-esc="report_title"/>
+                                    للطباعه
+                                </span>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <report id="print_confirmed_wizard_procedure_details_pdf"
+                model='procedure.reports.wizard'
+                string="Work Procedures Details"
+                report_type="qweb-html"
+                name="itq_work_procedures.confirmed_procedures_detailed_report_template"
+                file="itq_work_procedures.confirmed_procedures_detailed_report_template"/>
+
+        <!--        For print button in the record-->
+        <report id="print_single_confirmed_procedure_details_pdf"
+                model='work.procedure'
+                string="Work Procedures Details"
+                report_type="qweb-html"
+                menu="False"
+                name="itq_work_procedures.single_procedure_detailed_report_template"
+                file="itq_work_procedures.single_procedure_detailed_report_template"/>
+
+        <template id="procedures_statistical_report_template">
+            <t t-call="web.html_container">
+                <t t-call="itq_work_procedures.procedures_internal_layout">
+                    <t t-set="procedures" t-value="docs.get_procedures()"/>
+                    <t t-set="report_title" t-value="docs.get_report_title()"/>
+                    <div class="page">
+                        <t t-if="o and 'company_id' in o">
+                            <t t-set="company" t-value="o.company_id"/>
+                        </t>
+                        <t t-if="not o or not 'company_id' in o">
+                            <t t-set="company" t-value="res_company"/>
+                        </t>
+                        <div class="row" style="direction : rtl">
+                            <t t-if="procedures">
+                                <t t-set="departments"
+                                   t-value="docs.department_ids or procedures.mapped('department_id')"/>
+                                <t t-foreach="departments" t-as="department">
+                                    <t t-set="department_procedures"
+                                       t-value="procedures.filtered(lambda p: p.department_id == department)"/>
+                                    <t t-set="scopes"
+                                       t-value="docs.scope_ids or department_procedures.mapped('scope_id')"/>
+                                    <table style="width: 100%; direction:rtl; margin-bottom:5px">
+                                        <tr>
+                                            <td colspan="2">
+                                                <div>
+                                                    <span style="font-size:20px; font-weight : bold;">
+                                                        عن الإداره:
+                                                    </span>
+                                                    <span style="font-size:20px;">
+                                                        <t t-esc="department.name"/>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <br/>
+                                    <br/>
+                                    <t t-foreach="scopes" t-as="scope">
+                                        <t t-set="scope_procedures"
+                                           t-value="department_procedures.filtered(lambda p: p.scope_id == scope)"/>
+                                        <table style="width: 100%; direction:rtl; margin-bottom:5px">
+                                            <tr>
+                                                <td>
+                                                    <div>
+                                                        <span style="font-size:20px; font-weight : bold;">
+                                                            عن نطاق:
+                                                        </span>
+                                                        <span style="font-size:20px;">
+                                                            <t t-esc="scope.name"/>
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <br/>
+                                        <br/>
+                                        <table style="text-align:right; width: 100%; direction:rtl; margin-bottom:5px; margin-top:15px"
+                                               border="1">
+                                            <thead>
+                                                <tr style="font-size:12px;">
+                                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                                        الاداره
+                                                    </th>
+                                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                                        النطاق
+                                                    </th>
+                                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                                        عدد الاجراءات تحت المراجعه
+                                                    </th>
+                                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                                        عدد الاجراءات المرفوضه
+                                                    </th>
+                                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                                        عدد الاجراءات تحت الإعتماد
+                                                    </th>
+                                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                                        عدد الاجراءات الغير معتمده
+                                                    </th>
+                                                    <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                                        عدد الاجراءات المعتمده
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody style="position:relative;">
+                                                <tr>
+                                                    <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                                        <span t-esc="department.name"/>
+                                                    </td>
+                                                    <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                                        <span t-esc="scope.name"/>
+                                                    </td>
+                                                    <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                                        <span t-esc="len(scope_procedures.filtered(lambda p: p.state == 'under_review'))"/>
+                                                    </td>
+                                                    <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                                        <span t-esc="len(scope_procedures.filtered(lambda p: p.state == 'review_rejected'))"/>
+                                                    </td>
+                                                    <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                                        <span t-esc="len(scope_procedures.filtered(lambda p: p.state == 'under_confirmation'))"/>
+                                                    </td>
+                                                    <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                                        <span t-esc="len(scope_procedures.filtered(lambda p: p.state == 'rejected'))"/>
+                                                    </td>
+                                                    <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                                        <span t-esc="len(scope_procedures.filtered(lambda p: p.state == 'confirmed'))"/>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br/>
+                                        <br/>
+                                    </t>
+                                    <hr/>
+                                    <span style="text-align:center; width: 100%; direction:rtl; margin-bottom:5px; margin-top:15px">
+                                        مجمـــــــــوع عدد الاجراءات الكليه على مستوى الاداره
+                                    </span>
+                                    <table style="text-align:right; width: 100%; direction:rtl; margin-bottom:5px; margin-top:15px"
+                                           border="1">
+                                        <thead>
+                                            <tr style="font-size:12px;">
+                                                <th colspan="2"
+                                                    style="text-align : center;  padding : 3px 3px; border:1px black solid; width: 20%; font-weight: bold">
+                                                </th>
+                                                <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                                    عدد الاجراءات تحت المراجعه الكليه
+                                                </th>
+                                                <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                                    عدد الاجراءات المرفوضه الكليه
+                                                </th>
+                                                <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                                    عدد الاجراءات تحت الإعتماد الكليه
+                                                </th>
+                                                <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                                    عدد الاجراءات الغير معتمده الكليه
+                                                </th>
+                                                <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                                                    عدد الاجراءات المعتمده الكليه
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody style="position:relative;">
+                                            <tr>
+                                                <td colspan="2"
+                                                    style="text-align : right;  padding : 3px 3px; border:1px black solid; width: 20%;">
+                                                    مجمـــــــــوع
+                                                </td>
+
+                                                <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                                    <span t-esc="len(department_procedures.filtered(lambda p: p.state == 'under_review'))"/>
+                                                </td>
+                                                <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                                    <span t-esc="len(department_procedures.filtered(lambda p: p.state == 'review_rejected'))"/>
+                                                </td>
+                                                <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                                    <span t-esc="len(department_procedures.filtered(lambda p: p.state == 'under_confirmation'))"/>
+                                                </td>
+                                                <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                                    <span t-esc="len(department_procedures.filtered(lambda p: p.state == 'rejected'))"/>
+                                                </td>
+                                                <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                                    <span t-esc="len(department_procedures.filtered(lambda p: p.state == 'confirmed'))"/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p style="page-break-after:always;"/>
+                                </t>
+                            </t>
+                            <t t-else="">
+                                <div class="row">
+                                    <div class="row text-center">
+                                        <span style="font-size:20px; font-weight : bold;">
+                                            لا توجد إجراءات
+                                            <t t-esc="report_title"/>
+                                            للطباعه
+                                        </span>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+
+
+                </t>
+            </t>
+        </template>
+
+        <report id="print_procedures_statistical_report_pdf"
+                model='procedure.reports.wizard'
+                string="Statistical Procedures Report"
+                report_type="qweb-html"
+                name="itq_work_procedures.procedures_statistical_report_template"
+                file="itq_work_procedures.procedures_statistical_report_template"/>
+
+        <template id="procedures_actions_template">
+            <br/>
+            <table style="text-align:right; width: 100%; direction:rtl; margin-bottom:5px; margin-top:15px"
+                   border="1">
+                <thead>
+                    <tr style="font-size:12px;">
+                        <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                            اسم الإجراء
+                        </th>
+                        <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                            رمز الإجراء
+                        </th>
+                        <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                            رقم الإصدار
+                        </th>
+                        <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                            تاريخ الاصدار (الانشاء)
+                        </th>
+                        <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                            جهة الإعداد
+                        </th>
+                        <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                            اسم المستخدم
+                        </th>
+                        <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                            اسم الموظف
+                        </th>
+                        <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                            الوحدة الإدارية للإجراء
+                        </th>
+                        <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                            الحركة
+                        </th>
+                        <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                            تاريخ الحركة
+                        </th>
+                        <th style="text-align : center;  padding : 3px 3px; border:1px black solid; font-weight: bold">
+                            وقت الحركة
+                        </th>
+                    </tr>
+                </thead>
+                <tbody style="position:relative;">
+                    <t t-foreach="actions_docs" t-as="action">
+                        <tr>
+                            <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                <span t-esc="action.procedure_id.name"/>
+                            </td>
+                            <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                <span t-esc="action.procedure_code"/>
+                            </td>
+                            <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                <span t-esc="action.procedure_version_no"/>
+                            </td>
+                            <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                <t t-if="action.procedure_create_date">
+                                    <t t-esc="docs._get_hijri_date((datetime.datetime.strptime(action.procedure_create_date, '%Y-%m-%d %H:%M:%S') + relativedelta(hours=2)).strftime('%Y-%m-%d'))"/>
+                                </t>
+                            </td>
+                            <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                <span t-esc="action.procedure_setting_side_department"/>
+                            </td>
+                            <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                <span t-esc="action.user_id.name"/>
+                            </td>
+                            <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                <span t-esc="action.procedure_id.user_id.name"/>
+                            </td>
+                            <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                <span t-esc="action.department_id.name"/>
+                            </td>
+                            <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                <t t-esc="dict(action.fields_get(allfields=['action_type'])['action_type']['selection'])[action.action_type]"/>
+                            </td>
+                            <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                <t t-if="action.action_date">
+                                    <t t-esc="docs._get_hijri_date((datetime.datetime.strptime(action.action_date, '%Y-%m-%d %H:%M:%S') + relativedelta(hours=2)).strftime('%Y-%m-%d'))"/>
+                                </t>
+                            </td>
+                            <td style="text-align : right;  padding : 3px 3px; border:1px black solid;">
+                                <t t-if="action.action_date">
+                                    <t t-esc="(datetime.datetime.strptime(action.action_date , '%Y-%m-%d %H:%M:%S')+ relativedelta(hours=2)).strftime('%I:%M %p')"/>
+                                </t>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+            <br/>
+        </template>
+        <template id="procedures_actions_tracking_report_template">
+            <t t-call="web.html_container">
+                <t t-call="itq_work_procedures.procedures_internal_layout">
+                    <t t-set="actions" t-value="docs.get_procedures_actions()"/>
+                    <t t-set="report_title" t-value="'تقرير حركات المستخدم (سجل التدقيق)'"/>
+                    <div class="page">
+
+                        <t t-if="o and 'company_id' in o">
+                            <t t-set="company" t-value="o.company_id"/>
+                        </t>
+                        <t t-if="not o or not 'company_id' in o">
+                            <t t-set="company" t-value="res_company"/>
+                        </t>
+                        <t t-if="actions">
+                            <div class="row" style="direction : rtl">
+                                <t t-if="docs.group_by == 'user'">
+                                    <t t-set="users" t-value="actions.mapped('user_id')"/>
+                                    <t t-foreach="users" t-as="user">
+                                        <t t-set="actions_docs"
+                                           t-value="actions.filtered(lambda p: p.user_id == user)"/>
+                                        <div>
+                                            <span style="font-size:25px; font-weight : bold;">
+                                                الحركات الخاصه بالمستخدم:
+                                            </span>
+                                            <span style="font-size:20px;">
+                                                <span t-esc="user.name"/>
+                                            </span>
+                                        </div>
+                                        <t t-call="itq_work_procedures.procedures_actions_template"/>
+                                        <div>
+                                            <span style="font-size:20px; font-weight : bold;">
+                                                إجمالي عدد الحركات الخاصه بالمستخدم =
+                                            </span>
+                                            <span style="font-size:20px;">
+                                                <t t-esc="len(actions_docs)"/>
+                                            </span>
+                                        </div>
+                                        <hr/>
+                                        <p style="page-break-after:always;"/>
+                                    </t>
+                                </t>
+                                <t t-elif="docs.group_by == 'current_admin_unit'">
+                                    <t t-set="units" t-value="actions.mapped('department_id')"/>
+                                    <t t-if="units">
+                                        <t t-foreach="units" t-as="unit">
+                                            <t t-set="actions_docs"
+                                               t-value="actions.filtered(lambda p: p.department_id == unit)"/>
+                                            <div>
+                                                <span style="font-size:25px; font-weight : bold;">
+                                                    الحركات الخاصه بالوحده:
+                                                </span>
+                                                <span style="font-size:20px;">
+                                                    <span t-esc="unit.name"/>
+                                                </span>
+                                            </div>
+                                            <t t-call="itq_work_procedures.procedures_actions_template"/>
+                                            <div>
+                                                <span style="font-size:20px; font-weight : bold;">
+                                                    إجمالي عدد الحركات الخاصه بالوحده =
+                                                </span>
+                                                <span style="font-size:20px;">
+                                                    <t t-esc="len(actions_docs)"/>
+                                                </span>
+                                            </div>
+                                            <hr/>
+                                            <p style="page-break-after:always;"/>
+                                        </t>
+
+                                    </t>
+                                </t>
+                                <t t-else="">
+                                    <t t-set="actions_docs" t-value="actions"/>
+                                    <t t-call="itq_work_procedures.procedures_actions_template"/>
+                                    <div>
+                                        <span style="font-size:20px; font-weight : bold;">
+                                            إجمالي عدد الحركات =
+                                        </span>
+                                        <span style="font-size:20px;">
+                                            <t t-esc="len(actions_docs)"/>
+                                        </span>
+                                    </div>
+                                    <hr/>
+                                    <p style="page-break-after:always;"/>
+                                </t>
+                            </div>
+                        </t>
+
+                        <t t-else="">
+                            <div class="row">
+                                <div class="row text-center">
+                                    <span style="font-size:20px; font-weight : bold;">
+                                        لا توجد إجراءات
+                                        <t t-esc="report_title"/>
+                                        فى الفتره المختاره
+                                    </span>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <report id="print_procedures_actions_tracking_pdf"
+                model='actions.tracking.reports.wizard'
+                string="تقرير حركات المستخدم (سجل التدقيق)"
+                report_type="qweb-html"
+                name="itq_work_procedures.procedures_actions_tracking_report_template"
+                file="itq_work_procedures.procedures_actions_tracking_report_template"/>
+
+    </data>
+</odoo>

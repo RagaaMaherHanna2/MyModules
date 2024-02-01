@@ -1,0 +1,2680 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* itq_work_procedures
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-30 12:18+0000\n"
+"PO-Revision-Date: 2023-11-30 12:18+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/noitfication_settings.py:24
+#, python-format
+msgid " لابد ان يكون هناك سجل نشط واحد فقط لإعدادت الاشعارات!"
+msgstr " لابد ان يكون هناك سجل نشط واحد فقط لإعدادت الاشعارات!"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "<span class=\"text-center\">\n"
+"                            أحدث إصدار\n"
+"                        </span>"
+msgstr "<span class=\"text-center\">\n"
+"                            أحدث إصدار\n"
+"                        </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "<span class=\"text-center\">\n"
+"                            سري\n"
+"                        </span>"
+msgstr "<span class=\"text-center\">\n"
+"                            سري\n"
+"                        </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold; margin-top:15px;\">\n"
+"                                                إصدارات وتعديلات الوثيقة\n"
+"                                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold; margin-top:15px;\">\n"
+"                                                إصدارات وتعديلات الوثيقة\n"
+"                                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "<span style=\"font-size:20px; font-weight : bold; margin-top:15px;\">\n"
+"                                الموارد الاخرى\n"
+"                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold; margin-top:15px;\">\n"
+"                                الموارد الاخرى\n"
+"                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "<span style=\"font-size:20px; font-weight : bold; margin-top:15px;\">\n"
+"                                الموارد من نوع الأصول\n"
+"                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold; margin-top:15px;\">\n"
+"                                الموارد من نوع الأصول\n"
+"                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "<span style=\"font-size:20px; font-weight : bold; margin-top:15px;\">\n"
+"                                الموارد من نوع الموارد البشريه\n"
+"                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold; margin-top:15px;\">\n"
+"                                الموارد من نوع الموارد البشريه\n"
+"                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "<span style=\"font-size:20px; font-weight : bold; margin-top:15px;\">\n"
+"                        الموارد\n"
+"                    </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold; margin-top:15px;\">\n"
+"                        الموارد\n"
+"                    </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "<span style=\"font-size:20px; font-weight : bold; margin-top:15px;\">\n"
+"                        النماذج\n"
+"                    </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold; margin-top:15px;\">\n"
+"                        النماذج\n"
+"                    </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_statistical_report_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                                            عن نطاق:\n"
+"                                                        </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                                            عن نطاق:\n"
+"                                                        </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_statistical_report_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                                        عن الإداره:\n"
+"                                                    </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                                        عن الإداره:\n"
+"                                                    </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_actions_tracking_report_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                                    إجمالي عدد الحركات الخاصه بالوحده =\n"
+"                                                </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                                    إجمالي عدد الحركات الخاصه بالوحده =\n"
+"                                                </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_report_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                                إجمالي عدد الاجراءات علي مستوي الاداره =\n"
+"                                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                                إجمالي عدد الاجراءات علي مستوي الاداره =\n"
+"                                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_report_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                                إجمالي عدد الاجراءات علي مستوي النطاق =\n"
+"                                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                                إجمالي عدد الاجراءات علي مستوي النطاق =\n"
+"                                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_actions_tracking_report_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                                إجمالي عدد الحركات الخاصه بالمستخدم =\n"
+"                                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                                إجمالي عدد الحركات الخاصه بالمستخدم =\n"
+"                                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_actions_tracking_report_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                            إجمالي عدد الحركات =\n"
+"                                        </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                            إجمالي عدد الحركات =\n"
+"                                        </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_report_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                    إجمالي عدد الاجراءات =\n"
+"                                </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                    إجمالي عدد الاجراءات =\n"
+"                                </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                    المراجع:\n"
+"                                </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                    المراجع:\n"
+"                                </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                    المعتمد:\n"
+"                                </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                    المعتمد:\n"
+"                                </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                    تاريخ آخر إرسال للإعتماد:\n"
+"                                </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                    تاريخ آخر إرسال للإعتماد:\n"
+"                                </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                    تاريخ آخر إعتماد:\n"
+"                                </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                    تاريخ آخر إعتماد:\n"
+"                                </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                إسم الإجراء:\n"
+"                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                إسم الإجراء:\n"
+"                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                الزمن الكلي لتنفيذ الاجراء:\n"
+"                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                الزمن الكلي لتنفيذ الاجراء:\n"
+"                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                القسم:\n"
+"                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                القسم:\n"
+"                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                المخرجات:\n"
+"                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                المخرجات:\n"
+"                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                المدخلات:\n"
+"                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                المدخلات:\n"
+"                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                المسؤول عن الإجراء:\n"
+"                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                المسؤول عن الإجراء:\n"
+"                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                المسئولية:\n"
+"                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                المسئولية:\n"
+"                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                الهدف من الإجراء:\n"
+"                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                الهدف من الإجراء:\n"
+"                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                تاريخ ارسال للمراجعة:\n"
+"                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                تاريخ ارسال للمراجعة:\n"
+"                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                تاريخ الإصدار:\n"
+"                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                تاريخ الإصدار:\n"
+"                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                جهة الإعتماد:\n"
+"                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                جهة الإعتماد:\n"
+"                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                جهة الإعداد:\n"
+"                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                جهة الإعداد:\n"
+"                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                جهة المراجعة:\n"
+"                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                جهة المراجعة:\n"
+"                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                رقم الإصدار:\n"
+"                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                رقم الإصدار:\n"
+"                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                رمز الإجراء:\n"
+"                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                رمز الإجراء:\n"
+"                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                طبيعة وسبب الاصدار:\n"
+"                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                طبيعة وسبب الاصدار:\n"
+"                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                معايير ضبط الاجراء:\n"
+"                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                معايير ضبط الاجراء:\n"
+"                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                نطاق تطبيق الإجراء:\n"
+"                            </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                                نطاق تطبيق الإجراء:\n"
+"                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                        الخطوات /الفعاليات\n"
+"                    </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                        الخطوات /الفعاليات\n"
+"                    </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                        سجل العلاقات مع الإجراءات الأخرى\n"
+"                    </span>"
+msgstr "<span style=\"font-size:20px; font-weight : bold;\">\n"
+"                        سجل العلاقات مع الإجراءات الأخرى\n"
+"                    </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_actions_tracking_report_template
+msgid "<span style=\"font-size:25px; font-weight : bold;\">\n"
+"                                                    الحركات الخاصه بالوحده:\n"
+"                                                </span>"
+msgstr "<span style=\"font-size:25px; font-weight : bold;\">\n"
+"                                                    الحركات الخاصه بالوحده:\n"
+"                                                </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_report_template
+msgid "<span style=\"font-size:25px; font-weight : bold;\">\n"
+"                                                الإجراءات الخاصه بالإداره:\n"
+"                                            </span>"
+msgstr "<span style=\"font-size:25px; font-weight : bold;\">\n"
+"                                                الإجراءات الخاصه بالإداره:\n"
+"                                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_report_template
+msgid "<span style=\"font-size:25px; font-weight : bold;\">\n"
+"                                                الإجراءات الخاصه بالنطاق:\n"
+"                                            </span>"
+msgstr "<span style=\"font-size:25px; font-weight : bold;\">\n"
+"                                                الإجراءات الخاصه بالنطاق:\n"
+"                                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_actions_tracking_report_template
+msgid "<span style=\"font-size:25px; font-weight : bold;\">\n"
+"                                                الحركات الخاصه بالمستخدم:\n"
+"                                            </span>"
+msgstr "<span style=\"font-size:25px; font-weight : bold;\">\n"
+"                                                الحركات الخاصه بالمستخدم:\n"
+"                                            </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.confirmed_procedures_detailed_report_template
+msgid "<span style=\"font-size:25px; font-weight : bold;\">\n"
+"                                            الإجراءات الخاصه بالإداره:\n"
+"                                        </span>"
+msgstr "<span style=\"font-size:25px; font-weight : bold;\">\n"
+"                                            الإجراءات الخاصه بالإداره:\n"
+"                                        </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.confirmed_procedures_detailed_report_template
+msgid "<span style=\"padding: 5px; border-bottom: 1px solid black\">\n"
+"                                            نموذج دليل إرشادي لوثيقة اعداد وتوثيق إجراءات العمل والنماذج المرتبطة\n"
+"                                            بها\n"
+"                                        </span>"
+msgstr "<span style=\"padding: 5px; border-bottom: 1px solid black\">\n"
+"                                            نموذج دليل إرشادي لوثيقة اعداد وتوثيق إجراءات العمل والنماذج المرتبطة\n"
+"                                            بها\n"
+"                                        </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_statistical_report_template
+msgid "<span style=\"text-align:center; width: 100%; direction:rtl; margin-bottom:5px; margin-top:15px\">\n"
+"                                        مجمـــــــــوع عدد الاجراءات الكليه على مستوى الاداره\n"
+"                                    </span>"
+msgstr "<span style=\"text-align:center; width: 100%; direction:rtl; margin-bottom:5px; margin-top:15px\">\n"
+"                                        مجمـــــــــوع عدد الاجراءات الكليه على مستوى الاداره\n"
+"                                    </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.confirmed_procedures_detailed_report_template
+msgid "<span>\n"
+"                                            \"\n"
+"                                            بالنسبة\n"
+"                                            لتوثيق\n"
+"                                            إجراءات العمل يتم طبقاً للهيكل التنظيمي المعتمد لكل إدارة بحيث يكون\n"
+"                                            يعتمد\n"
+"                                            على\n"
+"                                            المهام\n"
+"                                            التنفيذية\n"
+"                                            لأقل وحدة إدارة بالجهات وباستخدام النموذج التالي\n"
+"                                        </span>\n"
+"                                        <span>:</span>"
+msgstr "<span>\n"
+"                                            \"\n"
+"                                            بالنسبة\n"
+"                                            لتوثيق\n"
+"                                            إجراءات العمل يتم طبقاً للهيكل التنظيمي المعتمد لكل إدارة بحيث يكون\n"
+"                                            يعتمد\n"
+"                                            على\n"
+"                                            المهام\n"
+"                                            التنفيذية\n"
+"                                            لأقل وحدة إدارة بالجهات وباستخدام النموذج التالي\n"
+"                                        </span>\n"
+"                                        <span>:</span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_internal_layout
+msgid "<span>\n"
+"                                    : التاريخ\n"
+"                                </span>"
+msgstr "<span>\n"
+"                                    : التاريخ\n"
+"                                </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_internal_layout
+msgid "<span>\n"
+"                                    : الوقت\n"
+"                                </span>"
+msgstr "<span>\n"
+"                                    : الوقت\n"
+"                                </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_internal_layout
+msgid "<span>\n"
+"                                    : قام بالطباعة\n"
+"                                </span>"
+msgstr "<span>\n"
+"                                    : قام بالطباعة\n"
+"                                </span>"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_internal_layout
+msgid "<span>:الصفحة</span>"
+msgstr "<span>:الصفحة</span>"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_job_access_name
+msgid "Access Name"
+msgstr "صلاحية المسمى الوظيفي"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_action_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_approval_tracking_line_action_date
+msgid "Action Date"
+msgstr "تاريخ التنفيذ"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_user_id
+msgid "Action User"
+msgstr "المستخدم"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.action_actions_tracking
+#: model:ir.model,name:itq_work_procedures.model_actions_tracking
+#: model:ir.ui.menu,name:itq_work_procedures.actions_tracking_report_menuitem
+msgid "Actions Tracking"
+msgstr "تقرير حركات المستخدم"
+
+#. module: itq_work_procedures
+#: model:ir.model,name:itq_work_procedures.model_actions_tracking_reports_wizard
+msgid "Actions Tracking Reports Wizard"
+msgstr "تقرير حركات المستخدم"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_documentation_committee_active_committee
+#: model:ir.model.fields,field_description:itq_work_procedures.field_review_department_settings_active_department
+msgid "Active"
+msgstr "نشط"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_document_active_document
+msgid "Active Document"
+msgstr "نشط"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_job_access_active_job
+msgid "Active Job"
+msgstr "نشط"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_committee_member_active_member
+msgid "Active Member"
+msgstr "نشط"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_scope_active_scope
+msgid "Active Scope"
+msgstr "نشط"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_approval_tracking_line_activity_id
+msgid "Activity"
+msgstr "النشاط"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/itq_procedure_general_security_setting.py:24
+#, python-format
+msgid "Add / Delete Units Children"
+msgstr "أضف / إحذف وحدات إداريه"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_itq_procedure_general_security_setting_is_admin
+msgid "Admin Security"
+msgstr "مدير نظام"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.view_itq_procedure_general_security_setting_form
+msgid "Admin Units"
+msgstr "الوحدات الادارية"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.view_itq_procedure_general_security_setting_form
+msgid "Admin unit"
+msgstr "ملاك الوظيفة"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_all_selected_departments
+msgid "All Departments"
+msgstr "كل الإدارات"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_confirm_settings_confirm_allowed_users
+msgid "Allowed Confirm Users"
+msgstr "Allowed Confirm Users"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_confirm_settings_allowed_confirm_departments
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_review_settings_allowed_review_departments
+msgid "Allowed Department Units"
+msgstr "Allowed Department Units"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_allowed_departments
+msgid "Allowed Departments"
+msgstr "الوحدات المتاحه"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.view_itq_procedure_general_security_setting_form
+msgid "Allowed Users"
+msgstr "المستخدمين المسموح لهم"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_review_settings_review_allowed_users
+msgid "Allowed review Users"
+msgstr "Allowed review Users"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_related_work_procedure_user_id
+msgid "Another User"
+msgstr "مستخدم اخر"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_approval_tracking_line_state
+msgid "Approval State"
+msgstr "الحاله"
+
+#. module: itq_work_procedures
+#: model:ir.model,name:itq_work_procedures.model_approval_tracking_line
+msgid "Approval Tracking Line"
+msgstr "سلسلة الموافقات"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.approval_line_form
+msgid "Approval/Rejection Notes"
+msgstr "أضف ملاحظات"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_approvals_tracking_ids
+msgid "Approvals Tracking"
+msgstr "سلسلة الموافقات"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "Approve"
+msgstr "اعتماد"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_approval_tracking_line_approver_id
+msgid "Approver"
+msgstr "المُعتمِد"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "Archive"
+msgstr "أرشفة"
+
+#. module: itq_work_procedures
+#: model:ir.model,name:itq_work_procedures.model_archive_warning_wizard
+msgid "Archive Warning Wizard"
+msgstr "أرشفه"
+
+#. module: itq_work_procedures
+#: selection:work.procedure,state:0
+msgid "Archived"
+msgstr "مؤرشفه"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.action_archived_procedures
+#: model:ir.ui.menu,name:itq_work_procedures.archived_procedures_menuitem
+msgid "Archived Procedures"
+msgstr "الاجراءات  المؤرشفة"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_search
+msgid "Archived procedures"
+msgstr "الاجراءات  المؤرشفة"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_resource_asset_id
+msgid "Asset"
+msgstr "الاصل"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_attachment_name
+msgid "Attachment Name"
+msgstr "اسم المرفق"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_itq_procedure_general_security_setting_access_secrets
+msgid "Can Access Secret Procedures"
+msgstr "الاطلاع على الاجراءت السريه"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_can_add_new_v
+msgid "Can Add New V"
+msgstr "Can Add New V"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_can_archive
+msgid "Can Archive"
+msgstr "Can Archive"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_can_confirm
+msgid "Can Confirm"
+msgstr "Can Confirm"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_can_request_approve
+msgid "Can Request Approve"
+msgstr "Can Request Approve"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_can_review
+msgid "Can Review"
+msgstr "Can Review"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.actions_tracking_reports_wizard_wizard_form
+#: model:ir.ui.view,arch_db:itq_work_procedures.approval_line_form
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_reports_wizard_wizard_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/work_procedure.py:120
+#, python-format
+msgid "Cannot delete a Procedures that is not draft"
+msgstr "لا يمكن الحذف الا فى حالة مسوده فقط"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_child_ids
+msgid "Child Procedures"
+msgstr "Child Procedures"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_committee_member_member_class
+msgid "Classification"
+msgstr "تصنيفات"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,help:itq_work_procedures.action_actions_tracking
+#: model:ir.actions.act_window,help:itq_work_procedures.action_my_procedure
+msgid "Click to Add new Work Procedure."
+msgstr "قم بأضافة إجراء جديد"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,help:itq_work_procedures.action_job_access
+msgid "Click to add a new Job Access."
+msgstr "قم بأضافة صلاحية مسمى وظيفي جديده"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,help:itq_work_procedures.action_notification_settings
+msgid "Click to add a new Notification Settings."
+msgstr "قم بأضافة إعدادات ضبط الإشعارات"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,help:itq_work_procedures.action_procedure_scope
+msgid "Click to add a new Procedure Scope."
+msgstr "قم بأضافة نطاق جديد"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,help:itq_work_procedures.action_procedure_name
+msgid "Click to add a new Procedure name."
+msgstr "قم بأضافة تعريف إجراء عمل جديد."
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,help:itq_work_procedures.action_procedures_confirm_settings
+msgid "Click to add a new Procedures Confirm Settings."
+msgstr "قم بأضافة صلاحيات جهات الاعتماد حسب الادارات."
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,help:itq_work_procedures.action_procedures_review_settings
+msgid "Click to add a new Procedures review Settings."
+msgstr "قم باضافة إعدادات مراجعة الاجراءات."
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,help:itq_work_procedures.action_review_department_settings
+msgid "Click to add a new Review Department Settings."
+msgstr "قم باضافة إعدادات إدارة مراجعة الاجراءات."
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,help:itq_work_procedures.action_documentation_committee
+msgid "Click to add new Documentation Committee."
+msgstr " قم بأضافة لجنة توثيق."
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_procedure_code
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_name_code
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_code
+msgid "Code"
+msgstr "الكود"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_committee_member_committee_id
+msgid "Committee"
+msgstr "اللجنة"
+
+#. module: itq_work_procedures
+#: model:ir.model,name:itq_work_procedures.model_committee_member
+msgid "Committee Member"
+msgstr "أعضاء لجان التوثيق"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/committee_member.py:28
+#, python-format
+msgid "Committee Must have one Active manager"
+msgstr "يجب ان يكون للجنه رئيس واحد فقط نشط"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_documentation_committee_name
+msgid "Committee Name"
+msgstr "اﺳﻢ اﻟﻠﺠﻨﺔ"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_committee_members_ids
+msgid "Committee member"
+msgstr "أعضاء اللجنه"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_step_communication_tool
+msgid "Communication Tool"
+msgstr "وسيلة الاتصال"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_reports_wizard_company_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_company_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: itq_work_procedures
+#: model:ir.ui.menu,name:itq_work_procedures.configurations_menuitem
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "Confirm"
+msgstr "تنشيط"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_confirm_settings_confirm_user_id
+msgid "Confirm User"
+msgstr "مُعتمد الاجراء"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_confirm_settings_view_form
+msgid "Confirmation"
+msgstr "إعتماد"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/approval_tracking_line.py:55
+#: selection:procedure.reports.wizard,report_for:0
+#: selection:work.procedure,state:0
+#, python-format
+msgid "Confirmed"
+msgstr "معتمده"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.confirmed_procedure_report_wizard_action
+msgid "Confirmed Procedure Report"
+msgstr "تقرير الاجراءات المعتمدة"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.action_confirmed_procedures
+#: model:ir.ui.menu,name:itq_work_procedures.confirmed_procedure_menuitem
+msgid "Confirmed Procedures"
+msgstr "اجراءات معتمدة"
+
+#. module: itq_work_procedures
+#: model:ir.ui.menu,name:itq_work_procedures.confirmed_work_procedures_menuitem
+#: model:ir.ui.menu,name:itq_work_procedures.latest_v_confirmed_work_procedures_menuitem
+msgid "Confirmed Procedures Report"
+msgstr "تقرير الاجراءات المعتمدة"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_search
+msgid "Confirmed procedures"
+msgstr "اجراءات معتمدة"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_create_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_reports_wizard_create_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_approval_tracking_line_create_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_archive_warning_wizard_create_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_committee_member_create_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_documentation_committee_create_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_itq_procedure_general_security_setting_create_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_job_access_create_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_notification_settings_create_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_document_create_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_name_create_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_create_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_resource_create_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_scope_create_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_step_create_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_confirm_settings_create_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_review_settings_create_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_related_work_procedure_create_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_review_department_settings_create_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_create_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_reports_wizard_create_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_approval_tracking_line_create_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_archive_warning_wizard_create_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_committee_member_create_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_documentation_committee_create_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_itq_procedure_general_security_setting_create_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_job_access_create_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_notification_settings_create_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_document_create_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_name_create_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_create_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_resource_create_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_scope_create_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_step_create_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_confirm_settings_create_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_review_settings_create_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_related_work_procedure_create_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_review_department_settings_create_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_procedure_create_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_documentation_committee_committee_creation_date
+msgid "Creation Date"
+msgstr "تاريخ الإنشاء"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_department_id
+msgid "Current Unit"
+msgstr "ملاك الوظيفة"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_approval_tracking_line_current_version_no
+msgid "Current Version NO"
+msgstr "إصدار الاجراء"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_reports_wizard_date_from
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_date_from
+msgid "Date from"
+msgstr "التاريخ من"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/wizard/actions_tracking_reports_wizard.py:29
+#: code:addons/itq_work_procedures/wizard/procedure_reports_wizard.py:65
+#, python-format
+msgid "Date from should be less than date to"
+msgstr "تاريخ البدايه لابد ان يكون اقل من أو يساوى تاريخ النهايه"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_reports_wizard_date_to
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_date_to
+msgid "Date to"
+msgstr "تاريخ الي"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_documentation_committee_decision_date
+msgid "Decision Date"
+msgstr "تاريخ القرار"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_documentation_committee_decision_file
+#: model:ir.model.fields,field_description:itq_work_procedures.field_documentation_committee_file_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_document_file_name
+msgid "Decision File"
+msgstr "رفع ملف القرار"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_documentation_committee_decision_no
+msgid "Decision No"
+msgstr "رقم القرار"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_department_ids
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_confirm_settings_confirm_department_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_review_settings_review_department_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_review_department_settings_review_department_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_department_id
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_search
+msgid "Department"
+msgstr "الوحدة الادارية"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/procedures_confirm_settings.py:34
+#: code:addons/itq_work_procedures/models/procedures_review_settings.py:29
+#, python-format
+msgid "Department %s already has configuration!"
+msgstr "تم إدخال إعدادات للإداره %s"
+
+#. module: itq_work_procedures
+#: selection:actions.tracking,procedure_availability:0
+#: selection:work.procedure,procedure_availability:0
+msgid "Department Related"
+msgstr "للإدارة المدخلة"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_confirm_settings_confirm_department_units
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_confirm_settings_confirm_department_units_ids
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_review_settings_review_department_units
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_review_settings_review_department_units_ids
+#: model:ir.model.fields,field_description:itq_work_procedures.field_review_department_settings_sub_review_units_ids
+msgid "Department Units"
+msgstr "الوحدات الاداريه"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_job_access_description
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_document_description
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_name_description
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_resource_description
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_scope_description
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_step_description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_display_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_reports_wizard_display_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_approval_tracking_line_display_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_archive_warning_wizard_display_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_committee_member_display_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_documentation_committee_display_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_itq_procedure_general_security_setting_display_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_itq_wp_access_display_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_job_access_display_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_manage_notifications_display_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_notification_settings_display_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_document_display_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_name_display_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_display_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_resource_display_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_scope_display_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_step_display_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_confirm_settings_display_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_review_settings_display_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_related_work_procedure_display_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_review_department_settings_display_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_document_aim
+msgid "Document Aim"
+msgstr "غرض النموذج"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_document_document_file
+msgid "Document File"
+msgstr "الملف المرفق"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_document_name
+msgid "Document Name"
+msgstr "رقم الوثيقة"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.action_documentation_committee
+#: model:ir.model,name:itq_work_procedures.model_documentation_committee
+#: model:ir.ui.menu,name:itq_work_procedures.documentation_committee_menuitem
+msgid "Documentation Committee"
+msgstr "لجان التوثيق"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/procedure_document.py:14
+#: sql_constraint:procedure.document:0
+#, python-format
+msgid "Documents names must be unique for the same procedure."
+msgstr "لا يمكن تكرار اسماء النماذج للاجراء الواحد، من فضلك قم بتغييره."
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_search
+#: selection:work.procedure,state:0
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.approval_line_form
+msgid "Examples Documents"
+msgstr "نماذج توضيحية"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_approval_tracking_line_approval_doc_ids
+msgid "Examples Files"
+msgstr "امثلة توضيحية"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_step_execution_days
+msgid "Execution Days"
+msgstr "يوم"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_step_execution_hours
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_procedure_execution_hours
+msgid "Execution Hours"
+msgstr "ساعه"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_step_execution_mints
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_procedure_execution_mints
+msgid "Execution Mints"
+msgstr "دقيقه"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_search
+msgid "Filters"
+msgstr "مرشحات الفرز"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_file_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_flowchart_file
+msgid "Flowchart File"
+msgstr "خريطة التدفق"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/work_procedure.py:184
+#, python-format
+msgid "For step %s Execution hours must be less than 24"
+msgstr "يجب الا يزيد عدد الساعات عن 24 ساعه للخطوه %s"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/work_procedure.py:186
+#, python-format
+msgid "For step %s Execution mints must be less than 60"
+msgstr "يجب الا يزيد عدد الدقائق عن 60 دقيقه للخطوه %s"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/work_procedure.py:182
+#, python-format
+msgid "For step %s Please Enter Execution Time"
+msgstr "من فضلك قم بإدخال زمن تنفيذ للخطوه %s "
+
+#. module: itq_work_procedures
+#: selection:actions.tracking,procedure_availability:0
+#: selection:work.procedure,procedure_availability:0
+msgid "General"
+msgstr "عام"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_general_department_ids
+msgid "General Departments"
+msgstr "الإدارت العامه"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_itq_procedure_general_security_setting_name
+msgid "Group"
+msgstr "المجموعة"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_reports_wizard_group_by
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_group_by
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_reports_wizard_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_approval_tracking_line_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_archive_warning_wizard_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_committee_member_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_documentation_committee_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_itq_procedure_general_security_setting_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_itq_wp_access_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_job_access_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_manage_notifications_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_notification_settings_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_document_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_name_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_resource_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_scope_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_step_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_confirm_settings_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_review_settings_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_related_work_procedure_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_review_department_settings_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_committee_member_identification_id
+msgid "Identification ID"
+msgstr "رقم الهوية"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_inputs
+msgid "Inputs"
+msgstr "المدخلات"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.action_job_access
+#: model:ir.model,name:itq_work_procedures.model_job_access
+#: model:ir.ui.menu,name:itq_work_procedures.job_access_menuitem
+msgid "Job Access"
+msgstr "صلاحيات المسميات الوظيفيه"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_resource_jobs_access_ids
+msgid "Job Access Name"
+msgstr "صلاحيات المسمى الوظيفى"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_resource_job_code
+msgid "Job Code"
+msgstr "رمز الوظيفه"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_resource_job_id
+msgid "Job Name"
+msgstr "ﻣﺴﻤﻲ اﻟﻮﻇﻴﻔﺔ"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking___last_update
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_reports_wizard___last_update
+#: model:ir.model.fields,field_description:itq_work_procedures.field_approval_tracking_line___last_update
+#: model:ir.model.fields,field_description:itq_work_procedures.field_archive_warning_wizard___last_update
+#: model:ir.model.fields,field_description:itq_work_procedures.field_committee_member___last_update
+#: model:ir.model.fields,field_description:itq_work_procedures.field_documentation_committee___last_update
+#: model:ir.model.fields,field_description:itq_work_procedures.field_itq_procedure_general_security_setting___last_update
+#: model:ir.model.fields,field_description:itq_work_procedures.field_itq_wp_access___last_update
+#: model:ir.model.fields,field_description:itq_work_procedures.field_job_access___last_update
+#: model:ir.model.fields,field_description:itq_work_procedures.field_manage_notifications___last_update
+#: model:ir.model.fields,field_description:itq_work_procedures.field_notification_settings___last_update
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_document___last_update
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_name___last_update
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard___last_update
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_resource___last_update
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_scope___last_update
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_step___last_update
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_confirm_settings___last_update
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_review_settings___last_update
+#: model:ir.model.fields,field_description:itq_work_procedures.field_related_work_procedure___last_update
+#: model:ir.model.fields,field_description:itq_work_procedures.field_review_department_settings___last_update
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure___last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_reports_wizard_write_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_write_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_approval_tracking_line_write_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_archive_warning_wizard_write_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_committee_member_write_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_documentation_committee_write_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_itq_procedure_general_security_setting_write_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_job_access_write_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_notification_settings_write_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_document_write_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_name_write_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_write_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_resource_write_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_scope_write_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_step_write_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_confirm_settings_write_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_review_settings_write_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_related_work_procedure_write_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_review_department_settings_write_uid
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_reports_wizard_write_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_write_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_approval_tracking_line_write_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_archive_warning_wizard_write_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_committee_member_write_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_documentation_committee_write_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_itq_procedure_general_security_setting_write_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_job_access_write_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_notification_settings_write_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_document_write_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_name_write_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_write_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_resource_write_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_scope_write_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_step_write_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_confirm_settings_write_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_review_settings_write_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_related_work_procedure_write_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_review_department_settings_write_date
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.latest_v_confirmed_procedure_report_wizard_action
+msgid "Latest Confirmed Procedure Report"
+msgstr "تقرير دليل الإجراءات المعتمده"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_latest_procedure_confirm_user_id
+msgid "Latest Procedure Confirm"
+msgstr "آخر معتمد للإجراء"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_latest_procedure_review_user_id
+msgid "Latest Procedure Reviewer"
+msgstr "آخر مراجع للإجراء"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_latest_v
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_latest_version
+msgid "Latest Version"
+msgstr "آخر اصدار"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.action_confirmed_procedures_latest_v
+msgid "Latest Version Confirmed Procedures"
+msgstr "دليل الإجراءات المعتمده"
+
+#. module: itq_work_procedures
+#: model:ir.model,name:itq_work_procedures.model_manage_notifications
+msgid "Manage Notifications"
+msgstr "إعدادات الاشعارات"
+
+#. module: itq_work_procedures
+#: selection:committee.member,member_class:0
+msgid "Manager"
+msgstr "رئيس اللجنه"
+
+#. module: itq_work_procedures
+#: selection:committee.member,member_class:0
+msgid "Member"
+msgstr "عضو"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_documentation_committee_member_ids
+#: model:ir.ui.view,arch_db:itq_work_procedures.documentation_committee_view_form
+msgid "Members"
+msgstr "الأعضاء"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "More Details"
+msgstr "التفاصيل"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_procedure_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_committee_member_employee_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_name_name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_name_name_active
+msgid "Name Active"
+msgstr "نشط"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/approval_tracking_line.py:31
+#, python-format
+msgid "Need Your confirmation"
+msgstr "يرجى إعتماد/عدم إعتماد هذا الاجراء"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_next_procedure_review_date
+msgid "Next Procedure Review Date"
+msgstr "تاريخ المراجعه القادم"
+
+#. module: itq_work_procedures
+#: model:ir.ui.menu,name:itq_work_procedures.not_confirmed_procedures_menuitem
+msgid "Not Confirmed Procedures"
+msgstr "إجراءات غير معتمده"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.action_not_confirmed_procedures
+msgid "Not Confirmed Work Procedures"
+msgstr "إجراءات غير معتمده"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_approval_tracking_line_notes
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: itq_work_procedures
+#: model:ir.model,name:itq_work_procedures.model_notification_settings
+msgid "Notification Settings"
+msgstr "إعدادات الإجراءات"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_reports_wizard_order_by
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_order_by
+msgid "Order By"
+msgstr "ترتيب حسب"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_outputs
+msgid "Outputs"
+msgstr "مخرجات"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_parent_id
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_search
+msgid "Parent"
+msgstr "التصنيف الرئيسي"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/itq_procedure_general_security_setting.py:38
+#, python-format
+msgid "Please enter admin unit"
+msgstr "من فضلك قم بإدخال الوحدات"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/itq_procedure_general_security_setting.py:36
+#, python-format
+msgid "Please enter users"
+msgstr "من فضلك قم بإدخال المستخدمين"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.actions_tracking_reports_wizard_wizard_form
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_reports_wizard_wizard_form
+msgid "Print"
+msgstr "طباعة"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.actions_tracking_reports_wizard_wizard_form
+msgid "Print Procedures Actions"
+msgstr "تقرير حركات المستخدم"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_allow_departments_procedure
+msgid "Print Related Department Procedures?"
+msgstr "طباعه اجراءات الادارات؟"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_reports_wizard_wizard_form
+msgid "Print Work Procedure"
+msgstr "طباعة إجرءات العمل"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_allow_general_procedure
+msgid "Print all General Procedures?"
+msgstr " طباعه كل الاجراءات العامه؟"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_procedure_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_approval_tracking_line_procedure_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_job_access_procedure_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_document_procedure_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_resource_procedure_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_step_procedure_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_related_work_procedure_procedure_id
+#: selection:procedure.document,aim:0
+#: selection:procedure.resource,aim:0
+msgid "Procedure"
+msgstr "الاجراء"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.approval_line_action
+msgid "Procedure Action"
+msgstr "القبول/رفض"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.action_procedures_actions_report
+msgid "Procedure Actions Report"
+msgstr "تقرير حركات المستخدم"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "Procedure Approvals"
+msgstr "سلسلة الموافقات"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_procedure_availability
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_procedure_availability
+msgid "Procedure Availability"
+msgstr "إتاحة الاجراء"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_procedure_confirm_user_id
+msgid "Procedure Confirm"
+msgstr "أعتماد الاجراء"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "Procedure Details"
+msgstr "تفاصيل الاجراء"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/procedure_step.py:53
+#: model:ir.model,name:itq_work_procedures.model_procedure_document
+#, python-format
+msgid "Procedure Document"
+msgstr "نماذج الإجراء"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_procedure_doc_ids
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "Procedure Documents"
+msgstr "نماذج الإجراء"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_procedure_label
+msgid "Procedure Label"
+msgstr "رمز الاجراء"
+
+#. module: itq_work_procedures
+#: model:ir.model,name:itq_work_procedures.model_procedure_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_name
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_name_id
+msgid "Procedure Name"
+msgstr "إسم الاجراء"
+
+#. module: itq_work_procedures
+#: model:ir.model,name:itq_work_procedures.model_procedure_reports_wizard
+msgid "Procedure Reports Wizard"
+msgstr "تقارير الاجراءات"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "Procedure Requirements"
+msgstr "متطلبات الاجراء"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/procedure_step.py:38
+#: model:ir.model,name:itq_work_procedures.model_procedure_resource
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+#, python-format
+msgid "Procedure Resource"
+msgstr "موارد الإجراء"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_procedure_resource_ids
+msgid "Procedure Resources"
+msgstr "موارد الإجراء"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_procedure_confirm_department_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_procedure_review_department_id
+msgid "Procedure Review Department"
+msgstr "جهة المراجعه"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_procedure_review_user_id
+msgid "Procedure Reviewer"
+msgstr "مراجع الاجراء"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.action_procedure_scope
+#: model:ir.model,name:itq_work_procedures.model_procedure_scope
+msgid "Procedure Scope"
+msgstr "نطاق الاجراء"
+
+#. module: itq_work_procedures
+#: model:ir.ui.menu,name:itq_work_procedures.procedure_scope_menuitem
+msgid "Procedure Scopes"
+msgstr "نطاقات الإجراءات"
+
+#. module: itq_work_procedures
+#: model:ir.model,name:itq_work_procedures.model_procedure_step
+msgid "Procedure Step"
+msgstr "خطوات وفعاليات الإجراء"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_procedure_user
+msgid "Procedure User"
+msgstr "إسم الموظف"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.action_procedure_name
+msgid "Procedure name"
+msgstr "أسماء الإجراءات"
+
+#. module: itq_work_procedures
+#: model:ir.ui.menu,name:itq_work_procedures.procedure_name_menuitem
+msgid "Procedure names"
+msgstr "تعريف إجراءات العمل"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.action_procedures_confirm_settings
+#: model:ir.ui.menu,name:itq_work_procedures.procedures_confirm_settings_menuitem
+msgid "Procedures Confirm Settings"
+msgstr "إعدادات إعتماد الاجراءات"
+
+#. module: itq_work_procedures
+#: model:ir.model,name:itq_work_procedures.model_procedures_confirm_settings
+msgid "Procedures confirm Settings"
+msgstr "إعدادات إعتماد الاجراءات"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.action_procedures_review_settings
+#: model:ir.model,name:itq_work_procedures.model_procedures_review_settings
+#: model:ir.ui.menu,name:itq_work_procedures.procedures_review_settings_menuitem
+msgid "Procedures review Settings"
+msgstr "إعدادات مراجعة الاجراءات"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_version_reason
+msgid "Reason"
+msgstr "السبب"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "Reject"
+msgstr "رفض"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/approval_tracking_line.py:67
+#: selection:work.procedure,state:0
+#, python-format
+msgid "Rejected"
+msgstr "غير معتمدة"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_search
+msgid "Rejected procedures"
+msgstr "إجراءات غير معتمدة"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_approval_tracking_line_rejection_reasons
+msgid "Rejection Reasons"
+msgstr "أسباب الرفض"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_document_approval_id
+msgid "Related Approval"
+msgstr "سلسلة الموافقات"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_related_department_ids
+msgid "Related Departments"
+msgstr "الإدارات"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_related_work_procedure_related_procedure_id
+msgid "Related Procedure"
+msgstr "الاجراء الاخر"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_related_procedure_ids
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "Related Procedures"
+msgstr "العلاقة بالاجراءات الاخرى"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_document_step_id
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_resource_step_id
+msgid "Related Step"
+msgstr "الخطوه"
+
+#. module: itq_work_procedures
+#: model:ir.model,name:itq_work_procedures.model_related_work_procedure
+msgid "Related Work Procedure"
+msgstr "العلاقة بالاجراءات الاخرى"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_related_work_procedure_relation
+msgid "Relation Description"
+msgstr "وصف تفصيلى"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "Request Review"
+msgstr "ارسال للمراجعه"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_resource_resource_name
+msgid "Resource"
+msgstr "الكائن"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_resource_aim
+msgid "Resource Aim"
+msgstr "غرض المورد"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_resource_resource_description
+msgid "Resource Description"
+msgstr "وصف المورد"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_resource_name
+msgid "Resource Name"
+msgstr "إسم المصدر"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/procedure_resources.py:12
+#: sql_constraint:procedure.resource:0
+#, python-format
+msgid "Resources names must be unique per procedure."
+msgstr "لا يمكن تكرار اسم المورد على الاجراء الواحد"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_responsibility_department_id
+msgid "Responsibility"
+msgstr "المسئولية"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_user_id
+msgid "Responsible"
+msgstr "مسئول"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_review_settings_view_form
+#: model:ir.ui.view,arch_db:itq_work_procedures.review_department_settings_view_form
+msgid "Review"
+msgstr "مراجعة"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/approval_tracking_line.py:35
+#, python-format
+msgid "Review Approved"
+msgstr "مقبوله"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.action_review_department_settings
+#: model:ir.model,name:itq_work_procedures.model_review_department_settings
+#: model:ir.ui.menu,name:itq_work_procedures.review_department_settings_menuitem
+msgid "Review Department Settings"
+msgstr "إعدادات إدارة المراجعه"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/approval_tracking_line.py:45
+#: selection:work.procedure,state:0
+#, python-format
+msgid "Review Rejected"
+msgstr "مرفوضة"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.action_review_rejected_procedures
+#: model:ir.ui.menu,name:itq_work_procedures.review_rejected_procedures_menuitem
+msgid "Review Rejected Procedures"
+msgstr "اجراءات مرفوضة"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_search
+msgid "Review Rejected procedures"
+msgstr "مرفوضة"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_scope_ids
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_scope_id
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_search
+msgid "Scope"
+msgstr "النطاق"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_scope_name
+msgid "Scope Name"
+msgstr "إسم النطاق"
+
+#. module: itq_work_procedures
+#: selection:actions.tracking,procedure_availability:0
+#: selection:work.procedure,procedure_availability:0
+msgid "Secret"
+msgstr "سري"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_approval_tracking_line_sequence
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_document_approval_docs_sequence
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_document_procedure_docs_sequence
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_resource_sequence
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_step_sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_related_work_procedure_serial_number
+msgid "Serial Number"
+msgstr "مسلسل"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.approval_line_form
+msgid "Set Action"
+msgstr "حفظ"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_procedure_setting_side_department
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_setting_side_department_id
+msgid "Setting side"
+msgstr "جهة الاعداد"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_procedure_settings_criteria
+msgid "Settings Criteria"
+msgstr "معايير ضبط الاجراء"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_report_for
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_state
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_search
+msgid "State"
+msgstr "الحالة"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.statistical_procedure_reports_wizard_action
+msgid "Statistical Procedure Report"
+msgstr "تقرير احصائي"
+
+#. module: itq_work_procedures
+#: model:ir.actions.report,name:itq_work_procedures.print_procedures_statistical_report_pdf
+#: model:ir.ui.menu,name:itq_work_procedures.statistical_procedures_menuitem
+msgid "Statistical Procedures Report"
+msgstr "تقرير احصائي"
+
+#. module: itq_work_procedures
+#: selection:procedure.reports.wizard,report_for:0
+msgid "Statistical report"
+msgstr "تقرير احصائي"
+
+#. module: itq_work_procedures
+#: selection:procedure.document,aim:0
+#: selection:procedure.resource,aim:0
+msgid "Step"
+msgstr "الخطوه"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_step_name
+msgid "Step Name"
+msgstr "إسم الخطوه"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_procedure_step_ids
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "Steps And Events"
+msgstr "الخطوات والفعاليات"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/procedure_step.py:13
+#: sql_constraint:procedure.step:0
+#, python-format
+msgid "Steps names must be unique for the same procedure."
+msgstr "لا يجب تكرار اسماء الخطوات للإجراء الواحد، من فضلك قم بتغييره."
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_step_system
+msgid "System"
+msgstr "النظام"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_target
+msgid "Target"
+msgstr "الهدف"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,help:itq_work_procedures.action_archived_procedures
+msgid "There's no Archived Procedures."
+msgstr "لا توجد إجراءات مؤرشفه."
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,help:itq_work_procedures.action_confirmed_procedures
+msgid "There's no Confirmed Procedures."
+msgstr "لا توجد إجراءات معتمدة."
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,help:itq_work_procedures.action_confirmed_procedures_latest_v
+msgid "There's no Latest Version Confirmed Procedures."
+msgstr "لا توجد إجراءات فى الدليل."
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,help:itq_work_procedures.action_not_confirmed_procedures
+msgid "There's no Not Confirmed Procedures."
+msgstr "لا توجد إجراءات غير معتمدة"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,help:itq_work_procedures.action_review_rejected_procedures
+msgid "There's no Review Rejected Procedures."
+msgstr "لا توجد إجراءات مرفوضه."
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/work_procedure.py:317
+#, python-format
+msgid "There's no reviewer please contact your admin system to add the procedure reviewer"
+msgstr "لا يوجد ضبط أعدادات مراجعه للإجراء, بالرجاء الرجوع لمسؤول لنظام لإعادة الضبط"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/documentation_committee.py:13
+#: sql_constraint:documentation.committee:0
+#, python-format
+msgid "This Committee Name has been registered before."
+msgstr "لقد تم ادخال هذ الاسم للجنه اخرى من قبل، من فضلك قم بتغييره."
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/job_access.py:11
+#: sql_constraint:job.access:0
+#, python-format
+msgid "This Job Access Name has been registered before."
+msgstr "لقد تم إدخال اسم الصلاحيه من قبل."
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/committee_member.py:33
+#, python-format
+msgid "This Member (%s) is registered for this committee before"
+msgstr "(%s) العضو تم إدخاله على هذه اللجنه بالفعل "
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/procedure_name.py:11
+#: sql_constraint:procedure.name:0
+#, python-format
+msgid "This Name has been registered before."
+msgstr "لقد تم ادخال اسم الاجراء من قبل، من فضلك قم بتغييره."
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/work_procedure.py:157
+#, python-format
+msgid "This Procedure Name has been registered with this department before."
+msgstr "لقد تم ادخال اسم للاجراء  لنفس الإداره من قبل، من فضلك قم بتغييره."
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/related_work_procedure.py:12
+#: sql_constraint:related.work.procedure:0
+#, python-format
+msgid "This Procedure is already attached with parent procedure before."
+msgstr "هذا الاجراء تم اختياره من قبل لنفس الاجراء من فضلك قم بتغييره او حذفه."
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/procedure_scope.py:10
+#: sql_constraint:procedure.scope:0
+#, python-format
+msgid "This Scope Name has been registered before."
+msgstr "لقد تم ادخال نفس اسم النطاق من قبل، من فضلك قم بتغييره."
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/procedures_confirm_settings.py:13
+#: sql_constraint:procedures.confirm.settings:0
+#, python-format
+msgid "This department already has configuration record."
+msgstr "هناك سجل اعدادات لهذه الاداره بالفعل."
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_resource_resource_type
+msgid "Type"
+msgstr "النوع"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_search
+msgid "Under Approval procedures"
+msgstr "إجراءات تحت المراجعه"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.under_confirm_procedure_reports_wizard_action
+msgid "Under Confirm Procedure Report"
+msgstr "تقرير الاجراءات تحت الاعتماد"
+
+#. module: itq_work_procedures
+#: model:ir.actions.server,name:itq_work_procedures.action_server_under_confirm_procedures
+#: model:ir.ui.menu,name:itq_work_procedures.under_confirm_procedures_menuitem
+msgid "Under Confirm Procedures"
+msgstr " اجراءات تحت الاعتماد"
+
+#. module: itq_work_procedures
+#: model:ir.ui.menu,name:itq_work_procedures.under_confirmation_procedures_menuitem
+msgid "Under Confirm Procedures Report"
+msgstr "تقرير الاجراءات تحت الاعتماد"
+
+#. module: itq_work_procedures
+#: selection:procedure.reports.wizard,report_for:0
+#: selection:work.procedure,state:0
+msgid "Under Confirmation"
+msgstr "تحت الاعتماد"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_search
+msgid "Under Confirmation procedures"
+msgstr "إجراءات تحت الاعتماد"
+
+#. module: itq_work_procedures
+#: selection:procedure.reports.wizard,report_for:0
+#: selection:work.procedure,state:0
+msgid "Under Review"
+msgstr "تحت المراجعه"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.under_review_procedure_reports_wizard_action
+msgid "Under Review Procedure Report"
+msgstr "تقرير الاجراءات تحت المراجعة"
+
+#. module: itq_work_procedures
+#: model:ir.actions.server,name:itq_work_procedures.action_server_under_review_procedures
+#: model:ir.ui.menu,name:itq_work_procedures.under_review_menuitem
+msgid "Under Review Procedures"
+msgstr "اجراءات تحت المراجعة"
+
+#. module: itq_work_procedures
+#: model:ir.ui.menu,name:itq_work_procedures.under_review_procedures_menuitem
+msgid "Under Review Procedures Report"
+msgstr "تقرير الاجراءات تحت المراجعة"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.view_itq_procedure_general_security_setting_form
+msgid "User"
+msgstr "المستخدم"
+
+#. module: itq_work_procedures
+#: model:ir.model,name:itq_work_procedures.model_res_users
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_procedure_version_no
+msgid "Version NO"
+msgstr "رقم الاصدار"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_related_work_procedure_related_procedure_version
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_version_no
+msgid "Version No"
+msgstr "رقم الاصدار"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_reports_wizard_wizard_form
+msgid "View"
+msgstr "مشاهدة"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "View Docs"
+msgstr "عرض النماذج"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "View Resource"
+msgstr "عرض الموارد"
+
+#. module: itq_work_procedures
+#: model:ir.model,name:itq_work_procedures.model_work_procedure
+msgid "Work Procedure"
+msgstr "إجراء عمل"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/approval_tracking_line.py:52
+#: code:addons/itq_work_procedures/models/approval_tracking_line.py:54
+#, python-format
+msgid "Work Procedure is Confirmed"
+msgstr "هذا الاجراء تم إعتماده"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/approval_tracking_line.py:64
+#: code:addons/itq_work_procedures/models/approval_tracking_line.py:66
+#, python-format
+msgid "Work Procedure rejected check reasons"
+msgstr "تم عدم إعتماد الاجراء انظر الاسباب فى  المراجعة والاعتماد"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.action_my_procedure
+#: model:ir.actions.report,name:itq_work_procedures.print_work_procedure_pdf
+#: model:ir.ui.menu,name:itq_work_procedures.work_procedure_menu
+#: model:ir.ui.menu,name:itq_work_procedures.work_procedure_menuitem
+#: model:ir.ui.menu,name:itq_work_procedures.work_procedure_module_menu
+msgid "Work Procedures"
+msgstr "تعريف دليل إجراءات العمل"
+
+#. module: itq_work_procedures
+#: model:ir.actions.report,name:itq_work_procedures.print_confirmed_wizard_procedure_details_pdf
+#: model:ir.actions.report,name:itq_work_procedures.print_single_confirmed_procedure_details_pdf
+msgid "Work Procedures Details"
+msgstr "تقرير بتفاصيل الاجراء"
+
+#. module: itq_work_procedures
+#: model:ir.ui.menu,name:itq_work_procedures.work_procedure_reports_menu
+msgid "Work Procedures Reports"
+msgstr "تقارير"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/wizard/procedure_reports_wizard.py:71
+#, python-format
+msgid "You have to choose at least one option!"
+msgstr "لابد من إختيار واحد على الأقل !"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/approval_tracking_line.py:33
+#, python-format
+msgid "Your procedure approved review from reviewer and waiting for confirmation"
+msgstr "تمت الموافقه على هذا الاجراء وهو حاليا تحت الاعتماد"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/approval_tracking_line.py:44
+#, python-format
+msgid "Your procedure rejected by reviewer check reasons"
+msgstr "لقد تم رفض الاجراء من المراجع انظر الاسباب فى  المراجعة والاعتماد"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_actions_tracking_action_type
+msgid "actions Type"
+msgstr "نوع الحركه"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_review_department_settings_allowed_units_ids
+msgid "allowed Units"
+msgstr "allowed Units"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "day"
+msgstr "يوما"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "day-"
+msgstr "يوم-"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "hour"
+msgstr "ساعه"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "hour-"
+msgstr "ساعه-"
+
+#. module: itq_work_procedures
+#: model:ir.model,name:itq_work_procedures.model_itq_procedure_general_security_setting
+msgid "itq.procedure.general.security.setting"
+msgstr "itq.procedure.general.security.setting"
+
+#. module: itq_work_procedures
+#: model:ir.model,name:itq_work_procedures.model_itq_wp_access
+msgid "itq.wp.access"
+msgstr "itq.wp.access"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "minute"
+msgstr "دقيقه"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.itq_procedure_general_security_setting_action
+msgid "procedure General Security Setting"
+msgstr "شاشة  صلاحيات البيانات"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedures_review_settings_review_user_id
+msgid "review User"
+msgstr "المراجع"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/documentation_committee.py:28
+#, python-format
+msgid "you have to choose just one active Committee"
+msgstr "هناك لجنه نشطه أخرى, لابد ان تكون هناك لجنه نشطه واحده فقط "
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/review_department_settings.py:21
+#, python-format
+msgid "you have to choose just one active Review Department Settings"
+msgstr "هناك إعدادات نشطه أخرى, لابد ان تكون هناك قيد نشط واحد فقط للإعدادات "
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/work_procedure.py:166
+#, python-format
+msgid "you have to choose upcoming date"
+msgstr "عليك اختيار تاريخ قادم للمراجعه من اليوم"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "إسم الخطوه/ الاجراء"
+msgstr "إسم الخطوه/ الاجراء"
+
+#. module: itq_work_procedures
+#: model:ir.actions.server,name:itq_work_procedures.procedure_review_notification_ir_actions_server
+#: model:ir.cron,cron_name:itq_work_procedures.procedure_review_notification
+#: model:ir.cron,name:itq_work_procedures.procedure_review_notification
+msgid "إشعار مراجعة الاجراءات"
+msgstr "إشعار مراجعة الاجراءات"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.action_notification_settings
+#: model:ir.ui.menu,name:itq_work_procedures.notification_settings_menuitem
+#: model:ir.ui.view,arch_db:itq_work_procedures.notification_settings_view_form
+msgid "إعدادات إشعارات المراجعه"
+msgstr "إعدادات إشعارات المراجعه"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.archive_warning_wizard_form
+msgid "إلغاء"
+msgstr "إلغاء"
+
+#. module: itq_work_procedures
+#: selection:procedure.resource,resource_type:0
+msgid "اخري "
+msgstr "اخري "
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_actions_template
+msgid "اسم الإجراء"
+msgstr "اسم الإجراء"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_actions_template
+msgid "اسم المستخدم"
+msgstr "اسم المستخدم"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "اسم المورد"
+msgstr "اسم المورد"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_actions_template
+msgid "اسم الموظف"
+msgstr "اسم الموظف"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "اسم النموذج"
+msgstr "اسم النموذج"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.view_itq_procedure_general_security_setting_form
+msgid "اضافة / حذف وحدة و الوحدات التابعة"
+msgstr "اضافة / حذف وحدة و الوحدات التابعة"
+
+#. module: itq_work_procedures
+#: selection:procedure.resource,employee_categ:0
+msgid "افراد"
+msgstr "افراد"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "الأصل"
+msgstr "الأصل"
+
+#. module: itq_work_procedures
+#: selection:procedure.resource,resource_type:0
+msgid "الأصول "
+msgstr "الأصول "
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "الاتصال"
+msgstr "الاتصال"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_allowed_procedure_ids
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_reports_wizard_procedure_ids
+msgid "الاجراء"
+msgstr "الاجراء"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "الاجراء الاخر"
+msgstr "الاجراء الاخر"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_statistical_report_template
+#: selection:procedure.reports.wizard,group_by:0
+msgid "الاداره"
+msgstr "الاداره"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_procedure_resource_employee_categ
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "التصنيف العام للموارد البشرية"
+msgstr "التصنيف العام للموارد البشرية"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_actions_template
+msgid "الحركة"
+msgstr "الحركة"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_procedure_execution_days
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "الزمن الكلي لتنفيذ الاجراء"
+msgstr "الزمن الكلي لتنفيذ الاجراء"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "الزمن الكلي لتنفيذ الخطوه"
+msgstr "الزمن الكلي لتنفيذ الخطوه"
+
+#. module: itq_work_procedures
+#: selection:actions.tracking.reports.wizard,group_by:0
+msgid "المستخدم"
+msgstr "المستخدم"
+
+#. module: itq_work_procedures
+#: selection:procedure.resource,resource_type:0
+msgid "المعلومات"
+msgstr "المعلومات"
+
+#. module: itq_work_procedures
+#: selection:procedure.resource,resource_type:0
+msgid "المكاتب "
+msgstr "المكاتب "
+
+#. module: itq_work_procedures
+#: selection:procedure.resource,resource_type:0
+msgid "الموارد البشرية"
+msgstr "الموارد البشرية"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "المورد"
+msgstr "المورد"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_statistical_report_template
+#: selection:procedure.reports.wizard,group_by:0
+msgid "النطاق"
+msgstr "النطاق"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "النظام"
+msgstr "النظام"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "النوع"
+msgstr "النوع"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_actions_template
+msgid "الوحدة الإدارية للإجراء"
+msgstr "الوحدة الإدارية للإجراء"
+
+#. module: itq_work_procedures
+#: selection:actions.tracking.reports.wizard,group_by:0
+msgid "الوحدة الإدارية للمستخدم"
+msgstr "الوحدة الإدارية للمستخدم"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "الوصف"
+msgstr "الوصف"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.archive_warning_wizard_form
+msgid "تأكيد"
+msgstr "تأكيد"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.archive_warning_wizard_form
+msgid "تأكيد الارشفه؟"
+msgstr "تأكيد الارشفه؟"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_procedure_review_date
+msgid "تاريخ إرسال للإعتماد"
+msgstr "تاريخ إرسال للإعتماد"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_procedure_request_review_date
+msgid "تاريخ إرسال للمراجعه"
+msgstr "تاريخ إرسال للمراجعه"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_actions_template
+msgid "تاريخ الاصدار (الانشاء)"
+msgstr "تاريخ الاصدار (الانشاء)"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "تاريخ الاصدار / التعديل"
+msgstr "تاريخ الاصدار / التعديل"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_procedure_confirmation_date
+msgid "تاريخ الاعتماد"
+msgstr "تاريخ الاعتماد"
+
+#. module: itq_work_procedures
+#: selection:actions.tracking.reports.wizard,order_by:0
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_actions_template
+msgid "تاريخ الحركة"
+msgstr "تاريخ الحركة"
+
+#. module: itq_work_procedures
+#: model:ir.actions.act_window,name:itq_work_procedures.archive_warning_wizard_action
+msgid "تحذير"
+msgstr "تحذير"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.archive_warning_wizard_form
+msgid "تحذير!!"
+msgstr "تحذير!!"
+
+#. module: itq_work_procedures
+#: selection:actions.tracking.reports.wizard,order_by:0
+msgid "ترتب ابجدي"
+msgstr "ترتب ابجدي"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.single_procedure_detailed_report_template
+msgid "تصنيف الوثيقة:"
+msgstr "تصنيف الوثيقة:"
+
+#. module: itq_work_procedures
+#: model:ir.actions.report,name:itq_work_procedures.print_procedures_actions_tracking_pdf
+msgid "تقرير حركات المستخدم (سجل التدقيق)"
+msgstr "تقرير حركات المستخدم (سجل التدقيق)"
+
+#. module: itq_work_procedures
+#: selection:actions.tracking,action_type:0
+msgid "تنزيل ملف"
+msgstr "تنزيل ملف"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_actions_template
+msgid "جهة الإعداد"
+msgstr "جهة الإعداد"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "دقيقه"
+msgstr "دقيقه"
+
+#. module: itq_work_procedures
+#: model:ir.ui.menu,name:itq_work_procedures.confirmed_procedure_latest_v_menuitem
+msgid "دليل الإجراءات المعتمدة"
+msgstr "دليل الإجراءات المعتمدة"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_view_form
+msgid "دورة جديده"
+msgstr "دورة جديده"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_actions_template
+msgid "رقم الإصدار"
+msgstr "رقم الإصدار"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "رقم الاصدار"
+msgstr "رقم الاصدار"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_actions_template
+msgid "رمز الإجراء"
+msgstr "رمز الإجراء"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "رمز الوظيفة"
+msgstr "رمز الوظيفة"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "ساعه"
+msgstr "ساعه"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "سري"
+msgstr "سري"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/manage_notifications.py:37
+#, python-format
+msgid "سيتم مراجعة هذا الاجراء بعد %s أيام"
+msgstr "سيتم مراجعة هذا الاجراء بعد %s أيام"
+
+#. module: itq_work_procedures
+#: model:ir.ui.menu,name:itq_work_procedures.itq_procedure_general_security_setting_menu
+msgid "صلاحيات البيانات"
+msgstr "صلاحيات البيانات"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "صلاحية المسمى الوظيفي"
+msgstr "صلاحية المسمى الوظيفي"
+
+#. module: itq_work_procedures
+#: selection:procedure.resource,employee_categ:0
+msgid "ضباط"
+msgstr "ضباط"
+
+#. module: itq_work_procedures
+#: selection:actions.tracking,action_type:0
+msgid "طباعه"
+msgstr "طباعه"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "طبيعة وسبب وملخص التعديل"
+msgstr "طبيعة وسبب وملخص التعديل"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_statistical_report_template
+msgid "عدد الاجراءات الغير معتمده"
+msgstr "عدد الاجراءات الغير معتمده"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_statistical_report_template
+msgid "عدد الاجراءات الغير معتمده الكليه"
+msgstr "عدد الاجراءات الغير معتمده الكليه"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_statistical_report_template
+msgid "عدد الاجراءات المرفوضه"
+msgstr "عدد الاجراءات المرفوضه"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_statistical_report_template
+msgid "عدد الاجراءات المرفوضه الكليه"
+msgstr "عدد الاجراءات المرفوضه الكليه"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_statistical_report_template
+msgid "عدد الاجراءات المعتمده"
+msgstr "عدد الاجراءات المعتمده"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_statistical_report_template
+msgid "عدد الاجراءات المعتمده الكليه"
+msgstr "عدد الاجراءات المعتمده الكليه"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_statistical_report_template
+msgid "عدد الاجراءات تحت الإعتماد"
+msgstr "عدد الاجراءات تحت الإعتماد"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_statistical_report_template
+msgid "عدد الاجراءات تحت الإعتماد الكليه"
+msgstr "عدد الاجراءات تحت الإعتماد الكليه"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_statistical_report_template
+msgid "عدد الاجراءات تحت المراجعه"
+msgstr "عدد الاجراءات تحت المراجعه"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_statistical_report_template
+msgid "عدد الاجراءات تحت المراجعه الكليه"
+msgstr "عدد الاجراءات تحت المراجعه الكليه"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_notification_settings_notification_days
+msgid "عدد الايام"
+msgstr "عدد الايام"
+
+#. module: itq_work_procedures
+#: selection:actions.tracking,action_type:0
+msgid "عرض"
+msgstr "عرض"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "غرض المورد"
+msgstr "غرض المورد"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "غرض النموذج"
+msgstr "غرض النموذج"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_internal_layout
+msgid "فرع ("
+msgstr "فرع ("
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_internal_layout
+msgid "فصل ("
+msgstr "فصل ("
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_actions_tracking_report_template
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_report_template
+msgid "فى الفتره المختاره"
+msgstr "فى الفتره المختاره"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.confirmed_procedures_detailed_report_template
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_actions_tracking_report_template
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_statistical_report_template
+#: model:ir.ui.view,arch_db:itq_work_procedures.work_procedure_report_template
+msgid "لا توجد إجراءات"
+msgstr "لا توجد إجراءات"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.archive_warning_wizard_form
+msgid "لا يمكن استرجاع هذا الاجراء بعد الارشفه"
+msgstr "لا يمكن استرجاع هذا الاجراء بعد الارشفه"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/noitfication_settings.py:18
+#, python-format
+msgid "لابد ان تكون عدد الايام من 1 إلى 10 أيام!"
+msgstr "لابد ان تكون عدد الايام من 1 إلى 10 أيام!"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/work_procedure.py:174
+#, python-format
+msgid "لابد من إضافة معايير وضبط الإجراء"
+msgstr "لابد من إضافة معايير وضبط الإجراء"
+
+#. module: itq_work_procedures
+#: code:addons/itq_work_procedures/models/procedure_document.py:15
+#: sql_constraint:procedure.document:0
+#, python-format
+msgid "لايمكن تكرر اسماء النماذج."
+msgstr "لايمكن تكرر اسماء النماذج."
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.confirmed_procedures_detailed_report_template
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_statistical_report_template
+msgid "للطباعه"
+msgstr "للطباعه"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_statistical_report_template
+msgid "مجمـــــــــوع"
+msgstr "مجمـــــــــوع"
+
+#. module: itq_work_procedures
+#: selection:procedure.resource,employee_categ:0
+msgid "مدنيين"
+msgstr "مدنيين"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_work_procedure_latest_write_uid
+msgid "مستخدم اخر تعديل"
+msgstr "مستخدم اخر تعديل"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "مسلسل"
+msgstr "مسلسل"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "مسمى الوظيفة"
+msgstr "مسمى الوظيفة"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "مسمي الخطوة/الفعالية"
+msgstr "مسمي الخطوة/الفعالية"
+
+#. module: itq_work_procedures
+#: model:ir.model.fields,field_description:itq_work_procedures.field_notification_settings_active_settings
+msgid "نشط"
+msgstr "نشط"
+
+#. module: itq_work_procedures
+#: selection:procedure.resource,resource_type:0
+msgid "وسائل الاتصال"
+msgstr "وسائل الاتصال"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "وصف تفصيلي للخطوة"
+msgstr "وصف تفصيلي للخطوة"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "وصف تفصيلي للعلاقة"
+msgstr "وصف تفصيلي للعلاقة"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "وصف للمورد"
+msgstr "وصف للمورد"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_actions_template
+msgid "وقت الحركة"
+msgstr "وقت الحركة"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedures_template
+msgid "يوم"
+msgstr "يوم"
+
+#. module: itq_work_procedures
+#: model:ir.ui.view,arch_db:itq_work_procedures.procedure_details_template
+msgid "يوما"
+msgstr "يوما"
+

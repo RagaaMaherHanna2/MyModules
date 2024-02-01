@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="action_my_dashboard" model="ir.actions.client">
+            <field name="name">My Dashboard</field>
+            <field name="tag">my_dashboard</field>
+        </record>
+
+        <menuitem id="menu_my_dashboard"
+                  name="Employee Dashboard"
+                  action="action_my_dashboard"
+                  web_icon="itq_my_hr_dashboard,static/description/icon.png"
+                  sequence="3"/>
+    </data>
+</odoo>

@@ -1,0 +1,183 @@
+<odoo>
+    <record id="customer_claim_request_form" model="ir.ui.view">
+        <field name="name">customer.claim.request.form</field>
+        <field name="model">customer.claim.request</field>
+        <field name="arch" type="xml">
+            <form string="Customer claim Request">
+                <header>
+                    <button name="action_submit_request" type="object"
+                            string="Submit"
+                            states="draft"
+                            class="oe_highlight"/>
+                    <button name="action_send_request" type="object"
+                            string="Send"
+                            states="submitted"
+                            class="oe_highlight"/>
+                    <button name="action_reconcile_request_invoices" type="object"
+                            string="Reconcile"
+                            states="sent,partially_reconciled"
+                            class="oe_highlight"/>
+                    <button name="action_reject_request" type="object"
+                            string="Reject"
+                            states="submitted,sent"
+                            class="oe_highlight"/>
+                    <button name="action_cancel_request" type="object"
+                            string="Cancel"
+                            states="submitted,sent"
+                            class="oe_highlight"/>
+                    <button name="action_print_reconciled_inv" type="object"
+                            string="Print Reconciled Inv"
+                            states="sent,partially_reconciled,reconciled"
+                            class="oe_highlight"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,submitted,sent,reconciled,rejected,cancelled"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="user_id" readonly="1"/>
+                            <field name="create_date" readonly="1"/>
+                            <field name="submit_date" readonly="1"/>
+                            <field name="sent_date" readonly="1"/>
+                            <field name="claim_amount"/>
+                            <field name="paid_amount" attrs="{'readonly': [('state', 'not in', ['sent', 'partially_reconciled'])],
+                                                              'invisible': [('state', 'in', ['draft', 'submitted'])]}"/>
+
+                            <field name="total_paid_amount" readonly="1"
+                                   attrs="{'invisible': [('state', 'in', ['draft', 'submitted'])]}"/>
+
+                            <field name="claim_perc" string="Claim Perc	(%)"/>
+                        </group>
+                        <group>
+                            <field name="company_id" invisible="1"/>
+                            <field name="installment_company_id" attrs="{'readonly':[('state', '!=','draft')]}"/>
+                            <field name="payment_method_id" attrs="{'readonly': [('state', '!=','draft')]}"/>
+                            <field name="is_date_filter" attrs="{'readonly': [('state', '!=','draft')]}"/>
+                            <field name="date_from" attrs="{'readonly': [('state', '!=','draft')],
+                                                            'invisible': [('is_date_filter', '!=', True)],
+                                                            'required': [('is_date_filter', '=', True)]}" />
+                            <field name="date_to" attrs="{'readonly': [('state', '!=','draft')],
+                                                          'invisible': [('is_date_filter', '!=', True)],
+                                                          'required': [('is_date_filter', '=', True)]}" />
+
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Available Invoices" name="available_invoices">
+                            <div class="row">
+                                <field name="reconciled_checked" invisible="1"/>
+                                <button name="action_select_all" type="object"
+                                        string="Select All"
+                                        attrs="{'invisible':[('state', '!=', 'draft')]}"
+                                        class="oe_highlight"/>
+
+                                <![CDATA[&nbsp;]]> <![CDATA[&nbsp;]]>
+
+                                <button name="action_to_reconcile_invoices" type="object"
+                                        string="To Reconcile All"
+                                        attrs="{'invisible':[('state', '!=', 'draft')]}"
+                                        class="oe_highlight"/>
+                            </div>
+                            <field name="claim_available_invoices_ids"
+                                   options="{'no_quick_create': True, 'no_open': True, 'no_create_edit': True}">
+                                <tree editable="bottom" create="0" delete="0">
+                                    <field name="checked"
+                                           attrs="{'invisible':[('line_state', '!=', 'available')]}"/>
+                                    <field name="partner_id"/>
+                                    <field name="move_id" required="1" readonly="1" force_save="1"/>
+                                    <field name="invoice_origin" optional="hide"/>
+                                    <field name="installment_line_id" optional="hide" readonly="1" force_save="1"/>
+                                    <field name="invoice_date_due" widget="remaining_days"/>
+                                    <field name="due_amount" readonly="1" force_save="1"/>
+                                    <field name="line_state" readonly="1" options="{'color_field': 'color'}"
+                                           widget="badge"/>
+                                    <field name="payment_state" invisible="1"/>
+                                    <button name="action_to_reconcile_invoice" type="object"
+                                            string="To Reconcile Invoice"
+                                            attrs="{'invisible':['|', ('checked', '=', True), ('parent.state', '!=', 'draft')]}"
+                                            class="oe_highlight"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Reconciled Invoices" name="reconciled_invoices"
+                              attrs="{'invisible':[('reconciled_checked', '=', False)]}">
+                            <field name="claim_reconciled_invoices_ids"
+                                   options="{'no_quick_create': True, 'no_open': True, 'no_create_edit': True}">
+                                <tree editable="bottom" create="0">
+                                    <field name="partner_id"/>
+                                    <field name="move_id" readonly="1" force_save="1"/>
+                                    <field name="invoice_origin" optional="hide"/>
+                                    <field name="invoice_date_due" widget="remaining_days"/>
+                                    <field name="installment_line_id" readonly="1" force_save="1"/>
+                                    <field name="due_amount" readonly="1" force_save="1"/>
+                                    <field name="claim_perc"/>
+                                    <field name="to_pay"/>
+                                    <field name="paid_amount" readonly="1"/>
+                                    <field name="line_state" widget="badge" readonly="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    <separator/>
+                    <group>
+                        <notebook>
+                            <page string="Rejection Reason" name="rejection_reason"
+                                  attrs="{'invisible':[('state', '!=','rejected')]}">
+                                <field name="rejection_reason" readonly="1"/>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="customer_claim_request_tree" model="ir.ui.view">
+        <field name="name">customer.claim.request.tree</field>
+        <field name="model">customer.claim.request</field>
+        <field name="arch" type="xml">
+            <tree string="Customer claim Request">
+                <field name="name"/>
+                <field name="claim_amount"/>
+                <field name="total_paid_amount"/>
+                <field name="claim_perc"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="customer_claim_request_action" model="ir.actions.act_window">
+        <field name="name">Customer claim Request</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">customer.claim.request</field>
+        <field name="view_mode">tree,form</field>
+        <!--        <field name="search_view_id" ref="customer_claim_request_search"/>-->
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+            </p>
+        </field>
+    </record>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="customer_claim_request_menu"
+              parent="account.menu_finance_receivables"
+              action="customer_claim_request_action"
+              sequence="10"/>
+
+    <menuitem id="customer_claim_request_pos_menu"
+              parent="point_of_sale.menu_point_of_sale"
+              action="customer_claim_request_action"
+              sequence="100"/>
+</odoo>

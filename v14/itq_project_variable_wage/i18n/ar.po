@@ -1,0 +1,306 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* itq_project_variable_wage
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-28 08:35+0000\n"
+"PO-Revision-Date: 2023-09-03 13:39+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.3.2\n"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__message_needaction
+msgid "Action Needed"
+msgstr "إجراء لازم"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "النشاط الاستثنائي"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_hr_contract__is_project_variable_wage
+msgid "Apply Project Variable Wage"
+msgstr "تطبيق أجور المشروعات المتغيرة"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: itq_project_variable_wage
+#: code:addons/itq_project_variable_wage/models/project_variable.py:0
+#, python-format
+msgid "Can not delete project variable lines that have because paid payslips."
+msgstr "لا يمكن حذف بنود المشاريع المتغيرة الموجودة لأن كشوف الرواتب أصبحت مدفوعة"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__contract_id
+msgid "Contract"
+msgstr "العقد"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__create_uid
+msgid "Created by"
+msgstr "تم الإنشاء بواسطة"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__create_date
+msgid "Created on"
+msgstr "إنشاء بتاريخ"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_hr_contract__display_name
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_hr_payslip__display_name
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: itq_project_variable_wage
+#: model:ir.model,name:itq_project_variable_wage.model_hr_contract
+msgid "Employee Contract"
+msgstr "عقد الموظف"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,help:itq_project_variable_wage.field_project_variable__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة خط جميل، مثال: fa-tasks"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__has_payslips
+msgid "Has Payslips"
+msgstr "كشوف الرواتب"
+
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,help:itq_project_variable_wage.field_project_variable__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,help:itq_project_variable_wage.field_project_variable__message_needaction
+#: model:ir.model.fields,help:itq_project_variable_wage.field_project_variable__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "بعض الرسائل بها خطأ في التسليم وذلك عند التحديد."
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,help:itq_project_variable_wage.field_project_variable__message_has_error
+#: model:ir.model.fields,help:itq_project_variable_wage.field_project_variable__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "بعض الرسائل بها خطأ في التسليم وذلك عند التحديد."
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__message_is_follower
+msgid "Is Follower"
+msgstr "متابع؟"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_hr_contract____last_update
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_hr_payslip____last_update
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل بتاريخ"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث بتاريخ"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الأساسي"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ تسليم الرسالة"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي للنشاط "
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,help:itq_project_variable_wage.field_project_variable__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,help:itq_project_variable_wage.field_project_variable__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,help:itq_project_variable_wage.field_project_variable__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: itq_project_variable_wage
+#: model:ir.model,name:itq_project_variable_wage.model_hr_payslip
+msgid "Pay Slip"
+msgstr "كشف الراتب"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__project_id
+msgid "Project"
+msgstr "المشروع"
+
+#. module: itq_project_variable_wage
+#: model_terms:ir.ui.view,arch_db:itq_project_variable_wage.hr_contract_form_inherit
+msgid "Projects variables"
+msgstr "المشاريع المتغيرة"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسئول"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ استلام الرسائل القصيرة"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_hr_contract__selected_projects_ids
+msgid "Selected Projects"
+msgstr "المشاريع المحددة"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,help:itq_project_variable_wage.field_project_variable__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناء على الأنشطة:\n"
+"منتهي: انقضاء تاريخ الاستحقاق\n"
+"اليوم: النشاط يتم اليوم\n"
+"مقرر: أنشطة مستقبلية."
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,help:itq_project_variable_wage.field_project_variable__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي في السجل"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل غير المقروءة"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عداد الرسائل غير المقروءة"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_hr_contract__project_variable_ids
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__project_variable
+msgid "Variable Salary"
+msgstr "متغيرات الرواتب"
+
+#. module: itq_project_variable_wage
+#: code:addons/itq_project_variable_wage/models/project_variable.py:0
+#, python-format
+msgid "Variable Salary Must Be Grater Than 0.0"
+msgstr "يجب أن تكون متغيرات الرواتب أكبر من 0"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,field_description:itq_project_variable_wage.field_project_variable__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: itq_project_variable_wage
+#: model:ir.model.fields,help:itq_project_variable_wage.field_project_variable__website_message_ids
+msgid "Website communication history"
+msgstr "تاريخ الاتصال بالموقع"
+
+#. module: itq_project_variable_wage
+#: model:ir.model,name:itq_project_variable_wage.model_project_variable
+msgid "project.variable"
+msgstr "project.variable"
+
+#. module: itq_project_variable_wage
+#: model_terms:ir.ui.view,arch_db:itq_project_variable_wage.hr_contract_form_inherit
+msgid "projects_variables"
+msgstr "projects_variables"

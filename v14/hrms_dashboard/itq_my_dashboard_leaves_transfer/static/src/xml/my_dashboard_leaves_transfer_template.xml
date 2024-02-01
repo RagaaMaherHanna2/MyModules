@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-inherit="itq_my_hr_dashboard.MyDashboardTemp" name="MyDashboardLeavesTemp" t-inherit-mode="extension">
+<!--        <xpath expr="//div[@name='leaves_allocation_details']" position="attributes">-->
+<!--            <attribute name="invisible">1</attribute>-->
+<!--        </xpath>-->
+        <xpath expr="//div[@name='employee_leaves']" position="after">
+            <!-- Leaves-->
+            <div class="row main-section d_allocation_options" name="d_allocation_options">
+                <div class="col-md-2 col-sm-2 dummy"/>
+                <div class="col-md-4 col-lg-3">
+                    <div class="col-md-2 col-sm-2 dummy"/>
+                    <label for="options">Choose:</label>
+                    <select name="options" id="allocation_options">
+                        <option id="this_year_id" value="this_year">This Year</option>
+                        <option id="p_year_id" value="p_year">Previous Year</option>
+                        <option id="joining_id" value="joining">Since Joining</option>
+                     </select>
+                 </div>
+            </div>
+        </xpath>
+    </t>
+</templates>
