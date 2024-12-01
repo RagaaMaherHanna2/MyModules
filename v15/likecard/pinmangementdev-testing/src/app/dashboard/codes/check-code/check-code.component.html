@@ -1,0 +1,97 @@
+<div>
+  <div class="check-codes-container">
+    <p-card header="Check Codes" i18n-header>
+      <form
+        (ngSubmit)="onSubmit($event)"
+        [formGroup]="codeForm"
+        style="margin-top: 2rem"
+      >
+        <div class="column-label-input">
+          <label for="code" class="required-label" i18n>Enter Code Here</label>
+          <textarea
+            formControlName="codes"
+            id="codes"
+            name="codes"
+            rows="20"
+            cols="40"
+            pInputTextarea
+            placeholder="Code1..
+code2..
+code3.."
+            i18n-placeholder
+          ></textarea>
+        </div>
+        <button
+          class="submit-button mt-3"
+          type="submit"
+          pButton
+          label="Check"
+          i18n-label
+          [disabled]="codeForm.invalid"
+        ></button>
+      </form>
+    </p-card>
+  </div>
+  <p-card styleClass="result-card" header="Result" i18n-header *ngIf="codes">
+    <p-table *ngIf="codes" [value]="codes">
+      <ng-template pTemplate="header">
+        <tr>
+          <th i18n>Found</th>
+          <th i18n>Code</th>
+          <th i18n>Pull Date</th>
+          <th i18n>Product Name</th>
+          <th i18n>Expired</th>
+          <th i18n>Expiry Date</th>
+          <th i18n>Merchant Name</th>
+          <th i18n>Merchant Reference</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-code>
+        <tr>
+          <td>
+            <span
+              class="item-status"
+              [ngClass]="{
+                success: code.found,
+                danger: !code.found
+              }"
+            >
+              <i
+                class="pi"
+                [ngClass]="{ 'pi-check': code.found, 'pi-times': !code.found }"
+              ></i>
+            </span>
+          </td>
+          <td [colSpan]="code.found ? null : 7">{{ code.serial }}</td>
+          <ng-container *ngIf="code.found">
+            <td>
+              <span *ngIf="code.pull_date; else notYet">
+                {{ code.pull_date | date }}
+              </span>
+              <ng-template #notYet>
+                <span i18n>Not Yet</span>
+              </ng-template>
+            </td>
+            <td>{{ code.name }}</td>
+            <td>
+              <span *ngIf="code.expired; else notExpired" i18n>Yes</span>
+
+              <ng-template #notExpired>
+                <span i18n>No</span>
+              </ng-template>
+            </td>
+            <td [colSpan]="code.pull_date ? null : 3">
+              <span *ngIf="code.expiry_date">
+                {{ code.expiry_date | date }}
+              </span>
+            </td>
+            <ng-container *ngIf="code.pull_date">
+              <td>{{ code.pulled_by_name }}</td>
+              <td>{{ code.pulled_by_reference }}</td>
+            </ng-container>
+          </ng-container>
+        </tr>
+      </ng-template>
+    </p-table>
+  </p-card>
+</div>

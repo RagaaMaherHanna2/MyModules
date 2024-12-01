@@ -1,0 +1,13 @@
+<p-dialog
+  [visible]="open$ | async"
+  [style]="{ 'min-width': 'max(300px,40vw)', 'min-height': 'max(300px,30vh)' }"
+  [closable]="false"
+  [resizable]="false"
+  [draggable]="false"
+  [modal]="true"
+>
+  <div class="loading-modal">
+    <p-progressSpinner strokeWidth="2px"></p-progressSpinner>
+    <h3 i18n>Loading...</h3>
+  </div>
+</p-dialog>

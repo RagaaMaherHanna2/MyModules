@@ -1,0 +1,186 @@
+<div class="redeem-codes-container mt-5 mp-5">
+  <form
+    *ngIf="isPrepaid"
+    (ngSubmit)="onSubmit($event)"
+    [formGroup]="prepaidRedeemForm"
+    style="margin-top: 2rem"
+  >
+    <div class="row-label-input">
+      <label for="code" class="required-label">Voucher Code</label>
+      <input
+        pInputText
+        type="text"
+        formControlName="code"
+        id="code"
+        name="code"
+      />
+    </div>
+    <div class="row-label-input">
+      <label for="pin_code" class="required-label">PIN code</label>
+      <input
+        pInputText
+        type="text"
+        formControlName="pin_code"
+        id="pin_code"
+        name="pin_code"
+      />
+    </div>
+    <div class="row-label-input">
+      <label for="deduct_value" class="required-label">Value</label>
+      <input
+        pInputText
+        type="number"
+        formControlName="deduct_value"
+        id="deduct_value"
+        name="deduct_value"
+        min="0"
+      />
+    </div>
+    <div class="row-label-input">
+      <label for="user_id" class="required-label">User ID</label>
+      <input
+        pInputText
+        type="text"
+        formControlName="user_id"
+        id="user_id"
+        name="user_id"
+      />
+    </div>
+    <div class="row-label-input">
+      <label for="transaction_id" class="required-label">Transaction ID</label>
+      <input
+        pInputText
+        type="text"
+        formControlName="transaction_id"
+        id="transaction_id"
+        name="transaction_id"
+      />
+    </div>
+    <div *ngIf="isHaveSecret" class="row-label-input">
+      <label for="secret" class="required-label">Secret Code</label>
+      <input
+        pInputText
+        type="text"
+        formControlName="secret"
+        id="secret"
+        name="secret"
+      />
+    </div>
+    <div *ngIf="productAttributes && !isHaveSecret">
+      <div class="row-label-input" *ngFor="let item of productAttributes">
+        <label
+          for="{{ item.name }}"
+          [ngClass]="{ 'required-label': item.required === true }"
+          >{{ item.name }}</label
+        >
+        <input
+          *ngIf="item.type !== 'boolean'"
+          pInputText
+          type="{{ item.type }}"
+          id="{{ item.name }}"
+          name="{{ item.name }}"
+          formControlName="{{ item.name }}"
+          pattern=".*\S+.*"
+        />
+        <p-dropdown
+          *ngIf="item.type === 'boolean'"
+          [options]="options"
+          optionLabel="label"
+          optionValue="value"
+          optionDisabled="chosen"
+          formControlName="{{ item.name }}"
+          placeholder="Please Select..."
+          i18n-placeholder
+        ></p-dropdown>
+      </div>
+    </div>
+    <button
+      class="submit-button mt-3"
+      type="submit"
+      pButton
+      label="Redeem"
+      [disabled]="prepaidRedeemForm.invalid || isSubmitted"
+    ></button>
+  </form>
+  <form
+    *ngIf="!isPrepaid"
+    (ngSubmit)="onSubmit($event)"
+    [formGroup]="serialRedeemForm"
+    style="margin-top: 2rem"
+  >
+    <div class="row-label-input">
+      <label for="code" class="required-label">Voucher Code</label>
+      <input
+        pInputText
+        type="text"
+        formControlName="code"
+        id="code"
+        name="code"
+      />
+    </div>
+    <div *ngIf="isHaveSecret" class="row-label-input">
+      <label for="secret" class="required-label">Secret Code</label>
+      <input
+        pInputText
+        type="text"
+        formControlName="secret"
+        id="secret"
+        name="secret"
+      />
+    </div>
+    <div *ngIf="productAttributes && !isHaveSecret">
+      <div class="row-label-input" *ngFor="let item of productAttributes">
+        <label
+          for="{{ item.name }}"
+          style="font-size: larger"
+          [ngClass]="{ 'required-label': item.required === true }"
+          >{{ item.name }}</label
+        >
+        <input
+          *ngIf="item.type !== 'boolean'"
+          pInputText
+          type="{{ item.type }}"
+          id="{{ item.name }}"
+          name="{{ item.name }}"
+          formControlName="{{ item.name }}"
+        />
+        <p-dropdown
+          *ngIf="item.type === 'boolean'"
+          [options]="options"
+          optionLabel="label"
+          optionValue="value"
+          optionDisabled="chosen"
+          formControlName="{{ item.name }}"
+          placeholder="Please Select..."
+          i18n-placeholder
+        ></p-dropdown>
+      </div>
+    </div>
+    <button
+      class="submit-button mt-3"
+      type="submit"
+      pButton
+      label="Redeem"
+      [disabled]="serialRedeemForm.invalid || isSubmitted"
+    ></button>
+  </form>
+
+  <div class="text-center mt-5" *ngIf="isRedeemed" id="resultDiv">
+    <p-divider align="center">
+      <span class="p-tag">Result</span>
+    </p-divider>
+    <h4 *ngIf="isPrepaid" class="header">
+      Congratulations! Your code is redeemed successfully
+      <span *ngIf="isPrepaid">
+        and your remaining balance is {{ remainingValue }}</span
+      >
+    </h4>
+    <h4 *ngIf="!isPrepaid" class="header">{{ serialMessage }}</h4>
+  </div>
+  <button
+    class="submit-button mt-3"
+    pButton
+    (click)="navigateBack()"
+    label="Back To Check Page"
+  ></button>
+</div>

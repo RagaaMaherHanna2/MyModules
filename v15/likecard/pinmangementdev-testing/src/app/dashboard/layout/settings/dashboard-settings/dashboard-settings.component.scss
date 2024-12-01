@@ -1,0 +1,29 @@
+@import "src/assets/sass/layout/mixins.scss";
+.settings-form {
+  display: flex;
+  flex-direction: column;
+
+  .settings-group + .settings-group {
+    margin-top: 2rem;
+  }
+  .settings-group {
+    .group-header {
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid var(--theme-primary-500);
+      color: var(--theme-primary-500);
+    }
+    .group-body {
+      .input-group {
+        display: flex;
+        justify-content: space-between;
+        .radio-buttons {
+          display: flex;
+          gap: 0.5rem;
+        }
+      }
+    }
+  }
+  .settings-save {
+    align-self: flex-end;
+  }
+}

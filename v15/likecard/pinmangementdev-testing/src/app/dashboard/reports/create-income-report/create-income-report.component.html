@@ -1,0 +1,31 @@
+<div class="container-800">
+  <p-card header="Create Income Report" i18n-header>
+    <form [formGroup]="incomeReportForm" (ngSubmit)="submit()">
+      <div class="md:mt-2 flex flex-column gap-1">
+        <label htmlFor="date" class="required-label mb-1" i18n
+          >Date Range</label
+        >
+        <p-calendar
+          [inline]="true"
+          name="date"
+          selectionMode="range"
+          i18n
+          (onSelect)="onCheckDate()"
+          formControlName="date"
+          [minDate]="minDate"
+          [maxDate]="maxDate"
+        ></p-calendar>
+        <div class="error-container"></div>
+      </div>
+
+      <button
+        pButton
+        type="submit"
+        label="Submit"
+        class="submit-button"
+        i18n-label
+        [disabled]="incomeReportForm.invalid"
+      ></button>
+    </form>
+  </p-card>
+</div>

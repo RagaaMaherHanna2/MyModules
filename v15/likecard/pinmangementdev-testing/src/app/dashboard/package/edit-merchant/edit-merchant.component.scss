@@ -1,0 +1,14 @@
+@import "src/assets/sass/layout/_mixins.scss";
+
+.column-label-input {
+  @include column-label-input();
+  margin-bottom: 1rem;
+}
+.quantity-input {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+}
+.radio-label {
+  margin-inline-start: 0.5rem;
+}

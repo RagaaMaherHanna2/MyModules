@@ -1,0 +1,1175 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* redeemly_pin_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20220807\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-05 07:32+0000\n"
+"PO-Revision-Date: 2023-03-05 11:18+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.2.2\n"
+
+#. module: redeemly_pin_management
+#: model:mail.template,body_html:redeemly_pin_management.package_invitaiton_email_tempalte
+msgid ""
+"<div style=\"                 font-family: Verdana, Geneva, Tahoma, "
+"sans-serif;background-color: #fff#344055;overflow-x: hidden;box-"
+"sizing: border-box;\">\n"
+"                    <div style=\"max-width: 500px;margin-top: 20px;"
+"margin-left: auto;margin-right: auto;margin-bottom: 0;background-"
+"color: #344055; color: #fff;overflow: hidden;padding-top: 30px;\">\n"
+"                        <div style=\"padding-right: 15px; padding-"
+"left: 15px; margin-bottom: 100px\">\n"
+"                            <img t-att-src=\"'https://redeemly-odoo."
+"s3.me-south-1.amazonaws.com/"
+"public/41f2cc147adc87d448b6267c25a73a9a2d0aa4bd'\" alt=\"Service "
+"Provider Logo\" style=\"max-width: 200px; margin-left: auto; margin-"
+"right: auto; display: block; margin-bottom: 100px;\"/>\n"
+"                            <p style=\"font-size: 24px\">\n"
+"                                Dear\n"
+"                                <span style=\"font-weight: bold\" t-"
+"esc=\"object.merchant.name\"/>\n"
+"                            </p>\n"
+"                            <p>\n"
+"                                You have been invited to package "
+"<span t-esc=\"object.package.name\"/>\n"
+"                                by service provider <span t-"
+"esc=\"object.package.service_provider_id.name\"/></p>\n"
+"                        </div>\n"
+"\n"
+"                        <a t-att-href=\"ctx.get('control_panel_url') "
+"+ '/auth/login'\" style=\"                     text-align: "
+"center;                     margin-left: auto;                     "
+"margin-right: auto;                     display: "
+"block;                     width: 100%;                     padding-"
+"top: 20px;                     padding-bottom: "
+"20px;                     background-color: "
+"#4b8f8c;                     text-decoration: "
+"none;                     color: #fff;                   \">Check It</"
+"a>\n"
+"                    </div>\n"
+"                    <div style=\"text-align: center; margin-top: "
+"10px\">\n"
+"                        <p>Powered by Redeemly©2022</p>\n"
+"                        <p style=\"margin-bottom: 0\">For any "
+"information you can contact us:</p>\n"
+"                        <p style=\"                             font-"
+"family: 'Courier New', Courier, "
+"monospace;                             margin-top: "
+"5px;                             margin-bottom: "
+"0;                           \">\n"
+"                          info@redeemly.com\n"
+"                        </p>\n"
+"                        <p style=\"                             font-"
+"family: 'Courier New', Courier, "
+"monospace;                             margin-top: "
+"0;                             margin-bottom: "
+"16px;                           \">\n"
+"                          +996 56 581 6214\n"
+"                        </p>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:mail.template,subject:redeemly_pin_management.package_invitaiton_email_tempalte
+msgid "A New Package Invitation"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_account_setup_bank_manual_config__adib_swift_code
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_res_partner_bank__adib_swift_code
+msgid "ADIB Swift Code"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_account_setup_bank_manual_config__account_class
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_res_partner_bank__account_class
+msgid "Account Class"
+msgstr "نوع الحساب"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_pin_management_bank_transfer_request__senderAccount
+msgid "Account Number"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_account_setup_bank_manual_config__account_type
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_res_partner_bank__account_type
+msgid "Account Type"
+msgstr "نمط الحساب"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package__code_type__alpha
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package_codes__code_type__alpha
+msgid "Alpha"
+msgstr "محرفي"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package__code_type__alphanumeric
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package_codes__code_type__alphanumeric
+msgid "Alphanumeric"
+msgstr "محرفي-رقمي"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_confirm_pin_management_bank_transfer__amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: redeemly_pin_management
+#: model:ir.model.constraint,message:redeemly_pin_management.constraint_running_ops_unique_val_unique
+msgid "Another operation is running. please wait"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.pim_management_bank_transfer_transfer_form
+msgid "Approve"
+msgstr "قبول"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__pin_management_bank_transfer_request__state__approved
+msgid "Approved"
+msgstr "مقبول"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_product__how_to_use_ar
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_template__how_to_use_ar
+msgid "Arabic How to use URL"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_product__name_ar
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_template__name_ar
+msgid "Arabic Name"
+msgstr "الاسم باللغة العربية"
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.confirm_merchant_bank_transfer_view
+msgid "Are you sure you want to validate the following amount:"
+msgstr "هل انت متاكد من انك تريد الموافقة على الطلب"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__product_serials__state__1
+msgid "Available"
+msgstr "متاح"
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.package_view_form
+msgid "Back To Draft"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_res_partner__balance
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_res_users__balance
+msgid "Balance"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_res_partner__balance_in_other_currency
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_res_users__balance_in_other_currency
+msgid "Balance In Other Currency"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_pin_management_bank_transfer_request__bank
+msgid "Bank"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model,name:redeemly_pin_management.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "الحسابات البنكية"
+
+#. module: redeemly_pin_management
+#: model:ir.ui.menu,name:redeemly_pin_management.pin_management_bank_transfer_request
+msgid "Bank Request"
+msgstr "طلبات التحويل"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_confirm_pin_management_bank_transfer__bank_transfer_id
+msgid "Bank Transfer"
+msgstr "طلبات التحويل"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_pin_management_bank_transfer_request__bankTransferImage
+msgid "Bank Transfer Attachment"
+msgstr "المرفق"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_pin_management_bank_transfer_request__bankTransferImageURL
+msgid "Bank Transfer Attachment URL"
+msgstr "عنوان المرفق"
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.pim_management_bank_transfer_transfer_form
+msgid "Bank Transfer Request"
+msgstr "طلب حوالة بنكية"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package__invoicing_policy__pulled
+msgid "Based on Pulled Codes"
+msgstr "بناء على الاكواد المسحوبة"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package__invoicing_policy__redeemed
+msgid "Based on Redeemed Codes"
+msgstr "بناء على الاكواد المصروفة"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__voucher_type_field__type__3
+msgid "Boolean"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.confirm_merchant_bank_transfer_view
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.voucher_type_fields_value_edit_tree
+msgid "Cancel"
+msgstr "الغاء"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package_generation_request__state__canceled
+msgid "Canceled"
+msgstr "ملغى"
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.package_view_form
+msgid "Close"
+msgstr "اغلاق"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package__state__closed
+msgid "Closed"
+msgstr "مغلق"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__code_duration_minutes
+msgid "Code Duration"
+msgstr "صلاحية الكود"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__code_seperator
+msgid "Code Seperator"
+msgstr "الفواصل بين الكود"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__code_type
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes__code_type
+msgid "Code Type"
+msgstr "نوع الكود"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request__codes
+#: model:ir.ui.menu,name:redeemly_pin_management.redeemly_code_menu
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.package_view_form
+msgid "Codes"
+msgstr "اكواد"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__code_days_duration
+msgid "Codes Duration Days"
+msgstr "صلاحية الكود بالايام"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__code_hours_duration
+msgid "Codes Duration Hours"
+msgstr "صلاحية الاكواد بالساعات"
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.package_view_form
+msgid "Configuration"
+msgstr "اعدادات"
+
+#. module: redeemly_pin_management
+#: model:ir.model,name:redeemly_pin_management.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_confirm_pin_management_bank_transfer__create_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_merchant_package_invites__create_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__create_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes__create_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request__create_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request_line__create_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_pin_management_bank_transfer_request__create_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_serials__create_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_running_ops__create_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type__create_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type_field__create_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type_fields_value_edit__create_uid
+msgid "Created by"
+msgstr "منشىء من"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_confirm_pin_management_bank_transfer__create_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_merchant_package_invites__create_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__create_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes__create_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request__create_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request_line__create_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_pin_management_bank_transfer_request__create_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_serials__create_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_running_ops__create_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type__create_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type_field__create_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type_fields_value_edit__create_date
+msgid "Created on"
+msgstr "منشىء بتاريخ"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package__code_seperator__-
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package_codes__seperator__-
+msgid "Dash (-)"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model,name:redeemly_pin_management.model_voucher_type_field
+msgid "Define a field for a voucher type"
+msgstr "تعريف حقول لنوع الكود"
+
+#. module: redeemly_pin_management
+#: model:ir.model,name:redeemly_pin_management.model_package_codes
+msgid "Description"
+msgstr "التوصيف"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,help:redeemly_pin_management.field_res_partner__integration
+#: model:ir.model.fields,help:redeemly_pin_management.field_res_users__integration
+msgid ""
+"Determine the class which implements API integration with the service "
+"provider"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_confirm_pin_management_bank_transfer__display_name
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_merchant_package_invites__display_name
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__display_name
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes__display_name
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request__display_name
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request_line__display_name
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_pin_management_bank_transfer_request__display_name
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_serials__display_name
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_running_ops__display_name
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type__display_name
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type_field__display_name
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type_fields_value_edit__display_name
+msgid "Display Name"
+msgstr "الاسم"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package__state__draft
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__pin_management_bank_transfer_request__state__draft
+msgid "Draft"
+msgstr "قيد المتابعة"
+
+#. module: redeemly_pin_management
+#: model:ir.model.constraint,message:redeemly_pin_management.constraint_product_serials_unique_serial_unique
+msgid "Duplicated Serials Not Allowed"
+msgstr "لايمكن ادخال نفس السيريال مرتين"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_merchant_package_invites__email_sent
+msgid "Email Invitation Sent"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.redeemly_product_template_view_form_inherited
+msgid "Enable/Disable Redeemly"
+msgstr "تفعيل/الغاء تفعيل الردملي"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_merchant_package_invites__enabled
+msgid "Enabled"
+msgstr "تفعيل"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_merchant_package_invites__expiry_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__expiry_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_serials__expiry_date
+msgid "Expiration Date"
+msgstr "تاريخ الصلاحية"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package__state__expired
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package_codes__status__expired
+msgid "Expired"
+msgstr "منتهي الصلاحية"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes__expiry_date
+msgid "Expiry Date"
+msgstr "تاريخ انتهاء الصلاحية"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request__fail_message
+msgid "Fail Reason"
+msgstr "سبب الفشل"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package_generation_request__state__failed
+msgid "Failed"
+msgstr "فشلت"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_res_users__fees_value
+msgid "Fees Value"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type_fields_value_edit__json_value
+msgid "Fields Value As Json"
+msgstr "قيم الحقل كـ json"
+
+#. module: redeemly_pin_management
+#: model:ir.actions.act_window,name:redeemly_pin_management.voucher_type_fields_value_populate
+msgid "Fields Value Populate"
+msgstr "مليء فيم الحقول"
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.redeemly_product_template_view_form_inherited
+msgid "Fill Voucher Type Fields"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request__end_time
+msgid "Finished At"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package_codes__status__generated
+msgid "Generated"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__generated_codes
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__generated_codes_count
+msgid "Generated Codes"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.package_view_form
+msgid "Generated Codes Configuration"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.actions.act_window,name:redeemly_pin_management.action_merchant_package_invites
+#: model:ir.actions.act_window,name:redeemly_pin_management.action_package_generation_request
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes__generation_request
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request_line__generation_request
+msgid "Generation Request"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model,name:redeemly_pin_management.model_package_generation_request_line
+msgid "Generation Request Lines"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model,name:redeemly_pin_management.model_package_generation_request
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__generation_requests
+#: model:ir.ui.menu,name:redeemly_pin_management.redeemly_generation_requests_list
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.package_view_form
+msgid "Generation Requests"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.package_codes_search
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.product_serials_search
+msgid "Group By"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_product__has_serials
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_template__has_serials
+msgid "Has Product Serials"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_product__how_to_use
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_template__how_to_use
+msgid "How to use URL"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.redeemly_product_template_view_form_inherited
+msgid "I18n"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_account_setup_bank_manual_config__iban
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_res_partner_bank__iban
+msgid "IBAN"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_confirm_pin_management_bank_transfer__id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_merchant_package_invites__id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes__id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request__id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request_line__id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_pin_management_bank_transfer_request__id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_serials__id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_running_ops__id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type__id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type_field__id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type_fields_value_edit__id
+msgid "ID"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,help:redeemly_pin_management.field_voucher_type_field__required
+msgid "If Unchecked , this field will not be required"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_product__image_url
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_template__image_url
+msgid "Image URL"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.package_view_form
+msgid "Info"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_res_partner__integration
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_res_users__integration
+msgid "Integration Class"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: code:addons/redeemly_pin_management/services/redeem_service.py:0
+#, python-format
+msgid "Invalid Code"
+msgstr "كود غير صالح"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_account_bank_statement_line__invite_id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_account_move__invite_id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_account_payment__invite_id
+msgid "Invite"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__invoicing_policy
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_res_users__fees_type
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.res_users_merchant_view_form_inherited
+msgid "Invoicing Policy"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes__is_invoiced
+msgid "Is Invoiced"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model,name:redeemly_pin_management.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_confirm_pin_management_bank_transfer____last_update
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_merchant_package_invites____last_update
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package____last_update
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes____last_update
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request____last_update
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request_line____last_update
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_pin_management_bank_transfer_request____last_update
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_serials____last_update
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_running_ops____last_update
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type____last_update
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type_field____last_update
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type_fields_value_edit____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_confirm_pin_management_bank_transfer__write_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_merchant_package_invites__write_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__write_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes__write_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request__write_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request_line__write_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_pin_management_bank_transfer_request__write_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_serials__write_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_running_ops__write_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type__write_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type_field__write_uid
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type_fields_value_edit__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_confirm_pin_management_bank_transfer__write_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_merchant_package_invites__write_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__write_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes__write_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request__write_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request_line__write_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_pin_management_bank_transfer_request__write_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_serials__write_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_running_ops__write_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type__write_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type_field__write_date
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type_fields_value_edit__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request__lines
+msgid "Lines"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes__code
+msgid "Mask Code"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.redeemly_product_template_view_form_inherited
+msgid "Media"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_merchant_package_invites__merchant
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_pin_management_bank_transfer_request__partner_id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_res_users__is_merchant
+msgid "Merchant"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model,name:redeemly_pin_management.model_pin_management_bank_transfer_request
+msgid "Merchant Bank Transfer Request"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__merchant_invites
+msgid "Merchant Invites"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model,name:redeemly_pin_management.model_merchant_package_invites
+msgid "Merchant Package Invites"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.res_users_merchant_view_search_inherited
+msgid "Merchant Users"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes__reference_user_id
+msgid "Merchant's User "
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.package_view_form
+msgid "Merchants"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_pin_management_bank_transfer_request__bankName
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type__name
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type_field__name
+msgid "Name"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__package_name_ar
+msgid "Name in arabic"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: code:addons/redeemly_pin_management/models/package.py:0
+#: code:addons/redeemly_pin_management/models/res_users.py:0
+#, python-format
+msgid "New"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:mail.template,name:redeemly_pin_management.package_invitaiton_email_tempalte
+msgid "New Package Invitation"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model_terms:ir.actions.act_window,help:redeemly_pin_management.action_pin_management_bank_transfer_requests
+msgid "No Bank Transfer Requests Founds"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model_terms:ir.actions.act_window,help:redeemly_pin_management.action_product_template_tree
+msgid "No Products Found"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_pin_management_bank_transfer_request__note
+msgid "Note"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package__code_seperator__nothing
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package_codes__seperator__nothing
+msgid "Nothing"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__voucher_type_field__type__2
+msgid "Number"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package__code_type__numeric
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package_codes__code_type__numeric
+msgid "Numeric"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.confirm_merchant_bank_transfer_view
+msgid "Ok"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_pin_management_bank_transfer_request__sequence
+msgid "Order Sequence"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.redeemly_product_template_view_form_inherited
+msgid "Owner Info"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes__name
+msgid "PIN Code"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.actions.act_window,name:redeemly_pin_management.action_package
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_merchant_package_invites__package
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes__package
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request__package
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.package_codes_search
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.package_view_form
+msgid "Package"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.actions.act_window,name:redeemly_pin_management.action_package_codes
+#: model:ir.ui.menu,name:redeemly_pin_management.package_codes_menu
+msgid "Package Codes"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__package_name
+msgid "Package Name"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_account_bank_statement_line__package_product_id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_account_move__package_product_id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_account_payment__package_product_id
+msgid "Package Product"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.ui.menu,name:redeemly_pin_management.redeemly_package_list
+#: model:ir.ui.menu,name:redeemly_pin_management.redeemly_packages_menu
+msgid "Packages"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model,name:redeemly_pin_management.model_package
+msgid "Packages For Sale"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_res_partner__partner_logo_url
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_res_users__partner_logo_url
+msgid "Partner Logo URL"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package_generation_request__state__pending
+msgid "Pending"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__res_users__fees_type__pull_percentage
+msgid "Percentage Of Pulled Quantity"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.actions.act_window,name:redeemly_pin_management.action_pin_management_bank_transfer_requests
+msgid "Pin Management Bank Transfer Requests"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_merchant_package_invites__price
+msgid "Price"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model,name:redeemly_pin_management.model_product_product
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes__product
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request_line__product
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_serials__product_id
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.package_codes_search
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.product_serials_search
+msgid "Product"
+msgstr "المنتج"
+
+#. module: redeemly_pin_management
+#: model:ir.actions.act_window,name:redeemly_pin_management.product_serials_action
+#: model:ir.ui.menu,name:redeemly_pin_management.product_serials_menu
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.product_serials_form
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.product_serials_tree
+msgid "Product Serials"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_product__product_serials_stock
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_template__product_serials_stock
+msgid "Product Serials Stock"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model,name:redeemly_pin_management.model_product_template
+msgid "Product Template"
+msgstr "قالب المنتج"
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.redeemly_product_template_view_form_inherited
+msgid "Product Type"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,help:redeemly_pin_management.field_voucher_type__name
+msgid "Product Type Name"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.actions.act_window,name:redeemly_pin_management.action_product_template_tree
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type__products
+#: model:ir.ui.menu,name:redeemly_pin_management.redeemly_product_list
+#: model:ir.ui.menu,name:redeemly_pin_management.redeemly_products_menu
+msgid "Products"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.package_view_form
+msgid "Publish"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package__state__published
+msgid "Published"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes__pull_date
+msgid "Pull Date"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_merchant_package_invites__limit
+msgid "Pull Limit"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package_codes__status__pulled
+msgid "Pulled"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes__pulled_by
+msgid "Pulled By"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_merchant_package_invites__pulled_codes_count
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__pulled_codes_count
+msgid "Pulled Codes"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request_line__quantity
+msgid "Quantity"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_res_users__redeemly_api_key
+msgid "REDEEMLY API KEY"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package_codes__status__redeemed
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__product_serials__state__3
+msgid "Redeemed"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.ui.menu,name:redeemly_pin_management.redeemly_main_screen
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.redeemly_product_template_view_form_inherited
+msgid "Redeemly"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_product__is_redeemly_product
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_template__is_redeemly_product
+msgid "Redeemly Product"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes__redemption_date
+msgid "Redemption Date"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__name
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_res_users__reference
+msgid "Reference"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.pim_management_bank_transfer_transfer_form
+msgid "Reject"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__pin_management_bank_transfer_request__state__rejected
+msgid "Rejected"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type_field__required
+msgid "Required"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__product_serials__state__2
+msgid "Reserved"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model,name:redeemly_pin_management.model_running_ops
+msgid "Running Operations"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes__seperator
+msgid "Seperator"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes__serial_id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_serials__serial_code
+msgid "Serial Code"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_serials__serial_code_hash
+msgid "Serial Code Hash"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_serials__serial_number
+msgid "Serial Number"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__service_provider_id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_product__service_provider_id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_template__service_provider_id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_res_users__is_service_provider
+msgid "Service Provider"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.res_users_merchant_view_search_inherited
+msgid "Service Provider Users"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request__start_time
+msgid "Started At"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_pin_management_bank_transfer_request__state
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_serials__state
+msgid "State"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.package_view_form
+msgid "Stats"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package__state
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_codes__status
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_package_generation_request__state
+msgid "Status"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model_terms:ir.ui.view,arch_db:redeemly_pin_management.redeemly_product_template_view_form_inherited
+msgid "Stock"
+msgstr ""
+
+#. module: redeemly_pin_management
+#. openerp-web
+#: code:addons/redeemly_pin_management/static/src/xml/json_widget.xml:0
+#, python-format
+msgid "Submit"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__package_generation_request__state__success
+msgid "Success"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__voucher_type_field__type__1
+msgid "Text"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,help:redeemly_pin_management.field_package_codes__reference_user_id
+msgid "The User Id which provided by the merchant."
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,help:redeemly_pin_management.field_voucher_type_field__type
+msgid "The field data type"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,help:redeemly_pin_management.field_voucher_type_field__name
+msgid "The name of the voucher type field"
+msgstr ""
+
+#. module: redeemly_pin_management
+#. openerp-web
+#: code:addons/redeemly_pin_management/static/src/xml/json_widget.xml:0
+#, python-format
+msgid "This field is required"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.constraint,message:redeemly_pin_management.constraint_merchant_package_invites_invite_unique
+msgid "This merchant is already invited."
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_pin_management_bank_transfer_request__toBank
+msgid "Tobank"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_pin_management_bank_transfer_request__transferAmount
+msgid "Transfer Amount"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_pin_management_bank_transfer_request__type
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_running_ops__type
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type_field__type
+msgid "Type"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_running_ops__unique_val
+msgid "Unique Val"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model,name:redeemly_pin_management.model_res_users
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: redeemly_pin_management
+#: model:ir.model,name:redeemly_pin_management.model_voucher_type
+msgid "Voucher Code Type"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type__voucher_fields
+msgid "Voucher Fields"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_product__voucher_secret
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_template__voucher_secret
+msgid "Voucher Secret Data"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_product__voucher_type_id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_template__voucher_type_id
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_voucher_type_field__voucher_type_id
+msgid "Voucher Type"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_product__voucher_secret_value
+#: model:ir.model.fields,field_description:redeemly_pin_management.field_product_template__voucher_secret_value
+msgid "Voucher Type Fields Values"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.ui.menu,name:redeemly_pin_management.voucher_type_menu_id
+msgid "Voucher Types"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.actions.act_window,name:redeemly_pin_management.action_voucher_type
+msgid "Voucher type"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields,help:redeemly_pin_management.field_product_product__image_url
+#: model:ir.model.fields,help:redeemly_pin_management.field_product_template__image_url
+msgid "You Can Paste an Image URL"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model,name:redeemly_pin_management.model_confirm_pin_management_bank_transfer
+msgid "confirm.pin.management.bank.transfer"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__pin_management_bank_transfer_request__type__credit
+msgid "credit"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__pin_management_bank_transfer_request__type__deposit
+msgid "deposit"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model,name:redeemly_pin_management.model_product_serials
+msgid "product.serials"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model.fields.selection,name:redeemly_pin_management.selection__running_ops__type__redeem
+msgid "redeem"
+msgstr ""
+
+#. module: redeemly_pin_management
+#: model:ir.model,name:redeemly_pin_management.model_voucher_type_fields_value_edit
+msgid "voucher.type.fields.value.edit"
+msgstr ""

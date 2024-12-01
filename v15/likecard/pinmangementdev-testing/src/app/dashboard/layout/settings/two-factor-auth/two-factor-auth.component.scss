@@ -1,0 +1,30 @@
+@import "src/assets/sass/layout/mixins.scss";
+// Mixins
+.column-label-input {
+  @include column-label-input();
+  margin-bottom: 1rem;
+}
+.info-pair {
+  @include info-pair();
+  .title {
+    min-width: 25ch;
+  }
+  margin-bottom: 1rem;
+}
+:host ::ng-deep {
+  .notification-card {
+    margin-top: 2rem;
+  }
+}
+.button-shape{
+  pointer-events: none;
+}
+
+.step-content {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.step-content.active {
+  opacity: 1;
+}

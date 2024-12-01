@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="invoice_merchant_request_tree" model="ir.ui.view">
+            <field name="name">invoice.merchant.request.tree</field>
+            <field name="model">merchant.invoice.request</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="state" />
+                    <field name="merchant" />
+                    <field name="from_date" />
+                    <field name="to_date" />
+                    <field name="failure_reason" />
+                    <field name="invoice_number" />
+                    <field name="request_date" />
+                    <field name="service_provider_id" />
+                    <field name="type" />
+                </tree>
+            </field>
+        </record>
+        <record id="invoice_merchant_request_form" model="ir.ui.view">
+            <field name="name">invoice.merchant.request.form</field>
+            <field name="model">merchant.invoice.request</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <header>
+                        <button name="print_invoice_test"
+                             string="Print Invoice Test"
+                            type="object" icon="fa-cogs" class="oe_highlight"
+                            help="Test Print"/>
+                        </header>
+                        <group>
+                            <field name="state" />
+                            <field name="type" />
+                            <field name="merchant" />
+                            <field name="from_date" />
+                            <field name="to_date" />
+                            <field name="failure_reason" />
+                            <field name="invoice_number" />
+                            <field name="request_date" />
+                            <field name="service_provider_id" />
+                            <field name="invoice"></field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_merchant_invoice_request" model="ir.actions.act_window">
+            <field name="name">Merchant Invoice Request</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">merchant.invoice.request</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

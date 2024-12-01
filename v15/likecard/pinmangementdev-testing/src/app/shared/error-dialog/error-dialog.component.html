@@ -1,0 +1,29 @@
+<p-dialog
+  [visible]="open$ | async"
+  [draggable]="false"
+  [resizable]="false"
+  [closable]="false"
+  [modal]="true"
+  [style]="{ 'max-width': 'min(60ch,95%)' }"
+>
+  <ng-template pTemplate="header">
+    <h3 i18n>Error</h3>
+  </ng-template>
+  <div class="error-dialog">
+    <i class="pi pi-times-circle icon"></i>
+    <span>
+      {{ message$ | async }}
+    </span>
+  </div>
+  <ng-template pTemplate="footer">
+    <div class="flex justify-content-center">
+      <button
+        pButton
+        class="p-button-danger"
+        label="Dismiss"
+        i18n-label
+        (click)="dismiss()"
+      ></button>
+    </div>
+  </ng-template>
+</p-dialog>

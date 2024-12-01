@@ -1,0 +1,75 @@
+<div class="container-800">
+  <p-card header="Create Sales Report" i18n-header>
+    <form [formGroup]="salesReportForm" (ngSubmit)="submit()">
+      <div class="two-groups" *ngIf="theUserRole === 'service_provider'">
+        <div class="column-label-input">
+          <label htmlFor="merchant" i18n
+            >Merchant Reference</label
+          >
+          <span class="p-input-icon-left">
+            <i [class]="fetchingMerchant ? 'pi pi-spin pi-spinner' : ''"></i>
+            <input
+              formControlName="selectedMerchant"
+              pInputText
+              id="merchant"
+              type="text"
+              placeholder="Merchant Reference"
+              i18n-placeholder
+              (blur)="getMerchantInfo($event)"
+            />
+          </span>
+        </div>
+        <div class="column-label-input">
+          <label htmlFor="merchant_name" i18n>Merchant Name</label>
+          <p>{{ merchantInfo.name }}</p>
+        </div>
+      </div>
+      <div class="two-groups">
+        <div class="column-label-input">
+          <label htmlFor="product" i18n 
+            >Product ID</label
+          >
+          <span class="p-input-icon-left">
+            <i [class]="fetchingProduct ? 'pi pi-spin pi-spinner' : ''"></i>
+            <input
+              formControlName="productId"
+              pInputText
+              id="product"
+              type="text"
+              placeholder="Product ID"
+              i18n-placeholder
+              (blur)="getProductInfo($event)"
+            />
+          </span>
+        </div>
+        <div class="column-label-input">
+          <label htmlFor="product_name" i18n>Product Name</label>
+          <p>{{productInfo.name }}</p>
+        </div>
+      </div>
+ 
+        <div class="md:mt-2 flex flex-column gap-1">
+          <label htmlFor="date" class="required-label mb-1" i18n>Report Creation Date</label>
+          <p-calendar
+          [inline]="true"
+          name="date"
+          selectionMode="range"
+          i18n
+          (onSelect)="onCheckDate()"
+          formControlName="date"
+          [minDate]="minDate"
+          [maxDate]="maxDate"></p-calendar>
+          <div class="error-container"></div>
+        </div>
+
+        <button
+          pButton
+          type="submit"
+          label="Submit"
+          class="submit-button"
+          i18n-label
+          [disabled]="salesReportForm.invalid"
+        ></button>
+    </form>
+  </p-card>
+</div>

@@ -1,0 +1,18 @@
+.error-dialog {
+  display: flex;
+
+  align-items: center;
+  gap: 1rem;
+
+  min-height: 10vh;
+
+  .icon {
+    font-size: 4rem;
+    color: var(--red-500);
+  }
+
+  span {
+    font-size: 1.3rem;
+    max-width: min(50ch, 90%);
+  }
+}

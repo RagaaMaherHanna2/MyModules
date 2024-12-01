@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="package_codes_view_tree" model="ir.ui.view">
+            <field name="name">redeemly_pin_management.package.codes.view.tree</field>
+            <field name="model">package.codes</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                    <field name="create_date"></field>
+                    <field name="package"></field>
+                    <field name="product"></field>
+                    <field name="status"></field>
+                </tree>
+            </field>
+        </record>
+        <record id="package_codes_view_form" model="ir.ui.view">
+            <field name="name">redeemly_pin_management.package.codes.view.form</field>
+            <field name="model">package.codes</field>
+            <field name="arch" type="xml">
+                <form edit="false">
+                    <header>
+                        <field name="status" widget="statusbar"></field>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name"></field>
+                            <field name="code"></field>
+                            <field name="create_date"></field>
+                            <field name="package"></field>
+                            <field name="product"></field>
+                            <field name="pull_date"></field>
+                            <field name="pulled_by"></field>
+                            <field name="reference_user_id"></field>
+                            <field name="redemption_date"></field>
+                            <field name="serial_id"></field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <record id="package_codes_search" model="ir.ui.view">
+            <field name="name">package.codes.search</field>
+            <field name="model">package.codes</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="package"/>
+                    <field name="product"/>
+                    <field name="status"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Product" name="group_by_product" context="{'group_by':'product'}"/>
+                    </group>
+                    <group expand="0" string="Group By">
+                        <filter string="Package" name="group_by_package" context="{'group_by':'package'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_package_codes" model="ir.actions.act_window">
+            <field name="name">Package Codes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">package.codes</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_group_by_product': 1}</field>
+<!--            <field name="context">{'search_default_group_by_package': 1}</field>-->
+        </record>
+
+    </data>
+</odoo>

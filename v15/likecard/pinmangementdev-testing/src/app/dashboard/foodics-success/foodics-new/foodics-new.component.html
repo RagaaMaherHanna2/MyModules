@@ -1,0 +1,32 @@
+<p-dialog
+  header="Skarla Authorization"
+  i18n-header
+  [(visible)]="successfullAuth"
+  [style]="{ width: '50vw' }"
+>
+  <div class="text-center">
+    <i
+      class="pi pi-check-circle"
+      style="font-size: 10rem; color: var(--theme-primary-500)"
+    ></i>
+    <h1 i18n>Congratulations</h1>
+    <p i18n>You have been authorized successfully</p>
+    <p-button (onClick)="goToGoogle()" i18n>Ok</p-button>
+  </div>
+</p-dialog>
+<p-dialog
+  header="Skarla Authorization"
+  i18n-header
+  [(visible)]="badAuth"
+  [style]="{ width: '50vw' }"
+>
+  <div class="text-center">
+    <i
+      class="pi pi-stop-circle"
+      style="font-size: 10rem; color: var(--theme-primary-500)"
+    ></i>
+    <h3 i18n>Sorry!</h3>
+    <p i18n>Something went wrong please try again later</p>
+    <p-button (onClick)="goToGoogle()" i18n>Ok</p-button>
+  </div>
+</p-dialog>

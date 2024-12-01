@@ -1,0 +1,200 @@
+@import "src/assets/sass/layout/_variables.scss";
+
+@mixin focused() {
+    outline: 0 none;
+    outline-offset: 0;
+    transition: box-shadow 0.2s;
+    box-shadow: var(--focus-ring);
+}
+
+@mixin focused-inset() {
+    outline: 0 none;
+    outline-offset: 0;
+    transition: box-shadow 0.2s;
+    box-shadow: inset var(--focus-ring);
+}
+
+@mixin column-label-input(
+    $gap: 0.5rem,
+    $labelFontSize: 1rem,
+    $width: 100%,
+    $containerAlign: "center",
+    $inputHeight: 3rem
+) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+
+    width: $width;
+
+    @if $containerAlign == "center" {
+        margin: 0 auto;
+    }
+
+    @if $containerAlign == "start" {
+        margin: 0;
+    }
+
+    label {
+        font-size: $labelFontSize;
+    }
+    input {
+        height: $inputHeight;
+    }
+
+    > p {
+        height: $inputHeight;
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        margin-bottom: unset;
+    }
+}
+@mixin row-label-input(
+   
+    $gap: 0.5rem,
+    $labelFontSize: 1rem,
+    $width: 100%,
+    $containerAlign: "center",
+    $inputHeight: 3rem
+) {
+     $display: flex;
+    $flex-wrap: wrap;
+    gap: $gap;
+
+    width: $width;
+
+    @if $containerAlign == "center" {
+        margin: 0 auto;
+    }
+
+    @if $containerAlign == "start" {
+        margin: 0;
+    }
+
+    label {
+        font-size: $labelFontSize;
+        width: calc(50% - 0.5rem);
+    }
+    input {
+        height: $inputHeight;
+        width: calc(50% - 0.5rem);
+    }
+
+    > p {
+        height: $inputHeight;
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        margin-bottom: unset;
+    }
+}
+
+@mixin info-pair($fontSize: 1rem) {
+    display: flex;
+    gap: 1rem;
+
+    width: 100%;
+
+    .title {
+        width: min(20ch, 50%);
+
+        font-size: $fontSize !important;
+        font-weight: bold;
+    }
+    .value {
+        font-size: $fontSize !important;
+        letter-spacing: 1.2;
+        color: var(--theme-primary-600);
+    }
+    a {
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+@mixin centered-container($width: 80%) {
+    width: $width;
+    margin: 0 auto;
+
+    @media screen and (max-width: $mediumScreen) {
+        width: 90%;
+    }
+    @media screen and (max-width: $smallScreen) {
+        width: 95%;
+    }
+}
+
+// used in both sign in and sign up components
+@mixin auth-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    width: min(95%, 50rem);
+
+    margin-inline: auto;
+    padding-block: 1rem;
+}
+
+@mixin auth-card-outline {
+    position: relative;
+    --outline-border-radius: 56px;
+    min-width: min(35rem, 95%);
+
+    padding: 0.3rem;
+
+    border-radius: var(--outline-border-radius);
+    background: linear-gradient(
+        180deg,
+        var(--theme-primary-500) 25%,
+        var(--theme-primary-700) 50%,
+        var(--theme-primary-500) 75%
+    );
+}
+
+@mixin auth-card {
+    padding: 4rem 2rem;
+
+    background-color: var(--surface-a);
+    border-radius: 52px;
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            max-width: 50%;
+            max-height: 6rem;
+        }
+        .title {
+            font-size: 2rem;
+            margin-bottom: 0.2rem;
+        }
+    }
+}
+
+@mixin auth-form {
+    width: 100%;
+    margin-top: 2rem;
+    > a {
+        display: inline-block;
+    }
+    button {
+        display: block;
+
+        width: 100%;
+
+        margin-top: 1rem;
+    }
+    .end-link {
+        margin-top: 1rem;
+    }
+}
+
+// END AUTH MIXINS

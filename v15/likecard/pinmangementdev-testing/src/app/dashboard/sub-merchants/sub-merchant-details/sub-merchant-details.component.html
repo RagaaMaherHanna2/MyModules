@@ -1,0 +1,66 @@
+<div class="spinner-wrapper" *ngIf="!subMerchantData">
+  <p-progressSpinner></p-progressSpinner>
+</div>
+<ng-container *ngIf="subMerchantData">
+  <p-card styleClass="title-card">
+    <h3 i18n>Sub-Merchant Details</h3>
+  </p-card>
+  <p-card>
+    <div class="two-groups">
+      <div class="details">
+        <div class="two-groups">
+          <div class="info-pair">
+            <span class="title" i18n>Reference</span>
+
+            <span class="value"><shared-reference
+              [reference]="subMerchantData.reference"
+            ></shared-reference></span>
+          </div>
+          <div class="info-pair">
+            <span class="title" i18n>Name</span>
+            <span class="value">{{ subMerchantData.name }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </p-card>
+
+  <ng-container>
+    <p-card header="Permissions" i18n-header styleClass="serials-card">
+      <div *ngIf="listPermissions.length > 0" style="display: flex; flex-wrap: wrap;gap: 1rem;justify-content: end;padding-inline: 2rem;">
+        <button
+        pButton
+        type="submit"
+        label="Update Permissions"
+        class="p-button-outlined"
+        i18n-label
+        (click)="submit()"
+      ></button>
+      </div>
+      <div *ngIf="listPermissions.length > 0" style="display: flex; flex-wrap: wrap;gap: 1rem;flex-direction: column;">
+        <div *ngFor="let category of permissionsCategories">
+          <h4>
+            {{category}}
+          </h4>
+
+          <div style="display: flex; flex-wrap: wrap;gap: 1rem;flex-direction: row;">
+            <div *ngFor="let permission of listPermissions"
+            [ngClass]="permission.category === category ?  '' : 'hidden'">
+              <div *ngIf="permission.category === category"
+              [ngClass]="selectedPermissions.includes(permission.id) ?  'field-checkbox permission checked' : 'field-checkbox permission'">
+                <p-checkbox
+                name="group"
+                [value]="permission.id"
+                (onChange)="onPermissionsChange()"
+                [(ngModel)]="selectedPermissions"
+                [inputId]="permission.id"></p-checkbox>
+                <label [for]="permission.id" i18n style="cursor: pointer;">{{ permission.label }}</label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </p-card>
+  </ng-container>
+</ng-container>

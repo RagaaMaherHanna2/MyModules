@@ -1,0 +1,138 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="product_serials_tree">
+            <field name="name">product.serials.tree</field>
+            <field name="model">product.serials</field>
+            <field name="arch" type="xml">
+                <tree string='Product Serials'>
+                    <field name="serial_number"/>
+                    <field name="product_id"/>
+                    <field name="state"/>
+                    <field name="expiry_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="product_serials_form">
+            <field name="name">product.serials.form</field>
+            <field name="model">product.serials</field>
+            <field name="arch" type="xml">
+                <form string='Product Serials' edit="false">
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="serial_number"/>
+                            <field name="serial_code"/>
+                            <field name="product_id"/>
+                            <field name="expiry_date"/>
+                            <field name="pin_code"/>
+                            <field name="original_value"/>
+                            <field name="value"/>
+                        </group>
+
+                        <notebook>
+                            <page string="Extra Info.">
+                                <group>
+                                    <field name='email_id'/>
+                                    <field name="order_id"/>
+                                    <field name="pulled_by"/>
+                                    <field name="pulled_by"/>
+                                    <field name="distributor"/>
+                                    <field name="country_of_generation_parameters"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="product_serials_search" model="ir.ui.view">
+            <field name="name">product.serials.search</field>
+            <field name="model">product.serials</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="serial_number"/>
+                    <field name="product_id"/>
+                    <field name="state"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Product" name="group_by_product" context="{'group_by':'product_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="product_serials_action" model="ir.actions.act_window">
+            <field name="name">Product Serials</field>
+            <field name="res_model">product.serials</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_group_by_product': 1}</field>
+        </record>
+
+
+        <record model="ir.ui.view" id="batch_serials_tree">
+            <field name="name">batch.serials.tree</field>
+            <field name="model">batch.serials</field>
+            <field name="arch" type="xml">
+                <tree string='Batch Serials'>
+                    <field name="batch_sequence"/>
+                    <field name="product_id"/>
+                    <field name="vendor_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="batch_serials_form">
+            <field name="name">batch.serials.form</field>
+            <field name="model">batch.serials</field>
+            <field name="arch" type="xml">
+                <form string='Batch Serials' edit="false">
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="batch_sequence"/>
+                                <field name="batch_file"/>
+                                <field name="product_id"/>
+                                <field name="product_purchase_price"/>
+                            </group>
+                            <group>
+                                <field name="batch_currency_id"/>
+                                <field name="vendor_id"/>
+                                <field name="invoice_ref"/>
+                                <field name="notes"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Serials.">
+                                <field name="serial_ids">
+                                    <tree>
+                                        <field name="serial_number"/>
+                                        <field name="serial_code"/>
+                                        <field name="product_id"/>
+                                        <field name="expiry_date"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Notes.">
+                                <group>
+                                    <field name='notes'/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="batch_serials_action" model="ir.actions.act_window">
+            <field name="name">Batch Serials</field>
+            <field name="res_model">batch.serials</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

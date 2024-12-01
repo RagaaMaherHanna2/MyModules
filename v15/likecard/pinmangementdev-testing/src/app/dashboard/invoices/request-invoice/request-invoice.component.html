@@ -1,0 +1,39 @@
+<div class="container-800">
+  <p-card header="Create Invoice" i18n-header>
+    <form [formGroup]="invoiceRequestForm" (ngSubmit)="submit()">
+      <div class="column-label-input">
+        <label htmlFor="merchant" i18n class="required-label">Merchant</label>
+        <p-dropdown
+          [options]="options"
+          optionLabel="name"
+          optionValue="reference"
+          formControlName="merchant"
+        ></p-dropdown>
+        <div class="error-container"></div>
+      </div>
+      <div class="column-label-input">
+        <label htmlFor="date" class="required-label" i18n>Invoice Date</label>
+        <p-calendar
+          [inline]="true"
+          name="date"
+          dataType="date"
+          selectionMode="range"
+          i18n
+          formControlName="date"
+          [maxDate]="maxDate"
+          (onSelect)="onCheckDate()"
+        ></p-calendar>
+        <div class="error-container"></div>
+      </div>
+
+      <button
+        pButton
+        type="submit"
+        label="Submit"
+        class="submit-button"
+        i18n-label
+        [disabled]="invoiceRequestForm.invalid"
+      ></button>
+    </form>
+  </p-card>
+</div>

@@ -1,0 +1,6 @@
+@import "src/assets/sass/layout/mixins.scss";
+// Mixins
+.column-label-input {
+  @include column-label-input();
+  margin-bottom: 1rem;
+}

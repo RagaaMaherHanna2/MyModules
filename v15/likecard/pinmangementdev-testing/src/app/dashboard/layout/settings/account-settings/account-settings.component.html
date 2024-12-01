@@ -1,0 +1,26 @@
+<div class="container-800">
+  <div class="settings-form">
+    <div class="settings-group card">
+      <h5 class="group-header" i18n>Account Settings</h5>
+      <div class="group-body">
+        <div class="info-pair">
+          <span class="title">API Key</span>
+          <button type="button" class="value" *ngIf="API_KEY" (click)="copy()">
+            <i class="pi pi-copy"></i>
+            {{ API_KEY }}
+          </button>
+          <span class="value" *ngIf="!API_KEY" i18n>
+            Please generate a key
+          </span>
+        </div>
+      </div>
+    </div>
+    <p-button
+      class="settings-save"
+      icon="pi pi-refresh"
+      label="Generate New Key"
+      (click)="generateNewKey()"
+      i18n-label
+    ></p-button>
+  </div>
+</div>

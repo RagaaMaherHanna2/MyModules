@@ -1,0 +1,160 @@
+<div class="container-800">
+  <p-card header="Edit Merchant Invite" i18n-header>
+    <form [formGroup]="editMerchantForm" (ngSubmit)="submit()">
+      <div class="two-groups">
+        <div class="column-label-input">
+          <label htmlFor="merchant" i18n>Merchant Reference</label>
+          <input
+            formControlName="reference"
+            pInputText
+            id="merchant"
+            type="text"
+            placeholder="Merchant Reference"
+            i18n-placeholder
+          />
+        </div>
+        <div class="column-label-input">
+          <label htmlFor="merchant_name" i18n>Merchant Name</label>
+          <p>{{ editMerchantForm.controls.name.value }}</p>
+        </div>
+      </div>
+      <div class="two-groups">
+        <div class="column-label-input">
+          <label htmlFor="price" class="required-label" i18n>Price</label>
+          <input
+            formControlName="price"
+            id="price"
+            pInputText
+            type="number"
+            placeholder="Price For This Merchant"
+            i18n-placeholder
+          />
+          <div class="error-container">
+            <ng-container
+              *ngIf="
+                editMerchantForm.controls.price.touched &&
+                editMerchantForm.controls.price.invalid &&
+                editMerchantForm.controls.price.errors
+              "
+            >
+              <div
+                class="text-error-validation"
+                i18n
+                *ngIf="editMerchantForm.controls.price.errors"
+              >
+                Invalid Price !
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <div class="column-label-input">
+          <label htmlFor="limit" class="required-label" i18n>Limit</label>
+          <div class="two-groups quantity-input">
+            <ng-container *ngIf="!merchantInvitation.unlimited; else unlimited">
+              <p
+              >{{merchantInvitation.limit}}</p>
+            </ng-container>
+            <ng-template #unlimited>
+              <p i18n>Unlimited</p>
+            </ng-template>
+
+            <p-checkbox
+              formControlName="unlimited"
+              [binary]="true"
+              label="Unlimited"
+              i18n-label
+              (onChange)="changeLimitState($event)"
+            >
+            </p-checkbox>
+          </div>
+          <div class="error-container">
+            <ng-container
+              *ngIf="
+                editMerchantForm.controls.limit.enabled &&
+                editMerchantForm.controls.limit.touched &&
+                editMerchantForm.controls.limit.invalid &&
+                editMerchantForm.controls.limit.errors
+              "
+            >
+              <div
+                class="text-error-validation"
+                i18n
+                *ngIf="editMerchantForm.controls.limit.errors"
+              >
+                Invalid Limit !
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+
+      <p-divider></p-divider>
+      <h5 i18n>Edit Quantity</h5>
+      <div class="two-groups">
+        <div class="column-label-input" formGroupName="quantity">
+          <div class="two-groups">
+            <div class="add">
+              <p-radioButton formControlName="type" value="add"></p-radioButton>
+              <span i18n class="radio-label">Add Quantity</span>
+            </div>
+            <div class="remove">
+              <p-radioButton
+                formControlName="type"
+                value="remove"
+              ></p-radioButton>
+              <span i18n class="radio-label">Remove Quantity</span>
+            </div>
+          </div>
+          <input type="number" pInputText formControlName="amount" />
+          <div class="error-container">
+            <ng-container
+              *ngIf="
+                editMerchantForm.controls.quantity.controls.amount.touched &&
+                editMerchantForm.controls.quantity.controls.amount.invalid &&
+                editMerchantForm.controls.quantity.controls.amount.errors
+              "
+            >
+              <span
+                class="text-error-validation"
+                *ngIf="
+                  editMerchantForm.controls.quantity.controls.amount.errors[
+                    'required'
+                  ]
+                "
+                i18n
+                >Please enter amount</span
+              >
+              <span
+                class="text-error-validation"
+                *ngIf="
+                  editMerchantForm.controls.quantity.controls.amount.errors[
+                    'min'
+                  ]
+                "
+                i18n
+                >Amount must be greater or equal to 0</span
+              >
+            </ng-container>
+          </div>
+        </div>
+      </div>
+
+      <p-divider></p-divider>
+
+      <div>
+        <h4 style="margin: 0;" i18n>Tax</h4>
+        <p>
+          {{formatedTax}}
+        </p>
+      </div>
+      <button
+        pButton
+        type="submit"
+        label="Submit"
+        class="submit-button"
+        i18n-label
+        [disabled]="editMerchantForm.invalid"
+      ></button>
+    </form>
+  </p-card>
+</div>

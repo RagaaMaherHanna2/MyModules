@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="0">
+    <record id="daily_process_create_invoice_requests" model="ir.cron">
+        <field name="name">Daily Create Invoice Request Report</field>
+        <field name="model_id" ref="model_sale_order"/>
+        <field name="state">code</field>
+        <field name="code">model.daily_process_invoice_request()</field>
+        <field name="user_id" ref="base.user_root"/>
+       <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="nextcall" eval="(DateTime.now() + timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')"/>
+    </record>
+    <record id="weekly_process_create_invoice_requests" model="ir.cron">
+        <field name="name">Weekly Create Invoice Request Report</field>
+        <field name="model_id" ref="model_sale_order"/>
+        <field name="state">code</field>
+        <field name="code">model.weekly_process_invoice_request()</field>
+        <field name="user_id" ref="base.user_root"/>
+       <field name="interval_number">1</field>
+        <field name="interval_type">weeks</field>
+        <field name="numbercall">-1</field>
+        <field name="nextcall" eval="(DateTime.now() + timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')"/>
+    </record>
+    <record id="monthly_process_create_invoice_requests" model="ir.cron">
+        <field name="name">Monthly Create Invoice Request Report</field>
+        <field name="model_id" ref="model_sale_order"/>
+        <field name="state">code</field>
+        <field name="code">model.monthly_process_invoice_request()</field>
+        <field name="user_id" ref="base.user_root"/>
+       <field name="interval_number">1</field>
+        <field name="interval_type">months</field>
+        <field name="numbercall">-1</field>
+        <field name="nextcall" eval="(DateTime.now() + timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')"/>
+    </record>
+
+    <record id="process_fees_invoices" model="ir.cron">
+        <field name="name">Process Fees Invoices</field>
+        <field name="model_id" ref="account.model_account_move_line"/>
+        <field name="state">code</field>
+        <field name="code">model.generate_fees_invoices()</field>
+        <field name="user_id" ref="base.user_root"/>
+       <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="nextcall" eval="(DateTime.now() + timedelta(hours=2)).strftime('%Y-%m-%d %H:%M:%S')"/>
+    </record>
+
+    <record id="check_low_balance_notification_cron" model="ir.cron">
+        <field name="name">Low Balance Notification</field>
+        <field name="model_id" ref="base.model_res_users"/>
+        <field name="state">code</field>
+        <field name="code">model.check_low_balance_notification()</field>
+        <field name="user_id" ref="base.user_root"/>
+       <field name="interval_number">30</field>
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+        <field name="nextcall" eval="(DateTime.now() + timedelta(hours=2)).strftime('%Y-%m-%d %H:%M:%S')"/>
+    </record>
+
+    <record id="fill_old_accountant_managers_users_with_related_sps" model="ir.cron">
+        <field name="name">fill old accountant managers users with related sps</field>
+        <field name="model_id" ref="base.model_res_users"/>
+        <field name="state">code</field>
+        <field name="nextcall" eval="(DateTime.now() + timedelta(hours=2)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        <field name="code">model.fill_old_accountant_managers_users_with_related_sps()</field>
+    </record>
+
+    <record id="detail_sales_report_cron" model="ir.cron">
+        <field name="name">detail Sales Report Cron</field>
+        <field name="model_id" ref="model_detail_sales_report"/>
+        <field name="state">code</field>
+        <field name="code">model.process_sales_report_request()</field>
+        <field name="user_id" ref="base.user_root"/>
+       <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="nextcall" eval="(DateTime.now() + timedelta(hours=2)).strftime('%Y-%m-%d %H:%M:%S')"/>
+    </record>
+
+    <record id="check_expired_serials_cron" model="ir.cron">
+        <field name="name">Expired Serials</field>
+        <field name="model_id" ref="model_product_serials"/>
+        <field name="state">code</field>
+        <field name="code">model.process_expired_serials()</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="nextcall" eval="(DateTime.now() + timedelta(hours=2)).strftime('%Y-%m-%d %H:%M:%S')"/>
+    </record>
+
+</odoo>

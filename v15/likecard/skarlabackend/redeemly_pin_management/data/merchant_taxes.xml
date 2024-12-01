@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+            <record id="account_taxes_merchant" model="account.account">
+                <field name="name">Merchant Taxes</field>
+                <field name="code">1111002</field>
+                <field name="user_type_id" ref="account.data_account_off_sheet"></field>
+            </record>
+
+            <record id="tax_group_taxes_merchant" model="account.tax.group">
+                <field name="name">Taxes Merchant</field>
+                <field name="sequence">0</field>
+            </record>
+
+            <record id="tax_other_merchant" model="account.tax" >
+            <field name="name">T-M/0</field>
+            <field name="is_merchant" eval="True"/>
+            <field name="description">Tax-Merchant-0</field>
+            <field name="amount_type">percent</field>
+            <field name="amount" eval="0.0"/>
+            <field name="invoice_repartition_line_ids" model="account.account" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                }),
+
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': obj().env.ref('redeemly_pin_management.account_taxes_merchant').id,
+                }),
+            ]"/>
+            <field name="refund_repartition_line_ids" model="account.account" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                }),
+
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': obj().env.ref('redeemly_pin_management.account_taxes_merchant').id,
+                }),
+            ]"/>
+            <field name="type_tax_use">sale</field>
+            <field name="tax_group_id" ref="redeemly_pin_management.tax_group_taxes_merchant"/>
+         </record>
+    </data>
+</odoo>

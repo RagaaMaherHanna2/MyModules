@@ -1,0 +1,102 @@
+<div class="step-header">
+  <h4>Invite Merchants</h4>
+  <div class="buttons-wrapper">
+    <button
+      class="p-button-outlined"
+      pButton
+      label="Previous"
+      i18n-label
+      (click)="previous()"
+    ></button>
+    <button
+      pButton
+      label="Next"
+      i18n-label
+      (click)="next()"
+      [disabled]="
+        inviteMerchantForm.invalid ||
+        invites.controls.length < 1 ||
+        nextDisabled
+      "
+    ></button>
+  </div>
+</div>
+<p-divider></p-divider>
+<form [formGroup]="inviteMerchantForm">
+  <table class="input-table">
+    <thead>
+      <tr>
+        <th i18n>Reference</th>
+        <th i18n class="medium-cell">Merchant Name</th>
+        <th i18n class="medium-cell">Price</th>
+        <th i18n class="medium-cell">Limit</th>
+        <th i18n class="medium-cell">Expiration</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody formArrayName="invites">
+      <ng-container *ngFor="let inviteForm of invites.controls; let i = index">
+        <tr [formGroupName]="i">
+          <td>
+            <span class="p-input-icon-right">
+              <i
+                class="status-icon pi"
+                [ngClass]="{
+                  'pi-spin pi-spinner': statuses[i].loading,
+                  'pi-check': !statuses[i].loading && statuses[i].hit,
+                  'pi-times':
+                    !statuses[i].loading &&
+                    !statuses[i].hit &&
+                    invites.controls[i].touched
+                }"
+              ></i>
+              <input
+                pInputText
+                type="text"
+                formControlName="merchant"
+                (blur)="getMerchant($event, i)"
+              />
+            </span>
+          </td>
+          <td>
+            {{
+              selectedMerchants[i]
+                ? selectedMerchants[i]
+                : "Please enter a reference"
+            }}
+          </td>
+          <td><input pInputText type="number" formControlName="price" /></td>
+          <td><input pInputText type="number" formControlName="limit" /></td>
+          <td>
+            <p-calendar
+              formControlName="expiry_date"
+              [showIcon]="true"
+            ></p-calendar>
+          </td>
+          <td>
+            <button
+              pButton
+              class="p-button-outlined p-button-danger"
+              type="button"
+              label="Remove"
+              i18n-label
+              (click)="deleteMerchant(i)"
+            ></button>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>
+          <button
+            pButton
+            class="p-button-outlined"
+            label="+"
+            (click)="addMerchant()"
+          ></button>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</form>

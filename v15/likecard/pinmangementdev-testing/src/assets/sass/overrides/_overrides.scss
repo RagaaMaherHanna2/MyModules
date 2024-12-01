@@ -1,0 +1,190 @@
+// Suggested location to add your overrides so that migration would be easy by just updating the SASS folder in the future
+
+html[dir="rtl"] {
+  --font-family: "Readex Pro", sans-serif;
+  .p-input-icon-right > i:last-of-type {
+    right: unset !important;
+    left: 1rem !important;
+  }
+  .p-input-icon-right > .p-inputtext {
+    padding-right: 0.75rem;
+    padding-left: 2.5rem;
+  }
+  .p-radiobutton-label {
+    margin-left: 0 !important;
+    margin-right: 0.5rem !important;
+  }
+  .layout-sidebar-container {
+    left: unset;
+    right: 1rem;
+
+    transition: transform $transitionDuration, right $transitionDuration;
+  }
+
+  .layout-wrapper {
+    &.layout-static-inactive {
+      .layout-sidebar-container {
+        transform: translateX(+100%);
+        left: unset;
+        right: 0;
+      }
+
+      .layout-main-container {
+        margin-inline-start: 0;
+        padding-inline-start: 2rem;
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    .layout-wrapper {
+      .layout-sidebar-container {
+        transform: translateX(+100%);
+        left: unset;
+        right: 0;
+        top: 0;
+      }
+      &.layout-mobile-active {
+        .layout-sidebar-container {
+          transform: translateX(0);
+        }
+
+        .layout-mask {
+          display: block;
+        }
+      }
+    }
+  }
+  .p-button .p-button-icon-left {
+    margin-right: unset;
+    margin-inline-end: 0.5rem;
+  }
+  .p-button .p-button-icon-right {
+    margin-left: unset;
+    margin-inline-start: 0.5rem;
+  }
+  .p-datatable .p-datatable-thead > tr > th {
+    text-align: start;
+  }
+  .p-datatable .p-datatable-tbody > tr > td {
+    text-align: start;
+  }
+  .p-dialog .p-dialog-footer {
+    text-align: end;
+  }
+  .p-picklist .p-picklist-buttons .p-button {
+    transform: rotate(180deg);
+  }
+
+  .p-paginator-bottom > button {
+    transform: rotate(180deg);
+  }
+  .p-multiselect-panel .p-multiselect-header .p-checkbox {
+    margin-right: 0;
+    margin-left: 0.5rem;
+  }
+  .p-multiselect-panel .p-multiselect-header .p-multiselect-close {
+    margin-left: 0;
+    margin-right: 0.5rem;
+  }
+  .p-multiselect-panel .p-multiselect-items .p-multiselect-item .p-checkbox {
+    margin-right: 0;
+    margin-left: 0.5rem;
+  }
+  .p-accordion-toggle-icon {
+    margin-right: unset;
+    margin-inline-end: 1rem;
+    transform: rotateY(180deg);
+  }
+  .p-datepicker-prev-icon,
+  .p-datepicker-next-icon {
+    transform: rotateY(180deg);
+  }
+  .p-checkbox-label {
+    margin-left: 0;
+    margin-inline-start: 0.5rem;
+  }
+.p-paginator .p-dropdown .p-dropdown-label {
+  padding-right: 1rem;
+}
+}
+.p-calendar-w-btn .p-datepicker-trigger {
+  border-end-end-radius: var(--border-radius) !important;
+  border-start-end-radius: var(--border-radius) !important;
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+}
+.p-calendar-w-btn .p-inputtext {
+  border-end-end-radius: 0;
+  border-start-end-radius: 0;
+  border-start-start-radius: var(--border-radius) !important;
+  border-end-start-radius: var(--border-radius) !important;
+}
+.p-splitbutton .p-splitbutton-defaultbutton,
+.p-splitbutton.p-button-rounded > .p-splitbutton-defaultbutton.p-button,
+.p-splitbutton.p-button-outlined > .p-splitbutton-defaultbutton.p-button {
+  border-start-start-radius: var(--border-radius) !important;
+  border-end-start-radius: var(--border-radius) !important;
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+.p-splitbutton-menubutton,
+.p-splitbutton.p-button-rounded > .p-splitbutton-menubutton.p-button,
+.p-splitbutton.p-button-outlined > .p-splitbutton-menubutton.p-button {
+  border-start-end-radius: var(--border-radius) !important;
+  border-end-end-radius: var(--border-radius) !important;
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+}
+p-password.ng-invalid {
+  input {
+    &:focus,
+    &:focus-visible,
+    &:focus-within {
+      box-shadow: 0 0 0 0.2rem var(--red-100) !important;
+    }
+  }
+}
+p-password.ng-touched.ng-valid {
+  input {
+    border-color: var(--green-500);
+  }
+}
+p-calendar.ng-touched.ng-valid {
+  input {
+    border-color: var(--green-500);
+  }
+}
+
+p-dropdown.ng-touched.ng-valid {
+  .p-dropdown {
+    border-color: var(--green-500) !important;
+  }
+}
+.p-dropdown-panel .p-dropdown-header .p-dropdown-filter {
+  margin-right: unset;
+  padding-right: unset;
+  margin-inline-end: 1.5rem;
+  padding-inline: 2rem;
+}
+
+.p-input-icon-right {
+  width: 100% !important;
+
+  .status-icon {
+    &.pi-check {
+      color: var(--green-500);
+    }
+    &.pi-times {
+      color: var(--red-500);
+    }
+  }
+}
+
+.p-menu {
+  width: unset;
+  min-width: 12rem;
+}
+.p-toast .p-toast-message .p-toast-message-content .p-toast-message-text {
+  margin: unset;
+  margin-inline-start: 1rem;
+}

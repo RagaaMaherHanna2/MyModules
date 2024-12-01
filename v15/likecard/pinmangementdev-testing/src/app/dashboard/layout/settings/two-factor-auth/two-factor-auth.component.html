@@ -1,0 +1,92 @@
+<div *ngIf="isLoading" class="spinner-wrapper">
+  <p-progressSpinner></p-progressSpinner>
+</div>
+<div *ngIf="!isLoading" class="container-800">
+  <p-card styleClass="title-card">
+      <div class="flex-between">
+          <h4 i18n>Two Factor Authentication</h4>
+          <div class="buttons-wrapper">
+              <button *ngIf="!is2FaEnabel" pButton class="p-button-outlined" label="Enabel" [disabled]="enable2FaDialogVisible" i18n-label (click)="onEnable2Fa()"></button>
+              <button *ngIf="is2FaEnabel" pButton class="p-button-outlined p-button-danger" label="Disable" i18n-label (click)="sendDisableReq()"></button>
+              <button *ngIf="is2FaEnabel" pButton class="p-button-outlined" label="Refresh" i18n-label (click)="sendRefreshQrReq()"></button>
+
+              <p-dialog (onHide)="onDialogHide()" header="Activate Two Factor Authentication" i18n-header [(visible)]="enable2FaDialogVisible" [style]="{width: '50vw'}">
+                <p-steps [model]="enable2FaSteps" [readonly]="true" [activeIndex]="enable2FaActiveIndex" (activeIndexChange)="onEnable2FaActiveIndexChange($event)"></p-steps>
+                <div [class]="'step-content' + (enable2FaActiveIndex === 0 ? ' active' : '')">
+                  <div *ngIf="enable2FaActiveIndex === 0" class="flex flex-column align-items-center" style="gap: 2rem; padding-top: 2rem;">
+                    <div class="flex" style="gap: .5rem">
+                      <h5 i18n style="margin: 0;white-space: nowrap;">Step 1 : </h5>
+                      <h6 i18n style="margin: 0;">Use an authentication app (such as Google Authenticator or Authy) on your Mobile device to scan this QR code</h6>
+                    </div>
+                    <img [src]="imageSource" alt="Image Source">
+                    <div class="flex justify-content-center w-6">
+                      <button pButton class="p-button-outlined w-full flex-row-reverse" label="Next" i18n-label (click)="onEnable2FaActiveIndexChange(1)"></button>
+                    </div>
+                  </div>
+                </div>
+                <div [class]="'step-content' + (enable2FaActiveIndex === 1 ? ' active' : '')">
+                  <div *ngIf="enable2FaActiveIndex === 1" class="flex flex-column align-items-center" style="padding: 2rem;gap: 2rem;">
+                    <div class="flex" style="gap: .5rem;">
+                      <h5 i18n style="margin: 0;white-space: nowrap;">Step 2 : </h5>
+                      <h6 i18n style="margin: 0;">Enter the code given by the app on your mobile device.</h6>
+                    </div>
+                    <div class="otp-input-container">
+                      <ng-otp-input class="otpContainer" (onInputChange)="onOtpChange($event)" [config]="{length:6,allowNumbersOnly:true}"></ng-otp-input>
+                    </div>
+                    <div class="flex gap-1 w-8 flex-column md:flex-row">
+                      <button pButton class="p-button-outlined w-6 md:w-full" label="Previous" i18n-label (click)="onEnable2FaActiveIndexChange(0)"></button>
+                      <button [disabled]="sendBtnDisabled" pButton class="p-button w-6 md:w-full" label="Enabel" i18n-label (click)="sendEnableReq()"></button>
+                    </div>
+                  </div>
+                </div>
+              </p-dialog>
+
+              <p-dialog (onHide)="onDialogHide()" header="Refresh QR Code" i18n-header [(visible)]="refreshQrDialogVisible" [style]="{minWidth: '50vw'}">
+                <p-steps [model]="refreshQrSteps" [readonly]="true" [activeIndex]="refreshQrActiveIndex" (activeIndexChange)="onRefreshQrActiveIndexChange($event)"></p-steps>
+                <div [class]="'step-content' + (refreshQrActiveIndex === 0 ? ' active' : '')">
+                  <div *ngIf="refreshQrActiveIndex === 0" class="flex flex-column align-items-center" style="padding: 2rem;gap: 2rem;">
+                    <div class="flex" style="gap: .5rem;">
+                      <h5 i18n style="margin: 0;white-space: nowrap;">Step 1 : </h5>
+                      <h6 i18n style="margin: 0;">Enter the code sent to your email.</h6>
+                    </div>
+                    <div class="otp-input-container">
+                      <ng-otp-input class="otpContainer" (onInputChange)="onVerficationCodeChange($event)" [config]="{length:6,allowNumbersOnly:true}">
+                      </ng-otp-input>
+                    </div>
+                    <div class="flex gap-1 justify-content-center w-full flex-column md:flex-row">
+                      <button [disabled]="sendVerficationCodeBtnDisabled" pButton class="p-button w-full md:w-6" label="Next" i18n-label (click)="activ_refresh2f()"></button>
+                    </div>
+                  </div>
+                </div>
+                <div [class]="'step-content' + (refreshQrActiveIndex === 1 ? ' active' : '')">
+                  <div *ngIf="refreshQrActiveIndex === 1" class="flex flex-column align-items-center" style="gap: 2rem; padding-top: 2rem;">
+                    <div class="flex" style="gap: .5rem">
+                      <h5 i18n style="margin: 0;white-space: nowrap;">Step 2 : </h5>
+                      <h6 i18n style="margin: 0;">Use an authentication app (such as Google Authenticator or Authy) on your Mobile device to scan this QR code</h6>
+                    </div>
+                    <img [src]="imageSource" alt="Image Source">
+                    <div class="flex justify-content-center w-6">
+                      <button pButton class="p-button-outlined w-full flex-row-reverse" label="Next" i18n-label (click)="onRefreshQrActiveIndexChange(2)"></button>
+                    </div>
+                  </div>
+                </div>
+                <div [class]="'step-content' + (refreshQrActiveIndex === 2 ? ' active' : '')">
+                  <div *ngIf="refreshQrActiveIndex === 2" class="flex flex-column align-items-center" style="padding: 2rem;gap: 2rem;">
+                    <div class="flex" style="gap: .5rem;">
+                      <h5 i18n style="margin: 0;white-space: nowrap;">Step 3 : </h5>
+                      <h6 i18n style="margin: 0;">Enter the code given by the app on your mobile device.</h6>
+                    </div>
+                    <div class="otp-input-container">
+                      <ng-otp-input class="otpContainer"(onInputChange)="onOtpChange($event)"[config]="{length:6,allowNumbersOnly:true}"></ng-otp-input>
+                    </div>
+                    <div class="flex gap-1 w-8 flex-column md:flex-row">
+                      <button  pButton class="p-button-outlined w-6" label="Previous" i18n-label (click)="onRefreshQrActiveIndexChange(1)"></button>
+                      <button [disabled]="sendBtnDisabled" pButton class="p-button w-6" label="Enabel" i18n-label (click)="activ_refresh2f_qr_code()"></button>
+                    </div>
+                  </div>
+                </div>
+              </p-dialog>
+          </div>
+      </div>
+  </p-card>
+</div>

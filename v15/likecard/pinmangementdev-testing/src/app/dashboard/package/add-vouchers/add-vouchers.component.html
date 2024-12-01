@@ -1,0 +1,84 @@
+<p-card styleClass="title-card">
+  <div class="flex-between">
+    <h3 *ngIf="locale === 'ar-AE'; else englishName">
+      {{ package.package_name_ar }}
+    </h3>
+    <ng-template #englishName>
+      <h3>{{ package.package_name }}</h3>
+    </ng-template>
+
+    <div class="info-pair">
+      <span class="title" i18n>Reference</span>
+      <span class="value">{{ package.reference }}</span>
+    </div>
+  </div>
+</p-card>
+
+<p-card header="Select Products">
+  <form [formGroup]="productsForm" (ngSubmit)="onSubmit($event)">
+    <table class="input-table">
+      <thead>
+        <tr>
+          <th i18n>Product</th>
+          <th i18n>Quantity</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody formArrayName="products">
+        <ng-container
+          *ngFor="let productFrom of products.controls; let i = index"
+        >
+          <tr [formGroupName]="i">
+            <td>
+              <p-dropdown
+                [options]="availableProducts"
+                optionLabel="name"
+                optionValue="id"
+                formControlName="product"
+                (onChange)="onDropdownChange($event)"
+                optionDisabled="chosen"
+                placeholder="Please Select..."
+                i18n-placeholder
+              ></p-dropdown>
+            </td>
+            <td>
+              <input type="number" pInputText formControlName="quantity" />
+            </td>
+            <td>
+              <button
+                pButton
+                class="p-button-outlined p-button-danger"
+                label="Remove"
+                i18n-label
+                (click)="deleteProduct(i)"
+              ></button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>
+            <button
+              pButton
+              type="button"
+              (click)="addProduct()"
+              [disabled]="products.controls.length === availableProducts.length"
+              class="p-button-outlined"
+              label="+"
+              style="font-size: 1.5em; font-weight: bold"
+            ></button>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <button
+      pButton
+      type="submit"
+      label="Submit"
+      [disabled]="productsForm.invalid"
+      i18n-label
+    ></button>
+  </form>
+</p-card>

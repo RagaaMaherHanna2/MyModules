@@ -1,0 +1,124 @@
+<div class="card">
+  <p-table
+    #dt
+    [value]="items.data"
+    [totalRecords]="items.totalCount"
+    [loading]="loading"
+    [rows]="pageSize"
+    [lazy]="true"
+    (onLazyLoad)="loadApiKeys()"
+    [rowHover]="true"
+    [paginator]="true"
+    [globalFilterFields]="['name']"
+    responsiveLayout="scroll"
+    [rowHover]="true"
+    dataKey="id"
+    (onPage)="changePage($event)"
+    [showCurrentPageReport]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    i18n-currentPageReportTemplate
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th i18n>ID</th>
+        <th i18n>Website Name</th>
+        <th i18n>API Key</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="caption">
+      <div class="table-header">
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input
+            pInputText
+            type="text"
+            (keyup)="applyFilter($event)"
+            placeholder="Website Name..."
+            i18n-placeholder
+          />
+        </span>
+        <div class="buttons-wrapper">
+          <button
+            pButton
+            pRipple
+            type="button"
+            label="Generate new API key"
+            i18n-label
+            icon="pi pi-plus"
+            class="p-button p-button m-2"
+            (click)="addApiKey()"
+          ></button>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="3">
+          <span class="empty-message" i18n>There is no records to show </span>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item>
+      <tr>
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>
+          {{ item.website_redeemly_api_key }}
+          <button type="button" (click)="copy(item.website_redeemly_api_key)">
+            <i class="pi pi-copy"></i>
+          </button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<p-dialog
+  position="top"
+  [(visible)]="showAddModal"
+  [style]="{ 'min-width': 'min(30rem, 90%)' }"
+  (onHide)="reiniApiKeyForm()"
+>
+  <form [formGroup]="apiKeyForm">
+    <h4 i18n>Generate New API Key</h4>
+
+    <div class="column-label-input">
+      <label htmlFor="website_name" class="required-label" i18n
+        >Website Name</label
+      >
+      <input
+        formControlName="website_name"
+        id="website_name"
+        pInputText
+        type="text"
+        placeholder="Website Name"
+        i18n-placeholder
+      />
+      <div
+        *ngIf="
+          apiKeyForm.get('website_name')?.invalid &&
+          apiKeyForm.get('website_name')?.dirty
+        "
+        class="text-danger"
+      >
+        <div
+          *ngIf="(apiKeyForm.get('website_name')?.errors)!['required']"
+          class="text-error-validation"
+        >
+          Website name is required!
+        </div>
+      </div>
+    </div>
+
+    <button
+      pButton
+      type="submit"
+      label="Submit"
+      class="submit-button"
+      [disabled]="apiKeyForm.invalid"
+      i18n-label
+      (click)="submit()"
+    ></button>
+  </form>
+</p-dialog>

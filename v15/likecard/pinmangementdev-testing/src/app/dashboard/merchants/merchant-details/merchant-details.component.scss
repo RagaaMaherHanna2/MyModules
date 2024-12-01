@@ -1,0 +1,45 @@
+@import "src/assets/sass/layout/_mixins.scss";
+
+.info-pair {
+  @include info-pair();
+
+  .title {
+    min-width: 20ch;
+  }
+
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin: unset;
+  font-weight: bold;
+}
+
+:host ::ng-deep {
+
+  .merchant-card,
+  .serials-card {
+    margin-top: 2rem;
+  }
+}
+
+.table-image {
+  max-width: 6rem;
+  max-height: 3rem;
+}
+
+.submit-button {
+  margin-top: 1rem;
+
+  width: 100%;
+  font-size: 1.3rem;
+}
+
+.column-label-input {
+  @include column-label-input();
+  margin-bottom: 1rem;
+
+  >span>input {
+    width: 100%;
+  }
+}

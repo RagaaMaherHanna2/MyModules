@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="redeemly_main_screen"
+                  action="redeemly_pin_management.action_package" name="Back-office"/>
+
+<!--        <menuitem id="redeemly_packages_menu" name="Packages" parent="redeemly_main_screen" sequence="1"/>-->
+        <menuitem id="redeemly_products_menu" name="Products" parent="redeemly_main_screen" sequence="2"/>
+        <menuitem id="redeemly_integration_logs" name="Logs" parent="redeemly_main_screen" sequence="5"/>
+        <menuitem id="redeemly_code_menu" name="Codes" parent="redeemly_main_screen" sequence="3"/>
+
+<!--        <menuitem name="Packages" id="redeemly_package_list" parent="redeemly_pin_management.redeemly_packages_menu"-->
+<!--                  action="redeemly_pin_management.action_package" />-->
+
+<!--        <menuitem name="Generation Requests" id="redeemly_generation_requests_list" parent="redeemly_pin_management.redeemly_packages_menu"-->
+<!--                  action="redeemly_pin_management.action_package_generation_request"/>-->
+        <menuitem name="Invoice Requests" id="redeemly_invoice_request" parent="redeemly_pin_management.redeemly_main_screen"
+                  action="redeemly_pin_management.action_merchant_invoice_request"/>
+
+        <menuitem name="Products" id="redeemly_product_list" parent="redeemly_pin_management.redeemly_products_menu"
+                  action="redeemly_pin_management.action_product_template_tree"/>
+
+        <menuitem name="Voucher Types" id="voucher_type_menu_id" groups="base.group_no_one"
+                  parent="redeemly_pin_management.redeemly_products_menu"
+                  action="action_voucher_type" sequence='10'/>
+
+        <menuitem name="Product Serials" id="product_serials_menu" parent="redeemly_pin_management.redeemly_code_menu"
+                  action="product_serials_action" sequence='2'/>
+
+        <menuitem name="Batch Serials" id="batch_serials_menu" parent="redeemly_pin_management.redeemly_code_menu"
+                  action="batch_serials_action" sequence='3'/>
+
+        <menuitem name="Package Codes" id="package_codes_menu" parent="redeemly_pin_management.redeemly_code_menu"
+                  action="action_package_codes" sequence='1'/>
+
+        <menuitem name="Bank Request" id="pin_management_bank_transfer_request" groups="base.group_no_one"
+                  parent="redeemly_pin_management.redeemly_main_screen"
+                  action="action_pin_management_bank_transfer_requests" sequence='10'/>
+
+
+
+    </data>
+</odoo>

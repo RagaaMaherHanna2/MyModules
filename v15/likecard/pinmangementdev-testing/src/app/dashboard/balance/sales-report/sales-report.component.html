@@ -1,0 +1,151 @@
+<p-card header="Balance Report" i18n-header>
+  <p-table
+    #dt
+    [value]="items.data"
+    dataKey="id"
+    [paginator]="true"
+    [rows]="pageSize"
+    [totalRecords]="items.totalCount"
+    [first]="lastFilter.first!"
+    [globalFilterFields]="['product', 'merchants', 'packages']"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [showCurrentPageReport]="true"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th>
+          <span i18n>ID</span>
+        </th>
+        <th>
+          <span i18n>Creation Date</span>
+        </th>
+        <th>
+          <span i18n>Amount</span>
+        </th>
+        <th class="medium-cell">
+          <span i18n>Merchant Name</span>
+        </th>
+        <th>
+          <span i18n>Package</span>
+        </th>
+        <th>
+          <span i18n>Product</span>
+        </th>
+        <th >
+          <span i18n>Description</span>
+        </th>
+      </tr>
+      <!-- <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>
+          <p-columnFilter field="merchant" matchMode="in" [showMenu]="false">
+            <ng-template
+              pTemplate="filter"
+              let-value
+              let-filter="filterCallback"
+            >
+              <p-multiSelect
+                [ngModel]="value"
+                [options]="merchants"
+                placeholder="Any"
+                (onChange)="columnFilter($event, 'merchant')"
+                optionLabel="name"
+                appendTo="body"
+              >
+                <ng-template let-option pTemplate="item">
+                  <div class="p-multiselect-representative-option">
+                    <span class="ml-1">{{ option.name }}</span>
+                  </div>
+                </ng-template>
+              </p-multiSelect>
+            </ng-template>
+          </p-columnFilter>
+        </th>
+        <th>
+          <p-columnFilter field="package" matchMode="in" [showMenu]="false">
+            <ng-template
+              pTemplate="filter"
+              let-value
+              let-filter="filterCallback"
+            >
+              <p-multiSelect
+                [ngModel]="value"
+                [options]="packages"
+                placeholder="Any"
+                (onChange)="columnFilter($event, 'package')"
+                optionLabel="name"
+                appendTo="body"
+              >
+                <ng-template let-option pTemplate="item">
+                  <div class="p-multiselect-representative-option">
+                    <span class="ml-1">{{ option.name }}</span>
+                  </div>
+                </ng-template>
+              </p-multiSelect>
+            </ng-template>
+          </p-columnFilter>
+        </th>
+        <th>
+          <p-columnFilter field="product" matchMode="in" [showMenu]="false">
+            <ng-template
+              pTemplate="filter"
+              let-product
+              let-filter="filterCallback"
+            >
+              <p-multiSelect
+                [ngModel]="product"
+                [options]="products"
+                placeholder="Any"
+                (onChange)="columnFilter($event, 'product')"
+                optionLabel="name"
+                appendTo="body"
+              >
+                <ng-template let-option pTemplate="item">
+                  <div class="p-multiselect-representative-option">
+                    <span class="ml-1">{{ option.name }}</span>
+                  </div>
+                </ng-template>
+              </p-multiSelect>
+            </ng-template>
+          </p-columnFilter>
+        </th>
+        <th></th>
+      </tr>
+ -->    </ng-template>
+    <ng-template pTemplate="body" let-code>
+      <tr>
+        <td class="id">{{ code.ref }}</td>
+        <td>
+          <span class="p-column-title">Date</span>
+          {{ code.date | date }}
+        </td>
+        <td>
+          <span
+            class="amount"
+            [ngClass]="{ plus: code.balance > 0, minus: code.balance < 0 }"
+          >
+            <i
+              class="pi"
+              [ngClass]="{
+                'pi-plus-circle': code.balance > 0,
+                'pi-minus-circle': code.balance < 0
+              }"
+            ></i>
+            <span>
+              {{
+                (code.balance > 0 ? code.balance : -1 * code.balance)
+                  | currency : userCurrency
+              }}
+            </span>
+          </span>
+        </td>
+        <td style="min-width: 20ch;">{{ code.merchant }}</td>
+        <td>{{ code.package_name }}</td>
+        <td>{{ code.product }}</td>
+        <td class="medium-cell">{{ code.description }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>

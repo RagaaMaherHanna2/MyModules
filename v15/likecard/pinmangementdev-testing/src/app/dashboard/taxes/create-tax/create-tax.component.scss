@@ -1,0 +1,21 @@
+@import "src/assets/sass/layout/mixins.scss";
+// Mixins
+.column-label-input {
+  @include column-label-input();
+  margin-bottom: 1rem;
+}
+
+
+// END Mixins
+
+.redeem-link-container{
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 10px;
+  align-items: center;
+}
+
+
+.p-input-icon-left>.p-inputtext {
+  padding-left: .75rem;
+}

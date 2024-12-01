@@ -1,0 +1,142 @@
+<p-card header="Package Report" i18n-header>
+  <p-table
+    #dt
+    [value]="codes"
+    dataKey="id"
+    [lazy]="true"
+    (onLazyLoad)="loadlist($event)"
+    [tableStyle]="{ 'min-width': '75rem' }"
+    (selectionChange)="onSelectionChange($event)"
+    [paginator]="true"
+    [rows]="25"
+    [totalRecords]="totalRecords"
+    [loading]="loading"
+    (onPage)="onPage($event)"
+    [globalFilterFields]="['product.name', 'state', 'create_date']"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 2rem"></th>
+        <th pSortableColumn="pin_code" i18n>PIN Code</th>
+        <th pSortableColumn="product.name" i18n>Product Name</th>
+        <th pSortableColumn="create_date" i18n>Creation Date</th>
+        <th pSortableColumn="state" i18n>Status</th>
+        <th pSortableColumn="pull_date" i18n>Pull Date</th>
+        <th pSortableColumn="pulled_by" i18n>Pulled By</th>
+        <th pSortableColumn="redemption_date" i18n>Redemption Date</th>
+        <th pSortableColumn="expiry_date" i18n>Expiry Date</th>
+      </tr>
+      <tr>
+        <th></th>
+        <th>
+          <input
+            pInputText
+            type="text"
+            #filterInputPingCode
+            (input)="
+              dt.filter(filterInputPingCode.value, 'pincode_name', 'contains')
+            "
+          />
+        </th>
+        <th>
+          <p-columnFilter
+            field="product.name"
+            matchMode="in"
+            [showMenu]="false"
+          >
+            <ng-template
+              pTemplate="productFilter"
+              let-selectedProductId
+              let-filter="filterCallback"
+            >
+              <p-multiSelect
+                [ngModel]="selectedProductId"
+                appendTo="body"
+                [options]="products"
+                placeholder="Any"
+                (onChange)="filter($event.value)"
+                optionLabel="name"
+                [maxSelectedLabels]="1"
+                [selectedItemsLabel]="'{0} items'"
+              >
+                <ng-template let-option pTemplate="item">
+                  <div class="p-multiselect-representative-option">
+                    <span class="ml-1">{{ option.name }}</span>
+                  </div>
+                </ng-template>
+              </p-multiSelect>
+            </ng-template>
+          </p-columnFilter>
+        </th>
+        <th>
+          <!-- <p-calendar
+            dir="ltr"
+            #filterInputDate
+            [showTime]="true"
+            hourFormat="12"
+            name="enddate"
+            (onSelect)="
+              dt.filter(filterInputDate.value, 'date_filter', 'contains')
+            "
+            [stepMinute]="30"
+            [appendTo]="'body'"
+          ></p-calendar> -->
+        </th>
+        <th>
+          <p-columnFilter field="status" matchMode="in" [showMenu]="false">
+            <ng-template
+              pTemplate="statusFilter"
+              let-selectedStatus
+              let-filter="filterCallback"
+            >
+              <p-multiSelect
+                [ngModel]="selectedStatus"
+                appendTo="body"
+                [options]="get_all_code_status()"
+                placeholder="Any"
+                (onChange)="filter($event.value)"
+                optionLabel="name"
+                [maxSelectedLabels]="1"
+                [selectedItemsLabel]="'{0} items'"
+              >
+                <ng-template let-option pTemplate="item">
+                  <div class="p-multiselect-representative-option">
+                    <span class="ml-1">{{ option.name }}</span>
+                  </div>
+                </ng-template>
+              </p-multiSelect>
+            </ng-template>
+          </p-columnFilter>
+        </th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="7">
+          <span class="empty-message" i18n>There is no records to show </span>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-code>
+      <tr>
+        <td>
+          <p-tableCheckbox [value]="code"></p-tableCheckbox>
+        </td>
+        <td>{{ code.pin_code }}</td>
+        <td>{{ code.product.name }}</td>
+        <td>{{ code.creation_date | date }}</td>
+        <td>{{ code.status }}</td>
+        <td>{{ code.pull_date ? (code.pull_date | date) : NOT_YET }}</td>
+        <td>{{ code.pulled_by ? code.pulled_by.name : NOT_YET }}</td>
+        <td>
+          {{ code.redemption_date ? (code.redemption_date | date) : NOT_YET }}
+        </td>
+        <td>{{ code.expiry_date ? (code.expiry_date | date) : NO }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>

@@ -1,0 +1,56 @@
+@import "src/assets/sass/layout/_mixins.scss";
+
+:host ::ng-deep .result-card {
+    margin-top: 2rem;
+    direction: ltr;
+}
+
+.header {
+    padding: 0px 60px 0px 60px;
+}
+
+.row-label-input {
+    @include row-label-input();
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.redeem-codes-container {
+    max-width: min(900px, 95%);
+    margin-inline: auto;
+    width: 30rem;
+}
+
+.submit-button {
+    width: 60%;
+    margin: auto;
+    display: block;
+}
+.column-label-input {
+    @include column-label-input();
+}
+
+.required-label {
+    font-size: larger !important;
+}
+
+.info-pair {
+    @include info-pair();
+
+    .title {
+        min-width: 25ch;
+    }
+
+    margin-bottom: 1rem;
+}
+.product-img{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 10px;
+}
+.details {
+    width: fit-content;
+}
+.next-button{
+    width: 20rem;
+}

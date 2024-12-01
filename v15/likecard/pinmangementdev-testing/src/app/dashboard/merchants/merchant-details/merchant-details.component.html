@@ -1,0 +1,550 @@
+<div class="spinner-wrapper" *ngIf="!invite">
+  <p-progressSpinner></p-progressSpinner>
+</div>
+<ng-container *ngIf="invite">
+  <p-card styleClass="title-card">
+    <div class="flex-between">
+      <h3 i18n>Merchant Details</h3>
+      <div class="buttons-wrapper">
+        <button
+          pButton
+          (click)="inviteProduct()"
+          class="p-button-outlined"
+          i18n
+          label="Add Product"
+          i18n-label
+        ></button>
+      </div>
+    </div>
+  </p-card>
+  <p-card>
+    <div class="two-groups">
+      <div class="details">
+        <div class="two-groups">
+          <div class="info-pair">
+            <span class="title" i18n>Reference</span>
+
+            <span class="value"
+              ><shared-reference
+                [reference]="invite.reference"
+              ></shared-reference
+            ></span>
+          </div>
+          <div class="info-pair">
+            <span class="title" i18n>Name</span>
+            <span class="value">{{ invite.name }}</span>
+          </div>
+        </div>
+        <div class="two-groups">
+          <div class="info-pair">
+            <span class="title" i18n>Products Invitations</span>
+            <span class="value">{{
+              invite.all_merchant_invitations.length
+            }}</span>
+          </div>
+          <div class="info-pair">
+            <span class="title" i18n>Enabled Invitations</span>
+            <span class="value">{{
+              enabledInvitations | number : "1.0-2"
+            }}</span>
+          </div>
+        </div>
+        <div class="two-groups">
+          <div class="info-pair">
+            <span class="title" i18n>Balance</span>
+            <span class="value">{{ balance | currency : userCurrency }}</span>
+          </div>
+          <div class="info-pair">
+            <span class="title" i18n>Total Sold Codes</span>
+            <span class="value">{{ redeemedCodes | number : "1.0-2" }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </p-card>
+
+  <ng-container>
+    <p-card header="Added Products" i18n-header styleClass="serials-card">
+      <table
+        class="input-table"
+        *ngIf="invite.all_merchant_invitations.length > 0; else noInvites"
+      >
+        <thead>
+          <tr>
+            <th i18n>Product Id</th>
+            <th i18n>Name</th>
+            <th i18n>SKU</th>
+            <th i18n>Price</th>
+            <th i18n>Tax</th>
+            <th i18n>Limit</th>
+            <th i18n>Sold</th>
+            <th i18n>Available</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container
+            *ngFor="let productInvite of invite.all_merchant_invitations"
+          >
+            <tr>
+              <td>
+                <p>{{ productInvite.product_details.id }}</p>
+              </td>
+              <td>
+                <p>
+                  {{
+                    locale === "ar-AE"
+                      ? productInvite.product_details.name_ar
+                      : productInvite.product_details.name
+                  }}
+                </p>
+              </td>
+              <td>
+                <p>{{ productInvite.product_details.SKU }}</p>
+              </td>
+              <td>
+                <p>{{ productInvite.price | currency : userCurrency }}</p>
+              </td>
+              <td>
+                <p>{{ getFormattedTax(productInvite) }}</p>
+              </td>
+              <td>
+                <ng-container *ngIf="productInvite.unlimited; else limit">
+                  <p i18n>Unlimited</p>
+                </ng-container>
+                <ng-template #limit>
+                  <p>{{ productInvite.limit | number : "1.0-2" }}</p>
+                </ng-template>
+              </td>
+              <td>
+                {{ productInvite.pulled_serials_count | number : "1.0-2" }}
+              </td>
+
+              <td>
+                <ng-container *ngIf="productInvite.unlimited; else remaining">
+                  <p i18n>Unlimited</p>
+                </ng-container>
+                <ng-template #remaining>
+                  <p>
+                    {{
+                      productInvite.remaining_qty < 0
+                        ? 0
+                        : (productInvite.remaining_qty | number : "1.0-2")
+                    }}
+                  </p>
+                </ng-template>
+              </td>
+
+              <td class="buttons-wrapper">
+                <button
+                  pButton
+                  class="p-button-outlined"
+                  (click)="editInvite(productInvite)"
+                >
+                  <span i18n>Edit</span>
+                </button>
+                <button
+                  pButton
+                  class="p-button-outlined"
+                  (click)="changeInviteState(productInvite)"
+                >
+                  <ng-container *ngIf="productInvite.enabled; else disable">
+                    <span i18n>Disable</span>
+                  </ng-container>
+                  <ng-template #disable>
+                    <span i18n>Enable</span>
+                  </ng-template>
+                </button>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+      <ng-template #noInvites>
+        <p i18n class="no-merchants">
+          There are no added products for this merchant yet.
+        </p>
+      </ng-template>
+    </p-card>
+  </ng-container>
+  <!-- 
+  <ng-container>
+    <p-card header="Merchants" i18n-header styleClass="merchant-card">
+      <table
+        class="input-table"
+        *ngIf="product.invited_merchant.length > 0; else noMerchants"
+      >
+        <thead>
+          <tr>
+            <th i18n>Reference</th>
+            <th i18n>Merchant Name</th>
+            <th i18n>Price</th>
+            <th i18n>Limit</th>
+            <th i18n>Redeemed</th>
+            <th i18n>Available</th>
+            <th i18n>Enabled</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container
+            *ngFor="let merchantInvitation of product.invited_merchant"
+          >
+            <tr>
+              <td>
+                <p>{{ merchantInvitation.merchant.reference }}</p>
+              </td>
+              <td>
+                <p>{{ merchantInvitation.merchant.name }}</p>
+              </td>
+              <td>{{ merchantInvitation.price | currency : userCurrency }}</td>
+              <td>
+                <ng-container *ngIf="merchantInvitation.unlimited; else limit">
+                  <p i18n>Unlimited</p>
+                </ng-container>
+                <ng-template #limit>
+                  <p>{{ merchantInvitation.limit }}</p>
+                </ng-template>
+              </td>
+              <td>
+                {{ merchantInvitation.pulled_serials_count }}
+              </td>
+
+              <td>
+                <ng-container
+                  *ngIf="merchantInvitation.unlimited; else remaining"
+                >
+                  <p i18n>Unlimited</p>
+                </ng-container>
+                <ng-template #remaining>
+                  <p>
+                    {{ merchantInvitation.remaining_qty }}
+                  </p>
+                </ng-template>
+              </td>
+              <td>
+                <ng-container *ngIf="merchantInvitation.enabled; else disabled">
+                  <p i18n>Yes</p>
+                </ng-container>
+                <ng-template #disabled>
+                  <p i18n>No</p>
+                </ng-template>
+              </td>
+              <td class="buttons-wrapper">
+                <button
+                  pButton
+                  class="p-button-outlined"
+                  (click)="editInvite(merchantInvitation)"
+                >
+                  <span i18n>Edit</span>
+                </button>
+                <button
+                  pButton
+                  class="p-button-outlined"
+                  (click)="changeInviteState(merchantInvitation)"
+                >
+                  <ng-container
+                    *ngIf="merchantInvitation.enabled; else disable"
+                  >
+                    <span i18n>Disable</span>
+                  </ng-container>
+                  <ng-template #disable>
+                    <span i18n>Enable</span>
+                  </ng-template>
+                </button>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+      <ng-template #noMerchants>
+        <p i18n class="no-merchants">
+          There are no invited merchants for this product yet.
+        </p>
+      </ng-template>
+    </p-card>
+  </ng-container>
+  -->
+</ng-container>
+<p-dialog
+  position="top"
+  [(visible)]="showAddProductModal"
+  [style]="{ 'min-width': 'min(30rem, 90%)' }"
+>
+  <h3 i18n class="mb-5">Add Product</h3>
+
+  <form [formGroup]="inviteProductForm" (ngSubmit)="submitInviteProduct()">
+    <div class="two-groups">
+      <div class="column-label-input">
+        <label htmlFor="product" i18n>Product</label>
+        <p-dropdown
+          id="product"
+          name="product"
+          [options]="availableProducts"
+          [editable]="true"
+          optionValue="id"
+          optionLabel="name"
+          formControlName="product"
+          styleClass="dropdown"
+          placeholder="Please Select..."
+          (onChange)="updateCostPrice()"
+          i18n-placeholder
+        ></p-dropdown>
+      </div>
+      <div class="column-label-input">
+        <label *ngIf="selectedProductCost !== ''" htmlFor="cost" i18n
+          >Product Cost</label
+        >
+        <span class="pt-2" *ngIf="selectedProductCost !== ''">{{
+          selectedProductCost
+        }}</span>
+      </div>
+    </div>
+    <div class="column-label-input">
+      <label htmlFor="price" class="required-label" i18n
+        >Price ({{ userCurrency }})</label
+      >
+      <input
+        formControlName="price"
+        id="price"
+        pInputText
+        type="number"
+        min="0.1"
+        placeholder="Price For This Merchant"
+        i18n-placeholder
+      />
+      <div class="error-container">
+        <ng-container
+          *ngIf="
+            inviteProductForm.controls.price.touched &&
+            inviteProductForm.controls.price.invalid &&
+            inviteProductForm.controls.price.errors
+          "
+        >
+          <div
+            class="text-error-validation"
+            i18n
+            *ngIf="inviteProductForm.controls.price.errors"
+          >
+            Invalid Price !
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="two-groups">
+      <div class="column-label-input">
+        <label htmlFor="limit" class="required-label" i18n>Limit</label>
+        <div class="two-groups">
+          <input formControlName="limit" id="limit" pInputText type="number" />
+          <p-checkbox
+            formControlName="unlimited"
+            [binary]="true"
+            label="Unlimited"
+            i18n-label
+            (onChange)="changeLimitState($event)"
+          >
+          </p-checkbox>
+        </div>
+        <div
+          *ngIf="submitted && inviteProductForm.controls['price'].invalid"
+          class="text-danger"
+        >
+          <div
+            class="text-error-validation"
+            i18n
+            *ngIf="inviteProductForm.controls['price'].errors ?? ['required']"
+          >
+            Invalid Limit !
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="two-groups mb-5">
+      <div class="column-label-input">
+        <label htmlFor="tax" i18n>Tax</label>
+        <p-dropdown
+          i18n-placeholder
+          placeholder="Tax"
+          [options]="taxOptions"
+          optionLabel="optionLabel"
+          optionValue="id"
+          formControlName="tax"
+        ></p-dropdown>
+      </div>
+    </div>
+    <button
+      pButton
+      type="submit"
+      label="Submit"
+      class="submit-button"
+      i18n-label
+      [disabled]="inviteProductForm.untouched || inviteProductForm.invalid"
+    ></button>
+  </form>
+</p-dialog>
+<p-dialog
+  position="top"
+  [(visible)]="showEditInvitationModal"
+  [style]="{ 'min-width': 'min(50rem, 90%)' }"
+>
+  <h3 i18n class="mb-5">Edit Product Invitation</h3>
+  <form
+    *ngIf="editedInvitation"
+    [formGroup]="editInviteProductForm"
+    (ngSubmit)="submitEditInvitation()"
+  >
+    <div class="two-groups">
+      <div class="column-label-input">
+        <label htmlFor="product_name" i18n
+          >Product Name:
+          <span>{{ editInviteProductForm.controls.name.value }}</span></label
+        >
+      </div>
+      <div class="column-label-input">
+        <label htmlFor="product_cost" i18n
+          >Product Cost:
+          <span>{{
+            editInviteProductForm.value.productPurchaseCost
+              | currency : userCurrency
+          }}</span></label
+        >
+      </div>
+    </div>
+    <div class="two-groups">
+      <div class="column-label-input">
+        <label htmlFor="price" class="required-label" i18n>Price</label>
+        <input
+          formControlName="price"
+          id="price"
+          pInputText
+          type="number"
+          min="0.1"
+          placeholder="Price For This Merchant"
+          i18n-placeholder
+        />
+        <div class="error-container">
+          <ng-container
+            *ngIf="
+              editInviteProductForm.controls.price.touched &&
+              editInviteProductForm.controls.price.invalid &&
+              editInviteProductForm.controls.price.errors
+            "
+          >
+            <div
+              class="text-error-validation"
+              i18n
+              *ngIf="editInviteProductForm.controls.price.errors"
+            >
+              Invalid Price !
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <div class="column-label-input">
+        <label htmlFor="tax" i18n>Tax</label>
+        <p style="font-size: medium">
+          {{ formatedTax }}
+        </p>
+      </div>
+    </div>
+    <p-divider></p-divider>
+    <div class="two-groups">
+      <div class="column-label-input">
+        <label htmlFor="limit" class="required-label" i18n>Limit</label>
+        <div class="two-groups quantity-input">
+          <ng-container *ngIf="!editedInvitation.unlimited; else unlimited">
+            <p>{{ editedInvitation.limit }}</p>
+          </ng-container>
+          <ng-template #unlimited>
+            <p i18n>Unlimited</p>
+          </ng-template>
+
+          <p-checkbox
+            formControlName="unlimited"
+            [binary]="true"
+            label="Unlimited"
+            i18n-label
+            (onChange)="editChangeLimitState($event)"
+          >
+          </p-checkbox>
+        </div>
+        <div class="error-container">
+          <ng-container
+            *ngIf="
+              editInviteProductForm.controls.limit.enabled &&
+              editInviteProductForm.controls.limit.touched &&
+              editInviteProductForm.controls.limit.invalid &&
+              editInviteProductForm.controls.limit.errors
+            "
+          >
+            <div
+              class="text-error-validation"
+              i18n
+              *ngIf="editInviteProductForm.controls.limit.errors"
+            >
+              Invalid Limit !
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <p-divider></p-divider>
+    <h5 i18n>Edit Quantity</h5>
+    <div class="two-groups">
+      <div class="column-label-input" formGroupName="quantity">
+        <div class="two-groups">
+          <div class="add">
+            <p-radioButton formControlName="type" value="add"></p-radioButton>
+            <span i18n class="radio-label">Add Quantity</span>
+          </div>
+          <div class="remove">
+            <p-radioButton
+              formControlName="type"
+              value="remove"
+            ></p-radioButton>
+            <span i18n class="radio-label">Remove Quantity</span>
+          </div>
+        </div>
+        <input type="number" pInputText formControlName="amount" />
+        <div class="error-container">
+          <ng-container
+            *ngIf="
+              editInviteProductForm.controls.quantity.controls.amount.touched &&
+              editInviteProductForm.controls.quantity.controls.amount.invalid &&
+              editInviteProductForm.controls.quantity.controls.amount.errors
+            "
+          >
+            <span
+              class="text-error-validation"
+              *ngIf="
+                editInviteProductForm.controls.quantity.controls.amount.errors[
+                  'required'
+                ]
+              "
+              i18n
+              >Please enter amount</span
+            >
+            <span
+              class="text-error-validation"
+              *ngIf="
+                editInviteProductForm.controls.quantity.controls.amount.errors[
+                  'min'
+                ]
+              "
+              i18n
+              >Amount must be greater or equal to 0</span
+            >
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <button
+      pButton
+      type="submit"
+      label="Submit"
+      class="submit-button"
+      i18n-label
+      [disabled]="editInviteProductForm.invalid"
+    ></button>
+  </form>
+</p-dialog>

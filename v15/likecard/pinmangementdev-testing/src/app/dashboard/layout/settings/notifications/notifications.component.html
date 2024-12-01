@@ -1,0 +1,118 @@
+<div
+  class="spinner-wrapper"
+  *ngIf="!spNotificationSettings && !merchantNotificationSettings"
+>
+  <p-progressSpinner></p-progressSpinner>
+</div>
+<div
+  class="container-800"
+  *ngIf="spNotificationSettings || merchantNotificationSettings"
+>
+  <p-card styleClass="title-card">
+    <div class="flex-between">
+      <h4 i18n>Notifications</h4>
+      <div class="buttons-wrapper">
+        <button
+          pButton
+          class="p-button-outlined"
+          label="Edit"
+          i18n-label
+          (click)="edit()"
+        ></button>
+      </div>
+    </div>
+  </p-card>
+  <p-card
+    *ngIf="spNotificationSettings && this.isServiceProvider"
+    header="Stock Limit Notification"
+    i18n-header
+  >
+    <div class="two-groups">
+      <div class="details">
+        <div class="info-pair">
+          <span class="title" i18n>Status</span>
+          <button
+            class="button-shape"
+            pButton
+            [ngClass]="
+              spNotificationSettings.enable_low_stock_notification
+                ? 'p-button'
+                : 'p-button-outlined'
+            "
+            i18n
+          >
+            {{
+              getNotificationValue(
+                spNotificationSettings.enable_low_stock_notification
+              )
+            }}
+          </button>
+        </div>
+        <div
+          class="info-pair"
+          *ngIf="spNotificationSettings.enable_low_stock_notification"
+        >
+          <span class="title" i18n>Stock Limit</span>
+          <span class="value">{{ spNotificationSettings.stock_limit }} </span>
+        </div>
+        <div
+          class="info-pair"
+          *ngIf="spNotificationSettings.enable_low_stock_notification"
+        >
+          <span class="title" i18n>Stock Limit Notification Email</span>
+          <span class="value"
+            >{{ spNotificationSettings.stock_notification_to_email }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </p-card>
+  <p-card
+    styleClass="notification-card"
+    *ngIf="merchantNotificationSettings && !this.isServiceProvider"
+    header="Balance Limit Notification"
+    i18n-header
+  >
+    <div class="two-groups">
+      <div class="details">
+        <div class="info-pair">
+          <span class="title" i18n>Status</span>
+          <button
+            class="button-shape"
+            pButton
+            [ngClass]="
+              merchantNotificationSettings.enable_low_balance_notification
+                ? 'p-button'
+                : 'p-button-outlined'
+            "
+            i18n
+          >
+            {{
+              getNotificationValue(
+                merchantNotificationSettings.enable_low_balance_notification
+              )
+            }}
+          </button>
+        </div>
+        <div
+          class="info-pair"
+          *ngIf="merchantNotificationSettings.enable_low_balance_notification"
+        >
+          <span class="title" i18n>Balance Limit</span>
+          <span class="value"
+            >{{ merchantNotificationSettings.balance_limit }}
+          </span>
+        </div>
+        <div
+          class="info-pair"
+          *ngIf="merchantNotificationSettings.enable_low_balance_notification"
+        >
+          <span class="title" i18n>Balance Limit Notification Email</span>
+          <span class="value"
+            >{{ merchantNotificationSettings.balance_notification_to_email }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </p-card>
+</div>

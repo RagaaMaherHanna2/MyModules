@@ -1,0 +1,109 @@
+@import "src/assets/sass/layout/_mixins.scss";
+
+.column-label-input {
+  @include column-label-input();
+}
+
+.info-pair {
+  @include info-pair();
+  margin-bottom: 1rem;
+}
+
+.check-codes-container {
+  max-width: min(900px, 95%);
+  margin-inline: auto;
+}
+
+:host ::ng-deep .result-card {
+  margin-top: 2rem;
+
+  .product-container {
+    max-width: 60%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid var(--surface-d);
+    border-radius: $borderRadius;
+    overflow-y: hidden;
+
+    .product-image {
+      max-height: 10rem;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
+
+      .title {
+        font-weight: bold;
+        font-size: 2rem;
+        text-align: center;
+        margin: 0;
+      }
+
+      .redeemed {
+        --bg-color: var(--green-100);
+        --font-color: var(--green-600);
+      }
+
+      .pulled {
+        --bg-color: var(--yellow-100);
+        --font-color: var(--yellow-600);
+      }
+
+      .price {
+        font-size: 1.2em;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  .not-found-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.status {
+  --bg-color: transparent;
+  --font-color: default;
+
+  padding: 1rem 2rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  border: 1px solid var(--font-color);
+  border-radius: 2rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.not-found {
+  --bg-color: var(--red-100);
+  --font-color: var(--red-600);
+  margin-inline: auto;
+}
+
+:host ::ng-deep .p-card-content {
+  padding-top: 0;
+}
+
+:host ::ng-deep .p-tabview .p-tabview-panels {
+  padding-top: 2rem;
+}
+
+:host ::ng-deep .p-tabview .p-tabview-nav {
+  >* {
+    width: 100%;
+  }
+}
+
+:host ::ng-deep .p-tabview-nav-link {
+  justify-content: center;
+}

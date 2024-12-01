@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="merchant_package_invites_view_tree" model="ir.ui.view">
+            <field name="name">redeemly_pin_management.merchant.package.invites.view.tree</field>
+            <field name="model">merchant.package.invites</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="merchant"></field>
+                    <field name="price"></field>
+                    <field name="limit"></field>
+                    <field name="expiry_date"></field>
+                    <field name="enabled"></field>
+                    <field name="product"></field>
+                </tree>
+            </field>
+        </record>
+        <record id="merchant_package_invites_view_form" model="ir.ui.view">
+            <field name="name">redeemly_pin_management.merchant.package.invites.view.form</field>
+            <field name="model">merchant.package.invites</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="merchant"></field>
+                            <field name="product"></field>
+                            <field name="price"></field>
+                            <field name="pulled_serials_count"></field>
+                            <field name="limit"></field>
+                            <field name="expiry_date"></field>
+                            <field name="enabled"></field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

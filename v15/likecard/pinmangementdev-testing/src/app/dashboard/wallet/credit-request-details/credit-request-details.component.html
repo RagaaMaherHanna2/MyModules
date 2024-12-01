@@ -1,0 +1,84 @@
+<div class="spinner-wrapper" *ngIf="!bankTransferRequest">
+  <p-progressSpinner></p-progressSpinner>
+</div>
+
+<ng-container *ngIf="bankTransferRequest">
+  <p-card styleClass="title-card container-800">
+    <div class="flex-between">
+      <h4 i18n>Credit Request Details</h4>
+      
+      <div class="buttons-wrapper">
+        <button
+          *ngIf="bankTransferRequest.state === 'draft'"
+          pButton
+          label="Accept"
+          i18n-label
+          (click)="AcceptOrReject('approved')"
+        ></button>
+        <button
+          *ngIf="bankTransferRequest.state === 'draft'"
+          pButton
+          label="Reject"
+          i18n-label
+          (click)="AcceptOrReject('rejected')"
+        ></button>
+      </div>
+    </div>
+  </p-card>
+  <p-card styleClass="container-800">
+    <div class="two-groups">
+      <div class="details">
+        <div class="info-pair">
+          <span class="title" i18n>Merchant Name</span>
+          <span class="value">{{ bankTransferRequest.bank_name }}</span>
+        </div>
+
+        <div class="info-pair">
+          <span class="title" i18n>Date</span>
+          <span class="value">{{
+            bankTransferRequest.date | date : "longDate"
+          }}</span>
+        </div>
+        <div class="info-pair">
+          <span class="title" i18n>To Bank</span>
+          <span class="value">{{ bankTransferRequest.to_bank }}</span>
+        </div>
+        <div class="info-pair">
+          <span class="title" i18n>Transfer Amount</span>
+          <span class="value">{{
+            bankTransferRequest.transfer_amount | currency : userCurrency
+          }}</span>
+        </div>
+        <div class="info-pair">
+          <span class="title" i18n>Status</span>
+          <span
+            class="item-status"
+            [ngClass]="orderStatus[bankTransferRequest.state].severity"
+            >{{ orderStatus[bankTransferRequest.state].label }}</span
+          >
+        </div>
+        <div class="info-pair">
+          <span class="title" i18n>Note</span>
+          <span *ngIf="bankTransferRequest.state !== 'draft'" class="value">{{
+            bankTransferRequest.note
+          }}</span>
+          <textarea
+            *ngIf="bankTransferRequest.state === 'draft'"
+            rows="3"
+            cols="40"
+            pInputTextarea
+            [(ngModel)]="note"
+          ></textarea>
+        </div>
+        <button
+          (click)="downloadAttachment(bankTransferRequest)"
+          style="margin-top: 5rem; margin-inline: 2rem"
+          pButton
+          class="p-button-outlined"
+          label="Download Attachment"
+          i18n-label
+        ></button>
+      </div>
+    </div>
+  </p-card>
+</ng-container>

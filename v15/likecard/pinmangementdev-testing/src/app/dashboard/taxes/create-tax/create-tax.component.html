@@ -1,0 +1,45 @@
+<div class="container-800">
+  <p-card header="Create Tax" i18n-header>
+    <form [formGroup]="taxesForm" (ngSubmit)="submit()">
+      <div class="column-label-input">
+
+        <div class="flex flex-column md:align-items-end column-gap-3 gap-2">
+          <div class="w-full">
+            <span class="p-input-icon-left flex gap-1 flex-column justify-center">
+              <label htmlFor="name" i18n>Name</label>
+              <input  pInputText id="name" type="text" formControlName="name" class="mt-1" placeholder="Name" i18n-placeholder />
+            </span>
+          </div>
+          <div class="p-input-icon-left flex gap-1 flex-column w-full">
+            <label htmlFor="amount_type" i18n>Type</label>
+            <p-dropdown
+            class="mt-1"
+            i18n-placeholder
+            placeholder="Type"
+            [options]="amountTypeOptions"
+            optionLabel="name"
+            optionValue="value"
+            id="amount_type"
+            formControlName="amount_type"
+            ></p-dropdown>
+          </div>
+          <div class="w-full">
+            <span class="p-input-icon-left flex gap-1 flex-column justify-center">
+              <label htmlFor="amount" i18n>Amount</label>
+              <input pInputText min="0" id="amount" type="number" class="mt-1" formControlName="amount" placeholder="Amount" i18n-placeholder />
+            </span>
+          </div>
+        </div>
+        </div>
+
+        <button
+          pButton
+          type="submit"
+          label="Submit"
+          class="submit-button"
+          i18n-label
+          [disabled]="taxesForm.invalid"
+        ></button>
+    </form>
+  </p-card>
+</div>

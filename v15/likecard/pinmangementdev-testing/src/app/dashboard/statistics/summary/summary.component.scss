@@ -1,0 +1,214 @@
+@import "src/assets/sass/layout/_variables.scss";
+
+.period-div {
+  width: 300px;
+}
+
+.statistics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  gap: 1.4rem;
+  padding-top: 3rem;
+
+  .stat-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    height: 275px;
+
+    padding: 4rem 2rem;
+    margin-bottom: 6rem;
+
+    background-color: var(--surface-a);
+    border-radius: 20px;
+
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    .icon {
+      position: absolute;
+      top: -3rem;
+      left: 50%;
+      transform: translate(-50%, 0);
+
+      margin: 0 auto;
+      padding: 1rem;
+
+      font-size: 4rem;
+      color: var(--surface-a);
+
+      background-color: var(--theme-primary-500);
+      border-radius: 50%;
+    }
+
+    .title {
+      position: relative;
+
+      margin-bottom: 1rem;
+      padding-inline: 10px;
+
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+
+        width: 100%;
+        height: 3px;
+
+        background-image: linear-gradient(90deg,
+            var(--theme-primary-100-transparent) 0%,
+            var(--theme-primary-100) 40%,
+            var(--theme-primary-100) 60%,
+            var(--theme-primary-100-transparent) 100%);
+      }
+    }
+
+    .value {
+      color: var(--theme-primary-500);
+      margin-top: 1rem;
+
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+.chart-card{
+  background-color: var(--surface-a);
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ .title{
+  margin-bottom: 1rem;
+  padding-inline: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+ }
+}
+  .mid-card {
+    grid-column: span 3;
+    flex-direction: row;
+    padding: 0.2rem 1rem;
+    padding-inline-end: 0;
+
+    .greeting-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+
+      width: 65%;
+
+      font-weight: bold;
+
+      .greeting {
+        font-size: 2rem;
+      }
+
+      .greeting-value {
+        font-size: 3rem;
+        color: var(--theme-primary-500);
+      }
+    }
+
+    .user-image-container {
+      background-color: var(--surface-b);
+      border-start-end-radius: 20px;
+      border-end-end-radius: 20px;
+      height: calc(100% + 0.4rem);
+      width: 35%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  @media screen and (max-width: 1650px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (max-width: 1350px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 700px) {
+    .mid-card {
+      flex-direction: column-reverse;
+      justify-content: flex-start;
+
+      min-height: 400px;
+
+      padding: 1rem 2rem;
+
+      .greeting-container {
+        align-items: center;
+
+        height: 100%;
+        width: 100%;
+
+        text-align: center;
+
+        .greeting {
+          font-size: 2rem;
+        }
+      }
+
+      .user-image-container {
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+
+    .stat-card {
+      height: 180px;
+    }
+
+    .mid-card {
+      grid-column: span 1;
+
+      min-height: unset;
+      height: auto;
+
+      .user-image-container {
+        padding-block: 2rem;
+      }
+    }
+  }
+}
+
+:host ::ng-deep {
+  .p-avatar {
+    background-color: var(--surface-c);
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .p-avatar-circle {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .p-avatar-text {
+    font-size: 6rem;
+  }
+
+  .p-avatar-image {
+    object-fit: contain;
+    max-width: 100% !important;
+    height: auto;
+  }
+}

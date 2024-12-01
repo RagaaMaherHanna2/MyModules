@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+<!--    <record id="fill_old_batches_with_product_id_cron" model="ir.cron">-->
+<!--        <field name="name">Fill old serials batches with product_id</field>-->
+<!--        <field name="model_id" ref="redeemly_pin_management.model_batch_serials"/>-->
+<!--        <field name="state">code</field>-->
+<!--        <field name="code">model.fill_old_batches_with_product_id()</field>-->
+<!--    </record>-->
+
+<!--    <record id="fill_old_batches_with_vendor_id_cron" model="ir.cron">-->
+<!--        <field name="name">Fill old serials batches with Vendor ID</field>-->
+<!--        <field name="model_id" ref="redeemly_pin_management.model_batch_serials"/>-->
+<!--        <field name="state">code</field>-->
+<!--        <field name="code">model.fill_old_batches_with_vendor_id()</field>-->
+<!--        <field name="nextcall" eval="(DateTime.now() + timedelta(hours=2)).strftime('%Y-%m-%d %H:%M:%S')"/>-->
+
+<!--    </record>-->
+</odoo>

@@ -1,0 +1,76 @@
+@import "src/assets/sass/layout/_mixins.scss";
+
+.column-label-input {
+  @include column-label-input();
+}
+:host ::ng-deep .result-card {
+  margin-top: 2rem;
+  .product-container {
+    max-width: 60%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 2rem;
+
+    border: 1px solid var(--theme-primary-400);
+    border-radius: $borderRadius;
+    overflow-y: hidden;
+
+    .product-image {
+      max-height: 10rem;
+      object-fit: cover;
+      padding-inline: 3rem;
+      margin-bottom: 2rem;
+    }
+    .details {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
+
+      .title {
+        text-align: center;
+      }
+
+      .price {
+        font-size: 2rem;
+        color: var(--theme-primary-500);
+      }
+    }
+  }
+  .not-found-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.status {
+  --bg-color: transparent;
+  --font-color: default;
+
+  padding: 1rem 2rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  border: 1px solid var(--font-color);
+  border-radius: 2rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+.success {
+  --bg-color: var(--green-100);
+  --font-color: var(--green-600);
+}
+.failed {
+  --bg-color: var(--red-100);
+  --font-color: var(--red-600);
+  margin-inline: auto;
+}
+.status-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}

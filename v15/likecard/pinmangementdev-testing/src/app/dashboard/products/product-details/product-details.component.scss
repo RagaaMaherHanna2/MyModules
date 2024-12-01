@@ -1,0 +1,44 @@
+@import "src/assets/sass/layout/_mixins.scss";
+
+.info-pair {
+  @include info-pair();
+  .title {
+    min-width: 25ch;
+  }
+  margin-bottom: 1rem;
+}
+
+h4 {
+  margin: unset;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: min(300px, 30rem);
+  padding: 1rem;
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 5px;
+    border: 1px solid var(--theme-primary-100);
+  }
+}
+:host ::ng-deep {
+  .merchant-card,
+  .serials-card,
+  .batches-card,
+  .redeem-fields-card {
+    margin-top: 2rem;
+  }
+  .font-weight-bold {
+    font-weight: bold;
+  }
+}

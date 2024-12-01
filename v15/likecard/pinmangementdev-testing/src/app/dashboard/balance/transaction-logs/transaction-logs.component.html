@@ -1,0 +1,76 @@
+<p-card i18n-header="Transaction Logs" header="Transaction Logs">
+  <p-table
+    #dt
+    [value]="items.data"
+    [loading]="loading"
+    [lazy]="true"
+    (onLazyLoad)="loadList($event)"
+    [rows]="pageSize"
+    [paginator]="true"
+    [globalFilterFields]="['name']"
+    responsiveLayout="scroll"
+    [totalRecords]="items.totalCount"
+    dataKey="id"
+    currentPageReportTemplate="{first} - {last} / {totalRecord}"
+    [showCurrentPageReport]="true"
+    [rowHover]="true"
+  >
+    <!-- <ng-template pTemplate="caption">
+      <div class="table-header">
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input
+            pInputText
+            type="text"
+            (keyup)="applyFilter($event)"
+            placeholder="Search..."
+            i18n-placeholder
+          />
+        </span>
+      </div>
+    </ng-template>
+ -->
+    <ng-template pTemplate="header">
+      <tr>
+        <th i18n>ID</th>
+        <th pSortableColumn="create_date" i18n>Creation Date</th>
+        <th i18n>Amount</th>
+        <th i18n>Description</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="4">
+          <span class="empty-message" i18n>There is no records to show </span>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item>
+      <tr [id]="item.id">
+        <td>{{ item.id }}</td>
+        <td>{{ item.create_date }}</td>
+        <td>
+          <span
+            class="amount"
+            [ngClass]="{ plus: item.amount > 0, minus: item.amount < 0 }"
+          >
+            <i
+              class="pi"
+              [ngClass]="{
+                'pi-plus-circle': item.amount > 0,
+                'pi-minus-circle': item.amount < 0
+              }"
+            ></i>
+            <span>
+              {{
+                (item.amount > 0 ? item.amount : -1 * item.amount)
+                  | currency : userCurrency
+              }}
+            </span>
+          </span>
+        </td>
+        <td>{{ item.description }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>

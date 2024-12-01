@@ -1,0 +1,58 @@
+<div class="spinner-wrapper" *ngIf="!productData">
+  <p-progressSpinner></p-progressSpinner>
+</div>
+<ng-container *ngIf="productData">
+  <p-card
+    styleClass="title-card"
+    i18n-header="Operations History"
+    header="Operations History"
+  >
+  </p-card>
+  <p-card i18n-header>
+    <div class="two-groups">
+      <div class="details">
+        <div class="info-pair">
+          <span class="title" i18n>Voucher Code</span>
+          <span class="value">{{ code }}</span>
+        </div>
+        <div class="info-pair">
+          <span class="title" i18n>Product Name</span>
+          <span class="value">{{ productData.name }}</span>
+        </div>
+      </div>
+    </div>
+  </p-card>
+  <p-card i18n-header="Operations" header="Operations" styleClass="mt-5">
+    <p-table
+      #dt
+      [value]="items.data"
+      [lazy]="true"
+      (onLazyLoad)="loadHistory($event)"
+      [rows]="pageSize"
+      [paginator]="true"
+      responsiveLayout="scroll"
+      [totalRecords]="items.totalCount"
+      dataKey="id"
+      currentPageReportTemplate="{first} - {last} / {totalRecords}"
+      [showCurrentPageReport]="true"
+      [rowHover]="true"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th i18n>Operation Date</th>
+          <th i18n>Operantion Value</th>
+          <th i18n>User ID</th>
+          <th i18n>Transaction ID</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-item>
+        <tr [id]="item.id">
+          <td>{{ item.date | date }}</td>
+          <td>{{ item.value |  number: "1.0-2" }}</td>
+          <td>{{ item.user_id }}</td>
+          <td>{{ item.transaction_id }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </p-card>
+</ng-container>

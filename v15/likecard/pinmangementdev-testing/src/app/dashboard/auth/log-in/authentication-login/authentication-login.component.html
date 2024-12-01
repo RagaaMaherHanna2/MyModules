@@ -1,0 +1,38 @@
+<section class="sign-in-container">
+    <div class="sign-in-card-outline">
+      <div class="sign-in-card">
+        <header>
+          <img src="assets/images/Skarla Logo.svg" alt="Skarla Logo" />
+          <h1 class="title" i18n>Welcome Back</h1>
+          <p class="subtitle" i18n>
+            To ensure the security of your account, enter the authentication code below.
+          </p>
+        </header>
+  
+        <form class="sign-in-form" [formGroup]="OTPloginForm">
+    
+            <ng-otp-input
+            class="otpContainer"
+            (onInputChange)="onOtpChange($event)"
+            [config]="{length:6,allowNumbersOnly:true}">
+            </ng-otp-input>
+        
+  
+      
+  
+          <button
+            type="submit"
+            pButton
+            pRipple
+            label="Login"
+            class="sign-in-submit-button"
+            (click)="loginWithOTP($event)"
+            [disabled]="OTPloginForm.invalid"
+            i18n-label
+          ></button>
+          
+        </form>
+      </div>
+    </div>
+  </section>
+  

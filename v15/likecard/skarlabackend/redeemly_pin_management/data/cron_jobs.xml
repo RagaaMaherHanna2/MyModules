@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="check_low_stock_notification_cron" model="ir.cron">
+        <field name="name">Low Stock Notification</field>
+        <field name="model_id" ref="base.model_res_users"></field>
+        <field name="state">code</field>
+        <field name="code">model.check_low_stock_notification()</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">30</field>
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+        <field name="nextcall" eval="(DateTime.now() + timedelta(hours=2)).strftime('%Y-%m-%d %H:%M:%S')"/>
+    </record>
+
+    <record id="daily_income_report_cron" model="ir.cron">
+        <field name="name">daily income report</field>
+        <field name="model_id" ref="model_daily_income_report"></field>
+        <field name="state">code</field>
+        <field name="code">model.daily_income_report_cron()</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="nextcall" eval="(DateTime.now() + timedelta(hours=2)).strftime('%Y-%m-%d %H:%M:%S')"/>
+    </record>
+    <record id="pull_redeem_fees_cron" model="ir.cron">
+        <field name="name">Pull Redeem Fees report</field>
+        <field name="model_id" ref="model_pull_redeem_fees_report"/>
+        <field name="state">code</field>
+        <field name="code">model.pull_redeem_fees_report_cron()</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="nextcall" eval="(DateTime.now() + timedelta(hours=2)).strftime('%Y-%m-%d %H:%M:%S')"/>
+    </record>
+    <record id="daily_pull_redeem_fees" model="ir.cron">
+        <field name="name">Daily Pull Redeem Fees</field>
+        <field name="model_id" ref="model_daily_pull_redeem_fees_report"/>
+        <field name="state">code</field>
+        <field name="code">model.daily_pull_redeem_fees_cron()</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="nextcall" eval="(DateTime.now() + timedelta(hours=2)).strftime('%Y-%m-%d %H:%M:%S')"/>
+    </record>
+
+</odoo>

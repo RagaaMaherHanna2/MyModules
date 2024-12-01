@@ -1,0 +1,35 @@
+<div class="container-800">
+  <form class="settings-form" [formGroup]="settingsForm">
+    <div class="settings-group card">
+      <h5 class="group-header" i18n>Language Settings</h5>
+      <div class="group-body">
+        <div class="input-group">
+          <label for="language" i18n>Current Language:</label>
+          <div class="radio-buttons">
+            <p-radioButton
+              name="language"
+              value="ar-AE"
+              label="Arabic"
+              i18n-label
+              formControlName="language"
+            ></p-radioButton>
+            <p-radioButton
+              name="language"
+              value="en-GB"
+              label="English"
+              i18n-label
+              formControlName="language"
+            ></p-radioButton>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p-button
+      class="settings-save"
+      [disabled]="settingsForm.invalid"
+      (onClick)="onSave()"
+      label="Save"
+      i18n-label
+    ></p-button>
+  </form>
+</div>

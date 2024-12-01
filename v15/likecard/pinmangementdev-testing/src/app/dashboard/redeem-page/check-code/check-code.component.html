@@ -1,0 +1,88 @@
+<div class="check-codes-container mt-5 mp-5">
+  <form
+    (ngSubmit)="onSubmit($event)"
+    [formGroup]="redeemForm"
+    style="margin-top: 2rem"
+  >
+    <div class="column-label-input">
+      <label for="codes" class="required-label">Enter Your Code Here</label>
+      <input
+        pInputText
+        type="text"
+        formControlName="codes"
+        id="codes"
+        name="codes"
+      />
+    </div>
+    <div class="column-label-input pt-4" *ngIf="isHaveSecret">
+      <label for="secret" class="required-label">Secret Code</label>
+      <input
+        pInputText
+        type="text"
+        formControlName="secret"
+        id="secret"
+        name="secret"
+      />
+    </div>
+    <button
+      class="submit-button mt-3"
+      type="submit"
+      pButton
+      label="Check"
+      [disabled]="redeemForm.invalid"
+    ></button>
+  </form>
+</div>
+
+<div class="text-center mt-5" id="resultDiv" *ngIf="codes">
+  <p-divider align="center">
+    <span class="p-tag">Result</span>
+  </p-divider>
+  <h4 class="header" *ngIf="!codes[0].found; else found">
+    Sorry, Your code isn't found!
+  </h4>
+  <ng-template #found>
+    <h4>Your code checked successfully!</h4>
+    <div style="width: 200">
+      <img
+        class="mt-5 mb-5 product-img"
+        src="{{ codes[0].image }}"
+        alt="image"
+        width="200"
+      />
+    </div>
+    <div class="m-auto details">
+      <div class="info-pair">
+        <span class="title">Voucher Number</span>
+        <span class="value">{{ codes[0].serial }}</span>
+      </div>
+
+      <div class="info-pair">
+        <span class="title">Product Name</span>
+        <span class="value">{{ codes[0].name }}</span>
+      </div>
+
+      <div class="info-pair">
+        <span class="title">Expired</span>
+        <span class="value">{{ codes[0].expired }}</span>
+      </div>
+      <div class="info-pair" *ngIf="codes[0].expired">
+        <span class="title">Expiry Date</span>
+        <span class="value">{{
+          codes[0].expiry_date | date : undefined : undefined : "en"
+        }}</span>
+      </div>
+    </div>
+    <h4 *ngIf="codes[0].expired">
+      Your code is Expired, Sorry You can't redeem it.
+    </h4>
+    <button
+      pButton
+      type="button"
+      label="Next"
+      class="next-button"
+      (click)="next()"
+      *ngIf="!codes[0].expired"
+    ></button>
+  </ng-template>
+</div>

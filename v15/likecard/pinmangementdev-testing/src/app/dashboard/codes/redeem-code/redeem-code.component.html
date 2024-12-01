@@ -1,0 +1,145 @@
+<div class="container-800">
+  <p-card header="Redeem Code" i18n-header>
+    <form (ngSubmit)="onSubmit($event)" [formGroup]="codeForm">
+      <div class="column-label-input">
+        <label for="code" class="required-label" i18n>Enter Code Here</label>
+        <input
+          pInputText
+          type="text"
+          name="code"
+          placeholder="Enter code..."
+          i18n-placeholder
+          formControlName="code"
+          id="code"
+        />
+        <div class="error-container"></div>
+      </div>
+      <div class="column-label-input">
+        <label for="deduct_value" class="required-label" i18n
+          >Redeem Value</label
+        >
+        <input
+          pInputText
+          type="number"
+          name="deduct_value"
+          placeholder="Enter value..."
+          i18n-placeholder
+          formControlName="deduct_value"
+          id="deduct_value"
+        />
+        <div class="error-container"></div>
+      </div>
+      <div class="column-label-input">
+        <label for="pin_code" class="required-label" i18n>PIN Code</label>
+        <input
+          pInputText
+          type="text"
+          name="pin_code"
+          placeholder="Enter PIN..."
+          i18n-placeholder
+          formControlName="pin_code"
+          id="pin_code"
+        />
+        <div class="error-container"></div>
+      </div>
+      <div class="column-label-input">
+        <label for="user_id" class="required-label" i18n>User ID</label>
+        <input
+          pInputText
+          type="text"
+          name="user_id"
+          placeholder="Enter user ID.."
+          i18n-placeholder
+          formControlName="user_id"
+          id="user_id"
+        />
+        <div class="error-container"></div>
+      </div>
+      <div class="column-label-input">
+        <label for="transaction_id" class="required-label" i18n
+          >Transaction ID</label
+        >
+        <input
+          pInputText
+          type="text"
+          name="transaction_id"
+          placeholder="Enter transaction ID.."
+          i18n-placeholder
+          formControlName="transaction_id"
+          id="transaction_id"
+        />
+        <div class="error-container"></div>
+      </div>
+      <div class="column-label-input">
+        <label for="language" class="required-label" i18n
+          >Response Language</label
+        >
+        <p-dropdown
+          name="language"
+          formControlName="language"
+          id="language"
+          [options]="languageOptions"
+          optionLabel="label"
+          optionValue="value"
+        />
+        <div class="error-container"></div>
+      </div>
+
+      <button
+        class="submit-button"
+        type="submit"
+        pButton
+        label="Redeem"
+        i18n-label
+        [disabled]="codeForm.invalid"
+      ></button>
+    </form>
+  </p-card>
+  <p-card
+    styleClass="result-card"
+    header="Result"
+    i18n-header
+    *ngIf="show_result"
+  >
+    <div class="redeem-result">
+      <div class="image-container">
+        <img [src]="redeem_result.image" alt="redeem_result.product_name" />
+      </div>
+      <div class="info-pair">
+        <span class="title" i18n>Product Name</span>
+        <span class="value">{{ redeem_result.product_name }}</span>
+      </div>
+      <div class="info-pair">
+        <span class="title" i18n>Code Value</span>
+        <span class="value">{{ redeem_result["Original Value"] }}</span>
+      </div>
+      <div class="two-columns">
+        <div class="info-pair">
+          <span class="title" i18n>Redeemed Value</span>
+          <span class="value">{{ redeem_result.value }}</span>
+        </div>
+        <div class="info-pair">
+          <span class="title" i18n>Remaining Value</span>
+          <span class="value">{{ redeem_result.remaining_value }}</span>
+        </div>
+      </div>
+      <div class="two-columns">
+        <div class="info-pair">
+          <span class="title" i18n>How To Use [EN]</span>
+          <a [href]="redeem_result.how_to_use" target="_blank" class="value">{{
+            redeem_result.how_to_use
+          }}</a>
+        </div>
+        <div class="info-pair">
+          <span class="title" i18n>How To Use [AR]</span>
+          <a
+            [href]="redeem_result.how_to_use_ar"
+            target="_blank"
+            class="value"
+            >{{ redeem_result.how_to_use_ar }}</a
+          >
+        </div>
+      </div>
+    </div>
+  </p-card>
+</div>

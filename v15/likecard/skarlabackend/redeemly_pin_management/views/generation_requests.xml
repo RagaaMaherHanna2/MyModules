@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="package_generation_request_view_tree" model="ir.ui.view">
+            <field name="name">redeemly_pin_management.package.generation.request.view.tree</field>
+            <field name="model">package.generation.request</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id"></field>
+                    <field name="create_date"></field>
+                    <field name="package"></field>
+                    <field name="state"></field>
+
+                </tree>
+            </field>
+        </record>
+        <record id="package_generation_request_view_form" model="ir.ui.view">
+            <field name="name">redeemly_pin_management.package.generation.request.view.form</field>
+            <field name="model">package.generation.request</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="id"></field>
+                            <field name="state"></field>
+                            <field name="package"></field>
+                            <field name="start_time" readonly="1"></field>
+                            <field name="end_time" readonly="1"></field>
+                            <field attrs="{'invisible':[('state','!=','failed')]}" name="fail_message"
+                                   readonly="1"></field>
+                            <field name="lines">
+                                <tree editable="bottom">
+                                    <field name="product"/>
+                                    <field name="quantity"/>
+                                    <field name="generation_request" invisible="1">
+                                    </field>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_package_generation_request" model="ir.actions.act_window">
+            <field name="name">Generation Request</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">package.generation.request</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

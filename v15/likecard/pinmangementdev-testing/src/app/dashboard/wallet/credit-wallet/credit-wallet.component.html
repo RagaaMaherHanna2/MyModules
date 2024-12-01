@@ -1,0 +1,46 @@
+<div class="container-800">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="note" i18n>
+        * Please Choose the bank you want to transfer money to.
+      </h4>
+    </div>
+    <p-divider></p-divider>
+    <form [formGroup]="chargeWalletForm" (ngSubmit)="submit()">
+      <div class="column-label-input">
+        <label htmlFor="to" class="required-label" i18n>To</label>
+        <p-dropdown
+          [options]="bankAccounts"
+          [(ngModel)]="toBankSelected"
+          optionValue="value"
+          formControlName="bank"
+          optionDisabled="chosen"
+          placeholder="Please Select..."
+          i18n-placeholder
+        ></p-dropdown>
+      </div>
+
+      <div class="column-label-input">
+        <label class="required-label" i18n>Amount</label>
+        <input
+          pInputText
+          type="number"
+          [(ngModel)]="item.transferAmount"
+          placeholder="Amount"
+          i18n-placeholder
+          name="amount"
+          formControlName="amount"
+        />
+      </div>
+
+      <button
+        pButton
+        type="submit"
+        label="Submit"
+        class="submit-button"
+        i18n-label
+        [disabled]="isSubmitButtonDisabled()"
+      ></button>
+    </form>
+  </div>
+</div>

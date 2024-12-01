@@ -1,0 +1,52 @@
+@import "src/assets/sass/layout/_mixins.scss";
+
+.layout-wrapper {
+    background-color: #edf1f5;
+    background-image: radial-gradient(#9fade0 0.75px, transparent 0.75px), radial-gradient(#9fade0 0.75px, #edf1f5 0.75px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    align-items: center;
+    min-height: 100vh;
+    direction: ltr;
+}
+.logo{
+    width: 100px !important;
+}
+p-card{
+    width: 70%;
+}
+:host ::ng-deep .result-card {
+    margin-top: 2rem;
+    direction: ltr;
+}
+.header{
+    padding: 0px 60px 0px 60px;
+}
+
+.column-label-input {
+    @include column-label-input();
+}
+
+.check-codes-container {
+    max-width: min(900px, 95%);
+    margin-inline: auto;
+    width: 70%;
+}
+
+.submit-button {
+    width: 100%;
+}
+
+.required-label {
+    font-size: larger !important;
+}
+.info-pair {
+    @include info-pair();
+    .title {
+      min-width: 25ch;
+    }
+    margin-bottom: 1rem;
+  }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="redeemly_token_validator" model="auth.jwt.validator">
+                <field name="name">dashboard</field>
+                <field name="audience">dashboard</field>
+                <field name="issuer">https://onlineapi.redeemly.com</field>
+                <field name="signature_type">secret</field>
+                <field name="user_id_strategy">email</field>
+                <field name="partner_id_strategy">email</field>
+                <field name="secret_key">dashboard</field>
+                <field name="secret_algorithm">HS512</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,89 @@
+@import "src/assets/sass/layout/_mixins.scss";
+
+.column-label-input {
+  @include column-label-input();
+  margin-bottom: 2rem;
+}
+.note {
+  font-size: 0.9rem;
+  color: var(--red-500);
+  margin-bottom: 1rem;
+}
+.info-pair {
+  @include info-pair($fontSize: 1.2rem);
+  margin-bottom: 1rem;
+
+  @media screen and (max-width: 600px) {
+    @include info-pair($fontSize: 0.9rem);
+  }
+}
+.info-pair .title{
+  width: 11ch !important;
+}
+.info-pair .value{
+  word-wrap: break-word;
+    width: 18ch;
+}
+
+:host ::ng-deep .dropdown {
+  .p-inputtext {
+    font-size: 1rem;
+  }
+  width: 100% !important;
+  height: 3rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+:host ::ng-deep .submit-button {
+  padding: 0.625rem 1rem;
+  .p-button-label {
+    font-size: 1rem !important;
+  }
+}
+
+.bank-details-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "name number"
+    "class swift"
+    "full type";
+  gap: 0.5rem;
+
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+      "name"
+      "number"
+      "class"
+      "swift"
+      "type"
+      "full";
+  }
+}
+
+#name {
+  grid-area: name;
+}
+#number {
+  grid-area: number;
+}
+#full {
+  grid-area: full;
+}
+#class {
+  grid-area: class;
+}
+#swift {
+  grid-area: swift;
+}
+#account-type {
+  grid-area: type;
+}

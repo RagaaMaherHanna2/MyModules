@@ -1,0 +1,132 @@
+<p-dialog
+  [(visible)]="dialogVisible"
+  [resizable]="false"
+  [draggable]="false"
+  [style]="{ 'min-width': 'min(800px, 90%)', 'min-height': 'min(400px, 90vh)' }"
+  (onHide)="closeDialogAndClear()"
+>
+  <ng-template pTemplate="header">
+    <h5 i18n>Upload Vouchers</h5>
+  </ng-template>
+  <div class="body">
+    <form [formGroup]="uploadSerialForm">
+      <div class="info-pair mb-5">
+        <label class="title" i18n>Operation Id</label>
+        <span class="value">{{ uploadSerialForm.value.batch_sequence }}</span>
+      </div>
+      <div class="column-label-input">
+        <label for="file" i18n>Product Vouchers</label>
+        <p-fileUpload
+          id="productImage"
+          [multiple]="false"
+          (onSelect)="onSelectFile($event)"
+          [showUploadButton]="false"
+          [accept]="EXCEL_FILE_TYPES"
+          (onClear)="clearFile()"
+          (onRemove)="clearFile()"
+          #serialsFileUploader
+        >
+          <!-- <ng-template pTemplate="content" let-files>
+          <li *ngFor="let file of files">
+            <ng-container *ngIf="serials.length > 0">
+              <span i18n> Serials Count:</span>
+              {{ serials.length | number: "1.0-2" }} <span i18n>serial(s)</span>
+            </ng-container>
+            <span *ngIf="serials.length === 0 && error === ''" i18n>Loading...</span>
+            <ng-container *ngIf="error !== ''">
+              {{ error }}
+            </ng-container>
+          </li>
+        </ng-template> -->
+        </p-fileUpload>
+      </div>
+      <div class="two-groups">
+        <div class="column-label-input">
+          <label htmlFor="vendor_name" class="required-label" i18n
+            >Vendor</label
+          >
+          <p-dropdown
+            id="vendor_id"
+            name="vendor_id"
+            [options]="vendors.data"
+            optionValue="id"
+            optionLabel="name"
+            formControlName="vendor_id"
+            styleClass="dropdown"
+            placeholder="Please Select..."
+            i18n-placeholder
+          ></p-dropdown>
+        </div>
+        <div class="column-label-input">
+          <label htmlFor="invoice_ref" class="required-label" i18n
+            >Invoice ID</label
+          >
+          <input
+            type="text"
+            name="invoice_ref"
+            formControlName="invoice_ref"
+            id="invoice_ref"
+            pInputText
+          />
+        </div>
+      </div>
+      <div class="two-groups">
+        <div class="column-label-input">
+          <label htmlFor="purchase_price" class="required-label" i18n
+            >Purchase Price</label
+          >
+          <input
+            type="number"
+            name="purchase_price"
+            formControlName="product_purchase_price"
+            id="purchase_price"
+            min="0"
+            pInputText
+          />
+        </div>
+        <div class="column-label-input">
+          <label htmlFor="currency_id" class="required-label" i18n
+            >Purchase Currency</label
+          >
+          <p-dropdown
+            [options]="allCurrencies"
+            optionLabel="symbol"
+            optionValue="id"
+            optionDisabled="chosen"
+            formControlName="batch_currency_id"
+            placeholder="Please Select..."
+            i18n-placeholder
+          ></p-dropdown>
+        </div>
+      </div>
+      <div class="column-label-input">
+        <label htmlFor="notes" i18n>Notes</label>
+        <textarea
+          rows="3"
+          cols="80"
+          pInputTextarea
+          formControlName="notes"
+        ></textarea>
+      </div>
+    </form>
+  </div>
+
+  <ng-template pTemplate="footer">
+    <button
+      pButton
+      pRipple
+      label="Cancel"
+      class="p-button-danger"
+      i18n-label
+      (click)="closeDialogAndClear()"
+    ></button>
+    <button
+      pButton
+      pRipple
+      label="Upload"
+      i18n-label
+      (click)="onUploadSerials()"
+      [disabled]="uploadSerialForm.invalid"
+    ></button>
+  </ng-template>
+</p-dialog>

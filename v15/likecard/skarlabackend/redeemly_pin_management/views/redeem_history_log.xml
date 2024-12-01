@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="redeem_history_log_view_tree" model="ir.ui.view">
+            <field name="name">redeem_history_log_view_tree</field>
+            <field name="model">redeem.history.prepaid</field>
+            <field name="arch" type="xml">
+                <tree string="redeem_history_log_tree">
+                    <field name="product_serial"></field>
+                    <field name="date"></field>
+                    <field name="user_id"></field>
+                    <field name="value"></field>
+                    <field name="transaction_id"></field>
+                    <field name="email_sent"></field>
+                </tree>
+            </field>
+        </record>
+        <record id="redeem_history_log_view_form" model="ir.ui.view">
+            <field name="name">redeem_history_log_view_form</field>
+            <field name="model">redeem.history.prepaid</field>
+            <field name="arch" type="xml">
+                <form string="redeem_history_log_form">
+                    <sheet>
+                        <group>
+                            <field name="product_serial"></field>
+                            <field name="date"></field>
+                            <field name="user_id"></field>
+                            <field name="value"></field>
+                            <field name="transaction_id"></field>
+                            <field name="email_sent"></field>
+                            <field name="website_api_key_id" readonly="1"></field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="redeem_history_prepaid_action" model="ir.actions.act_window">
+            <field name="name">Redeem Prepaid Log</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">redeem.history.prepaid</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+                <menuitem name="Redeem Prepaid Logs" id="pin_management_redeem_prepaid_logs" groups="sales_team.group_sale_manager"
+                  parent="redeemly_pin_management.menu_settings"
+                  action="redeem_history_prepaid_action" sequence='70'/>
+
+    </data>
+</odoo>

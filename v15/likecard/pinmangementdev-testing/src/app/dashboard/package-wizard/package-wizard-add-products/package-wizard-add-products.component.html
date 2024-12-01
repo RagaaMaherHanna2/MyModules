@@ -1,0 +1,100 @@
+<div class="step-header">
+  <h4 i18n>Add Products</h4>
+  <div class="buttons-wrapper">
+    <button
+      pButton
+      type="button"
+      label="Previous"
+      i18n-label
+      class="p-button-outlined"
+      (click)="previous()"
+    ></button>
+    <button
+      pButton
+      type="button"
+      label="Next"
+      [disabled]="productsForm.invalid || products.controls.length < 1"
+      i18n-label
+      (click)="next()"
+    ></button>
+  </div>
+</div>
+<p-divider></p-divider>
+<form [formGroup]="productsForm">
+  <table class="input-table">
+    <thead>
+      <tr>
+        <th i18n>Product</th>
+        <th i18n class="medium-cell">Quantity</th>
+        <th i18n class="medium-cell">Has Vouchers?</th>
+        <th i18n class="medium-cell">Vouchers Stock</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody formArrayName="products">
+      <ng-container
+        *ngFor="let productFrom of products.controls; let i = index"
+      >
+        <tr [formGroupName]="i">
+          <td>
+            <p-dropdown
+              [options]="availableProducts"
+              [filter]="true"
+              filterBy="name"
+              optionLabel="name"
+              optionValue="id"
+              formControlName="product"
+              (onChange)="updateOptionsDisableState($event.value, -1)"
+              optionDisabled="chosen"
+              placeholder="Please Select..."
+              i18n-placeholder
+            ></p-dropdown>
+          </td>
+
+          <td>
+            <input
+              type="number"
+              pInputText
+              formControlName="quantity"
+              [max]="
+                +productSerialsStock(i) > -1
+                  ? productSerialsStock(i)
+                  : MAX_QUANTITY
+              "
+            />
+          </td>
+          <td>
+            {{ productHasSerials(i) }}
+          </td>
+          <td>
+            {{ productSerialsStock(i) }}
+          </td>
+
+          <td>
+            <button
+              pButton
+              class="p-button-outlined p-button-danger"
+              label="Remove"
+              i18n-label
+              (click)="deleteProduct(i)"
+            ></button>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>
+          <button
+            pButton
+            type="button"
+            (click)="addProduct()"
+            [disabled]="products.controls.length === availableProducts.length"
+            class="p-button-outlined"
+            label="+"
+          ></button>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</form>

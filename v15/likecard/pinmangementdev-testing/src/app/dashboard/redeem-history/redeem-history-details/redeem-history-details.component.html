@@ -1,0 +1,102 @@
+<div class="spinner-wrapper" *ngIf="!redemptionOperation">
+  <p-progressSpinner></p-progressSpinner>
+</div>
+<ng-container *ngIf="redemptionOperation">
+  <p-card header="Redemption Operation Details" i18n-header>
+    <div class="two-groups">
+      <div class="details">
+        <div class="info-pair">
+          <span class="title" i18n>ID</span>
+          <span class="value">{{ redemptionOperation.id }}</span>
+        </div>
+        <div class="info-pair" *ngIf="redemptionOperation.product.is_prepaid">
+          <span class="title" i18n>User ID</span>
+          <span class="value">{{ redemptionOperation.user_id }}</span>
+        </div>
+
+        <div class="info-pair" *ngIf="redemptionOperation.product.is_prepaid">
+          <span class="title" i18n>Transaction ID</span>
+          <span class="value">{{ redemptionOperation.transaction_id }}</span>
+        </div>
+
+        <div class="info-pair" *ngIf="redemptionOperation.product.is_prepaid">
+          <span class="title" i18n>Redemption Value</span>
+          <span class="value">{{ redemptionOperation.value }}</span>
+        </div>
+        <div class="info-pair">
+          <span class="title" i18n>Product ID</span>
+          <span class="value">{{ redemptionOperation.product.id }}</span>
+        </div>
+        <div class="info-pair">
+          <span class="title" i18n>Product Name</span>
+          <span class="value">{{ redemptionOperation.product.name }}</span>
+        </div>
+
+        <div class="info-pair">
+          <span class="title" i18n>Voucher Number</span>
+          <span class="value">{{
+            redemptionOperation.product.serial_number
+          }}</span>
+        </div>
+        <div class="info-pair">
+          <span class="title" i18n>Website Name</span>
+          <span class="value">{{ redemptionOperation.website_name }}</span>
+        </div>
+      </div>
+    </div>
+  </p-card>
+  <p-card
+    *ngIf="redemptionOperation.product.use_skarla_portal"
+    header="Product Attributes Values"
+    i18n-header
+    styleClass="product-attributes-card"
+  >
+    <table
+      class="input-table"
+      *ngIf="
+        redemptionOperation.product_attributes_value.length > 0;
+        else noFields
+      "
+    >
+      <thead>
+        <tr>
+          <th i18n>Attribute</th>
+          <th i18n>Type</th>
+          <th i18n>Required</th>
+          <th i18n>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container
+          *ngFor="
+            let productAttribute of redemptionOperation.product_attributes_value
+          "
+        >
+          <tr>
+            <td>
+              <p>{{ productAttribute.name }}</p>
+            </td>
+            <td>
+              <p>{{ productAttribute.type }}</p>
+            </td>
+            <td>
+              <p>{{ productAttribute.required }}</p>
+            </td>
+            <td>
+              <p>{{ productAttribute.value }}</p>
+            </td>
+          </tr></ng-container
+        >
+      </tbody>
+    </table>
+    <ng-template #noFields>
+      <tr>
+        <td colspan="8">
+          <p i18n class="no-fields">
+            There are no product attributes for this product.
+          </p>
+        </td>
+      </tr>
+    </ng-template>
+  </p-card></ng-container
+>

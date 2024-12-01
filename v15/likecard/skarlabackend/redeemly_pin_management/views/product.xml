@@ -1,0 +1,166 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="redeemly_product_template_view_form_inherited">
+            <field name="name">redeemly_pin_management.product.template.view.form.inherited</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//form//sheet//notebook" position="inside">
+                    <page string="Redeemly">
+                        <group string="General">
+                            <field name="is_redeemly_product"/>
+                            <field name="has_serials"/>
+                            <field name="serials_auto_generated"/>
+                            <field name="use_skarla_portal"/>
+                            <field name="enable_stock_history" />
+                        </group>
+
+                        <group col="4" string="Owner Info" attrs="{'invisible': [('is_redeemly_product','==',False)]}">
+                            <field name="service_provider_id"/>
+                            <field name="product_specific_attribute" />
+                        </group>
+
+                        <group string="Product Attributes" attrs="{'invisible': [('is_redeemly_product','==',False)]}">
+                                <field name="attribute_definition_ids" />
+                        </group>
+
+                        <group col="4" string="Stock" attrs="{'invisible': [('is_redeemly_product','==',False)]}">
+                            <field name="product_total_stock" readonly="1"/>
+                            <field name="product_serials_stock" readonly="1"/>
+                            <field name="frozen_serial_count" readonly="1"/>
+                        </group>
+
+
+                        <group string="Media" attrs="{'invisible': [('is_redeemly_product','==',False)]}">
+                            <field name="image_url"/>
+                            <field name="how_to_use" widget='url'/>
+                        </group>
+
+                        <group string="I18n" attrs="{'invisible': [('is_redeemly_product','==',False)]}">
+                            <field name="name_ar"/>
+                            <field name="how_to_use_ar" widget='url'/>
+                        </group>
+                        <group>
+                            <field name="SKU" />
+                            <field name="is_prepaid"/>
+                            <field name="value"/>
+                            <field name="expiry_date"/>
+                            <field name="expiry_period"/>
+                            <field name="country_id"/>
+                            <field name="product_currency"/>
+                        </group>
+                        <group string="NetDragon" attrs="{'invisible': [('product_specific_attribute','!=','topup')]}">
+                            <field name="product_amount" />
+                            <field name="netdragon_product_description" />
+                            <field name="netdragon_product_category" />
+                        </group>
+                        <group string="Purchase Info" name="purchase_info">
+                            <field name="vendor_id"/>
+                            <field name="purchase_currency_id"/>
+                            <field name="purchase_cost"/>
+                        </group>
+<!--                        <group string="Foodics">-->
+<!--                            <field name="foodics_discount_type" />-->
+<!--                            <field name="foodics_discount_amount"/>-->
+<!--                            <field name="foodics_is_percent"/>-->
+<!--                            <field name="foodics_business_reference"/>-->
+<!--                            <field name="foodics_max_discount_amount"/>-->
+<!--                            <field name="foodics_include_modifiers"/>-->
+<!--                            <field name="foodics_allowed_products"/>-->
+<!--                            <field name="foodics_is_discount_taxable"/>-->
+<!--                        </group>-->
+
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="redeemly_product_template_form_view_procurement_button_inherited">
+            <field name="name">redeemly_pin_management.product.template.form.view.procurement.button.inherited</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="stock.product_template_form_view_procurement_button"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='%(stock.action_product_replenish)d']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_category_form" model="ir.ui.view">
+            <field name="name">product.category.form.inherit</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view"/>
+            <field name="arch" type="xml">
+                <group name="first" position="after">
+                    <group name="redeemly_data" >
+                        <group>
+                            <field name="name_ar"/>
+                            <field name="service_provider_id"/>
+                             <field name="image_url"/>
+                        </group>
+                    </group>
+                </group>
+            </field>
+        </record>
+        <record id="voucher_type_fields_value_populate" model="ir.actions.act_window">
+            <field name="name">Fields Value Populate</field>
+            <field name="res_model">voucher.type.fields.value.edit</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id="voucher_type_view_tree" model="ir.ui.view">
+            <field name="name">redeemly_pin_management.voucher.type.view.tree</field>
+            <field name="model">voucher.type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                </tree>
+            </field>
+        </record>
+        <record id="voucher_type_view_form" model="ir.ui.view">
+            <field name="name">redeemly_pin_management.voucher.type.view.form</field>
+            <field name="model">voucher.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="products" invisible="1"/>
+                            <field name="voucher_fields">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="type"/>
+                                    <field name="required"/>
+                                    <field name="voucher_type_id" invisible="1"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_voucher_type" model="ir.actions.act_window">
+            <field name="name">Voucher type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">voucher.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="action_product_template_tree" model="ir.actions.act_window">
+            <field name="name">Products</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[("is_redeemly_product" , "=" , True)]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_empty_folder">
+                    No Products Found
+                </p>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

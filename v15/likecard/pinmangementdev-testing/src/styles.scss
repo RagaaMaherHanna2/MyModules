@@ -1,0 +1,390 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/sass/layout/layout";
+@import "assets/sass/overrides/overrides";
+@import "src/redeemly-theme.scss";
+@import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap");
+
+:root {
+  @media screen and (max-width: 600px) {
+    font-size: 12px;
+  }
+  @media screen and (max-height: 730px) {
+    font-size: 12px;
+  }
+}
+
+.text-error-validation {
+  color: var(--red-500);
+}
+.balance {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  margin-inline-end: 1rem;
+  padding: 0.5rem 2rem;
+
+  color: var(--theme-primary-500);
+  font-weight: bold;
+
+  border: 1px solid var(--theme-primary-500);
+  border-radius: 2rem;
+
+  transition: background-color 0.3s ease-in, color 0.3s ease-in;
+  cursor: pointer;
+  i {
+    font-size: 1.5em;
+  }
+  &:hover {
+    background-color: var(--theme-primary-600);
+    color: white;
+  }
+  @media screen and (max-width: 991px) {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.required-label {
+  &::after {
+    content: "*";
+    display: inline-block;
+    margin-inline-start: 0.3rem;
+    color: #d9534f;
+  }
+}
+
+:host ::ng-deep .p-tooltip {
+  bottom: 1rem !important;
+}
+
+button:disabled {
+  cursor: not-allowed !important;
+  pointer-events: all !important;
+}
+
+:host ::ng-deep button:disabled {
+  cursor: not-allowed !important;
+  pointer-events: all !important;
+}
+
+:host ::ng-deep .size-warning {
+  color: var(--red-500);
+  font-size: 1rem;
+}
+.size-warning {
+  margin-top: -5px;
+  margin-bottom: 0.5rem;
+  color: var(--red-500);
+  font-size: 1rem;
+}
+.empty-message {
+  text-align: center;
+}
+
+.error-container {
+  margin: 0;
+  padding: 0 0.5rem;
+  li.error {
+    color: var(--red-500);
+    font-size: 0.8rem;
+    font-family: monospace;
+
+    transition: all 0.3s ease;
+    list-style: none;
+
+    &::before {
+      content: "*";
+      margin-inline-end: 0.1rem;
+    }
+  }
+}
+
+input.ng-touched.ng-invalid {
+  border-color: var(--red-500);
+}
+input.ng-touched.ng-invalid {
+  &:focus,
+  &:focus-within,
+  &:focus-visible {
+    border-color: var(--red-500);
+  }
+}
+input.ng-invalid.ng-dirty {
+  &:focus,
+  &:focus-visible,
+  &:focus-within {
+    box-shadow: 0 0 0 0.2rem var(--red-100) !important;
+  }
+}
+
+input.ng-touched.ng-valid {
+  border-color: var(--green-500);
+}
+:root {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--theme-primary-50);
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: var(--theme-primary-500);
+    transition: all 0.3s ease;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--theme-primary-600);
+  }
+}
+
+// V2
+.card-title {
+  padding: 1rem 0.5rem;
+}
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+div,
+li,
+ul,
+button,
+label {
+  font-family: var(--font-family);
+}
+
+.table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.center-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.flex-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1.7rem !important;
+}
+
+.container-800 {
+  margin-inline: auto;
+  max-width: min(800px, 95%);
+
+  .submit-button {
+    margin-top: 1rem;
+
+    width: 100%;
+    font-size: 1.3rem;
+  }
+}
+
+.two-groups {
+  display: flex;
+  gap: 1rem;
+  > * {
+    width: 100%;
+  }
+}
+@media screen and (max-width: $mediumScreen) {
+  .container {
+    .two-groups {
+      flex-direction: column;
+    }
+  }
+}
+.p-dropdown {
+  width: 100% !important;
+}
+.p-calendar {
+  width: 100% !important;
+}
+.p-calendar .p-datepicker {
+  min-width: min(100%, 400px) !important;
+}
+
+.buttons-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.end-of-line {
+  margin-left: auto;
+}
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  h3 {
+    margin: 0;
+  }
+}
+.title-card {
+  margin-bottom: 2rem;
+}
+
+.input-table,
+.summary-table {
+  width: 100%;
+  margin-bottom: 2rem;
+  border-spacing: unset;
+  > * {
+    width: 100%;
+  }
+
+  thead {
+    background-color: var(--surface-b);
+    th {
+      font-size: 1.1em;
+      font-weight: bold;
+      padding: 1rem;
+      border: 1px solid var(--surface-c);
+      text-align: start;
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        border: 1px solid var(--surface-c);
+        padding: 1rem;
+
+        .p-inputtext {
+          width: 100%;
+        }
+      }
+
+      &:nth-child(2n) {
+        background-color: var(--gray-50);
+      }
+    }
+  }
+
+  tfoot {
+    tr {
+      td {
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+.item-status {
+  --bg-color: var(--gray-100);
+  --font-color: var(--gray-600);
+
+  padding: 0.5rem 1rem;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  border: 1px solid var(--font-color);
+  border-radius: 5px;
+  text-transform: capitalize;
+  text-align: center;
+}
+.success {
+  --bg-color: var(--green-100);
+  --font-color: var(--green-600);
+}
+.warning {
+  --bg-color: var(--yellow-100);
+  --font-color: var(--yellow-600);
+}
+.danger {
+  --bg-color: var(--red-100);
+  --font-color: var(--red-600);
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.spinner-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.error-container {
+  min-height: 1.5rem;
+}
+
+.qrcode {
+  padding: 2rem !important;
+}
+.qrcode img {
+  max-width: 100%;
+}
+
+@media (max-width: $largeScreen) {
+  .md-col {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+// Top Bar Menu
+.user {
+  p {
+    color: var(--theme-primary-600);
+    margin-bottom: 0;
+  }
+  span {
+    color: var(--gray-600);
+    font-size: 0.8em;
+  }
+}
+
+.reference {
+  font-size: 0.8em;
+}
+
+.otp-input {
+  margin-right: 0px !important;
+}
+
+.otpContainer {
+  padding: 1rem !important;
+}
+.ng-otp-input-wrapper {
+  direction: ltr !important;
+  display: flex !important;
+  gap: 0.5rem !important;
+}
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 450px !important;
+}
+
+.colored-notification {
+  background-color: var(--theme-primary-50) !important;
+}
+.blue {
+  color: var(--theme-primary-600);
+}
+.p-menu.p-menu-overlay {
+  max-height: 500px; /* Set the maximum height of the menu container */
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-width: 500px;
+}

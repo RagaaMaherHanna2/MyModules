@@ -1,0 +1,37 @@
+<templates id="JsonFieldWidgetTemplate" xml:space="preserve">
+    <t t-name="JsonFieldWidget">
+            <form class="col-12">
+                <t t-foreach="widget.state.items" t-as="field">
+               
+                <div class='form-group row'>
+                    <label t-esc="field.name" t-attf-class='col-6 {{ field.type == "3" ? "form-check-label" : "col-form-label "}}'></label>
+                   
+                    <t t-if="field.type == '2'">
+                     
+                        <input t-att-value="field.value" t-att-name="field.id" t-att-id="field.id" type="number" class="form-control col-6"></input>
+                    </t>
+                    <t t-if="field.type == '3'">
+                        <t t-if="field.value == false"> 
+                            <input t-att-name="field.id" t-att-id="field.id" type="checkbox" class="form-check-input col-6"></input>
+                        </t>
+                      <t t-if="field.value == true"> 
+                        <input t-att-checked="field.value" t-att-name="field.id" t-att-id="field.id" type="checkbox" class="form-check-input col-6"></input>
+                      </t>
+                    </t>
+                    <t t-if="field.type == '1'">
+                        <input t-att-value="field.value" t-att-name="field.id" t-att-id="field.id" type="text" class="form-control col-6">
+                        </input>
+                    </t>
+                     <t t-if="field.required == true">
+                        <div hidden='true' class='h6 text-danger col-6' t-attf-id='{{ field.id}}-validation' > This field is required </div>
+                    </t>
+                </div>
+                
+                </t>
+                <button type="button" class="btn btn-fill-primary buttonSave" >Submit</button>
+            </form>
+    </t>
+
+
+</templates>
+

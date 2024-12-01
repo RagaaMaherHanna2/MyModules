@@ -1,0 +1,29 @@
+@import "src/assets/sass/layout/mixins.scss";
+// Mixins
+.column-label-input {
+  @include column-label-input();
+  margin-bottom: 1rem;
+}
+
+.redeem-link-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.preview-message {
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+  // margin-top: 10px;
+}
+.toggle-button {
+  margin-inline-end: 0;
+  margin-inline-start: auto;
+}
+.note {
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+}

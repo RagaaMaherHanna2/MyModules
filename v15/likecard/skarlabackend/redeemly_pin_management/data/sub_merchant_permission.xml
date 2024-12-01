@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="sub_merchant_permission_product" model="sub.merchant.permission">
+            <field name="name_english">View Product Access</field>
+            <field name="name_arabic">View Product Access</field>
+            <field name="code">1.1</field>
+            <field name="category">products</field>
+        </record>
+
+         <record id="sub_merchant_permission_product_pull" model="sub.merchant.permission">
+            <field name="name_english">Pull codes Access</field>
+            <field name="name_arabic">Pull codes Access</field>
+            <field name="code">1.2</field>
+            <field name="category">products</field>
+        </record>
+
+          <record id="sub_merchant_permission_report_create" model="sub.merchant.permission">
+            <field name="name_english">Create sales report</field>
+            <field name="name_arabic">Create sales report</field>
+            <field name="code">2.1</field>
+              <field name="category">reports</field>
+        </record>
+        <record id="sub_merchant_permission_report_view" model="sub.merchant.permission">
+            <field name="name_english">view sales reports</field>
+            <field name="name_arabic">view sales reports</field>
+            <field name="code">2.2</field>
+              <field name="category">reports</field>
+        </record>
+
+        <record id="sub_merchant_permission_order" model="sub.merchant.permission">
+            <field name="name_english">View Orders</field>
+            <field name="name_arabic">View Orders</field>
+            <field name="code">3</field>
+            <field name="category">orders</field>
+        </record>
+
+        <record id="sub_merchant_permission_check_prepaid_balance" model="sub.merchant.permission">
+            <field name="name_english">Check Prepaid Balance Access</field>
+            <field name="name_arabic">Check Prepaid Balance</field>
+            <field name="code">4</field>
+            <field name="category">codes</field>
+        </record>
+
+         <record id="sub_merchant_permission_invoice" model="sub.merchant.permission">
+            <field name="name_english">View Invoices</field>
+            <field name="name_arabic">View Invoices</field>
+            <field name="code">5</field>
+             <field name="category">invoices</field>
+        </record>
+
+         <record id="sub_merchant_permission_wallet_general" model="sub.merchant.permission">
+             <field name="name_english">Wallet</field>
+             <field name="name_arabic">Wallet</field>
+             <field name="code">6</field>
+             <field name="category">wallet</field>
+         </record>
+    </data>
+</odoo>

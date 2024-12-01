@@ -1,0 +1,34 @@
+.summary-container {
+  padding: 1rem;
+  .package-info {
+    margin-inline-start: -0.5rem;
+    margin-bottom: 2rem;
+
+    display: flex;
+    > * {
+      width: 100%;
+    }
+
+    .info-pair {
+      display: flex;
+      margin-bottom: 1rem;
+      .title {
+        min-width: 30ch;
+        font-weight: bold;
+      }
+      .value {
+        color: var(--theme-primary-600);
+        font-size: 1.1em;
+      }
+    }
+  }
+}
+
+:host ::ng-deep .products-header {
+  background-color: var(--theme-primary-600) !important;
+  color: #fff !important;
+}
+:host ::ng-deep .merchant-header {
+  background-color: var(--theme-primary-600) !important;
+  color: #fff !important;
+}

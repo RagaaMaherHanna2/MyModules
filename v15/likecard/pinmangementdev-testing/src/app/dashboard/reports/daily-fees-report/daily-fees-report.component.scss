@@ -1,0 +1,9 @@
+:host ::ng-deep .result-card {
+  margin-top: 2rem;
+}
+
+.top-row-container {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1rem;
+}

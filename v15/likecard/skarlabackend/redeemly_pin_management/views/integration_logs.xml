@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="netdragon_logs_view_tree" model="ir.ui.view">
+        <field name="name">netdragon_logs_view_tree</field>
+        <field name="model">netdragon.log</field>
+        <field name="arch" type="xml">
+            <tree string="netdragon_logs_tree">
+                <field name="code" />
+                <field name="username" />
+                <field name="validate_request_id" />
+                <field name="create_date" />
+            </tree>
+        </field>
+    </record>
+    <record id="netdragon_logs_view_form" model="ir.ui.view">
+        <field name="name">netdragon_logs_view_form</field>
+        <field name="model">netdragon.log</field>
+        <field name="arch" type="xml">
+            <form string="netdragon_logs_form">
+                <sheet>
+                    <group>
+                        <field name="code" />
+                        <field name="username" />
+                        <field name="validate_request_id" />
+                        <field name="validate_request_body" widget="json" />
+                        <field name="validate_response_result" widget="json" />
+                        <field name="topup_request_body" widget="json" />
+                        <field name="topup_response_body" widget="json" />
+                        <field name="create_date" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="netdragon_log_action" model="ir.actions.act_window">
+        <field name="name">Net Dragon Integration</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">netdragon.log</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+     <menuitem name="Net Dragon Integration Logs" id="netdragon_integration_logs_menu" groups="base.group_no_one"
+                  parent="redeemly_pin_management.redeemly_integration_logs"
+                  action="netdragon_log_action" sequence='1'/>
+</odoo>

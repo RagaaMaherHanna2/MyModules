@@ -1,0 +1,35 @@
+@import "src/assets/sass/layout/mixins.scss";
+
+// Mixins
+.column-label-input {
+  @include column-label-input();
+  margin-bottom: 1rem;
+}
+
+.info-pair {
+  @include info-pair();
+
+  .title {
+    min-width: 25ch;
+  }
+
+  margin-bottom: 1rem;
+}
+
+.column-label-button {
+  display: flex;
+  flex-direction: column column;
+  gap: 5rem;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+.column-label-button > label {
+  font-size: larger;
+  font-weight: 700;
+}
+.note {
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+}

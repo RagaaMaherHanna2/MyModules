@@ -1,0 +1,44 @@
+<div class="period-div" *ngIf="summaryData">
+  <p-dropdown
+    [options]="summaryPeriods"
+    optionLabel="label"
+    optionValue="name"
+    [(ngModel)]="selectedPeriod"
+    (onChange)="onPeriodChange($event)"
+    [style]="{ 'font-weight': '500', 'margin-bottom': '50px' }"
+    i18n-placeholder
+  ></p-dropdown>
+</div>
+
+<div class="statistics-grid" *ngIf="summaryData">
+  <ng-container *ngFor="let item of summaryData">
+    <div class="stat-card" [ngClass]="{ 'mid-card': item.isMidCard }">
+      <ng-container *ngIf="item.isMidCard; else statCard">
+        <div class="greeting-container">
+          <p class="greeting">{{ item.title }}</p>
+          <p class="greeting-value">{{ item.value }}</p>
+        </div>
+        <div class="user-image-container">
+          <p-avatar size="xlarge" [label]="item.value!.charAt(0)"></p-avatar>
+        </div>
+      </ng-container>
+      <ng-template #statCard>
+        <i class="pi icon" [ngClass]="item.icon"></i>
+        <p class="title">{{ item.title }}</p>
+        <p class="value">
+          {{ item.value }}
+        </p>
+      </ng-template>
+    </div>
+  </ng-container>
+  <ng-container>
+    <div class="chart-card mid-card" *ngIf="isServiceProvider">
+      <p class="title">Average Order Chart</p>
+      <p-chart
+        type="line"
+        [data]="averageOrderChartData"
+        [options]="averageOrderChartOptions"
+      ></p-chart>
+    </div>
+  </ng-container>
+</div>

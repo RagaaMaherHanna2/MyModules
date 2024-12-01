@@ -1,0 +1,220 @@
+<div class="container-800">
+  <p-card header="Create Package" i18n-header>
+    <form [formGroup]="createPackageForm" (ngSubmit)="submit($event)">
+      <h5 i18n>Basic Information</h5>
+      <div class="two-groups">
+        <div class="column-label-input">
+          <label htmlFor="name" i18n class="required-label"
+            >Package Name [EN]</label
+          >
+          <input
+            formControlName="name"
+            id="name"
+            pInputText
+            type="text"
+            placeholder="Package Name"
+            i18n-placeholder
+          />
+          <div
+            *ngIf="submitted && createPackageForm.controls['name'].invalid"
+            class="text-danger"
+          >
+            <div
+              class="text-error-validation"
+              *ngIf="createPackageForm.controls['name'].errors ?? ['required']"
+              i18n
+            >
+              Invalid Package Name !
+            </div>
+          </div>
+        </div>
+        <div class="column-label-input">
+          <label htmlFor="name_ar" class="required-label" i18n
+            >Package Name [AR]</label
+          >
+          <input
+            formControlName="name_ar"
+            id="name_ar"
+            pInputText
+            type="text"
+            placeholder="Package Name in Arabic"
+            i18n-placeholder
+          />
+          <div
+            *ngIf="submitted && createPackageForm.controls['name_ar'].invalid"
+            class="text-danger"
+          >
+            <div
+              class="text-error-validation"
+              i18n
+              *ngIf="
+                createPackageForm.controls['name_ar'].errors ?? ['required']
+              "
+            >
+              Invalid Package Name !
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column-label-input">
+        <label htmlFor="expiration" class="required-label" i18n
+          >Expiration</label
+        >
+        <p-calendar
+          dir="ltr"
+          formControlName="expiration"
+          [showTime]="true"
+          hourFormat="12"
+          [minDate]="minDate"
+          name="expiration"
+          [stepMinute]="30"
+        ></p-calendar>
+        <div
+          *ngIf="submitted && createPackageForm.controls['expiration'].invalid"
+          class="text-danger"
+        >
+          <div
+            class="text-error-validation"
+            i18n
+            *ngIf="
+              createPackageForm.controls['expiration'].errors ?? ['required']
+            "
+          >
+            Invalid expiration !
+          </div>
+        </div>
+      </div>
+
+      <p-divider></p-divider>
+      <h5 i18n>Codes Configuration</h5>
+      <div class="two-groups">
+        <div class="column-label-input">
+          <label class="required-label" i18n>Code Type</label>
+          <p-dropdown
+            id="code_type"
+            formControlName="code_type"
+            [options]="codesTypes"
+            optionValue="name"
+            optionLabel="label"
+            styleClass="dropdown"
+          ></p-dropdown>
+          <div
+            *ngIf="submitted && createPackageForm.controls['code_type'].invalid"
+            class="text-danger"
+          >
+            <div
+              class="text-error-validation"
+              *ngIf="
+                createPackageForm.controls['code_type'].errors ?? ['required']
+              "
+              i18n
+            >
+              Data Required !
+            </div>
+          </div>
+        </div>
+        <div class="column-label-input">
+          <label class="required-label" i18n>Code Separators</label>
+          <p-dropdown
+            id="code_separator"
+            formControlName="code_separator"
+            [options]="codeSeparators"
+            optionValue="name"
+            optionLabel="label"
+            styleClass="dropdown"
+          ></p-dropdown>
+          <div
+            *ngIf="
+              submitted && createPackageForm.controls['code_separator'].invalid
+            "
+            class="text-danger"
+          >
+            <div
+              class="text-error-validation"
+              *ngIf="
+                createPackageForm.controls['code_separator'].errors ??
+                ['required']
+              "
+              i18n
+            >
+              Data Required !
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="two-groups">
+        <div class="column-label-input">
+          <label htmlFor="name" i18n class="required-label"
+            >Code Duration In Days</label
+          >
+          <input
+            formControlName="code_days_duration"
+            [(ngModel)]="package.code_days_duration"
+            id="code_days_duration"
+            pInputText
+            type="number"
+            placeholder="Code Duration In Days"
+            i18n-placeholder
+          />
+          <div
+            *ngIf="
+              submitted &&
+              createPackageForm.controls['code_days_duration'].invalid
+            "
+            class="text-danger"
+          >
+            <div
+              class="text-error-validation"
+              *ngIf="
+                createPackageForm.controls['code_days_duration'].errors ??
+                ['required']
+              "
+              i18n
+            >
+              Invalid Code Duration !
+            </div>
+          </div>
+        </div>
+        <div class="column-label-input">
+          <label htmlFor="name" i18n class="required-label"
+            >Code Duration In Hours</label
+          >
+          <input
+            formControlName="code_hours_duration"
+            [(ngModel)]="package.code_hours_duration"
+            id="code_hours_duration"
+            pInputText
+            type="number"
+            placeholder="Code Duration In Hours"
+            i18n-placeholder
+          />
+          <div
+            *ngIf="
+              submitted &&
+              createPackageForm.controls['code_hours_duration'].invalid
+            "
+            class="text-danger"
+          >
+            <div
+              class="text-error-validation"
+              *ngIf="
+                createPackageForm.controls['code_hours_duration'].errors ??
+                ['required']
+              "
+              i18n
+            >
+              Invalid Code Duration !
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        pButton
+        type="submit"
+        label="Submit"
+        class="submit-button"
+        [disabled]="createPackageForm.invalid"
+      ></button>
+    </form>
+  </p-card>
+</div>

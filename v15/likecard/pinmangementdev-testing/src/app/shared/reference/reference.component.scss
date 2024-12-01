@@ -1,0 +1,27 @@
+.reference-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+
+  .reference-text {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+  }
+
+  .copy-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 1.5rem;
+    height: 1.5rem;
+
+    border-radius: 20%;
+    > i {
+      font-size: 1.2rem;
+    color: var(--indigo-600);
+    }
+    
+  }
+}

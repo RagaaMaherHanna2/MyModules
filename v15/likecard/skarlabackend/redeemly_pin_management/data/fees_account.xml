@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="fees_revenue_account" model="account.account">
+            <field name="name">Fees Income</field>
+            <field name="code">2222000</field>
+            <field name="user_type_id" ref="account.data_account_type_other_income"></field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,33 @@
+<div class="top-bar-container">
+  <div class="layout-top-bar">
+    <button #sidebarButton class="sidebar-toggle-button" (click)="layoutService.onMenuToggle()">
+      <i class="pi pi-bars"></i>
+    </button>
+    <a class="layout-top-bar-logo" routerLink="">
+      <img src="assets/images/Skarla Logo.svg" alt="Skarla Logo" />
+    </a>
+    <button #topBarMenuButton class="small-screen-button" (click)="layoutService.showProfileSidebar()">
+      <i class="pi pi-ellipsis-v"></i>
+    </button>
+
+    <div #topBarMenu class="layout-top-bar-menu" [ngClass]="{
+        'layout-top-bar-menu-mobile-active':
+          layoutService.state.profileSidebarVisible
+      }">
+      <div type="button" class="balance" *ngIf="isMerchant">
+        <span>{{ balance$ | async | currency : userCurrency }}</span>
+        <i class="pi pi-money-bill"></i>
+      </div>
+      <!-- <ng-container *ngIf="!isMerchant">
+        <p-menu #balanceMenu [popup]="true" [model]="balanceMenuModel"></p-menu
+      ></ng-container> -->
+      <i class="pi pi-bell logout" (click)="notificationsMenu.toggle($event)"></i>
+      <p-menu #notificationsMenu [popup]="true" [model]="notificationsMenuModel" appendTo="body"
+        dir="ltr" class="scrollable-menu"></p-menu>
+
+      <i class="pi pi-user logout" (click)="userMenu.toggle($event)"></i>
+      <p-menu #userMenu [popup]="true" [model]="userMenuModel" appendTo="body" dir="ltr"></p-menu>
+
+    </div>
+  </div>
+</div>

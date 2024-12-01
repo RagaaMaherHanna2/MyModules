@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="back_request_bank_transfer" model="mail.message.subtype">
+                <field name="name">Request Bank Transfer</field>
+                <field name="res_model">pin.management.bank.transfer.request</field>
+                <field name="description">Request Bank Transfer Notification ( To : Service Provider )</field>
+        </record>
+
+        <record id="back_accept_reject_bank_transfer" model="mail.message.subtype">
+                <field name="name">Accept Or Reject Bank Transfer</field>
+                <field name="res_model">pin.management.bank.transfer.request</field>
+                <field name="description">Accept Or Reject Bank Transfer Notification ( To : Merchant )</field>
+        </record>
+
+        <record id="back_pending_invoice_request" model="mail.message.subtype">
+                <field name="name">Pending Invoice Request</field>
+                <field name="res_model">pin.management.bank.transfer.request</field>
+                <field name="description">Pending Invoice Request ( To : Merchant And Service Provider )</field>
+        </record>
+
+        <record id="merchant_invited_on_product" model="mail.message.subtype">
+                <field name="name">Merchant Invited On Product From Service Provider</field>
+                <field name="res_model">merchant.package.invites</field>
+                <field name="description">Merchant Invited On Product  From Service Provider</field>
+        </record>
+
+
+
+
+    </data>
+</odoo>

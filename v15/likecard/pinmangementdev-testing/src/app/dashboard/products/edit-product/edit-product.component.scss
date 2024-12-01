@@ -1,0 +1,39 @@
+@import "src/assets/sass/layout/_mixins.scss";
+
+.column-label-input {
+  @include column-label-input();
+  margin-bottom: 1rem;
+}
+.column-label-input label {
+  font-weight: 700 !important;
+}
+
+// END Mixins
+
+.redeem-link-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: min(300px, 30rem);
+
+  padding: 1rem;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 5px;
+    border: 1px solid var(--theme-primary-100);
+  }
+}
+.toggle-button {
+  margin-inline-end: 0;
+  margin-inline-start: auto;
+}

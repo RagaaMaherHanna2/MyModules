@@ -1,0 +1,69 @@
+<div class="spinner-wrapper" *ngIf="!bankTransferRequest">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+  
+  <ng-container *ngIf="bankTransferRequest">
+      <p-card *ngIf="bill" header="Bill Details" i18n-header styleClass="container-800">
+        <div class="two-groups">
+            <div class="details">
+                <div class="info-pair">
+                    <span class="title" i18n>ID</span>
+                    <span class="value">{{ bill.id }}</span>
+                </div>
+                <div class="info-pair">
+                    <span class="title" i18n>Bill Date</span>
+                    <span class="value">{{ bill.invoice_date | date}}</span>
+                </div>
+            </div>
+        </div>
+    </p-card>
+    <p-card styleClass="container-800 mt-5" header="Payment Details" i18n-header>
+      <div class="two-groups">
+        <div class="details">
+          <div class="info-pair">
+            <span class="title" i18n>From Bank</span>
+            <span class="value">{{ bankTransferRequest.bank_name }}</span>
+          </div>
+          <div class="info-pair">
+            <span class="title" i18n>To Bank</span>
+            <span class="value">{{ bankTransferRequest.to_bank }}</span>
+          </div>
+          <div class="info-pair">
+            <span class="title" i18n>Date</span>
+            <span class="value">{{
+              bankTransferRequest.date | date : "longDate"
+            }}</span>
+          </div>
+          <div class="info-pair">
+            <span class="title" i18n>Transfer Amount</span>
+            <span class="value">{{
+              bankTransferRequest.transfer_amount | currency : userCurrency
+            }}</span>
+          </div>
+          <div class="info-pair">
+            <span class="title" i18n>Status</span>
+            <span
+              class="item-status"
+              [ngClass]="orderStatus[bankTransferRequest.state].severity"
+              >{{ orderStatus[bankTransferRequest.state].label }}</span
+            >
+          </div>
+          <div class="info-pair" *ngIf="bankTransferRequest.state !== 'draft'">
+            <span class="title" i18n>Note</span>
+            <span class="value">{{
+              bankTransferRequest.note
+            }}</span>
+          </div>
+          <button
+          (click)="downloadAttachment(bankTransferRequest)"
+            style="margin-top: 5rem; margin-inline: 2rem"
+            pButton
+            class="p-button-outlined"
+            label="Download Attachment"
+            i18n-label
+          ></button>
+        </div>
+      </div>
+    </p-card>
+  </ng-container>
+  

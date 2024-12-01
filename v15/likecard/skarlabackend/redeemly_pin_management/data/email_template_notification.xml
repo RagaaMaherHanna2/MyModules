@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <!-- general Bank Transfer Email template -->
+        <record id="general_bank_transfer_email_tempalte" model="mail.template">
+            <field name="name">{{ ctx.get('name', '') }}</field>
+            <field name="model_id" ref="model_pin_management_bank_transfer_request" />
+            <field name="subject">{{ ctx.get('name', '') }}</field>
+            <field name="email_to"> {{ ctx.get('to_email', '') }}</field>
+            <field name="body_html" type="html">
+                <div style="font-family: Verdana, Geneva, Tahoma, sans-serif;background-color: #fff#344055;overflow-x: hidden;box-sizing: border-box;">
+                    <div style="max-width: 500px;margin-top: 20px;margin-left: auto;margin-right: auto;margin-bottom: 0;background-color: #344055; color: #fff;overflow: hidden;padding-top: 30px;">
+                        <div style="padding-right: 15px; padding-left: 15px;">
+                            <p style="font-size: 24px">
+                                Dear
+                                 <t t-if="object.state=='draft'">
+                                     <span style="font-weight: bold" t-esc="ctx.get('server_provider_name', '')"></span>
+                                 </t>
+                                <t t-if="object.state!='draft'">
+                                    <span  style="font-weight: bold" t-esc="object.partner_id.name"></span>
+                                </t>
+
+
+                            </p>
+                            <p>
+                                <span t-esc="ctx.get('message')" />
+                            </p><br/>
+                            <br/>
+                            <p>
+                            </p><br/>
+                          <p>
+                                Thank you for your attention to this matter
+                            </p><br/>
+                            <p>
+                                Best regards,
+                            </p><br/>
+                            <p>
+                                Skarla Team,
+                            </p><br/>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 10px">
+                        <p>Powered by Skarla©2023</p>
+                        <p style="margin-bottom: 0">For any information you can contact us:</p>
+                        <p style="font-family: 'Courier New', Courier, monospace;margin-top: 5px;margin-bottom: 0;">info@Skarla.com</p>
+                        <p style="font-family: 'Courier New', Courier, monospace;margin-top: 0;margin-bottom: 16px;"></p>
+                    </div>
+                </div>
+            </field>
+        </record>
+
+        <!-- Invoice Request  [To : Service Provider]-->
+        <record id="pending_invoice_request_email_for_service_provider_tempalte" model="mail.template">
+            <field name="name">{{ ctx.get('name', '') }}</field>
+            <field name="model_id" ref="model_merchant_invoice_request" />
+            <field name="subject">{{ ctx.get('name', '') }}</field>
+            <field name="email_to">{{object.service_provider_id.notification_to_email}}</field>
+            <field name="body_html" type="html">
+                <div style="font-family: Verdana, Geneva, Tahoma, sans-serif;background-color: #fff#344055;overflow-x: hidden;box-sizing: border-box;">
+                    <div style="max-width: 500px;margin-top: 20px;margin-left: auto;margin-right: auto;margin-bottom: 0;background-color: #344055; color: #fff;overflow: hidden;padding-top: 30px;">
+                        <div style="padding-right: 15px; padding-left: 15px; margin-bottom: 100px">
+                            <img t-att-src="object.service_provider_id.partner_logo_url" alt="Service Provider Logo" style="border-style:none;box-sizing:border-box;vertical-align:middle;max-width: 200px; margin-left: auto; margin-right: auto; display: block; margin-bottom: 100px;" />
+                            <p style="margin:0px 0 12px 0;box-sizing:border-box;font-size: 24px">
+                                <strong style="box-sizing:border-box;font-weight:bolder;">Dear
+                                <span style="font-weight: bold" t-esc="object.service_provider_id.name" contenteditable="false" oe-keep-contenteditable=""></span>
+                                </strong>
+                            </p>
+                            <p style="margin:0px 0 12px 0;box-sizing:border-box;">
+                                 <span t-esc="ctx.get('message')" />
+                                 <br/><br/>Kindly review the attached invoice, which provides a breakdown of the charges.
+                                <br/><br/>Should you require further assistance or have any concerns regarding your merchant account, please reach out to your dedicated account
+                                 manager or our support team.
+                             </p><br/>
+                                <p style="margin:0px 0 12px 0;box-sizing:border-box;">
+                                Thank you for your cooperation and continued partnership.
+                                </p><br/>
+                                <p style="margin:0px 0 12px 0;box-sizing:border-box;">
+                                    Best regards,</p><br/>
+                                <p style="margin:0px 0 12px 0;box-sizing:border-box;">
+                                Skarla Team
+                            </p><br/>
+                        </div>
+                        <t t-if="object.state=='success'">
+                            <a t-att-href="ctx.get('server_base_url') + object.get_public_url()"
+                               style="box-sizing:border-box;text-align: center;margin-left: auto;margin-right: auto;display: block;width: 100%;padding-top: 20px;padding-bottom: 20px;background-color: #4b8f8c;text-decoration: none;color: #fff;" width="100%">Download  It</a>
+                        </t>
+                    </div>
+                    <div style="text-align: center; margin-top: 10px">
+                        <p style="margin:0px 0 12px 0;box-sizing:border-box;">Powered by Skarla©2023</p>
+                        <p style="box-sizing:border-box;margin-bottom: 0">For any information you can contact us:</p>
+                        <p style="box-sizing:border-box;font-family: 'Courier New', Courier, monospace;margin-top: 0;margin-bottom: 16px;">
+                          info@Skarla.com
+                        </p>
+                        <p style="box-sizing:border-box;font-family: 'Courier New', Courier, monospace;margin-top: 0;margin-bottom: 16px;">
+                        </p>
+                    </div>
+                </div>
+            </field>
+        </record>
+
+        <!-- Merchant Invited On Product From Service Provider-->
+        <record id="merchant_invited_on_product_from_service_provider_tempalte" model="mail.template">
+            <field name="name">{{ ctx.get('name', '') }}</field>
+            <field name="model_id" ref="model_merchant_package_invites" />
+            <field name="subject">{{ ctx.get('name', '') }}</field>
+            <field name="email_to">{{object.merchant.balance_notification_to_email}}</field>
+            <field name="body_html" type="html">
+                <div style="font-family: Verdana, Geneva, Tahoma, sans-serif;background-color: #fff#344055;overflow-x: hidden;box-sizing: border-box;">
+                    <div style="max-width: 500px;margin-top: 20px;margin-left: auto;margin-right: auto;margin-bottom: 0;background-color: #344055; color: #fff;overflow: hidden;padding-top: 30px;">
+                        <div style="padding-right: 15px; padding-left: 15px; margin-bottom: 100px">
+                            <img t-att-src="object.create_uid.partner_logo_url" alt="Service Provider Logo" style="border-style:none;box-sizing:border-box;vertical-align:middle;max-width: 200px; margin-left: auto; margin-right: auto; display: block; margin-bottom: 100px;" />
+                            <p style="margin:0px 0 12px 0;box-sizing:border-box;font-size: 24px">
+                                <strong style="box-sizing:border-box;font-weight:bolder;">Dear
+                                <span style="font-weight: bold" t-esc="object.merchant.name" contenteditable="false" oe-keep-contenteditable=""></span>
+                                </strong>
+                            </p>
+
+                            <br/>
+                            <table class="table-bordered">
+                                <tr>
+                                    <th style="padding:10px">Product Name</th>
+                                    <th style="padding:10px">Price</th>
+                                    <th style="padding:10px">Limit</th>
+                                </tr>
+                                <tr >
+                                    <td style="padding:10px"><span t-esc="object.product.name"></span> </td>
+                                    <td style="padding:10px"><span t-esc="object.price"></span> </td>
+                                    <td style="padding:10px"><span t-esc="object.limit"></span> </td>
+                                </tr>
+                            </table>
+                            <br/>
+
+
+
+                            <p style="margin:0px 0 12px 0;box-sizing:border-box;">
+                                 <span t-esc="ctx.get('message')" />
+                                 <br/><br/>Kindly review The Invitation, which provides a breakdown of the charges.
+                                <br/><br/>Should you require further assistance or have any concerns regarding your merchant account, please reach out to your dedicated account
+                                 manager or our support team.
+                             </p><br/>
+                                <p style="margin:0px 0 12px 0;box-sizing:border-box;">
+                                Thank you for your cooperation and continued partnership.
+                                </p><br/>
+                                <p style="margin:0px 0 12px 0;box-sizing:border-box;">
+                                    Best regards,</p><br/>
+                                <p style="margin:0px 0 12px 0;box-sizing:border-box;">
+                                Skarla Team
+                            </p><br/>
+                        </div>
+
+                    </div>
+                    <div style="text-align: center; margin-top: 10px">
+                        <p style="margin:0px 0 12px 0;box-sizing:border-box;">Powered by Skarla©2023</p>
+                        <p style="box-sizing:border-box;margin-bottom: 0">For any information you can contact us:</p>
+                        <p style="box-sizing:border-box;font-family: 'Courier New', Courier, monospace;margin-top: 0;margin-bottom: 16px;">
+                          info@Skarla.com
+                        </p>
+                        <p style="box-sizing:border-box;font-family: 'Courier New', Courier, monospace;margin-top: 0;margin-bottom: 16px;">
+                        </p>
+                    </div>
+                </div>
+            </field>
+        </record>
+
+
+<!--        failed crun run email template-->
+    <record id="cron_notify_runner_template" model="mail.template">
+            <field name="name">{{ ctx.get('name', '') }}</field>
+            <field name="model_id" ref="model_ir_cron" />
+            <field name="subject">{{ ctx.get('name', '') }}</field>
+            <field name="email_to"> {{ ctx.get('to_email', '') }}</field>
+            <field name="body_html" type="html">
+                <div style="font-family: Verdana, Geneva, Tahoma, sans-serif;background-color: #fff#344055;overflow-x: hidden;box-sizing: border-box;">
+                    <div style="max-width: 500px;margin-top: 20px;margin-left: auto;margin-right: auto;margin-bottom: 0;background-color: #344055; color: #fff;overflow: hidden;padding-top: 30px;">
+                        <div style="padding-right: 15px; padding-left: 15px;">
+                            <p style="font-size: 24px">
+                                Dear Administrator
+                            </p>
+                            <p>
+                                <span t-esc="ctx.get('message')" />
+                            </p><br/>
+                            <br/>
+                            <p>
+                            </p><br/>
+                          <p>
+                                Thank you for your attention to this matter
+                            </p><br/>
+                            <p>
+                                Best regards,
+                            </p><br/>
+                            <p>
+                                Skarla Team,
+                            </p><br/>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 10px">
+                        <p>Powered by Skarla©2023</p>
+                        <p style="margin-bottom: 0">For any information you can contact us:</p>
+                        <p style="font-family: 'Courier New', Courier, monospace;margin-top: 5px;margin-bottom: 0;">info@Skarla.com</p>
+                        <p style="font-family: 'Courier New', Courier, monospace;margin-top: 0;margin-bottom: 16px;"></p>
+                    </div>
+                </div>
+            </field>
+        </record>
+
+    </data>
+</odoo>

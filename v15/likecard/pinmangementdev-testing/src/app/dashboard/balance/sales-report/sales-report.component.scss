@@ -1,0 +1,23 @@
+.id {
+  font-family: "Courier New", Courier, monospace;
+}
+.amount {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  width: max-content;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+.plus {
+  background-color: var(--green-100);
+  color: var(--green-600);
+  border: 1px solid var(--green-600);
+}
+
+.minus {
+  background-color: var(--red-100);
+  color: var(--red-600);
+  border: 1px solid var(--red-600);
+}

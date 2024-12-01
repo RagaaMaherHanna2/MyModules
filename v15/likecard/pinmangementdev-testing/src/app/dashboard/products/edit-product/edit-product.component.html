@@ -1,0 +1,847 @@
+<div class="container-800">
+  <p-card i18n-header="Edit Product" header="Edit Product">
+    <div class="spinner-wrapper" *ngIf="!product.id">
+      <p-progressSpinner></p-progressSpinner>
+    </div>
+    <div *ngIf="product.id">
+      <form [formGroup]="editProductForm" (ngSubmit)="submit()">
+        <div class="two-groups">
+          <div class="column-label-input">
+            <label htmlFor="name" class="required-label" i18n
+              >Product Name [EN]</label
+            >
+            <input
+              formControlName="name"
+              id="name"
+              pInputText
+              type="text"
+              i18n-placeholder
+              placeholder="Product Name [EN]"
+            />
+            <div class="error-container">
+              <ng-container
+                *ngIf="
+                  editProductForm.controls.name.touched &&
+                  editProductForm.controls.name.invalid &&
+                  editProductForm.controls.name.errors
+                "
+                class="text-danger"
+              >
+                <div
+                  class="text-error-validation"
+                  *ngIf="editProductForm.controls.name.errors['required']"
+                  i18n
+                >
+                  Please enter a name
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="column-label-input">
+            <label htmlFor="name_ar" class="required-label" i18n
+              >Product Name [AR]</label
+            >
+            <input
+              formControlName="name_ar"
+              id="name_ar"
+              pInputText
+              type="text"
+              i18n-placeholder
+              placeholder="Product Name [AR]"
+            />
+            <div class="error-container">
+              <ng-container
+                *ngIf="
+                  editProductForm.controls.name_ar.touched &&
+                  editProductForm.controls.name_ar.invalid &&
+                  editProductForm.controls.name_ar.errors
+                "
+                class="text-danger"
+              >
+                <div
+                  class="text-error-validation"
+                  i18n
+                  *ngIf="editProductForm.controls.name_ar.errors['required']"
+                >
+                  Please enter a name
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+        <div class="two-groups">
+          <!-- Country -->
+          <div class="column-label-input">
+            <label htmlFor="country" i18n>Country</label>
+            <p-dropdown
+              [options]="countriesOptions"
+              optionLabel="country_name"
+              optionValue="country_id"
+              formControlName="country_id"
+              optionDisabled="chosen"
+              placeholder="Please Select..."
+              (onChange)="fillDenomenationandCurrency($event.value)"
+              i18n-placeholder
+            ></p-dropdown>
+          </div>
+
+          <!-- denmonation -->
+          <div class="column-label-input">
+            <label htmlFor="denomination" i18n>Denmonation</label>
+            <span class="p-3">{{ selectedCountry.country_currency_unit }}</span>
+
+            <!-- currency -->
+          </div>
+          <div class="column-label-input">
+            <label htmlFor="currency" i18n>Currency</label>
+            <span class="p-3">{{ selectedCountry.country_currency_name }}</span>
+          </div>
+        </div>
+        <p-divider />
+        <div class="two-groups">
+          <div class="column-label-input">
+            <label htmlFor="standard_price" class="required-label" i18n
+              >Cost</label
+            >
+            <input
+              name="standard_price"
+              type="number"
+              min="0"
+              formControlName="standard_price"
+              id="standard_price"
+              pInputText
+            />
+          </div>
+          <div class="column-label-input">
+            <label class="required-label" htmlFor="currency" i18n
+              >Cost Currency</label
+            >
+            <p-dropdown
+              [options]="allCurrencies"
+              optionLabel="symbol"
+              optionValue="id"
+              optionDisabled="chosen"
+              formControlName="purchase_currency_id"
+              placeholder="Please Select..."
+              i18n-placeholder
+            ></p-dropdown>
+            <div class="error-container">
+              <ng-container
+                *ngIf="
+                  editProductForm.get('purchase_currency_id')?.touched &&
+                  editProductForm.get('purchase_currency_id')?.invalid &&
+                  editProductForm.get('purchase_currency_id')?.errors
+                "
+              >
+                <p
+                  class="text-error-validation"
+                  *ngIf="
+                    (editProductForm.get('purchase_currency_id')?.errors)![
+                      'required'
+                    ]
+                  "
+                  i18n
+                >
+                  Cost currency is required. Please select a currency.
+                </p>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+        <div class="column-label-input">
+          <label class="required-label" htmlFor="category_id" i18n
+            >Product Category</label
+          >
+          <p-dropdown
+            [options]="categories"
+            optionLabel="name"
+            optionValue="id"
+            optionDisabled="chosen"
+            formControlName="category_id"
+            placeholder="Please Select..."
+            i18n-placeholder
+          ></p-dropdown>
+          <div class="error-container">
+            <ng-container
+              *ngIf="
+                editProductForm.get('category_id')?.touched &&
+                editProductForm.get('category_id')?.invalid &&
+                editProductForm.get('category_id')?.errors
+              "
+            >
+              <p
+                class="text-error-validation"
+                *ngIf="
+                  (editProductForm.get('category_id')?.errors)!['required']
+                "
+                i18n
+              >
+                Product category is required. Please select a category.
+              </p>
+            </ng-container>
+          </div>
+        </div>
+        <ng-container *ngIf="product.product_specific_attribute === 'topup'">
+          <div class="column-label-input">
+            <label class="required-label font-weight-bold" i18n
+              >Product Category</label
+            >
+            <span i18n>Top-Up</span>
+          </div>
+          <div class="column-label-input">
+            <label class="required-label font-weight-bold" i18n
+              >Parent Category</label
+            >
+            <span i18n>{{ netdragonProductCategoryName }}</span>
+          </div>
+          <div class="column-label-input">
+            <label htmlFor="type" i18n>Product Brief</label>
+            <textarea
+              rows="5"
+              cols="80"
+              pInputTextarea
+              formControlName="netdragon_product_description"
+            ></textarea>
+          </div>
+          <div class="column-label-input">
+            <label htmlFor="product_amount" class="required-label" i18n
+              >Amount</label
+            >
+            <span>{{ product.product_amount }}</span>
+          </div>
+          <div class="column-label-input">
+            <label htmlFor="currency" class="required-label" i18n
+              >Currency</label
+            >
+            <p-dropdown
+              [options]="availableCurrencies"
+              optionLabel="symbol"
+              optionValue="id"
+              optionDisabled="chosen"
+              formControlName="product_currency"
+              placeholder="Please Select..."
+              i18n-placeholder
+            ></p-dropdown>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="isPrepaid">
+          <div class="column-label-input">
+            <label htmlFor="type" class="required-label" i18n
+              >Product Type</label
+            >
+            <p *ngIf="isPrepaid" i18n>Prepaid Card</p>
+          </div>
+          <div class="column-label-input">
+            <label htmlFor="value" class="required-label" i18n>Value</label>
+            <input
+              name="value"
+              type="number"
+              min="1"
+              formControlName="value"
+              id="value"
+              pInputText
+            />
+            <div class="error-container">
+              <ng-container
+                *ngIf="
+                  editProductForm.get('value')?.touched &&
+                  editProductForm.get('value')?.invalid &&
+                  editProductForm.get('value')?.errors
+                "
+              >
+                <p
+                  class="text-error-validation"
+                  *ngIf="(editProductForm.get('value')?.errors)!['required']"
+                  i18n
+                >
+                  Value is required. Please enter a valid Value.
+                </p>
+              </ng-container>
+            </div>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="!isPrepaid">
+          <div class="column-label-input">
+            <label htmlFor="type" class="required-label" i18n
+              >Product Type</label
+            >
+            <span *ngIf="!isPrepaid"
+              >Voucher -
+              <span *ngIf="isSerialsAutoGenerated" class="font-weight-bold" i18n
+                >Auto generated By Skarla</span
+              >
+              <span
+                *ngIf="!isSerialsAutoGenerated"
+                class="font-weight-bold"
+                i18n
+                >Uploaded By Excel</span
+              >
+            </span>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="isSerialsAutoGenerated || isPrepaid">
+          <div class="two-groups" *ngIf="isBabil">
+            <div class="column-label-input">
+              <label htmlFor="expiry_period" class="required-label" i18n
+                >Expiry period in days</label
+              >
+              <input
+                name="expiry_period"
+                type="number"
+                min="1"
+                formControlName="expiry_period"
+                id="expiry_period"
+                pInputText
+              />
+              <div class="error-container">
+                <ng-container
+                  *ngIf="
+                    editProductForm.get('expiry_period')?.touched &&
+                    editProductForm.get('expiry_period')?.invalid &&
+                    editProductForm.get('expiry_period')?.errors
+                  "
+                >
+                  <p
+                    class="text-error-validation"
+                    *ngIf="
+                      (editProductForm.get('expiry_period')?.errors)![
+                        'required'
+                      ]
+                    "
+                    i18n
+                  >
+                    Expiry Period is required. Please enter a valid Value.
+                  </p>
+                </ng-container>
+              </div>
+            </div>
+            <div class="column-label-input">
+              <label htmlFor="unlimited" i18n></label>
+              <p-checkbox
+                formControlName="unlimited"
+                [binary]="true"
+                label="Unlimited"
+                i18n-label
+                (onChange)="changeLimitState($event)"
+              ></p-checkbox>
+            </div>
+          </div>
+          <div class="column-label-input" *ngIf="!isBabil">
+            <label
+              [ngClass]="{ 'required-label': isPrepaid }"
+              htmlFor="expiry_date"
+              i18n
+              >Expiry Date</label
+            >
+            <p-calendar
+              name="expiry_date"
+              [minDate]="minDate"
+              formControlName="expiry_date"
+              id="expiry_date"
+            />
+            <div class="error-container">
+              <ng-container
+                *ngIf="
+                  editProductForm.get('expiry_date')?.touched &&
+                  editProductForm.get('expiry_date')?.invalid &&
+                  editProductForm.get('expiry_date')?.errors
+                "
+              >
+                <p
+                  class="text-error-validation"
+                  *ngIf="
+                    (editProductForm.get('expiry_date')?.errors)!['required']
+                  "
+                  i18n
+                >
+                  Expiry date is required, please enter a valid expiry date.
+                </p>
+              </ng-container>
+            </div>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="codesAdditionalValues === 'foodics'">
+          <div class="column-label-input">
+            <label htmlFor="foodics_discount_type" class="required-label" i18n
+              >Discount Type</label
+            >
+            <p-dropdown
+              [options]="foodicsDiscountTypes"
+              optionLabel="label"
+              optionValue="value"
+              formControlName="foodics_discount_type"
+              i18n-placeholder
+            ></p-dropdown>
+          </div>
+          <br />
+          <!-- foodics discount amount -->
+          <div class="column-label-input">
+            <label htmlFor="foodics_discount_amount" class="required-label" i18n
+              >Discount Amount</label
+            >
+            <input
+              name="foodics_discount_amount"
+              type="number"
+              min="1"
+              formControlName="foodics_discount_amount"
+              id="foodics_discount_amount"
+              pInputText
+            />
+            <div class="error-container">
+              <ng-container
+                *ngIf="
+                  editProductForm.get('foodics_discount_amount')?.touched &&
+                  editProductForm.get('foodics_discount_amount')?.invalid &&
+                  editProductForm.get('foodics_discount_amount')?.errors
+                "
+              >
+                <p
+                  class="text-error-validation"
+                  *ngIf="
+                    (editProductForm.get('foodics_discount_amount')?.errors)![
+                      'required'
+                    ]
+                  "
+                  i18n
+                >
+                  Discount amount is required. Please enter a valid Value.
+                </p>
+              </ng-container>
+            </div>
+          </div>
+
+          <!-- Business Reference -->
+          <div class="column-label-input">
+            <label
+              htmlFor="foodics_business_reference"
+              class="required-label"
+              i18n
+              >Business Reference</label
+            >
+            <input
+              name="foodics_business_reference"
+              type="text"
+              formControlName="foodics_business_reference"
+              id="foodics_business_reference"
+              pInputText
+            />
+            <ng-container
+              *ngIf="
+                editProductForm.get('foodics_business_reference')?.touched &&
+                editProductForm.get('foodics_business_reference')?.invalid &&
+                editProductForm.get('foodics_business_reference')?.errors
+              "
+            >
+              <p
+                class="text-error-validation"
+                *ngIf="
+                  (editProductForm.get('foodics_business_reference')?.errors)![
+                    'required'
+                  ]
+                "
+                i18n
+              >
+                Business reference is required. Please enter a valid Value.
+              </p>
+            </ng-container>
+          </div>
+          <!-- max discount amount -->
+          <div class="column-label-input">
+            <label
+              htmlFor="foodics_max_discount_amount"
+              class="required-label"
+              i18n
+              >Max Discount Amount</label
+            >
+            <input
+              name="foodics_max_discount_amount"
+              type="number"
+              min="1"
+              formControlName="foodics_max_discount_amount"
+              id="foodics_max_discount_amount"
+              pInputText
+            />
+            <div class="error-container">
+              <ng-container
+                *ngIf="
+                  editProductForm.get('foodics_max_discount_amount')?.touched &&
+                  editProductForm.get('foodics_max_discount_amount')?.invalid &&
+                  editProductForm.get('foodics_max_discount_amount')?.errors
+                "
+              >
+                <p
+                  class="text-error-validation"
+                  *ngIf="
+                    (editProductForm.get('foodics_max_discount_amount')
+                      ?.errors)!['required']
+                  "
+                  i18n
+                >
+                  Max discount amount is required. Please enter a valid Value.
+                </p>
+              </ng-container>
+            </div>
+          </div>
+          <div class="two-groups">
+            <!-- Foodics is percent -->
+            <div class="column-label-input">
+              <p-checkbox
+                formControlName="foodics_is_percent"
+                [binary]="true"
+                label="Is percentage"
+                i18n-label
+              />
+            </div>
+            <!-- is include modifiers? -->
+            <div class="column-label-input">
+              <p-checkbox
+                formControlName="foodics_include_modifiers"
+                [binary]="true"
+                label="Is include modifiers"
+                i18n-label
+              />
+            </div>
+            <!-- is taxable discount -->
+            <div class="column-label-input">
+              <p-checkbox
+                formControlName="foodics_is_discount_taxable"
+                [binary]="true"
+                label="is Discount taxable "
+                i18n-label
+              />
+            </div>
+          </div>
+          <br />
+          <!-- Allowed Products -->
+          <div class="column-label-input">
+            <label i18n>Allowed Products</label>
+            <table class="input-table">
+              <thead>
+                <tr>
+                  <th i18n>Product ID</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody formArrayName="foodics_allowed_products">
+                <ng-container
+                  *ngFor="
+                    let product of foodics_allowed_products.controls;
+                    let i = index
+                  "
+                >
+                  <tr [formGroupName]="i">
+                    <td>
+                      <input
+                        type="text"
+                        pInputText
+                        formControlName="product_id"
+                      />
+                    </td>
+
+                    <td>
+                      <button
+                        pButton
+                        class="p-button-outlined p-button-danger"
+                        label="Remove"
+                        i18n-label
+                        (click)="deleteAllowedProduct(i)"
+                      ></button>
+                    </td>
+                  </tr>
+                </ng-container>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>
+                    <button
+                      pButton
+                      type="button"
+                      (click)="addAllowedProducts()"
+                      class="p-button-outlined"
+                      label="+"
+                      style="font-size: 1.5em; font-weight: bold"
+                    ></button>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <br />
+        </ng-container>
+        <div class="column-label-input">
+          <label htmlFor="SKU" class="required-label" i18n
+            >Stock-Keeping Units (SKU)</label
+          >
+          <p>{{ product.SKU }}</p>
+        </div>
+        <div class="two-groups">
+          <div class="column-label-input">
+            <label htmlFor="how_to_use" class="required-label" i18n
+              >How To Use [EN]</label
+            >
+            <input
+              formControlName="how_to_use"
+              id="how_to_use"
+              pInputText
+              type="text"
+              i18n-placeholder
+              placeholder="How To Use [EN]"
+            />
+            <div class="error-container">
+              <ng-container
+                *ngIf="
+                  editProductForm.controls.how_to_use.touched &&
+                  editProductForm.controls.how_to_use.invalid &&
+                  editProductForm.controls.how_to_use.errors
+                "
+              >
+                <p
+                  class="text-error-validation"
+                  *ngIf="editProductForm.controls.how_to_use.errors['required']"
+                  i18n
+                >
+                  Please enter an URL
+                </p>
+                <p
+                  class="text-error-validation"
+                  *ngIf="editProductForm.controls.how_to_use.errors['pattern']"
+                  i18n
+                >
+                  Please Enter a valid URL
+                </p>
+              </ng-container>
+            </div>
+          </div>
+
+          <div class="column-label-input">
+            <label htmlFor="how_to_use_ar" i18n class="required-label"
+              >How To Use [AR]</label
+            >
+            <input
+              formControlName="how_to_use_ar"
+              id="how_to_use_ar"
+              pInputText
+              type="text"
+              i18n-placeholder
+              placeholder="How To Use [AR]"
+            />
+            <div class="error-container">
+              <ng-container
+                *ngIf="
+                  editProductForm.controls.how_to_use_ar.touched &&
+                  editProductForm.controls.how_to_use_ar.invalid &&
+                  editProductForm.controls.how_to_use_ar.errors
+                "
+              >
+                <p
+                  class="text-error-validation"
+                  *ngIf="
+                    editProductForm.controls.how_to_use_ar.errors['required']
+                  "
+                  i18n
+                >
+                  Please enter an URL
+                </p>
+                <p
+                  class="text-error-validation"
+                  *ngIf="
+                    editProductForm.controls.how_to_use_ar.errors['pattern']
+                  "
+                  i18n
+                >
+                  Please Enter a valid URL
+                </p>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+        <div
+          class="column-label-input"
+          *ngIf="!isPrepaid && !isSerialsAutoGenerated"
+        >
+          <div style="display: inline-flex; align-items: center">
+            <input
+              type="checkbox"
+              formControlName="enable_stock_history"
+              id="enable_stock_history"
+            />
+            <label class="px-2" htmlFor="enable_stock_history" i18n
+              >View Stock History</label
+            >
+          </div>
+        </div>
+        <div class="two-groups">
+          <div class="column-label-input">
+            <div class="redeem-link-container">
+              <label htmlFor="direct_redeem_link" class="required-label" i18n
+                >Direct Redeem Link</label
+              >
+            </div>
+          </div>
+          <div
+            class="column-label-input"
+            *ngIf="codesAdditionalValues !== 'foodics'"
+          >
+            <p-toggleButton
+              formControlName="use_skarla_portal"
+              onLabel="Use Skarla Portal Service"
+              offLabel="Use Skarla Portal Service"
+              onIcon="pi pi-check"
+              (click)="addSkarlaRedeemLink()"
+              class="toggle-button"
+            ></p-toggleButton>
+          </div>
+        </div>
+        <div class="column-label-input">
+          <input
+            formControlName="direct_redeem_link"
+            id="direct_redeem_link"
+            pInputText
+            type="text"
+          />
+        </div>
+        <div class="error-container">
+          <ng-container
+            *ngIf="
+              editProductForm.controls.direct_redeem_link.touched &&
+              editProductForm.controls.direct_redeem_link.invalid &&
+              editProductForm.controls.direct_redeem_link.errors
+            "
+          >
+            <p
+              class="text-error-validation"
+              *ngIf="
+                editProductForm.controls.direct_redeem_link.errors['required']
+              "
+              i18n
+            >
+              Please enter an URL
+            </p>
+            <p
+              class="text-error-validation"
+              *ngIf="
+                editProductForm.controls.direct_redeem_link.errors['pattern']
+              "
+              i18n
+            >
+              Please Enter a valid URL
+            </p>
+          </ng-container>
+        </div>
+
+        <div
+          class="column-label-input"
+          *ngIf="editProductForm.controls.use_skarla_portal.value === true"
+        >
+          <label i18n>Additional Redeem Fields</label>
+          <table class="input-table">
+            <thead>
+              <tr>
+                <th i18n>Attribute</th>
+                <th i18n>Type</th>
+                <th>Required</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody formArrayName="product_attributes">
+              <ng-container
+                *ngFor="
+                  let attribute of product_attributes.controls;
+                  let i = index
+                "
+              >
+                <tr [formGroupName]="i">
+                  <td>
+                    <input type="text" pInputText formControlName="name" />
+                  </td>
+                  <td>
+                    <p-dropdown
+                      [options]="redeemFieldsTypes"
+                      optionLabel="label"
+                      optionValue="value"
+                      formControlName="type"
+                      placeholder="Please Select..."
+                      i18n-placeholder
+                    >
+                    </p-dropdown>
+                  </td>
+                  <td>
+                    <p-dropdown
+                      [options]="required"
+                      optionLabel="label"
+                      optionValue="value"
+                      formControlName="required"
+                      placeholder="Please Select..."
+                      i18n-placeholder
+                    >
+                    </p-dropdown>
+                  </td>
+                  <td>
+                    <button
+                      pButton
+                      class="p-button-outlined p-button-danger"
+                      label="Remove"
+                      i18n-label
+                      (click)="deleteField(i)"
+                    ></button>
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>
+                  <button
+                    pButton
+                    type="button"
+                    (click)="addField()"
+                    class="p-button-outlined"
+                    label="+"
+                    style="font-size: 1.5em; font-weight: bold"
+                  ></button>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <div class="two-groups md-col">
+          <div class="column-label-input">
+            <label class="required-label" i18n>Product Image</label>
+            <span class="size-warning">{{
+              maxFileSizeMessage | uppercase
+            }}</span>
+
+            <p-fileUpload
+              id="image"
+              [multiple]="false"
+              (onSelect)="onUpload($event)"
+              [showUploadButton]="false"
+              accept="image/*"
+            >
+              <ng-template pTemplate="content">
+                <ul *ngIf="selectedFile.length">
+                  <li *ngFor="let file of selectedFile">
+                    {{ file.name }} - {{ file.size }} bytes
+                  </li>
+                </ul>
+              </ng-template>
+            </p-fileUpload>
+          </div>
+          <div class="image-wrapper">
+            <img [src]="product.image" [alt]="product.name" />
+          </div>
+        </div>
+        <button
+          pButton
+          type="submit"
+          label="Submit"
+          class="submit-button"
+          i18n-label
+          [disabled]="editProductForm.invalid || !product.image"
+        ></button>
+      </form>
+    </div>
+  </p-card>
+</div>

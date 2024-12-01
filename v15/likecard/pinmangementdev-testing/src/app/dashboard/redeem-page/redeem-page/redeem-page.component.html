@@ -1,0 +1,17 @@
+<div class="container layout-wrapper">
+    <div class="spinner-wrapper" *ngIf="!SPdetails">
+        <p-progressSpinner></p-progressSpinner>
+      </div>
+    <p-card *ngIf="SPdetails" >
+        <ng-template pTemplate="header">
+            <div class="text-center pt-5" *ngIf="SPdetails">
+                <img class="logo" src="{{SPdetails.logo}}" alt="Logo">
+                <h4 class="header">{{SPdetails.portal_welcome_text}}</h4>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="content">
+            <p-steps [model]="stepsModel" [readonly]="true"></p-steps>
+            <router-outlet></router-outlet>
+        </ng-template>
+    </p-card>
+</div>

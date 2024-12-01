@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="0">
+        <record id="invoice_merchant_template_report" model="ir.actions.report">
+            <field name="name">Merchant Invoice</field>
+            <field name="model">merchant.invoice.request</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">redeemly_pin_management.invoice_merchant_template</field>
+            <field name="report_file">redeemly_pin_management.invoice_merchant_template</field>
+            <field name="print_report_name">'Invoice %s - %s - %s.pdf' %(object.merchant.name,
+                object.from_dat,object.to_date)
+            </field>
+            <field name="attachment">'Invoice %s - %s - %s.pdf' %(object.merchant.name, object.from_date,
+                object.to_date)
+            </field>
+        </record>
+        <!-- Here Template for Send Email For Redeem For Prepaid product Card  -->
+        <record id="redeem_history_email_tempalte" model="mail.template">
+            <field name="name">New Redeem Prepaid Card</field>
+            <field name="model_id" ref="model_redeem_history_prepaid"/>
+            <field name="subject">Code Redemption Confirmation</field>
+            <field name="email_to">{{object.product_serial.email_id}}</field>
+            <field name="body_html" type="html">
+                <div style="                 font-family: Verdana, Geneva, Tahoma, sans-serif;background-color: #fff#344055;overflow-x: hidden;box-sizing: border-box;">
+                    <div style="max-width: 500px;margin-top: 20px;margin-left: auto;margin-right: auto;margin-bottom: 0;background-color: #344055; color: #fff;overflow: hidden;padding-top: 30px;">
+                        <div style="padding-right: 15px; padding-left: 15px; margin-bottom: 100px">
+                            <img t-att-src="object.product_serial.product_id.service_provider_id.partner_logo_url"
+                                 alt="Service Provider Logo"
+                                 style="max-width: 200px; margin-left: auto; margin-right: auto; display: block; margin-bottom: 100px;"/>
+                            <p style="font-size: 24px">
+                                Dear Customer
+                            </p>
+                            <p>
+                                We are writing to inform you that the redemption of your code was successful. The
+                                details of the transaction are as follows:
+                            </p>
+                            <ul>
+                                <li>Redeemed Value:
+                                    <span t-esc="object.value" contenteditable="false"
+                                          oe-keep-contenteditable=""></span>
+                                </li>
+                                <li>Redemption Date:
+                                    <span t-esc="datetime.datetime.strftime(object.date, '%d-%m-%Y')"
+                                          contenteditable="false" oe-keep-contenteditable=""></span>
+                                </li>
+                            </ul>
+                            <p><br/>Please note that the redeemed value has been deducted from the total value of the
+                                code.
+                            </p>
+                            <p><br/>Should you have any inquiries or require further assistance, please do not hesitate
+                                to contact our support team.
+                            </p>
+                            <p><br/>Thank you for choosing our services.
+                            </p>
+                            <p><br/>Sincerely,
+                            </p>
+                            <p><br/>Skarla Team
+                            </p>
+                        </div>
+
+
+                    </div>
+                    <div style="text-align: center; margin-top: 10px">
+                        <p>Powered by Skarla©2023</p>
+                        <p style="margin-bottom: 0">For any information you can contact us:</p>
+                        <p style="                             font-family: 'Courier New', Courier, monospace;                             margin-top: 5px;                             margin-bottom: 0;                           ">
+                            info@Skarla.com
+                        </p>
+                        <p style="                             font-family: 'Courier New', Courier, monospace;                             margin-top: 0;                             margin-bottom: 16px;                           ">
+
+                        </p>
+                    </div>
+                </div>
+
+            </field>
+        </record>
+
+        <record id="redeem_history_for_with_email_users" model="mail.template">
+            <field name="name">New Redeem Operation</field>
+            <field name="model_id" ref="model_redeem_history_prepaid"/>
+            <field name="subject">New Redeem Operation</field>
+            <field name="email_to">{{object.product_serial.product_id.service_provider_id.email}}</field>
+            <field name="body_html" type="html">
+                <div style="                 font-family: Verdana, Geneva, Tahoma, sans-serif;background-color: #fff#344055;overflow-x: hidden;box-sizing: border-box;">
+                    <div style="max-width: 500px;margin-top: 20px;margin-left: auto;margin-right: auto;margin-bottom: 0;background-color: #344055; color: #fff;overflow: hidden;padding-top: 30px;">
+                        <div style="padding-right: 15px; padding-left: 15px; margin-bottom: 100px">
+                            <img t-att-src="object.product_serial.product_id.service_provider_id.partner_logo_url"
+                                 alt="Service Provider Logo"
+                                 style="max-width: 200px; margin-left: auto; margin-right: auto; display: block; margin-bottom: 100px;"/>
+                            <p style="font-size: 24px">
+                                Dear
+                            </p>
+                            <p>
+                                A new redemption operation has been done please visit the below link for more details
+                            </p>
+
+                            <ul>
+                                <li>Redemption Date:
+                                    <span t-esc="datetime.datetime.strftime(object.date, '%d-%m-%Y')"
+                                          contenteditable="false" oe-keep-contenteditable=""></span>
+                                </li>
+                            </ul>
+                            <p><br/>Thank you for choosing our services.
+                            </p>
+                            <p><br/>Sincerely,
+                            </p>
+                            <p><br/>Skarla Team
+                            </p>
+                        </div>
+                        <a t-att-href="ctx.get('redeem_detail_operation')"
+                           target="_new"
+                           style="box-sizing:border-box;text-align: center;margin-left: auto;margin-right: auto;display: block;width: 100%;padding-top: 20px;padding-bottom: 20px;background-color: #4b8f8c;text-decoration: none;color: #fff;"
+                           width="100%">Redemption Details
+                        </a>
+
+                    </div>
+                    <div style="text-align: center; margin-top: 10px">
+                        <p>Powered by Skarla©2023</p>
+                        <p style="margin-bottom: 0">For any information you can contact us:</p>
+                        <p style="                             font-family: 'Courier New', Courier, monospace;                             margin-top: 5px;                             margin-bottom: 0;                           ">
+                            info@Skarla.com
+                        </p>
+                        <p style="                             font-family: 'Courier New', Courier, monospace;                             margin-top: 0;                             margin-bottom: 16px;                           ">
+
+                        </p>
+                    </div>
+                </div>
+
+            </field>
+        </record>
+
+        <record id="redeem_history_for_net_dragon_client" model="mail.template">
+            <field name="name">Successful Code Redemption - Thank You!</field>
+            <field name="model_id" ref="model_redeem_history_prepaid"/>
+            <field name="subject">New Redeem Operation</field>
+            <field name="email_to">{{object.user_id}}</field>
+            <field name="body_html" type="html">
+                <div style="                 font-family: Verdana, Geneva, Tahoma, sans-serif;background-color: #fff#344055;overflow-x: hidden;box-sizing: border-box;">
+                    <div style="max-width: 500px;margin-top: 20px;margin-left: auto;margin-right: auto;margin-bottom: 0;background-color: #344055; color: #fff;overflow: hidden;padding-top: 30px;">
+                        <div style="padding-right: 15px; padding-left: 15px; margin-bottom: 100px">
+                            <img t-att-src="object.product_serial.product_id.service_provider_id.partner_logo_url"
+                                 alt="Service Provider Logo"
+                                 style="max-width: 200px; margin-left: auto; margin-right: auto; display: block; margin-bottom: 100px;"/>
+                            <p style="font-size: 24px">
+                                Dear
+                            </p>
+                            <p>
+                                the code redemption process has been successfully completed.
+                            </p>
+
+                            <ul>
+                                <li>Redemption Date:
+                                    <span t-esc="datetime.datetime.strftime(object.date, '%d-%m-%Y')"
+                                          contenteditable="false" oe-keep-contenteditable=""></span>
+                                </li>
+                            </ul>
+                            <p><br/>Thank you for choosing our services.
+                            </p>
+                            <p><br/>Sincerely,
+                            </p>
+                            <p><br/>Skarla Team
+                            </p>
+                        </div>
+
+                    </div>
+                    <div style="text-align: center; margin-top: 10px">
+                        <p>Powered by Skarla©2023</p>
+                        <p style="margin-bottom: 0">For any information you can contact us:</p>
+                        <p style="                             font-family: 'Courier New', Courier, monospace;                             margin-top: 5px;                             margin-bottom: 0;                           ">
+                            info@Skarla.com
+                        </p>
+                        <p style="font-family: 'Courier New', Courier, monospace;margin-top: 0;margin-bottom: 16px;">
+
+                        </p>
+                    </div>
+                </div>
+
+            </field>
+        </record>
+        <!-- Here Template for Send Email For Merchant  For Invoice Request  -->
+        <record id="merchant_invoice_request_email_tempalte" model="mail.template">
+            <field name="name">New Merchant Invoice Request</field>
+            <field name="model_id" ref="model_merchant_invoice_request"/>
+            <field name="subject">Invoice Issued from {{object.service_provider_id.name}}</field>
+            <field name="email_to">{{object.merchant.login}}</field>
+            <field name="body_html" type="html">
+
+                <div style="                 font-family: Verdana, Geneva, Tahoma, sans-serif;background-color: #fff#344055;overflow-x: hidden;box-sizing: border-box;">
+                    <div style="max-width: 500px;margin-top: 20px;margin-left: auto;margin-right: auto;margin-bottom: 0;background-color: #344055; color: #fff;overflow: hidden;padding-top: 30px;">
+                        <div style="padding-right: 15px; padding-left: 15px; margin-bottom: 100px">
+                            <img t-att-src="object.service_provider_id.partner_logo_url" alt="Service Provider Logo"
+                                 style="border-style:none;box-sizing:border-box;vertical-align:middle;max-width: 200px; margin-left: auto; margin-right: auto; display: block; margin-bottom: 100px;"/>
+                            <p style="margin:0px 0 12px 0;box-sizing:border-box;font-size: 24px">
+                                <strong style="box-sizing:border-box;font-weight:bolder;">Dear
+                                    <span style="font-weight: bold" t-esc="object.merchant.name" contenteditable="false"
+                                          oe-keep-contenteditable=""></span>
+                                </strong>
+                            </p>
+                            <p style="margin:0px 0 12px 0;box-sizing:border-box;">
+                                We want to inform you that an invoice has been issued for your merchant account.
+                                <br/>
+                                <br/>Kindly review the attached invoice, which provides a breakdown of the charges.
+                                <br/>
+                                <br/>Should you require further assistance or have any concerns regarding your merchant
+                                account, please reach out to your dedicated account
+                                manager or our support team.
+                            </p>
+                            <br/>
+                            <p style="margin:0px 0 12px 0;box-sizing:border-box;">
+                                Thank you for your cooperation and continued partnership.
+                            </p>
+                            <br/>
+                            <p style="margin:0px 0 12px 0;box-sizing:border-box;">
+                                Best regards,
+                            </p>
+                            <br/>
+                            <p style="margin:0px 0 12px 0;box-sizing:border-box;">
+                                Skarla Team
+                            </p>
+                            <br/>
+                        </div>
+                        <a t-att-href="ctx.get('server_base_url') + object.get_public_url()"
+                           style="box-sizing:border-box;                         text-align: center;                         margin-left: auto;                         margin-right: auto;                         display: block;                         width: 100%;                         padding-top: 20px;                         padding-bottom: 20px;                         background-color: #4b8f8c;                         text-decoration: none;                         color: #fff;                       "
+                           width="100%">Download It
+                        </a>
+                    </div>
+                    <div style="text-align: center; margin-top: 10px">
+                        <p style="margin:0px 0 12px 0;box-sizing:border-box;">Powered by Skarla©2023</p>
+                        <p style="box-sizing:border-box;margin-bottom: 0">For any information you can contact us:</p>
+                        <p style="box-sizing:border-box;                             font-family: 'Courier New', Courier, monospace;                             margin-top: 5px;                             margin-bottom: 0;                           ">
+                            info@Skarla.com
+                        </p>
+                        <p style="box-sizing:border-box;                             font-family: 'Courier New', Courier, monospace;                             margin-top: 0;                             margin-bottom: 16px;                           ">
+                        </p>
+                    </div>
+                </div>
+            </field>
+        </record>
+        <record id="skarla_reset_password" model="mail.template">
+            <field name="name">Skarla Rest Password</field>
+            <field name="model_id" ref="model_res_users"/>
+            <field name="subject">Reset Password</field>
+            <field name="email_to">{{object.login}}</field>
+            <field name="body_html" type="html">
+                <div style="
+                font-family: Verdana, Geneva, Tahoma, sans-serif;background-color: #fff#344055;overflow-x: hidden;box-sizing: border-box;">
+                    <div style="max-width: 500px;margin-top: 20px;margin-left: auto;margin-right: auto;margin-bottom: 0;background-color: #344055; color: #fff;overflow: hidden;padding-top: 30px;">
+                        <div
+                                style="padding-right: 15px; padding-left: 15px;"
+                        >
+
+                            <p style="font-size: 24px">
+                                Dear
+                                <span style="font-weight: bold" t-esc="object.partner_id.name"></span>
+                            </p>
+                            <p>
+                                Your password reset successfully, please use below link and token to change it.
+                            </p>
+                            <br/>
+                            <p>
+                                <span t-esc="ctx.get('token')"/>
+                            </p>
+                            <br/>
+                            <p>
+                                <strong>Please Note That The Lifetime For This Token Is One Hour.</strong>
+                            </p>
+                            <p>
+                                <a t-att-href="ctx.get('front_url')"
+                                   style="box-sizing:border-box;text-align: center;margin-left: auto;margin-right: auto; display: block; width: 100%;padding-top: 20px;padding-bottom: 20px;background-color: #4b8f8c;text-decoration: none;color: #fff;"
+                                   width="100%" target="_blank">Reset Password
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 10px">
+                        <p>Powered by Skarla&#169;2023</p>
+                        <p style="margin-bottom: 0">For any information you can contact us:</p>
+                        <p
+                                style="
+                            font-family: 'Courier New', Courier, monospace;
+                            margin-top: 5px;
+                            margin-bottom: 0;
+                          "
+                        >
+                            info@Skarla.com
+                        </p>
+                        <p
+                                style="
+                            font-family: 'Courier New', Courier, monospace;
+                            margin-top: 0;
+                            margin-bottom: 16px;
+                          "
+                        >
+
+                        </p>
+                    </div>
+                </div>
+            </field>
+        </record>
+        <record id="skarla_refresh_2f" model="mail.template">
+            <field name="name">Skarla Refresh 2 Factor</field>
+            <field name="model_id" ref="model_res_users"/>
+            <field name="subject">Refresh 2 Factor</field>
+            <field name="email_to">{{object.login}}</field>
+            <field name="body_html" type="html">
+                <div style="
+                font-family: Verdana, Geneva, Tahoma, sans-serif;background-color: #fff#344055;overflow-x: hidden;box-sizing: border-box;">
+                    <div style="max-width: 500px;margin-top: 20px;margin-left: auto;margin-right: auto;margin-bottom: 0;background-color: #344055; color: #fff;overflow: hidden;padding-top: 30px;">
+                        <div
+                                style="padding-right: 15px; padding-left: 15px;"
+                        >
+
+                            <p style="font-size: 24px">
+                                Dear
+                                <span style="font-weight: bold" t-esc="object.partner_id.name"></span>
+                            </p>
+                            <p>
+                                Your Qr Code Will be Changed With Six Code, please use below link and Six Code to change
+                                it.
+                            </p>
+                            <br/>
+                            <p>
+                                <span t-esc="ctx.get('last_six_digit_for_2f')"/>
+                            </p>
+                            <br/>
+                            <p>
+                                <strong>Please Note That The Lifetime For This Six Digits Code Is One Hour.</strong>
+                            </p>
+                            <p>
+                                <a t-att-href="ctx.get('front_url')"
+                                   style="box-sizing:border-box;text-align: center;margin-left: auto;margin-right: auto; display: block; width: 100%;padding-top: 20px;padding-bottom: 20px;background-color: #4b8f8c;text-decoration: none;color: #fff;"
+                                   width="100%" target="_blank">Refresh QR Code
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 10px">
+                        <p>Powered by Skarla&#169;2022</p>
+                        <p style="margin-bottom: 0">For any information you can contact us:</p>
+                        <p
+                                style="
+                            font-family: 'Courier New', Courier, monospace;
+                            margin-top: 5px;
+                            margin-bottom: 0;
+                          "
+                        >
+                            info@Skarla.com
+                        </p>
+                        <p
+                                style="
+                            font-family: 'Courier New', Courier, monospace;
+                            margin-top: 0;
+                            margin-bottom: 16px;
+                          "
+                        >
+
+                        </p>
+                    </div>
+                </div>
+            </field>
+        </record>
+        <record id="low_balance_email_tempalte" model="mail.template">
+            <field name="name">Low Balance Notification</field>
+            <field name="model_id" ref="model_res_users"/>
+            <field name="subject">Low Balance Notification</field>
+            <field name="email_to">{{object.balance_notification_to_email}}</field>
+            <field name="body_html" type="html">
+                <div style="
+                font-family: Verdana, Geneva, Tahoma, sans-serif;background-color: #fff#344055;overflow-x: hidden;box-sizing: border-box;">
+                    <div style="max-width: 500px;margin-top: 20px;margin-left: auto;margin-right: auto;margin-bottom: 0;background-color: #344055; color: #fff;overflow: hidden;padding-top: 30px;">
+                        <div
+                                style="padding-right: 15px; padding-left: 15px;"
+                        >
+
+                            <p style="font-size: 24px">
+                                Dear
+                                <span style="font-weight: bold" t-esc="object.partner_id.name"></span>
+                            </p>
+                            <p>
+                                I hope this email finds you well.
+                            </p>
+                            <br/>
+                            <p>
+                                Your balance has fallen below the specified threshold, to ensure uninterrupted services,
+                                we recommend that you take the necessary steps to replenish your account balance as soon
+                                as possible.
+                            </p>
+                            <br/>
+                            <p>
+                                Thank you for your attention to this matter
+                            </p>
+                            <br/>
+                            <p>
+                                Best regards,
+                            </p>
+                            <br/>
+                            <p>
+                                Skarla Team,
+                            </p>
+                            <br/>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 10px">
+                        <p>Powered by Skarla&#169;2022</p>
+                        <p style="margin-bottom: 0">For any information you can contact us:</p>
+                        <p
+                                style="
+                            font-family: 'Courier New', Courier, monospace;
+                            margin-top: 5px;
+                            margin-bottom: 0;
+                          "
+                        >
+                            info@Skarla.com
+                        </p>
+                        <p
+                                style="
+                            font-family: 'Courier New', Courier, monospace;
+                            margin-top: 0;
+                            margin-bottom: 16px;
+                          "
+                        >
+
+                        </p>
+                    </div>
+                </div>
+            </field>
+        </record>
+        <record id="batch_serial_email_template" model="mail.template">
+            <field name="name">Batch Serial Email</field>
+            <field name="model_id" ref="model_batch_serials"/>
+            <field name="subject">Batch Serials {{object.batch_sequence}}</field>
+            <field name="email_to">{{object.serial_ids[0].product_id.service_provider_id.login}}</field>
+            <field name="body_html" type="html">
+                <div style="font-family: Verdana, Geneva, Tahoma, sans-serif;background-color: #fff#344055;overflow-x: hidden;box-sizing: border-box;">
+                    <div style="max-width: 500px;margin-top: 20px;margin-left: auto;margin-right: auto;margin-bottom: 0;background-color: #344055; color: #fff;overflow: hidden;padding-top: 30px;">
+                        <div style="padding-right: 15px; padding-left: 15px; margin-bottom: 100px">
+                            <p style="margin:0px 0 12px 0;box-sizing:border-box;font-size: 24px">
+                                <strong style="box-sizing:border-box;font-weight:bolder;">Dear
+                                    <span t-esc="object.serial_ids[0].product_id.service_provider_id.name + ','"/>
+                                </strong>
+                            </p>
+                            <p style="margin:0px 0 12px 0;box-sizing:border-box;">
+                                I hope this email finds you well.
+                            </p>
+                            <br/>
+                            <p style="margin:0px 0 12px 0;box-sizing:border-box;">
+                                Please find attached the batch serials of product:
+                                <span t-esc="object.serial_ids[0].product_id.name"/>
+                            </p>
+                            <br/>
+                            <p style="margin:0px 0 12px 0;box-sizing:border-box;">
+                                Thank you.
+                            </p>
+                            <br/>
+                            <p style="margin:0px 0 12px 0;box-sizing:border-box;">
+                                Best regards,
+                            </p>
+                            <br/>
+                            <p style="margin:0px 0 12px 0;box-sizing:border-box;">
+                                Skarla Team
+                            </p>
+                            <br/>
+                        </div>
+                        <a t-att-href="ctx.get('server_base_url') + object.get_public_url()"
+                           style="box-sizing:border-box;text-align: center;margin-left: auto;margin-right: auto;display: block;width: 100%;padding-top: 20px;padding-bottom: 20px;background-color: #4b8f8c;text-decoration: none;color: #fff;"
+                           width="100%">Download It
+                        </a>
+                    </div>
+                    <div style="text-align: center; margin-top: 10px">
+                        <p style="margin:0px 0 12px 0;box-sizing:border-box;">Powered by Skarla©2023</p>
+                        <p style="box-sizing:border-box;margin-bottom: 0">For any information you can contact us:</p>
+                        <p style="box-sizing:border-box;font-family: 'Courier New', Courier, monospace;margin-top: 5px;margin-bottom: 0;">
+                            info@Skarla.com
+                        </p>
+                        <p style="box-sizing:border-box;font-family: 'Courier New', Courier, monospace; margin-top: 0;margin-bottom: 16px;">
+                        </p>
+                    </div>
+                </div>
+            </field>
+        </record>
+
+        <template id="invoice_merchant_template">
+            <t t-call="web.html_container">
+
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="o" t-value="o.with_context(lang=lang)"/>
+                    <t t-if="not o" t-set="o" t-value="doc"/>
+
+                    <t t-if="not company">
+                        <!-- Multicompany -->
+                        <t t-if="company_id">
+                            <t t-set="company" t-value="company_id"/>
+                        </t>
+                        <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                            <t t-set="company" t-value="o.company_id.sudo()"/>
+                        </t>
+                        <t t-else="else">
+                            <t t-set="company" t-value="res_company"/>
+                        </t>
+                    </t>
+
+
+                    <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                         t-att-data-oe-lang="o and o.env.context.get('lang')">
+                        <div class="page">
+
+                            <div style="flex: 1; padding: 0 40px; height:230px">
+
+                                <div style="width: 50%; float: left;">
+                                    <img style="max-width:128px;max-height:128px"
+                                         t-att-src="image_data_uri(o.service_provider_id.image_1920) if o.service_provider_id.image_1920 else False"/>
+                                    <p>
+                                        <b t-esc="o.service_provider_id.name"></b>
+                                    </p>
+                                </div>
+                                <div style="width: 50%; float: right; padding-top: 50px;">
+                                    <h2 style="float: right; ">
+                                        <span>Invoice</span>
+                                        <span t-esc="str(o.request_date.year) + '/' + str(o.invoice_number)"/>
+                                    </h2>
+                                </div>
+
+                            </div>
+
+
+                            <div style="flex: 1; padding: 0 25px;">
+                                <div style="padding: 0 25px;">
+                                    <div style="width: 50%; float: left;">
+                                        <h6 style="line-height: 1.8;">
+
+                                            <span style="font-size: 14px;">Invoice to:</span>
+                                            <span style="font-size: 14px;" t-esc="o.merchant.name"/>
+                                            <br/>
+
+                                        </h6>
+                                    </div>
+                                    <div style="width: 50%; float: right;">
+                                        <h6 style="line-height: 1.8;float: right;">
+                                            <span style="font-size: 14px;">From Date:
+                                                <span style="font-size: 14px;"
+                                                      t-esc="o.from_date.strftime('%Y-%m-%d') + ' 00:00:00'"/>
+                                            </span>
+                                            <br/>
+                                            <span style="font-size: 14px;">To Date:</span>
+                                            <span style="font-size: 14px;"
+                                                  t-esc="o.to_date.strftime('%Y-%m-%d') + ' 23:59:59 UTC'"/>
+                                            <br/>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <table style=" width: 90%; border-collapse: collapse; line-height: 2; margin-left: 40px;  margin-right: 40px;"
+                                   class="table table-sm o_main_table" name="invoice_line_table">
+
+                                <thead>
+                                    <tr>
+                                        <th style=" border: 1px solid;" name="th_description" class="text-left">
+                                            <span>Description</span>
+                                        </th>
+                                        <th style=" border: 1px solid;" name="th_quantity" class="text-right">
+                                            <span>Quantity</span>
+                                        </th>
+                                        <th style=" border: 1px solid;" name="th_priceunit" t-attf-class="text-right">
+                                            <span>Unit Price</span>
+                                        </th>
+                                        <th style=" border: 1px solid;" name="th_tax" t-attf-class="text-right">
+                                            <span>Tax</span>
+                                        </th>
+                                        <th style=" border: 1px solid;" name="th_priceunit" t-attf-class="text-right">
+                                            <span>Total Price</span>
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody class="invoice_tbody">
+                                    <t t-set="total_value" t-value="0"/>
+                                    <t t-set="total_tax" t-value="0"/>
+                                    <t t-foreach="data" t-as="line">
+
+                                        <tr t-att-class="'bg-200 font-weight-bold o_line_section' 'font-italic o_line_note' ">
+                                            <t name="account_invoice_line_accountable">
+                                                <td style="border: 1px solid; text-align:center"
+                                                    name="account_invoice_line_name">
+                                                    <span t-esc="line['name']" t-options="{'widget': 'text'}"/>
+                                                </td>
+                                                <td style="border: 1px solid; text-align:center">
+                                                    <span t-esc="line['quantity_subtotal']"/>
+                                                </td>
+                                                <td style="border: 1px solid; text-align:right; padding-right:10px"
+                                                    t-attf-class="text-right">
+                                                    <span class="text-nowrap"
+                                                          t-esc="str(line['price_unit']) +' '+ o.get_sp_currency()"/>
+                                                </td>
+                                                <td style="border: 1px solid; text-align:right; padding-right:10px"
+                                                    t-attf-class="text-right">
+                                                    <t t-if="str(line['merchant_tax']) != None">
+                                                        <span class="text-nowrap" t-esc="str(line['merchant_tax'])"/>
+                                                    </t>
+                                                    <t t-if="str(line['merchant_tax']) == None">
+                                                        <span class="text-nowrap"/>
+                                                    </t>
+
+                                                </td>
+                                                <td style="border: 1px solid; text-align:right; padding-right:10px">
+                                                    <span class="text-nowrap"
+                                                          t-esc="str(line['price_subtotal'])+' '+ o.get_sp_currency()"/>
+                                                </td>
+                                            </t>
+                                        </tr>
+                                        <t t-set="total_value" t-value="total_value + line['price_subtotal']"/>
+                                        <t t-set="total_tax" t-value="total_tax + line['price_tax']"/>
+
+                                    </t>
+                                    <div class="clearfix">
+                                        <div id="total" class="row">
+                                            <div t-attf-class="#{'col-6' if report_type != 'html' else 'col-sm-7 col-md-6'} ml-auto">
+                                                <table style="float: right; margin-top: 0px;line-height: 1; margin-right:40px;">
+
+                                                    <tr style="font-size:12px;">
+                                                        <td style="font-weight:bold; padding:6px;">
+                                                            <strong t-esc="'Total Untaxed Amount'"/>
+                                                        </td>
+                                                        <td style="padding:6px; text-align:right;  border-bottom: 1pt solid black;">
+                                                            <b>
+                                                                <span t-esc="str(total_value)+' '+o.get_sp_currency()"/>
+                                                            </b>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr style="font-size:12px;">
+                                                        <td style="font-weight:bold;padding:6px;">
+                                                            <strong t-esc="'Total Tax'"/>
+                                                        </td>
+                                                        <td style="padding:6px; text-align:right;  border-bottom: 1pt solid black;"
+                                                            class="text-right o_price_total">
+                                                            <b>
+                                                                <span t-esc="str(total_tax)+' '+o.get_sp_currency()"/>
+                                                            </b>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr style="font-size:16px;">
+                                                        <td style="font-weight:bold; padding:6px;">
+                                                            <strong t-esc="'Total Amount'"/>
+                                                        </td>
+                                                        <td style="padding:6px; text-align:right;  border-bottom: 1pt solid black;">
+                                                            <b>
+                                                                <span t-esc="str(total_value + total_tax)+' '+o.get_sp_currency()"/>
+                                                            </b>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <record id="successful_topup_operation_template" model="mail.template">
+            <field name="name">Successful Top-up Operation</field>
+            <field name="model_id" ref="model_product_template"/>
+            <field name="subject">Successful Top-up for Product {{object.name}}</field>
+            <field name="body_html" type="html">
+                <div style="
+                font-family: Verdana, Geneva, Tahoma, sans-serif;background-color: #fff#344055;overflow-x: hidden;box-sizing: border-box;">
+                    <div style="max-width: 500px;margin-top: 20px;margin-left: auto;margin-right: auto;margin-bottom: 0;background-color: #344055; color: #fff;overflow: hidden;padding-top: 30px;">
+                        <div
+                                style="padding-right: 15px; padding-left: 15px;"
+                        >
+
+                            <p>Hello,</p>
+                            <p>
+                                I hope this email finds you well.
+                            </p>
+                            <br/>
+                            <p>Your top-up operation was successful for the following product:</p>
+                            <ul>
+                                <li>
+                                    <strong>Product Name:</strong>
+                                  <span t-esc="object.name"></span>
+                                </li>
+                                <li>
+                                    <strong>SKU:</strong>
+                                    <span t-esc="object.SKU"></span>
+                                </li>
+                            </ul>
+
+                            <p>Thank you for choosing our services.</p>
+                            <br/>
+                            <p>
+                                Best regards,
+                            </p>
+                            <br/>
+                            <p>
+                                Skarla Team,
+                            </p>
+                            <br/>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 10px">
+                        <p>Powered by Skarla&#169;2022</p>
+                        <p style="margin-bottom: 0">For any information you can contact us:</p>
+                        <p
+                                style="
+                            font-family: 'Courier New', Courier, monospace;
+                            margin-top: 5px;
+                            margin-bottom: 0;
+                          "
+                        >
+                            info@Skarla.com
+                        </p>
+                        <p
+                                style="
+                            font-family: 'Courier New', Courier, monospace;
+                            margin-top: 0;
+                            margin-bottom: 16px;
+                          "
+                        >
+
+                        </p>
+                    </div>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

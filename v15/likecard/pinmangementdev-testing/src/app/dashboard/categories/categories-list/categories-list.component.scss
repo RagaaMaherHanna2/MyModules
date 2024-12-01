@@ -1,0 +1,59 @@
+.custom-card {
+  height: 100%; /* Ensure the card takes full height of its container */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+:host ::ng-deep .custom-card .p-card-body {
+  padding: 0 !important;
+  flex-grow: 1;
+}
+
+:host ::ng-deep .p-card-content {
+  padding: 0.25rem 0;
+}
+
+.card-image {
+  width: 100%;
+  object-fit: cover;
+  padding: 10px 10px 0px 10px;
+  border-radius: 16px;
+  height: 100px;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.animated-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animated-card:hover {
+  transform: scale(1.05);
+}
+
+/* Initially hide the edit icon */
+.edit-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 4px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Make the edit icon visible on hover */
+.custom-card:hover .edit-icon {
+  opacity: 1;
+}
+
+.edit-icon i {
+  color: white;
+  font-size: 1em;
+}

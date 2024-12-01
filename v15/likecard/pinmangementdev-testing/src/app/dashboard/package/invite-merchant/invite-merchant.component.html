@@ -1,0 +1,108 @@
+<div class="container-800">
+  <p-card header="Invite Merchant" i18n-header>
+    <form [formGroup]="inviteMerchantForm" (ngSubmit)="submit()">
+      <div class="two-groups">
+        <div class="column-label-input">
+          <label htmlFor="merchant" i18n class="required-label"
+            >Merchant Reference</label
+          >
+          <span class="p-input-icon-left">
+            <i [class]="fetchingMerchant ? 'pi pi-spin pi-spinner' : ''"></i>
+            <input
+              formControlName="merchant"
+              pInputText
+              id="merchant"
+              type="text"
+              placeholder="Merchant Reference"
+              i18n-placeholder
+              (blur)="getMerchantInfo($event)"
+            />
+          </span>
+        </div>
+        <div class="column-label-input">
+          <label htmlFor="merchant_name" i18n>Merchant Name</label>
+          <p>{{ merchantInfo.name }}</p>
+        </div>
+      </div>
+      <div class="two-groups">
+        <div class="column-label-input">
+          <label htmlFor="price" class="required-label" i18n>Price</label>
+          <input
+            formControlName="price"
+            id="price"
+            pInputText
+            type="number"
+            placeholder="Price For This Merchant"
+            i18n-placeholder
+          />
+          <div
+            *ngIf="submitted && inviteMerchantForm.controls['price'].invalid"
+            class="text-danger"
+          >
+            <div
+              class="text-error-validation"
+              i18n
+              *ngIf="
+                inviteMerchantForm.controls['price'].errors ?? ['required']
+              "
+            >
+              Invalid Price !
+            </div>
+          </div>
+        </div>
+        <div class="column-label-input">
+          <label htmlFor="limit" class="required-label" i18n>Limit</label>
+          <div class="two-groups">
+            <input
+              formControlName="limit"
+              id="limit"
+              pInputText
+              type="number"
+            />
+            <p-checkbox
+              formControlName="unlimited"
+              [binary]="true"
+              label="Unlimited"
+              i18n-label
+              (onChange)="changeLimitState($event)"
+            >
+            </p-checkbox>
+          </div>
+          <div
+            *ngIf="submitted && inviteMerchantForm.controls['price'].invalid"
+            class="text-danger"
+          >
+            <div
+              class="text-error-validation"
+              i18n
+              *ngIf="
+                inviteMerchantForm.controls['price'].errors ?? ['required']
+              "
+            >
+              Invalid Limit !
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="p-input-icon-left flex gap-1 flex-column md:w-6">
+        <label htmlFor="merchant" i18n>Tax</label>
+        <p-dropdown
+        i18n-placeholder
+        placeholder="Tax"
+        [options]="taxOptions"
+        optionLabel="optionLabel"
+        optionValue="id"
+        formControlName="tax"
+        ></p-dropdown>
+      </span>
+      <button
+        pButton
+        type="submit"
+        label="Submit"
+        class="submit-button"
+        i18n-label
+        [disabled]="inviteMerchantForm.untouched || inviteMerchantForm.invalid"
+      ></button>
+    </form>
+  </p-card>
+</div>

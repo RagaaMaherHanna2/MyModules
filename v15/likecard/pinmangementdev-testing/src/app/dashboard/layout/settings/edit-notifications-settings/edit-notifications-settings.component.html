@@ -1,0 +1,147 @@
+<div class="container-800">
+  <p-card
+    styleClass="title-card"
+    i18n-header
+    header="Edit Notifcations Settings"
+  >
+  </p-card>
+  <p-card>
+    <div
+      class="spinner-wrapper"
+      *ngIf="!merchantNotificationsSettings && !spNotificationsSettings"
+    >
+      <p-progressSpinner></p-progressSpinner>
+    </div>
+    <form
+      *ngIf="spNotificationsSettings && isServiceProvider"
+      [formGroup]="stockNotificationsForm"
+      (ngSubmit)="submitStock()"
+    >
+      <div class="two-groups">
+        <div class="column-label-button mt-3">
+          <label htmlFor="enable_stock_notification" i18n
+            >Stock Limit Notification</label
+          >
+        </div>
+        <div class="column-label-button mt-3">
+          <p-toggleButton
+            formControlName="enable_stock_notification"
+            onLabel="Disable"
+            offLabel="Enable"
+          ></p-toggleButton>
+        </div>
+      </div>
+      <div *ngIf="stockNotificationsForm.value.enable_stock_notification">
+        <div class="two-groups">
+          <div class="column-label-input mt-3">
+            <label htmlFor="stock_limit" i18n>Stock Limit</label>
+          </div>
+          <div class="column-label-input">
+            <input
+              formControlName="stock_limit"
+              id="stock_limit"
+              pInputText
+              type="number"
+              i18n-placeholder
+              placeholder="Stock Limit"
+            />
+          </div>
+        </div>
+        <div class="two-groups">
+          <div class="column-label-input mt-3">
+            <label htmlFor="stock_notification_to_email" i18n
+              >Stock Limit Notification Email</label
+            >
+          </div>
+
+          <div class="column-label-input">
+            <input
+              formControlName="stock_notification_to_email"
+              id="stock_notification_to_email"
+              pInputText
+              type="email"
+            />
+          </div>
+        </div>
+        <span i18n class="note"
+          >Note: If you do not specify an email address for notifications, they
+          will be sent to your personal account email by default.</span
+        >
+      </div>
+      <button
+        pButton
+        type="submit"
+        label="Submit"
+        class="submit-button"
+        i18n-label
+        [disabled]="!stockNotificationsForm.valid"
+      ></button>
+    </form>
+    <form
+      *ngIf="merchantNotificationsSettings && !isServiceProvider"
+      [formGroup]="balanceNotificationForm"
+      (ngSubmit)="submitBalance()"
+    >
+      <div class="two-groups">
+        <div class="column-label-button mt-3">
+          <label htmlFor="enable_balance_notification" i18n
+            >Balance Limit Notification</label
+          >
+        </div>
+        <div class="column-label-button mt-3">
+          <p-toggleButton
+            formControlName="enable_balance_notification"
+            onLabel="Disable"
+            offLabel="Enable"
+          ></p-toggleButton>
+        </div>
+      </div>
+      <div *ngIf="balanceNotificationForm.value.enable_balance_notification">
+        <div class="two-groups">
+          <div class="column-label-input mt-3">
+            <label htmlFor="balance_limit" i18n>Balance Limit</label>
+          </div>
+
+          <div class="column-label-input">
+            <input
+              formControlName="balance_limit"
+              id="balance_limit"
+              pInputText
+              type="number"
+              i18n-placeholder
+              placeholder="Balance Limit"
+            />
+          </div>
+        </div>
+        <div class="two-groups">
+          <div class="column-label-input mt-3">
+            <label htmlFor="balance_notification_to_email" i18n
+              >Balance Limit Notification Email</label
+            >
+          </div>
+
+          <div class="column-label-input">
+            <input
+              formControlName="balance_notification_to_email"
+              id="balance_notification_to_email"
+              pInputText
+              type="email"
+            />
+          </div>
+        </div>
+        <span i18n class="note"
+          >Note: If you do not specify an email address for notifications, they
+          will be sent to your personal account email by default.</span
+        >
+      </div>
+      <button
+        pButton
+        type="submit"
+        label="Submit"
+        class="submit-button"
+        i18n-label
+        [disabled]="!balanceNotificationForm.valid"
+      ></button>
+    </form>
+  </p-card>
+</div>

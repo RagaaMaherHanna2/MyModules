@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="voucher_type_balance" model="voucher.type">
+            <field name="name">BALANCE</field>
+            <field name="voucher_fields" eval="[(0, 0, {
+       'name': 'BALANCE',
+       'type': '2',
+       'required': True, })]"></field>
+        </record>
+        <record id="voucher_type_points" model="voucher.type">
+            <field name="name">POINTS</field>
+            <field name="voucher_fields" eval="[(0, 0, {
+       'name': 'POINTS',
+       'type': '2',
+       'required': True, })]"></field>
+        </record>
+        <record id="voucher_type_discount" model="voucher.type">
+            <field name="name">DISCOUNT</field>
+            <field name="voucher_fields" eval="[(0, 0, {
+       'name': 'VALUE',
+       'type': '2',
+       'required': True, })]"></field>
+        </record>
+        <record id="voucher_type_voucher" model="voucher.type">
+            <field name="name">VOUCHER</field>
+        </record>
+        <record id="voucher_type_service" model="voucher.type">
+            <field name="name">SERVICE</field>
+            <field name="voucher_fields" eval="[(0, 0, {
+       'name': 'ID',
+       'type': '2',
+       'required': False, }),
+       (0, 0, {
+       'name': 'DESCRIPTION',
+       'type': '1',
+       'required': True, })
+       ]"></field>
+        </record>
+    </data>
+</odoo>

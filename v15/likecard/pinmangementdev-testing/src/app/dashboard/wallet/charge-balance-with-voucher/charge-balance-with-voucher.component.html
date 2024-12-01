@@ -1,0 +1,51 @@
+<div class="container-800">
+  <p-card header="Charge Balance with LikeCard Vouchers" i18n-header>
+    <form (ngSubmit)="onSubmit($event)" [formGroup]="codeForm">
+      <div class="column-label-input">
+        <label for="code" class="required-label" i18n
+          >Enter LikeCard Voucher</label
+        >
+        <input
+          pInputText
+          type="text"
+          name="code"
+          placeholder="Enter code..."
+          i18n-placeholder
+          formControlName="code"
+          id="code"
+        />
+      </div>
+      <button
+        class="submit-button"
+        type="submit"
+        pButton
+        label="Charge"
+        i18n-label
+        [disabled]="codeForm.invalid"
+      ></button>
+    </form>
+  </p-card>
+  <p-card styleClass="result-card" *ngIf="showRes">
+    <div class="product-container" *ngIf="res.class === 'success'">
+      <img
+        src="assets/images/logo.png"
+        alt=""
+        srcset=""
+        class="product-image"
+      />
+
+      <div class="details">
+        <h5 i18n class="title">Balance has been charged successfully with:</h5>
+        <p class="price">{{ res.amount | currency : userCurrency }}</p>
+      </div>
+
+      <div class="status-container">
+        <span class="status" [ngClass]="'success'">{{ res.status }}</span>
+      </div>
+    </div>
+    <div class="status-container" *ngIf="res.class === 'failed'">
+      <h5 i18n>Code not found. Please check it and retry again</h5>
+      <span class="status" [ngClass]="'failed'">{{ res.status }}</span>
+    </div>
+  </p-card>
+</div>

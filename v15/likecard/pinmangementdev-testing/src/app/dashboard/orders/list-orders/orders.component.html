@@ -1,0 +1,105 @@
+<p-card header="Manage Orders" i18n-header>
+  <p-table
+    #dt
+    [value]="items.data"
+    [loading]="loading"
+    [lazy]="true"
+    (onLazyLoad)="loadList($event)"
+    [rows]="pageSize"
+    [paginator]="true"
+    [globalFilterFields]="['name']"
+    responsiveLayout="scroll"
+    [totalRecords]="items.totalCount"
+    [rowHover]="true"
+    dataKey="id"
+    currentPageReportTemplate="{first} - {last} / {totalRecords}"
+    [showCurrentPageReport]="true"
+  >
+    <ng-template pTemplate="caption">
+      <div class="top-row-container">
+        <div class="filters-container mb-4">
+          <p-calendar [(ngModel)]="dateFilter" [showIcon]="true"></p-calendar>
+          <div class="md:mr-2">
+            <span class="flex gap-1 flex-column justify-center">
+              <input
+                pInputText
+                type="text"
+                [(ngModel)]="selectedProduct"
+                placeholder="Product Name"
+                i18n-placeholder
+              />
+            </span>
+          </div>
+          <button
+            pButton
+            pRipple
+            type="button"
+            label="Submit"
+            i18n-label
+            class="p-button p-button m-2"
+            (click)="applyFilter($event)"
+          ></button>
+        </div>
+        <button
+          pButton
+          pRipple
+          type="button"
+          label="Export"
+          i18n-label
+          icon="pi pi-file-excel"
+          class="p-button p-button m-2"
+          (click)="exportExcel()"
+        ></button>
+      </div>
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input
+          pInputText
+          type="text"
+          (keyup)="applyFilter($event)"
+          placeholder="Order Name..."
+          i18n-placeholder
+        />
+      </span>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th i18n>ID</th>
+        <th i18n>Order Name</th>
+        <th i18n>Product Name</th>
+        <th i18n>Order Date</th>
+        <th i18n>Price</th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="7">
+          <span class="empty-message" i18n>There is no records to show </span>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item>
+      <tr>
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.product_name }}</td>
+        <td>{{ item.date | date }}</td>
+        <td>{{ item.amount_total }}</td>
+
+        <td>
+          <div class="flex-buttons">
+            <button
+              class="p-button-outlined"
+              (click)="goToDetails(item)"
+              pButton
+              i18n-label
+              label="Details"
+            ></button>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>

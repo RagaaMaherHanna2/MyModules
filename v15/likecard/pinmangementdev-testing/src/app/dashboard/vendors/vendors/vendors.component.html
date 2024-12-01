@@ -1,0 +1,107 @@
+<p-card i18n-header header="Vendors">
+  <p-table
+    [value]="vendors.data"
+    responsiveLayout="scroll"
+    [totalRecords]="vendors.totalCount"
+    dataKey="id"
+    [loading]="loading"
+    [rows]="pageSize"
+    [lazy]="true"
+    (onLazyLoad)="getVendors()"
+    [rowHover]="true"
+    [paginator]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    i18n-currentPageReportTemplate
+    [showCurrentPageReport]="true"
+    (onPage)="changePage($event)"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th i18n>Vendor Name</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="caption">
+      <div class="table-header">
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input
+            pInputText
+            type="text"
+            (keyup)="applyFilter($event)"
+            placeholder="Vendor Name..."
+            i18n-placeholder
+          />
+        </span>
+        <div class="buttons-wrapper">
+          <button
+            pButton
+            pRipple
+            type="button"
+            label="Create new vendor"
+            i18n-label
+            icon="pi pi-plus"
+            class="p-button p-button m-2"
+            (click)="openNewVendorDialog()"
+          ></button>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="1">
+          <span class="empty-message" i18n>There is no records to show </span>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item>
+      <tr [id]="item.id">
+        <td>{{ item.name }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>
+
+<p-dialog
+  position="top"
+  [(visible)]="showAddModal"
+  [style]="{ 'min-width': 'min(30rem, 90%)' }"
+  (onHide)="reinitVendorForm()"
+>
+  <form [formGroup]="vendorForm">
+    <h4 i18n>Vendor Details</h4>
+
+    <div class="column-label-input">
+      <label htmlFor="name" class="required-label" i18n>Vendor Name</label>
+      <input
+        formControlName="name"
+        id="name"
+        pInputText
+        [(ngModel)]="item.name"
+        type="text"
+        placeholder="Vendor Name"
+        i18n-placeholder
+      />
+      <div
+        *ngIf="vendorForm.get('name')?.invalid && vendorForm.get('name')?.dirty"
+        class="text-danger"
+      >
+        <div
+          *ngIf="(vendorForm.get('name')?.errors)!['required']"
+          class="text-error-validation"
+        >
+          Vendor name is required!
+        </div>
+      </div>
+    </div>
+
+    <button
+      pButton
+      type="submit"
+      label="Submit"
+      class="submit-button"
+      [disabled]="vendorForm.invalid"
+      i18n-label
+      (click)="submit()"
+    ></button>
+  </form>
+</p-dialog>

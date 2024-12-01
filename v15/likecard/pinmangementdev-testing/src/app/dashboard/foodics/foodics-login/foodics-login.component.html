@@ -1,0 +1,89 @@
+<section class="sign-in-container">
+  <div class="sign-in-card-outline">
+    <div class="sign-in-card">
+      <header>
+        <img src="assets/images/Skarla Logo.svg" alt="Skarla Logo" />
+        <h1 class="title" i18n>Welcome!</h1>
+        <p class="subtitle" i18n>Enter your email and password to login</p>
+      </header>
+
+      <form class="sign-in-form" [formGroup]="loginForm">
+        <div class="input-group">
+          <label for="login" class="label" i18n>Email</label>
+          <input
+            id="login"
+            name="login"
+            type="text"
+            pInputText
+            class="input"
+            formControlName="login"
+            dir="ltr"
+          />
+          <div class="error-container">
+            <ng-container
+              *ngIf="
+                loginForm.controls.login.touched &&
+                loginForm.controls.login.invalid
+              "
+            >
+              <p
+                class="text-error-validation"
+                *ngIf="loginForm.controls.login.errors!['required']"
+                i18n
+              >
+                Email is required
+              </p>
+              <p
+                class="text-error-validation"
+                *ngIf="loginForm.controls.login.errors!['login']"
+                i18n
+              >
+                Please enter a valid email
+              </p>
+            </ng-container>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="password" class="label" i18n> Password </label>
+          <!-- styleClass is a weird workaround for fixing style issues with p-password component using reactive forms -->
+          <p-password
+            id="password"
+            name="password"
+            formControlName="password"
+            [feedback]="false"
+            [toggleMask]="true"
+            styleClass="p-password p-input-icon-right"
+          ></p-password>
+          <div class="error-container">
+            <ng-container
+              *ngIf="
+                loginForm.controls.password.invalid &&
+                loginForm.controls.password.touched
+              "
+            >
+              <p
+                class="text-error-validation"
+                *ngIf="loginForm.controls.password.errors!['required']"
+                i18n
+              >
+                Password is required
+              </p>
+            </ng-container>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          pButton
+          pRipple
+          label="Login"
+          class="sign-in-submit-button"
+          (click)="login()"
+          [disabled]="loginForm.invalid"
+          i18n-label
+        ></button>
+      </form>
+    </div>
+  </div>
+</section>

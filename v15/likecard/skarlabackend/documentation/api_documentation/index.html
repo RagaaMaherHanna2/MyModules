@@ -1,0 +1,777 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Redeemly Merchant Integration API</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="./screen-a1ce949a.css" rel="stylesheet" media="screen" />
+    <link href="./print-bccf8c07.css" rel="stylesheet" media="print" />
+      <script src="./all-c5541673.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;php&quot;,&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="./navbar-cad8cdcb.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="./logo-cbef21c2.png" style="max-width:100px;max-height:100px;" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="php">php</a>
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+        <ul id="toc" class="toc-list-h1">
+         
+		  
+		  <li>
+			<a href="#get_wallet_balance_online" class="toc-h1 toc-link" data-title="Check Balance">Check Balance</a>
+		  </li>
+		  <li>
+			<a href="#order_list_online" class="toc-h1 toc-link" data-title="Categories">Order List</a>
+		  </li>
+		  <li>
+			<a href="#pull_codes" class="toc-h1 toc-link" data-title="Products">Create Order</a>
+		  </li>
+      <li>
+        <a href="#check_codes" class="toc-h1 toc-link" data-title="Products">Check Codes</a>
+        </li>
+		  <li>
+			
+      </ul>
+	  
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        
+
+</tbody></table>
+<h1 id="get_wallet_balance_online">Check Balance</h1><pre class="highlight php tab-php" style="display: none;"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://onlineapi.skarla.com/exposed/wallet/get_wallet_balance_online"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="nx">CURLOPT_FOLLOWLOCATION</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_POSTFIELDS</span> <span class="o">=&gt;</span> <span class="k">json_encode("params" => array</span><span class="p">(</span>));</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,CURLOPT_HEADER,</span> <span class="k">true</span><span class="p">);</span>
+
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,CURLOPT_HTTPHEADER,</span> <span class="k">array</span><span class="p">(</span>
+<span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span>,
+<span class="s1">'Authorization'</span><span class="p">:</span> <span class="s1">'***apikey****'</span>
+<span class="p">)</span>
+<span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre><pre class="highlight shell tab-shell" style=""><code>curl  --header "Content-Type: application/json" --header "Authorization: ***apikey****" --location --request POST --data '
+<span class="s1">{</span>
+  <span class="s1">"params:{"</span> <span class="se"></span>
+    <span class="s1">}</span>
+  <span class="s1">}</span>
+'<span class="se">\</span>
+<span class="s1">'https://onlineapi.skarla.com/exposed/wallet/get_wallet_balance_online'</span> <span class="se">\</span>
+</code></pre><pre class="highlight javascript tab-javascript" style="display: none;"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+  <span class="s1">'url'</span><span class="p">:</span> <span class="s1">'https://onlineapi.skarla.com/exposed/wallet/get_wallet_balance_online'</span><span class="p">,</span>
+  <span class="s1">'headers'</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span>,
+    <span class="s1">'Authorization'</span><span class="p">:</span> <span class="s1">'***apikey****'</span>
+  <span class="p">},</span>
+  <span class="na">formData</span><span class="p">:</span> <span class="s1">{"params":{</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">request</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span> 
+  <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"ok"</span><span class="p">:</span><span class="w"> </span><span class="mi">true</span><span class="p">,</span><span class="w"></span>
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="mi">""</span><span class="p">,</span><span class="w"></span>
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{
+    &nbsp;&nbsp;&nbsp;</span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"53174.868512898"</span><span class="p">,</span><span class="w">
+    &nbsp;&nbsp;&nbsp;</span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Operation that help the merchant to get his balance.</p>
+<p><strong>Check Balance URL</strong></p>
+<p><a href="https://onlineapi.skarla.com/exposed/wallet/get_wallet_balance_online" target="_blank">
+  https://onlineapi.skarla.com/exposed/wallet/get_wallet_balance_online
+</a> </p>
+<p><strong>Request Parameters</strong></p>
+<ul>
+  <li>No Parameters</li>
+</ul>
+<p><strong>Response</strong></p>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ok</td>
+<td>true for success, false for failure</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>balance currency</td>
+</tr>
+<tr>
+<td>balance</td>
+<td>merchant account balance</td>
+</tr>
+</tbody></table>
+<h1 id="order_list_online">Orders List</h1><pre class="highlight php tab-php" style="display: none;"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://onlineapi.skarla.com/exposed/order_list"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="nx">CURLOPT_FOLLOWLOCATION</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_POSTFIELDS</span> <span class="o">=&gt;</span> <span class="k">json_encode("params" => array</span><span class="p">(</span>
+    <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'S00004'</span><span class="p">,</span>
+    <span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="s1">0</span><span class="p">,</span>
+    <span class="s1">'limit'</span> <span class="o">=&gt;</span> <span class="s1">20</span><span class="p">,</span>
+    <span class="s1">'offset'</span> <span class="o">=&gt;</span> <span class="s1">0</span><span class="p">,</span>
+  <span class="p">)),</span>
+
+<span class="p">));</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,CURLOPT_HEADER,</span> <span class="k">true</span><span class="p">);</span>
+
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,CURLOPT_HTTPHEADER,</span> <span class="k">array</span><span class="p">(</span>
+<span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span>,
+<span class="s1">'Authorization'</span><span class="p">:</span> <span class="s1">'***apikey****'</span>
+<span class="p">)</span>
+<span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre><pre class="highlight shell tab-shell" style=""><code>curl --header "Content-Type: application/json" --header "Authorization: ***apikey****" --location --request POST --data ' <span class="se">\</span>
+  <span class="s1">{</span>
+    <span class="s1">"params":{</span> <span class="se"></span>
+      <span class="s1">"name":"S00004"</span> <span class="se">,</span>
+      <span class="s1">"id":0</span> <span class="se">,</span>
+      <span class="s1">"limit":20</span> <span class="se">,</span>
+      <span class="s1">"offset":0</span> <span class="se">,</span>
+      <span class="s1">}</span>
+    <span class="s1">}</span>  
+' <span class="se">\</span>
+<span class="s1">'https://onlineapi.skarla.com/exposed/order_list'</span>
+</code></pre><pre class="highlight javascript tab-javascript" style="display: none;"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+  <span class="s1">'url'</span><span class="p">:</span> <span class="s1">'https://onlineapi.skarla.com/exposed/order_list'</span><span class="p">,</span>
+  <span class="s1">'headers'</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span>,
+    <span class="s1">'Authorization'</span><span class="p">:</span> <span class="s1">'***apikey****'</span>
+  <span class="p">},</span>
+  <span class="na">formData</span><span class="p">:</span> <span class="s1">{"params":{</span>
+    <span class="s1">'name'</span><span class="p">:</span> <span class="s1">"S00004"</span><span class="p">,</span>
+    <span class="s1">'id'</span><span class="p">:</span> <span class="s1">0</span><span class="p">,</span>
+    <span class="s1">'limit'</span><span class="p">:</span> <span class="s1">20</span><span class="p">,</span>
+    <span class="s1">'offset'</span><span class="p">:</span> <span class="s1">0</span><span class="p">,</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">request</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span> 
+  <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"ok"</span><span class="p">:</span><span class="w"> </span><span class="mi">true</span><span class="p">,</span><span class="w"></span>
+</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="mi">""</span><span class="p">,</span><span class="w"></span>
+</span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{
+      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">8</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S00004"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-06-08T11:17:54.000000Z"</span><span class="p">,</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="err">...</span><span class="p">,</span><span class="w">
+          </span><span class="err">...</span><span class="p">,</span><span class="w">
+          </span><span class="err">...</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+  
+</span></code></pre>
+<p>Operation to get all orders for this merchant.</p>
+<p><strong>Request URL</strong></p>
+<p><a href="https://onlineapi.skarla.com/exposed/order_list" target="_blank">
+  https://onlineapi.skarla.com/exposed/order_list
+</a> </p>
+<p><strong>Request Parameters</strong></p>
+<ul>
+<li>name (optional): Search for order name</li>
+<li>id (optional): Filter to sepecific order id</li>
+<li>limit (default 20): represent page size</li>
+<li>offset (default 0): represent page offset</li>
+</ul>
+<p><strong>Response</strong></p>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ok</td>
+<td>true for success, false for failure</td>
+</tr>
+<tr>
+<td>data</td>
+<td>array of objects, each object represents a order, and every order object has the following property</td>
+</tr>
+<tr>
+<td>name</td>
+<td>order name</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>order id</td>
+</tr>
+<tr>
+  <td>date</td>
+  <td>order date</td>
+</tr>
+</tbody></table>
+
+
+  <!--end orders list-->
+
+  <h1 id="pull_codes">Create Order (Pull Codes)</h1><pre class="highlight php tab-php" style="display: none;"><code><span class="cp">&lt;?php</span>
+
+    <span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+    
+    <span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+      <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://onlineapi.skarla.com/exposed/pull_codes"</span><span class="p">,</span>
+      <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+      <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nx">CURLOPT_FOLLOWLOCATION</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+      <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"POST"</span><span class="p">,</span>
+      <span class="nx">CURLOPT_POSTFIELDS</span> <span class="o">=&gt;</span> <span class="k">json_encode("params" => array</span><span class="p">(</span>
+        <span class="s1">'product'</span> <span class="o">=&gt;</span> <span class="s1">150</span><span class="p">,</span>
+        <span class="s1">'quantity'</span> <span class="o">=&gt;</span> <span class="s1">10</span><span class="p">,</span>
+        <span class="s1">'email_id'</span> <span class="o">=&gt;</span> <span class="s1">"test****@gmail.com"</span><span class="p">,</span>
+      <span class="p">)),</span>
+    
+    <span class="p">));</span>
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,CURLOPT_HEADER,</span> <span class="k">true</span><span class="p">);</span>
+    
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,CURLOPT_HTTPHEADER,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span>,
+    <span class="s1">'Authorization'</span><span class="p">:</span> <span class="s1">'***apikey****'</span>
+    <span class="p">)</span>
+    <span class="p">);</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+    
+    <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+    <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+    <span class="cp">?&gt;</span>
+    </code></pre><pre class="highlight shell tab-shell" style=""><code>curl --header "Content-Type: application/json" --header "Authorization: ***apikey****" --location --request POST --data ' <span class="se">\</span>
+      <span class="s1">{</span>
+        <span class="s1">"params":{</span> <span class="se"></span>
+          <span class="s1">"product":150</span> <span class="se">,</span>
+          <span class="s1">"quantity":10</span> <span class="se">,</span>
+          <span class="s1">"email_id":"test****@gmail.com"</span> <span class="se">,</span>
+          <span class="s1">}</span>
+        <span class="s1">}</span>  
+    ' <span class="se">\</span>
+    <span class="s1">'https://onlineapi.skarla.com/exposed/pull_codes'</span>
+    </code></pre><pre class="highlight javascript tab-javascript" style="display: none;"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+      <span class="s1">'url'</span><span class="p">:</span> <span class="s1">'https://onlineapi.skarla.com/exposed/pull_codes'</span><span class="p">,</span>
+      <span class="s1">'headers'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span>,
+        <span class="s1">'Authorization'</span><span class="p">:</span> <span class="s1">'***apikey****'</span>
+      <span class="p">},</span>
+      <span class="na">formData</span><span class="p">:</span> <span class="s1">{"params":{</span>
+        <span class="s1">'product'</span><span class="p">:</span> <span class="s1">150</span><span class="p">,</span>
+        <span class="s1">'quantity'</span><span class="p">:</span> <span class="s1">10</span><span class="p">,</span>
+        <span class="s1">'email_id'</span><span class="p">:</span> <span class="s1">"test****@gmail.com"</span><span class="p">,</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+    <span class="nx">request</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span> 
+      <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+    <span class="p">});</span>
+    </code></pre>
+    <blockquote>
+    <p>Response Example</p>
+    </blockquote>
+    <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"ok"</span><span class="p">:</span><span class="w"> </span><span class="mi">true</span><span class="p">,</span><span class="w"></span>
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="mi">""</span><span class="p">,</span><span class="w"></span>
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{
+    </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S00193"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"pulled_serials"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"serial_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdb*****-*****-****-***-*******"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"serial_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7***********"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">150</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ITUNES*****"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"SKU"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RT123e44****"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"expiry_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-06-08T00:00:00.000000Z"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">2000</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"pin_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">6***</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"is_prepaid"</span><span class="p">:</span><span class="w"> </span><span class="s2">true</span><span class="p">,</span><span class="w">    
+              </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="p">,</span><span class="w">
+        </span><span class="err">...</span><span class="p">,</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span  span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+      
+    </span></code></pre>
+    <p>Operation to create a new order for merchant account (Pull codes from a product invitaiton).</p>
+    <p><strong>Request URL</strong></p>
+    <p><a href="https://onlineapi.skarla.com/exposed/pull_codes" target="_blank">
+      https://onlineapi.skarla.com/exposed/pull_codes
+    </a> </p>
+    <p><strong>Request Parameters</strong></p>
+    <ul>
+    <li>product (required): Order product id</li>
+    <li>quantity (required): quantity to be pulled (between 1 and 50,000)</li>
+    <li>email_id (required if the product is prepaid): email</li>
+    </ul>
+    <p><strong>Response</strong></p>
+    <table><thead>
+    <tr>
+    <th>Property</th>
+    <th>Description</th>
+    </tr>
+    </thead><tbody>
+    <tr>
+    <td>ok</td>
+    <td>true for success, false for failure</td>
+    </tr>
+    <tr>
+    <td>pulled_serials</td>
+    <td>array of objects, each object represents a order, and every order object has the following property</td>
+    </tr>
+    <tr>
+    <td>serial_number</td>
+    <td>serial number of pulled code</td>
+    </tr>
+    <tr>
+      <td>serial_code</td>
+      <td>serial code of pulled code</td>
+    </tr>
+    <tr>
+      <td>product_id</td>
+      <td>pulled product id</td>
+    </tr>
+    <tr>
+      <td>product_name</td>
+      <td>pulled product name</td>
+    </tr>
+    <tr>
+      <td>SKU</td>
+      <td>pulled product SKU</td>
+    </tr>
+    <tr>
+      <td>expiry_date</td>
+      <td>Code Expiration Date</td>
+    </tr>
+    <tr>
+      <td>value</td>
+      <td>If Product Is Prepaid it represent the balance of prepaid code else 0</td>
+    </tr>
+    <tr>
+      <td>pin_code</td>
+      <td>If Product Is Prepaid it represent the pin code of prepaid code else null</td>
+    </tr>
+    <tr>
+      <td>is_prepaid</td>
+      <td>flag to check if the product is prepaid or not</td>
+    </tr>
+    </tbody></table>
+    
+    
+      <!--end create_order-->
+      </tbody></table>
+  </tbody></table>
+
+
+  <h1 id="check_codes">check codes</h1><pre class="highlight php tab-php" style="display: none;"><code><span class="cp">&lt;?php</span>
+
+    <span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+    
+    <span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+      <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://onlineapi.skarla.com/exposed/check_and_redeem_online"</span><span class="p">,</span>
+      <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+      <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nx">CURLOPT_FOLLOWLOCATION</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+      <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"POST"</span><span class="p">,</span>
+      <span class="nx">CURLOPT_POSTFIELDS</span> <span class="o">=&gt;</span> <span class="k">json_encode("params" => array</span><span class="p">(</span>
+        <span class="s1">'codes'</span> <span class="o">=&gt;</span> <span class="s1">["24*****-**-***-*****-******","89*****-**-***-*****-******"]</span><span class="p">,</span>
+      <span class="p">)),</span>
+    
+    <span class="p">));</span>
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,CURLOPT_HEADER,</span> <span class="k">true</span><span class="p">);</span>
+    
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,CURLOPT_HTTPHEADER,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span>,
+    <span class="s1">'Authorization'</span><span class="p">:</span> <span class="s1">'***apikey****'</span>
+    <span class="p">)</span>
+    <span class="p">);</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+    
+    <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+    <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+    <span class="cp">?&gt;</span>
+    </code></pre><pre class="highlight shell tab-shell" style=""><code>curl --header "Content-Type: application/json" --header "Authorization: ***apikey****" --location --request POST --data ' <span class="se">\</span>
+      <span class="s1">{</span>
+        <span class="s1">"params":{</span> <span class="se"></span>
+          <span class="s1">"codes":["24*****-**-***-*****-******","89*****-**-***-*****-******"]</span> <span class="se">,</span>
+          <span class="s1">}</span>
+        <span class="s1">}</span>  
+    ' <span class="se">\</span>
+    <span class="s1">'https://onlineapi.skarla.com/exposed/check_and_redeem_online'</span>
+    </code></pre><pre class="highlight javascript tab-javascript" style="display: none;"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+      <span class="s1">'url'</span><span class="p">:</span> <span class="s1">'https://onlineapi.skarla.com/exposed/check_and_redeem_online'</span><span class="p">,</span>
+      <span class="s1">'headers'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span>,
+        <span class="s1">'Authorization'</span><span class="p">:</span> <span class="s1">'***apikey****'</span>
+      <span class="p">},</span>
+      <span class="na">formData</span><span class="p">:</span> <span class="s1">{"params":{</span>
+        <span class="s1">'codes'</span><span class="p">:</span> <span class="s1">["24*****-**-***-*****-******","89*****-**-***-*****-******"]</span><span class="p">,</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+    <span class="nx">request</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span> 
+      <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+    <span class="p">});</span>
+    </code></pre>
+    <blockquote>
+    <p>Response Example</p>
+    </blockquote>
+    <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"ok"</span><span class="p">:</span><span class="w"> </span><span class="mi">true</span><span class="p">,</span><span class="w"></span>
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="mi">""</span><span class="p">,</span><span class="w"></span>
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[
+              </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdb*****-*****-****-***-*******"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7***********"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"how_to_use"</span><span class="p">:</span><span class="w"> </span><span class="s2">150</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"how_to_use_ar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ITUNES*****"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"check_count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RT123e44****"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"last_check_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-06-08T00:00:00.000000Z"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="s2">2000</span><span class="p">,</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+              </span><span class="err">...</span><span class="p">,</span><span class="w">
+              </span><span class="err">...</span><span class="p">,</span><span class="w">
+              </span><span class="err">...</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+      
+    </span></code></pre>
+    <p>Operation to create a new order for merchant account (Pull codes from a product invitaiton).</p>
+    <p><strong>Request URL</strong></p>
+    <p><a href="https://onlineapi.skarla.com/exposed/check_and_redeem_online" target="_blank">
+      https://onlineapi.skarla.com/exposed/check_and_redeem_online
+    </a> </p>
+    <p><strong>Request Parameters</strong></p>
+    <ul>
+    <li>codes (required): Array of string represent serial code or serial numbers of codes to be checked</li>
+    </ul>
+    <p><strong>Response</strong></p>
+    <table><thead>
+    <tr>
+    <th>Property</th>
+    <th>Description</th>
+    </tr>
+    </thead><tbody>
+    <tr>
+    <td>ok</td>
+    <td>true for success, false for failure</td>
+    </tr>
+    <tr>
+    <td>result</td>
+    <td>array of codes status as follow</td>
+    </tr>
+    <tr>
+    <td>name</td>
+    <td>product name of this code</td>
+    </tr>
+    <tr>
+      <td>image</td>
+      <td>product image url</td>
+    </tr>
+    <tr>
+      <td>how_to_use</td>
+      <td>How to use page url</td>
+    </tr>
+    <tr>
+      <td>how_to_use_ar</td>
+      <td>how to use page in arabic</td>
+    </tr>
+    <tr>
+      <td>check_count</td>
+      <td>how many time this code checked before</td>
+    </tr>
+    <tr>
+      <td>last_check_time</td>
+      <td>last time this code was checked</td>
+    </tr>
+    <tr>
+      <td>vendor</td>
+      <td>Product's Service Provider</td>
+    </tr>
+    </tbody></table>
+    
+    
+      <!--end create_order-->
+      </tbody></table>
+  </tbody></table>
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector"style="display: inherit !important;">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="php">php</a>
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
+

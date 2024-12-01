@@ -1,0 +1,29 @@
+@import "src/assets/sass/layout/_mixins.scss";
+
+.column-label-input {
+  @include column-label-input();
+  margin-bottom: 1rem;
+}
+
+.info-pair {
+  @include info-pair();
+  margin-bottom: 1rem;
+}
+
+.image-container {
+  width: 20rem;
+  max-height: 20rem;
+  max-width: 95%;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+:host ::ng-deep .result-card {
+  margin-top: 2rem;
+}

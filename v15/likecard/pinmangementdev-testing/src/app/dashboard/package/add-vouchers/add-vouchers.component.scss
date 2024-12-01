@@ -1,0 +1,14 @@
+@import "src/assets/sass/layout/_mixins.scss";
+@import "src/assets/sass/layout/_variables.scss";
+.info-pair {
+  @include info-pair();
+}
+:host ::ng-deep {
+  .title-card {
+    h3 {
+      width: 100%;
+    }
+  }
+}
+
+

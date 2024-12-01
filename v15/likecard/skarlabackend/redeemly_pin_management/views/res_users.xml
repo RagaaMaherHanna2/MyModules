@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="res_users_merchant_view_form_inherited" model="ir.ui.view">
+        <field name="name">res.users.merchant.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="priority">20</field>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='access_rights']" position="inside">
+                <group col="2">
+                    <field name="sel_groups_1_9_10" widget="radio" invisible="True"/>
+                    <!--visible only for portal users-->
+                    <field name="reference" attrs="{'invisible': [('sel_groups_1_9_10', '!=', 9)]}"/>
+                    <field name="sp_hash" attrs="{'invisible': [('sel_groups_1_9_10', '!=', 9)]}"/>
+                    <!--                    <field name="white_labeling" attrs="{'invisible': [('sel_groups_1_9_10', '!=', 9)]}"/>-->
+                    <field name="is_merchant" attrs="{'invisible': [('sel_groups_1_9_10', '!=', 9)]}"/>
+                    <field name="merchant_invoice_mail" attrs="{'invisible': [('is_merchant', '=', False)]}"
+                           placeholder="e.g. email@yourcompany.com"/>
+                    <field name="is_service_provider" attrs="{'invisible': [('sel_groups_1_9_10', '!=', 9)]}"/>
+                    <field name="is_foodics_cashier" attrs="{'invisible': [('sel_groups_1_9_10', '!=', 9)]}"/>
+                    <field name="is_accountant_manager" attrs="{'invisible': [('sel_groups_1_9_10', '!=', 9)]}"
+                    />
+                    <field name="accountant_manager_sps_ids"
+                          attrs="{'invisible': ['|',('sel_groups_1_9_10', '!=', 9), ('is_accountant_manager', '!=', True)]}"
+
+                           widget="many2many_tags" options="{'no_create': True, 'no_edit': True}"/>
+                    <field name="codes_additional_value" attrs="{'invisible': [('is_service_provider', '!=', True)]}"/>
+                    <field name="is_sp_finance"  attrs="{'invisible': [('sel_groups_1_9_10', '!=', 9)]}"/>
+                    <field name="finance_service_provider_id" attrs="{'invisible': [('is_sp_finance', '!=', True)],
+                    'required': [('is_sp_finance', '=', True)]}"/>
+                    <field name="default_categ_id" readonly="1"
+                           attrs="{'invisible': [('is_service_provider', '!=', True)]}"/>
+                    <field name="archived_products_categ_id" readonly="1"
+                           attrs="{'invisible': [('is_service_provider', '!=', True)]}"/>
+
+
+                    <field name="categs_ids" attrs="{'invisible': [('is_service_provider', '!=', True)]}"
+                           widget="many2many_tags"/>
+                </group>
+                <group col="2" string="Invoicing Policy">
+                    <field name="sp_currency"/>
+                    <field name="fees_value" digits="[16,6]"/>
+                    <field name="redeem_fees_value" digits="[16,6]"/>
+                </group>
+                <group col="2" string="Portal Setting">
+                    <field name="portal_welcome_text"/>
+                    <field name="enable_invoice_auto_generating"/>
+                    <field name="invoice_generating_frequency"
+                           attrs="{'invisible':[('enable_invoice_auto_generating', '=', False)]}"/>
+                </group>
+                <group col="2" string="Net Dragon">
+                    <field name="netdragon_account_name"/>
+                    <field name="netdragon_account_secret"/>
+                </group>
+                <group col="2" string="Notification Policy">
+                    <field name="enable_low_stock_notification"/>
+                    <field name="stock_limit" attrs="{'required':[('enable_low_stock_notification', '=', True)]}"/>
+                    <field name="notification_to_email"
+                           attrs="{'required':[('enable_low_stock_notification', '=', True)]}"/>
+
+                    <field name="enable_low_balance_notification"/>
+                    <field name="balance_limit" attrs="{'required':[('enable_low_balance_notification', '=', True)]}"/>
+                    <field name="balance_notification_to_email"
+                           attrs="{'required':[('enable_low_balance_notification', '=', True)]}"/>
+                </group>
+            </xpath>
+
+            <xpath expr="//page[@name='access_rights']" position="after">
+                <page name="Tokens" string="Tokens">
+                    <group col="2">
+                        <field name="token_ids">
+                            <tree>
+                                <field name="token" width="30%"/>
+                                <field name="scope" width="70%"/>
+                            </tree>
+                        </field>
+                        <field name="website_key_ids" attrs="{'invisible': [('is_service_provider', '!=', True)]}">
+                            <tree>
+                                <field name="name" width="30%"/>
+                                <field name="website_redeemly_api_key" width="70%"/>
+                            </tree>
+                        </field>
+                        <field name="redeemly_api_key"/>
+                    </group>
+                </page>
+                <page name="sp_vendors" string="Sp Vendors"
+                      attrs="{'invisible': [('is_service_provider', '!=', True)]}">
+                    <field name="vendor_ids" context="{'default_is_vendor': True}">
+                        <tree editable="bottom">
+                            <field name="name"/>
+                            <field name="phone"/>
+                            <field name="email"/>
+                            <field name="is_vendor" readonly="1" force_save="1"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="res_users_merchant_view_search_inherited" model="ir.ui.view">
+        <field name="name">res.users.merchant.search</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='no_share']" position="after">
+                <separator/>
+                <filter string="Merchant Users" name="merchant_users" domain="[('is_merchant', '=', True)]"/>
+                <separator/>
+                <filter string="Service Provider Users" name="service_provider_users"
+                        domain="[('is_service_provider', '=', True)]"/>
+                <separator/>
+                <filter string="Accountant Manager Users" name="accountant_manager_users"
+                        domain="[('is_accountant_manager', '=', True)]"/>
+                <separator/>
+                 <filter string="SP Finance Users" name="sp_finance_users"
+                        domain="[('is_sp_finance', '=', True)]"/>
+                <separator/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_users_tree_inherited" model="ir.ui.view">
+        <field name="name">res.users.tree.inherited</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="is_merchant"/>
+                <field name="is_service_provider"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!--        <record id="view_partner_form_inherited" model="ir.ui.view">-->
+    <!--            <field name="name">res.partner.form.inherited</field>-->
+    <!--            <field name="model">res.partner</field>-->
+    <!--            <field name="inherit_id" ref="base.view_partner_form"></field>-->
+    <!--            <field name="arch" type="xml">-->
+    <!--                <xpath expr="//field[@name='vat']" position="after">-->
+    <!--                    <field name="balance"/>-->
+    <!--                </xpath>-->
+    <!--            </field>-->
+    <!--        </record>-->
+
+    <record id="base.action_res_users" model="ir.actions.act_window">
+        <field name="context">{'search_default_no_share': 0}</field>
+    </record>
+
+    <template id="merchant_portal_my_security" inherit_id="portal.portal_my_security">
+        <xpath expr="//section[@t-if='debug and allow_api_keys']" position="attributes">
+            <attribute name="t-if">allow_api_keys and (request.env.user.is_merchant or
+                request.env.user.is_service_provider) and request.env.user.id
+            </attribute>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,127 @@
+<div class="container-800">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="note" i18n>
+        * Please use the following bank account details to send a bank transfer,
+        Then attach the remittance picture and send the request.
+      </h4>
+      <div class="bank-details-container">
+        <div class="info-pair" id="name">
+          <span class="title" i18n>Bank Name</span>
+          <span class="value">
+            {{ companyBankDetails.bank_name }}
+          </span>
+        </div>
+        <div class="info-pair" id="account-type">
+          <span class="title" i18n>Account Type</span>
+          <span class="value">
+            {{ companyBankDetails.account_type }}
+          </span>
+        </div>
+        <div class="info-pair" id="number">
+          <span class="title" i18n>Account Number</span>
+          <span class="value">
+            {{ companyBankDetails.acc_number }}
+          </span>
+        </div>
+        <div class="info-pair" id="full">
+          <span class="title" i18n>IBAN</span>
+          <span class="value">
+            {{ companyBankDetails.iban }}
+          </span>
+        </div>
+        <div class="info-pair" id="class">
+          <span class="title" i18n>Account Class</span>
+          <span class="value">
+            {{ companyBankDetails.account_class }}
+          </span>
+        </div>
+        <div class="info-pair" id="swift">
+          <span class="title" i18n>ADIB Swift Code</span>
+          <span class="value">
+            {{ companyBankDetails.adib_swift_code }}
+          </span>
+        </div>
+      </div>
+    </div>
+    <p-divider></p-divider>
+    <form [formGroup]="chargeWalletForm" (ngSubmit)="submit()">
+      <div class="column-label-input">
+        <label htmlFor="from" class="required-label" i18n>From</label>
+        <p-dropdown
+          [options]="bankAccounts"
+          [(ngModel)]="fromBankSelected"
+          optionValue="value"
+          formControlName="bank"
+          optionDisabled="chosen"
+          placeholder="Please Select..."
+          i18n-placeholder
+        ></p-dropdown>
+      </div>
+
+      <div class="column-label-input">
+        <label class="required-label" i18n>To</label>
+        <p-dropdown
+          id="toBanks"
+          name="toBanks"
+          [options]="serviceProviderBanks"
+          [(ngModel)]="toBankSelected"
+          optionValue="value"
+          formControlName="toBanks"
+          styleClass="dropdown"
+          placeholder="Please Select..."
+          i18n-placeholder
+          (onChange)="updateBankDetails($event.value)"
+        ></p-dropdown>
+      </div>
+
+      <div class="column-label-input">
+        <label class="required-label" i18n>Amount</label>
+        <input
+          pInputText
+          type="number"
+          [(ngModel)]="item.transferAmount"
+          placeholder="Amount"
+          i18n-placeholder
+          name="amount"
+          formControlName="amount"
+        />
+      </div>
+
+      <div class="column-label-input">
+        <label class="required-label" i18n>Bank Transfer Attachment</label>
+        <span class="size-warning" i18n>
+          Max file size {{ maxFileSize / 1000000 }} MB
+        </span>
+
+        <p-fileUpload
+          name="banktransferImage"
+          [multiple]="false"
+          accept="image/png,image/jpeg,image/jpg,image/gif"
+          [maxFileSize]="maxFileSize"
+          (onSelect)="onUpload($event)"
+          (onClear)="onClear()"
+          (onRemove)="onClear()"
+          [showUploadButton]="false"
+        >
+          <ng-template pTemplate="content">
+            <ul *ngIf="selectedFile.length">
+              <li *ngFor="let file of selectedFile">
+                {{ file.name }} - {{ file.size }} bytes
+              </li>
+            </ul>
+          </ng-template>
+        </p-fileUpload>
+      </div>
+
+      <button
+        pButton
+        type="submit"
+        label="Submit"
+        class="submit-button"
+        i18n-label
+        [disabled]="!chargeWalletForm.valid || !fileUploaded"
+      ></button>
+    </form>
+  </div>
+</div>

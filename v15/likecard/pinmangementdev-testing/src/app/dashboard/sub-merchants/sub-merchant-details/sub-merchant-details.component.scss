@@ -1,0 +1,49 @@
+@import "src/assets/sass/layout/_mixins.scss";
+
+.info-pair {
+  @include info-pair();
+  .title {
+    min-width: 20ch;
+  }
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin: unset;
+  font-weight: bold;
+}
+:host ::ng-deep {
+  .merchant-card,
+  .serials-card {
+    margin-top: 2rem;
+  }
+}
+
+.table-image {
+  max-width: 6rem;
+  max-height: 3rem;
+}
+
+
+.field-checkbox>label, .field-radiobutton>label {
+  margin-inline: .5rem;
+}
+
+
+.permission {
+  padding: .5rem;
+  border: 1px solid #edf1f5;
+  border-radius: 30px;
+  transition: all .5s;
+  cursor: pointer;
+}
+.permission:hover {
+  transform: scale(1.1);
+}
+
+.permission.checked {
+  border: 1px solid #3952ad;
+  background: #3952ad;
+  background: linear-gradient(90deg, #3952adfc 25%, #132050 100%);
+  color: #ffffff;
+}

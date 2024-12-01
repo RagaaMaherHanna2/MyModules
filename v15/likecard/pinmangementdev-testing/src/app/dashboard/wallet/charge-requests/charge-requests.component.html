@@ -1,0 +1,121 @@
+<div class="card">
+  <p-table
+    #dt
+    [value]="items.data"
+    [loading]="loading"
+    [lazy]="true"
+    (onLazyLoad)="loadList($event)"
+    [rows]="pageSize"
+    [paginator]="true"
+    [globalFilterFields]="['name']"
+    responsiveLayout="scroll"
+    [totalRecords]="items.totalCount"
+    [rowHover]="true"
+    dataKey="id"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    i18n-currentPageReportTemplate
+    [showCurrentPageReport]="true"
+  >
+    <ng-template pTemplate="caption">
+      <div class="top-row-container">
+        <div class="filters-container">
+          <span [style]="{ 'margin-inline-end': '2rem' }" i18n
+            >Quick Filters</span
+          >
+          <button
+            pButton
+            pRipple
+            type="button"
+            label="All"
+            class="p-button-outlined"
+            i18n-label
+            (click)="setFilter('')"
+          ></button>
+          <button
+            pButton
+            pRipple
+            type="button"
+            label="Approved"
+            class="p-button-outlined p-button"
+            i18n-label
+            (click)="setFilter('approved')"
+          ></button>
+          <button
+            pButton
+            pRipple
+            type="button"
+            label="Pending"
+            i18n-label
+            class="p-button-outlined p-button"
+            (click)="setFilter('draft')"
+          ></button>
+          <button
+            pButton
+            pRipple
+            type="button"
+            label="Rejected"
+            i18n-label
+            class="p-button-outlined p-button"
+            (click)="setFilter('rejected')"
+          ></button>
+        </div>
+        <button
+          pButton
+          pRipple
+          type="button"
+          label="Export"
+          i18n-label
+          icon="pi pi-file-excel"
+          class="p-button p-button m-2"
+          (click)="exportExcel()"
+        ></button>
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th i18n>Bank Name</th>
+        <th i18n>Date</th>
+        <th i18n>To Bank</th>
+        <th i18n>Transfer Amount</th>
+        <th i18n>Status</th>
+        <th i18n>Note</th>
+        <th i18n>Attachment</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="7">
+          <span class="empty-message" i18n>There is no records to show </span>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item>
+      <tr>
+        <td>{{ item.bank_name }}</td>
+        <td>{{ item.date | date : "longDate" }}</td>
+        <td>{{ item.to_bank }}</td>
+        <td>{{ item.transfer_amount | currency : userCurrency }}</td>
+        <td>
+          <span
+            class="item-status"
+            [ngClass]="orderStatus[item.state].severity"
+          >
+            {{ orderStatus[item.state].label }}
+          </span>
+        </td>
+        <td>{{ item.note }}</td>
+        <td>
+          <a
+            *ngIf="item.image"
+            pButton
+            (click)="downloadAttachment(item)"
+            label="Download Attachment"
+            class="p-button-outlined"
+            i18n-label
+          ></a>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

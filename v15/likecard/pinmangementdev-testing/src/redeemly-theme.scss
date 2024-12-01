@@ -1,0 +1,28 @@
+:root {
+  --theme-primary-50: #eceff9;
+  --theme-primary-100: #c5ceec;
+  --theme-primary-100-transparent: #c5ceec22;
+  --theme-primary-200: #9fade0;
+  --theme-primary-300: #788dd3;
+  --theme-primary-400: #526cc7;
+  --theme-primary-500: #3852ad;
+  --theme-primary-600: #2c4087;
+  --theme-primary-700: #1f2e60;
+  --theme-primary-800: #131b3a;
+  --theme-primary-900: #060913;
+  --primary-color: var(--theme-primary-500);
+}
+body.staging {
+  --theme-primary-50: #e9ebfc;
+  --theme-primary-100: #bdc2f5;
+  --theme-primary-100-transparent: #bdc2f522;
+  --theme-primary-200: #9099ee;
+  --theme-primary-300: #6470e7;
+  --theme-primary-400: #3848e1;
+  --theme-primary-500: #1e2ec7;
+  --theme-primary-600: #18249b;
+  --theme-primary-700: #111a6f;
+  --theme-primary-800: #0a0f42;
+  --theme-primary-900: #030516;
+  --primary-color: var(--theme-primary-500);
+}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="pim_management_bank_transfer_transfer_tree">
+            <field name="name">pim.management.bank.transfer.transfer.tree</field>
+            <field name="model">pin.management.bank.transfer.request</field>
+            <field name="arch" type="xml">
+                <tree create="false" decoration-warning="(state == 'draft')"
+                      decoration-success="(state == 'approved')"
+                      decoration-danger="(state == 'rejected')">
+                    <field name="type"/>
+                    <field name="partner_id"/>
+                    <field name="bankName"/>
+                    <field name="senderAccount"/>
+                    <field name="toBank"/>
+                    <field name="transferAmount"/>
+                    <field name="state"/>
+                    <field name="note"/>
+                    <field name="invoice_id" readonly="1"></field>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="pim_management_bank_transfer_transfer_form">
+            <field name="name">pim.management.bank.transfer.transfer.form</field>
+            <field name="model">pin.management.bank.transfer.request</field>
+            <field name="arch" type="xml">
+                <form string="Bank Transfer Request">
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,approved,rejected"/>
+                        <button name="show_confirmation_wizard_before_approve" string="Approve" type="object"
+                                attrs="{'invisible': [('state', 'not in', ('draft'))]}"></button>
+                        <button name="action_reject" string="Reject"
+                                attrs="{'invisible': [('state', 'not in', ('draft'))]}" type="object" data-hotkey="z"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="type" readonly="1" force_save="1"/>
+                            <field name="partner_id" readonly="1" force_save="1"/>
+                            <field name="bankName"
+                                   attrs="{'readonly' : [('state' , 'in' , ['approved', 'rejected'])]}"/>
+                            <field name="senderAccount"
+                                   attrs="{'readonly' : [('state' , 'in' , ['approved', 'rejected'])]}"/>
+                        </group>
+                        <group>
+                            <field name="toBank" attrs="{'readonly' : [('state' , 'in' , ['approved', 'rejected'])]}"/>
+                            <field name="transferAmount"
+                                   attrs="{'readonly' : [('state' , 'in' , ['approved', 'rejected'])]}"/>
+                        </group>
+                        <group>
+                            <field name="note"/>
+                            <field name="bankTransferImageURL" widget="url" readonly="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="pim_management_view_partner_form_inherited">
+            <field name="name">pim.management.view.partner.form.inherited</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                  <xpath expr="//field[@name='acc_number']" position="after">
+                      <field name="account_type"/>
+                      <field name="account_class"/>
+                      <field name="iban"/>
+                      <field name="adib_swift_code"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_pin_management_bank_transfer_requests" model="ir.actions.act_window">
+            <field name="name">Pin Management Bank Transfer Requests</field>
+            <field name="res_model">pin.management.bank.transfer.request</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_empty_folder">
+                    No Bank Transfer Requests Founds
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record id="voucher_type_fields_value_edit_tree" model="ir.ui.view">
+            <field name="name">voucher_type_fields_value_edit_tree</field>
+            <field name="model">voucher.type.fields.value.edit</field>
+            <field name="arch" type="xml">
+                <form create="false" edit="false">
+                    <field name="json_value" widget="json_field_widget" />
+                    <footer>
+                        <button string="Cancel" class="btn btn-secondary cancel_product_fields_value_edit_tree" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

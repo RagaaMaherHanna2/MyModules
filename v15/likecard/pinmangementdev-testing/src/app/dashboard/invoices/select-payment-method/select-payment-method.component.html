@@ -1,0 +1,32 @@
+<div class="container-800">
+    <ng-container>
+        <p-card i18n-header header="Select Payment Method">
+            <form [formGroup]="selectPaymentForm" (ngSubmit)="submit()">
+                <div class="column-label-input">
+                    <label htmlFor="type" i18n class="required-label">Payment Method</label>
+
+                    <p-dropdown [options]="paymentMethods" optionLabel="name" optionValue="reference"
+                        formControlName="type" optionDisabled="chosen" placeholder="Please Select..."
+                        i18n-placeholder></p-dropdown>
+                </div>
+                <button pButton type="submit" label="Next" class="submit-button" i18n-label
+                    [disabled]="selectPaymentForm.invalid"></button>
+            </form>
+        </p-card>
+        
+        <p-card *ngIf="bill" header="Bill Details" i18n-header styleClass="details-card">
+            <div class="two-groups">
+                <div class="details">
+                    <div class="info-pair">
+                        <span class="title" i18n>ID</span>
+                        <span class="value">{{ bill.id }}</span>
+                    </div>
+                    <div class="info-pair">
+                        <span class="title" i18n>Bill Date</span>
+                        <span class="value">{{ bill.invoice_date | date}}</span>
+                    </div>
+                </div>
+            </div>
+        </p-card>
+    </ng-container>
+</div>

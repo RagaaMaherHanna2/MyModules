@@ -1,0 +1,96 @@
+<p-card i18n-header header="Sales Report Table">
+  <div class="flex md:align-items-end jus gap-1 flex-column md:flex-row">
+    <div class="flex gap-1 flex-column w-3" style="position: relative;">
+      <label htmlFor="merchant" i18n>Creation Date Range</label>
+      <p-calendar [(ngModel)]="rangeDates" selectionMode="range" [minDate]="minDate" [maxDate]="maxDate"
+        [readonlyInput]="true">
+      </p-calendar>
+      <p-button *ngIf="rangeDates" (click)="clearRangeDates()" icon="pi pi-times"
+        [style]=" currentLanguage === 'en-GB'
+        ? {left:'100%', transform: 'translate(-100%, -5px)', background: '#ffffffa0',bottom: '0', position: 'absolute'}
+        : {left:'0', transform: 'translate(0, -5px)', background: '#ffffffa0',bottom: '0', position: 'absolute'}"
+        styleClass="p-button-secondary p-button-text p-button-raised"></p-button>
+    </div>
+    <div class="w-full md:w-3 md:mr-2">
+      <span class="flex gap-1 flex-column justify-center">
+        <label htmlFor="product" i18n>Product Name</label>
+        <input pInputText type="text" [(ngModel)]="product" placeholder="Product Name" i18n-placeholder />
+      </span>
+    </div>
+    <span class="p-input-icon-left md:mr-2 flex gap-1 flex-column md:w-3" *ngIf="theUserRole === 'service_provider'">
+      <label htmlFor="merchant" i18n>Merchant</label>
+      <p-dropdown i18n-placeholder placeholder="Merchant" [options]="options" optionLabel="name" optionValue="id"
+        [(ngModel)]="selectedMerchant"></p-dropdown>
+    </span>
+    <div>
+      <button pButton pRipple type="button" label="Submit" i18n-label class="p-button p-button m-2"
+        (click)="loadList()"></button>
+    </div>
+  </div>
+
+  <p-table styleClass="p-datatable-gridlines p-datatable-striped mt-4" #dt [value]="reports.data" [loading]="loading"
+    [lazy]="true" (onLazyLoad)="getReports()" [rows]="pageSize" [paginator]="true" [globalFilterFields]="['name']"
+    (onPage)="changePage($event)" [loading]="loading" responsiveLayout="scroll" [totalRecords]="reports.totalCount"
+    dataKey="id" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    i18n-currentPageReportTemplate [showCurrentPageReport]="true">
+    <ng-template pTemplate="header">
+      <tr>
+        <th i18n>Create Date</th>
+        <th i18n>From Date</th>
+        <th i18n>To Date</th>
+        <th i18n>Product Name</th>
+        <th i18n>Merchant</th>
+        <th i18n>Status</th>
+        <th i18n>ٌReport file</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="7">
+          <span class="empty-message" i18n>There is no records to show </span>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item>
+      <tr [id]="item.id">
+        <td>{{ item.report_date | date : "longDate" }}</td>
+        <td>{{ item.from_date | date : "longDate" }}</td>
+        <td>{{ item.to_date | date : "longDate" }}</td>
+        <td>
+          <ng-container *ngIf="!item.product">
+            <span i18n>All</span>
+          </ng-container>
+          <ng-container *ngIf="item.product">{{ item.product }}
+          </ng-container>
+        </td>
+        <td>
+          <ng-container *ngIf="!item.merchant_filter.name">
+          <span i18n>All</span>
+        </ng-container>
+        <ng-container *ngIf="item.merchant_filter.name">{{item.merchant_filter.name }}
+        </ng-container>
+      </td>
+        <td>
+          <span *ngIf="item.state!=='failed'" [class]="'item-status ' + actionState[item.state].class">
+            {{ actionState[item.state].label }}
+          </span>
+          <span *ngIf="item.state==='failed'" [class]="'item-status ' + actionState['success'].class">
+            {{ actionState['success'].label }}
+          </span>
+        </td>
+        <td>
+          <ng-container *ngIf="item.state === 'pending'">
+            <span i18n>Report being generated. Please wait.</span>
+          </ng-container>
+          <ng-container *ngIf="item.state === 'done'">
+            <button pButton label="Download Report" i18n-label class="p-button-outlined"
+              (click)="downloadAttachment(item)"></button>
+          </ng-container>
+          <ng-container *ngIf="item.state === 'failed'">
+            <span i18n>No Data</span>
+          </ng-container>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>

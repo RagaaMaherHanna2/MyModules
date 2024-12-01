@@ -1,0 +1,105 @@
+<div class="container-800">
+  <p-card header="Edit Category" i18n-header>
+    <div class="spinner-wrapper" *ngIf="!category.id">
+      <p-progressSpinner></p-progressSpinner>
+    </div>
+    <div *ngIf="category.id">
+      <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+        <div class="two-groups">
+          <!-- Name -->
+          <div class="column-label-input">
+            <label htmlFor="name" i18n class="required-label"
+              >Category Name [EN]</label
+            >
+            <input
+              formControlName="name"
+              id="name"
+              pInputText
+              type="text"
+              i18n-placeholder
+              placeholder="Category Name [EN]"
+            />
+
+            <div class="error-container">
+              <ng-container
+                *ngIf="
+                  categoryForm.controls['name'].touched &&
+                  categoryForm.controls['name'].invalid &&
+                  categoryForm.controls['name'].errors
+                "
+                class="text-danger"
+              >
+                <div
+                  class="text-error-validation"
+                  *ngIf="categoryForm.controls['name'].errors['required']"
+                  i18n
+                >
+                  Engilsh name is required
+                </div>
+              </ng-container>
+            </div>
+          </div>
+
+          <!-- Name AR -->
+          <div class="column-label-input">
+            <label htmlFor="name_ar" class="required-label" i18n
+              >Category Name [AR]</label
+            >
+            <input
+              formControlName="name_ar"
+              id="name_ar"
+              pInputText
+              type="text"
+              i18n-placeholder
+              placeholder="Category Name [AR]"
+            />
+            <div class="error-container">
+              <ng-container
+                *ngIf="
+                  categoryForm.controls['name_ar'].touched &&
+                  categoryForm.controls['name_ar'].invalid &&
+                  categoryForm.controls['name_ar'].errors
+                "
+                class="text-danger"
+              >
+                <div
+                  class="text-error-validation"
+                  i18n
+                  *ngIf="categoryForm.controls['name_ar'].errors['required']"
+                >
+                  Arabic name is required
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+        <div class="column-label-input">
+          <label class="required-label" i18n>Category Image</label>
+          <span class="size-warning">{{ maxFileSizeMessage | uppercase }}</span>
+
+          <p-fileUpload
+            id="productImage"
+            [multiple]="false"
+            (onSelect)="onUpload($event)"
+            (onClear)="onClear()"
+            (onRemove)="onClear()"
+            [showUploadButton]="false"
+            accept="image/*"
+          >
+          </p-fileUpload>
+        </div>
+        <div class="image-wrapper">
+          <img [src]="category.image" [alt]="category.name" />
+        </div>
+
+        <button
+          pButton
+          type="submit"
+          label="Submit"
+          class="submit-button"
+          [disabled]="categoryForm.invalid"
+        ></button>
+      </form>
+    </div>
+  </p-card>
+</div>

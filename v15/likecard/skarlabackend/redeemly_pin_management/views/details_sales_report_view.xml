@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="detailed_sales_report_view_tree" model="ir.ui.view">
+            <field name="name">detailed_sales_report_view_tree</field>
+            <field name="model">detail.sales.report</field>
+            <field name="arch" type="xml">
+                <tree string="detailed_sales_report_tree">
+                    <field name="from_date" />
+                    <field name="to_date" />
+                    <field name="report_date" />
+                    <field name="state" />
+                    <field name="user_id" />
+                    <field name="failure_reason" />
+                    <field name="report_excel" />
+                    <field name="merchant_filter" />
+                    <field name="product" />
+                </tree>
+            </field>
+        </record>
+        <record id="detailed_sales_report_view_form" model="ir.ui.view">
+            <field name="name">detailed_sales_report_view_form</field>
+            <field name="model">detail.sales.report</field>
+            <field name="arch" type="xml">
+                <form string="detailed_sales_report_form">
+                    <sheet>
+                        <group>
+                           <field name="from_date" />
+                            <field name="to_date" />
+                            <field name="report_date" />
+                            <field name="state" />
+                            <field name="user_id" />
+                            <field name="failure_reason" />
+                            <field name="report_excel" />
+                            <field name="merchant_filter" />
+                            <field name="product" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="detailed_sales_report_action" model="ir.actions.act_window">
+            <field name="name">Detailed Sales Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">detail.sales.report</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem name="Sales Report" id="pin_management_detailed_sales_report" groups="sales_team.group_sale_manager"
+                parent="redeemly_pin_management.redeemly_report_menu"
+                action="detailed_sales_report_action" sequence='60'/>
+    </data>
+</odoo>

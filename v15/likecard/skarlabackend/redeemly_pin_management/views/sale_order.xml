@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="redeemly_view_order_form_inherited">
+            <field name="name">redeemly_pin_management.sale.order.form.inherited</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='date_order']" position="after">
+                     <field name="is_invoice_request" readonly="1"/>
+                 </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

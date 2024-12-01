@@ -1,0 +1,111 @@
+<div class="spinner-wrapper" *ngIf="!package">
+  <p-progressSpinner></p-progressSpinner>
+</div>
+
+<ng-container *ngIf="package">
+  <p-card styleClass="title-card">
+    <div class="flex-between">
+      <h3 i18n>Package Details</h3>
+      <div class="buttons-wrapper">
+        <a
+          [routerLink]="['/dashboard/package/edit/' + package.reference]"
+          pButton
+          label="Edit"
+          i18n-label
+        ></a>
+        <a
+          pButton
+          label="Add Products"
+          i18n-label
+          [routerLink]="['/dashboard/package/add-vouchers', package.reference]"
+        ></a>
+        <button
+          pButton
+          label="Merchants"
+          [routerLink]="['/dashboard/package/merchants', package.reference]"
+          i18n-label
+        ></button>
+        <button
+          pButton
+          label="Package Report"
+          [routerLink]="['/dashboard/package/codes', package.reference]"
+          i18n-label
+        ></button>
+        <button
+          pButton
+          label="Publish"
+          i18n-label
+          (click)="publishPackage()"
+          [disabled]="package.state === 'published'"
+        ></button>
+      </div>
+    </div>
+  </p-card>
+
+  <p-card>
+    <div class="two-groups">
+      <div>
+        <h5 i18n>Basic Information</h5>
+        <div class="info-pair">
+          <span class="title" i18n>Reference</span>
+          <span class="value">{{ package.reference }}</span>
+        </div>
+        <div class="info-pair">
+          <span class="title" i18n>Package Name [EN]</span>
+          <span class="value">{{ package.package_name }}</span>
+        </div>
+        <div class="info-pair">
+          <span class="title" i18n>Package Name [AR]</span>
+          <span class="value">{{ package.package_name_ar }}</span>
+        </div>
+      </div>
+      <div>
+        <h5 i18n>Configuration</h5>
+        <div class="info-pair">
+          <span class="title" i18n>Expiration</span>
+          <span class="value">{{ package.expiry_date | date }}</span>
+        </div>
+        <div class="info-pair">
+          <span class="title" i18n>Code Type</span>
+          <span class="value">{{ package.code_type }}</span>
+        </div>
+        <div class="info-pair">
+          <span class="title" i18n>Code Duration</span>
+          <span class="value" i18n>
+            {{ package.code_days_duration }} Day(s) and
+            {{ package.code_hours_duration }} Hour(s)
+          </span>
+        </div>
+      </div>
+    </div>
+    <p-divider></p-divider>
+    <p-table
+      [value]="package.generation_requests"
+      [tableStyle]="{ 'min-width': '50rem' }"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th i18n>Creation Date</th>
+          <th i18n>Status</th>
+          <th i18n>Start Time</th>
+          <th i18n>End Time</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-request>
+        <tr>
+          <td>{{ request.create_date | date }}</td>
+          <td>
+            <span
+              class="item-status"
+              [ngClass]="get_request_status_style(request.state)"
+            >
+              {{ request.state }}
+            </span>
+          </td>
+          <td>{{ request.start_time | date : "medium" }}</td>
+          <td>{{ request.end_time | date : "medium" }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </p-card>
+</ng-container>

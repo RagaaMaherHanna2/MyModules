@@ -1,0 +1,27 @@
+<p-confirmDialog
+  [visible]="open$ | async"
+  [style]="{ 'min-width': '30vw', 'max-width': '90%' }"
+  [message]="(message$ | async)!"
+  [icon]="(icon$ | async)!"
+>
+  <ng-template pTemplate="header">
+    <h3 i18n>Please Confirm Action</h3>
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <button
+      pButton
+      label="Dismiss"
+      class="p-button-outlined p-button-warning"
+      i18n-label
+      (click)="onHide()"
+    ></button>
+    <button
+      pButton
+      label="Confirm"
+      class="p-button-warning"
+      i18n-label
+      (click)="confirm()"
+    ></button>
+  </ng-template>
+</p-confirmDialog>

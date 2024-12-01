@@ -1,0 +1,58 @@
+<div class="container-800">
+  <p-card header="Create Fees Report" i18n-header>
+    <form [formGroup]="feesReportForm" (ngSubmit)="submit()">
+      <div class="two-groups">
+        <div class="column-label-input">
+          <label htmlFor="sp" i18n class="required-label"
+            >Service Provider</label
+          >
+          <p-dropdown
+            [options]="SPs"
+            optionLabel="name"
+            optionValue="id"
+            formControlName="sp"
+            (onChange)="getMerchants($event.value)"
+          >
+          </p-dropdown>
+        </div>
+        <div class="column-label-input">
+          <label htmlFor="merchant" i18n class="required-label">Merchant</label>
+          <p-dropdown
+            [options]="merchants"
+            optionLabel="name"
+            optionValue="id"
+            formControlName="merchant"
+            [placeholder]="
+              (loadingMerchants | async) === false
+                ? 'Select Merchant'
+                : 'Loading Merchants...'
+            "
+          >
+          </p-dropdown>
+        </div>
+      </div>
+      <div class="md:mt-2 flex flex-column gap-1">
+        <label htmlFor="date" class="required-label mb-1" i18n>Date</label>
+        <p-calendar
+          [inline]="true"
+          view="month"
+          dateFormat="mm/yy"
+          name="date"
+          i18n
+          formControlName="date"
+          [maxDate]="maxDate"
+        ></p-calendar>
+        <div class="error-container"></div>
+      </div>
+
+      <button
+        pButton
+        type="submit"
+        label="Submit"
+        class="submit-button"
+        i18n-label
+        [disabled]="feesReportForm.invalid"
+      ></button>
+    </form>
+  </p-card>
+</div>

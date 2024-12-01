@@ -1,0 +1,45 @@
+@import "src/assets/sass/layout/_mixins.scss";
+// Global Styles
+.input-group {
+  @include column-label-input();
+  margin-bottom: 1rem;
+}
+
+// Sign in styles
+.sign-in-container {
+  @include auth-container();
+  .sign-in-card-outline {
+    @include auth-card-outline();
+    .sign-in-card {
+      @include auth-card();
+
+      .sign-in-form {
+        @include auth-form();
+      }
+    }
+  }
+}
+
+// Overriding PrimeNg styles
+:host ::ng-deep {
+  .p-password {
+    width: 100%;
+
+    input {
+      width: 100%;
+    }
+  }
+  // to select both .pi-eye & .pi-eye-slash
+  [class*="pi-eye"] {
+    color: var(--primary-color) !important;
+
+    cursor: pointer;
+    transform: scale(1.3);
+  }
+  .p-input-icon-left > i,
+  .p-input-icon-left > .p-icon-wrapper,
+  .p-input-icon-right > i,
+  .p-input-icon-right > .p-icon-wrapper {
+    inset-inline-end: 1rem;
+  }
+}

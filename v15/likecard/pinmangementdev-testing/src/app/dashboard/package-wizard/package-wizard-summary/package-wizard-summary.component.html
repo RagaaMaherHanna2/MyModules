@@ -1,0 +1,104 @@
+<div class="step-header">
+  <h4 i18n>Summary</h4>
+  <div class="buttons-wrapper">
+    <button
+      pButton
+      class="p-button-outlined"
+      (click)="previous()"
+      label="Previous"
+      i18n-label
+    ></button>
+    <button pButton (click)="finishWizard()" label="Create" i18n-label></button>
+  </div>
+</div>
+<p-divider></p-divider>
+
+<div class="summary-container">
+  <div class="package-info">
+    <div class="basic-info">
+      <div class="info-pair">
+        <span class="title" i18n>Package Name [EN]</span>
+        <span class="value">{{ package.package_name }}</span>
+      </div>
+      <div class="info-pair">
+        <span class="title" i18n>Package Name [AR]</span>
+        <span class="value">{{ package.package_name_ar }}</span>
+      </div>
+      <div class="info-pair">
+        <span class="title" i18n>Expiration</span>
+        <span class="value">{{ package.expiry_date | date }}</span>
+      </div>
+    </div>
+    <div class="code-configuration">
+      <div class="info-pair">
+        <span class="title" i18n>Code Type</span>
+        <span class="value">{{ package.code_type }}</span>
+      </div>
+      <div class="info-pair">
+        <span class="title" i18n>Code Separator</span>
+        <span class="value">{{ package.code_separator }} </span>
+      </div>
+      <div class="info-pair">
+        <span class="title" i18n>Code Duration</span>
+        <span class="value" i18n>
+          {{ package.code_days_duration }} Day(s) and
+          {{ package.code_hours_duration }} Hour(s)
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <p-accordion [multiple]="true">
+    <p-accordionTab
+      header="Selected Products"
+      i18n-header
+      headerStyleClass="products-header"
+      [selected]="true"
+    >
+      <table class="summary-table">
+        <thead>
+          <tr>
+            <th i18n>Product Name</th>
+            <th i18n>Quantity</th>
+            <th i18n>Product Type</th>
+            <th i18n>Serials Stock</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{ getProductById(product.product).name }}</td>
+            <td>{{ product.quantity }}</td>
+            <td>{{ getProductSerialsStock(product.product) }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </p-accordionTab>
+    <p-accordionTab
+      header="Invited Merchants"
+      i18n-header
+      headerStyleClass="merchant-header"
+      [selected]="true"
+    >
+      <table class="summary-table">
+        <thead>
+          <tr>
+            <th i18n>Reference</th>
+            <th i18n>Merchant Name</th>
+            <th i18n>Price</th>
+            <th i18n>Limit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let merchant of merchants; let i = index">
+            <td>{{ merchant.merchant }}</td>
+            <td>{{ selectedMerchants[i] }}</td>
+            <td>{{ merchant.price | currency : userCurrency }}</td>
+            <td>
+              {{ merchant.limit | number : "1.0-2" }} <span i18n>Code</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </p-accordionTab>
+  </p-accordion>
+</div>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="package_view_tree" model="ir.ui.view">
+            <field name="name">package.view.tree</field>
+            <field name="model">package</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="package_name"/>
+                    <field name="name"/>
+                    <field name="state"/>
+                    <field name="service_provider_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="package_view_form" model="ir.ui.view">
+            <field name="name">package.view.form</field>
+            <field name="model">package</field>
+            <field name="arch" type="xml">
+                <form string="Package">
+                    <header>
+                        <field name="id" invisible="1"/>
+                        <field name="state" widget="statusbar"/>
+                        <button name="publish_package" string="Publish" class="btn btn-primary" type="object"
+                                attrs="{'invisible':[('state','!=','draft')]}"/>
+                        <button name="unpublish_package" string="Back To Draft" class="btn btn-primary" type="object"
+                                attrs="{'invisible':[('state','!=','published')]}"/>
+                        <button name="close_package" string="Close" class="btn btn-primary" type="object"
+                                attrs="{'invisible':[('state','!=','published')]}"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box" groups="base.group_user">
+                            <button type="object" name="show_merchant_invites"
+                                    class="oe_stat_button" icon="fa-th-list" string="Merchants"
+                            >
+                            </button>
+                            <button type="object" name="show_generation_requests"
+                                    class="oe_stat_button" icon="fa-th-list" string="Generation Requests"
+                            >
+                            </button>
+                            <button type="object" name="show_package_codes"
+                                    class="oe_stat_button" icon="fa-th-list"
+                                    string="Codes"
+                            >
+                            </button>
+                        </div>
+                        <group>
+                            <group string="Info">
+                                <field name="name"/>
+                                <field name="id" attrs="{'readonly' : True}"/>
+                                <field name="package_name"/>
+                                <field name="package_name_ar"/>
+                                <field name="service_provider_id" options="{'no_create' : True}"
+                                       attrs="{'readonly' : [('service_provider_id' , '!=' , False), ('id' , '>' , 0)]}"
+                                       force_save="1"/>
+                            </group>
+                            <group string="Configuration">
+                                <field name="expiry_date"/>
+                                <field name="invoicing_policy" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            </group>
+<!--                            <group string="Generated Codes Configuration">-->
+<!--                                <field name="code_type"/>-->
+<!--                                <field name="code_seperator"/>-->
+<!--                                <field name="code_days_duration"/>-->
+<!--                                <field name="code_hours_duration"/>-->
+<!--                            </group>-->
+                            <group string="Stats">
+                                <field name="generated_codes_count" />
+                                <field name="pulled_codes_count"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_package" model="ir.actions.act_window">
+            <field name="name">Package</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">package</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

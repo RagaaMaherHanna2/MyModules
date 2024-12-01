@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="0">
+    <record id="collect_on_hand_qty_snapshots" model="ir.cron">
+            <field name="name">Stock History Job</field>
+            <field name="model_id" ref="redeemly_pin_management.model_serials_stock_history"></field>
+            <field name="state">code</field>
+            <field name="code">model.collect_on_hand_qty_snapshots()</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">12</field>
+            <field name="interval_type">hours</field>
+            <field name="numbercall">-1</field>
+            <field name="nextcall" eval="(DateTime.now() + timedelta(hours=2)).strftime('%Y-%m-%d %H:%M:%S')"/>
+    </record>
+</odoo>

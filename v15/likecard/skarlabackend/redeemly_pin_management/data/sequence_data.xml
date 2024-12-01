@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="bank_transfer_sequence" model="ir.sequence">
+            <field name="name">Bank Transfer</field>
+            <field name="code">bank.transfer.request</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">BNK-REQ</field>
+            <field name="padding">9</field>
+        </record>
+    </data>
+</odoo>

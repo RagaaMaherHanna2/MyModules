@@ -1,0 +1,39 @@
+<div class="spinner-wrapper" *ngIf="!serialBatch">
+  <p-progressSpinner></p-progressSpinner>
+</div>
+<ng-container *ngIf="serialBatch">
+  <p-card header="Vouchers Batch Details" i18n-header>
+    <div class="two-groups">
+      <div class="details">
+        <div class="info-pair">
+          <span class="title" i18n>Batch Sequence</span>
+          <span class="value">{{ serialBatch.batch_sequence }}</span>
+        </div>
+        <div class="info-pair">
+          <span class="title" i18n>Product Name</span>
+          <span class="value">{{ serialBatch.product_name }}</span>
+        </div>
+        <div class="info-pair">
+          <span class="title" i18n>Vendor Name</span>
+          <span class="value">{{ serialBatch.vendor_name }}</span>
+        </div>
+        <div class="info-pair">
+          <span class="title" i18n>Purchase Price</span>
+          <span class="value">{{
+            serialBatch.product_purchase_price +
+              " " +
+              serialBatch.batch_currency_name
+          }}</span>
+        </div>
+        <div class="info-pair">
+          <span class="title" i18n>Notes</span>
+          <span class="value">{{ serialBatch.notes }}</span>
+        </div>
+        <div class="info-pair">
+          <span class="title" i18n>Quantity</span>
+          <span class="value">{{ serialBatch.batch_count }}</span>
+        </div>
+      </div>
+    </div>
+  </p-card>
+</ng-container>

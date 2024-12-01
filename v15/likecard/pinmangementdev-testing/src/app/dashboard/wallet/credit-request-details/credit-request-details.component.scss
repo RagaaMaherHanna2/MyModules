@@ -1,0 +1,35 @@
+@import "src/assets/sass/layout/_mixins.scss";
+
+.info-pair {
+  @include info-pair(1.2rem);
+  .title {
+    min-width: 25ch;
+  }
+  margin-bottom: 1rem;
+}
+
+h4 {
+  margin: unset;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 40% !important;
+  min-height: 17rem;
+
+  margin-bottom: 2rem;
+  padding: 1rem;
+
+  img {
+    max-height: 15rem;
+    border-radius: 20px;
+  }
+}

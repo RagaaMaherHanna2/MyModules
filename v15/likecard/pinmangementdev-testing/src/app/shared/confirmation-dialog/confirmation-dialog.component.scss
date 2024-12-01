@@ -1,0 +1,16 @@
+:host ::ng-deep .p-dialog-content {
+  padding: 1rem 2rem 4rem;
+
+  i::before {
+    font-size: 5rem;
+    margin-inline: 2rem;
+    color: var(--yellow-500);
+  }
+
+  span {
+    margin: 0;
+    margin-inline-start: 2rem;
+    font-size: 1.7rem;
+    max-width: 60ch;
+  }
+}
